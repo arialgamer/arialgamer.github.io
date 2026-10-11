@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arial Gamer</title>
+<meta name="description" content="Jogos do Arial: Gelada (bebidas virtuais no celular) e Esconde-Esconde (esconde-esconde para a família).">
+<meta property="og:title" content="Arial Gamer">
+<meta property="og:description" content="Gelada e Esconde-Esconde: baixe os jogos do Arial.">
+<meta property="og:image" content="https://arialgamer.github.io/gelada.png">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Figtree:wght@400;600;700&display=swap">
+<style>
+/* Layout: uma coluna estreita de cartões, como um "link da bio"; céu noturno do Esconde-Esconde com o âmbar do Gelada */
+:root {
+  --night: #120e2a; --night-2: #1d1744; --card: rgba(255,255,255,.06); --line: rgba(255,255,255,.12);
+  --text: #f4f0ff; --muted: #b9b0d8; --amber: #f6b83a; --amber-ink: #2a1703; --violet: #b49cff; --pink: #ff4fa3;
+  --display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box }
+html { background: var(--night) }
+body { margin: 0; min-height: 100vh; color: var(--text); font: 16px/1.5 var(--body);
+  background: radial-gradient(120% 60% at 50% -10%, var(--night-2), var(--night) 70%); }
+.stars { position: fixed; inset: 0; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 78% 12%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 60% 34%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 30% 52%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 60%, #fff 50%, transparent 51%), radial-gradient(1.5px 1.5px at 18% 82%, #fff 50%, transparent 51%); }
+main { position: relative; max-width: 460px; margin: 0 auto; padding-inline: 16px;
+  padding-block: calc(36px + env(safe-area-inset-top, 0px)) calc(40px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 18px }
+header { text-align: center; display: grid; justify-items: center; gap: 4px }
+header img { width: 190px; height: auto }
+header p { margin: 0; color: var(--muted) }
+.game { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px; display: grid; gap: 14px }
+.top { display: flex; gap: 14px; align-items: center }
+.top img { width: 76px; height: 76px; border-radius: 18px; flex: none }
+.top div { min-width: 0 }
+h2 { font-family: var(--display); font-size: clamp(22px, 6.5vw, 26px); line-height: 1.05; margin: 0 }
+.tag { margin: 2px 0 0; color: var(--muted); font-size: 15px }
+.btns { display: grid; gap: 8px }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; border-radius: 14px;
+  font-weight: 700; font-size: 16px; text-decoration: none; color: var(--amber-ink); background: var(--amber) }
+.esconde .btn { background: var(--violet); color: #15102e }
+.soon { text-align: center; color: var(--muted); font-size: 14px; margin: 0 }
+.btn:focus-visible, .tiktok:focus-visible { outline: 3px solid #fff; outline-offset: 3px }
+.tiktok { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; border-radius: 999px;
+  background: #fff; color: #111; text-decoration: none; font-weight: 700; font-size: 17px }
+.tiktok svg { width: 22px; height: 22px }
+footer { text-align: center; color: var(--muted); font-size: 13px; display: grid; gap: 4px }
+footer a { color: var(--muted) }
+@media (hover: hover) { .btn:hover, .tiktok:hover { filter: brightness(1.08) } }
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<main>
+  <header>
+    <img src="assinatura.svg" alt="Arial">
+    <p>Jogos para celular feitos no Brasil</p>
+  </header>
+
+  <a class="tiktok" href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 3c.4 2.2 1.9 3.8 4.1 4v3.1c-1.5 0-2.9-.4-4.1-1.2v6.2c0 3.4-2.6 5.9-5.8 5.9S5 18.5 5 15.2s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.2a2.7 2.7 0 0 0-.9-.1 2.6 2.6 0 1 0 2.6 2.6V3h3.2z"/></svg>
+    Siga @arial.gamer no TikTok
+  </a>
+
+  <section class="game">
+    <div class="top">
+      <img src="gelada.png" alt="Ícone do Gelada">
+      <div>
+        <h2>Gelada</h2>
+        <p class="tag">Cerveja, drinks e até café no seu celular. Incline para beber 🍺</p>
+      </div>
+    </div>
+    <div class="btns">
+      <a class="btn" href="https://apps.apple.com/br/app/id6819882963" target="_blank" rel="noopener">Baixar na App Store</a>
+      <p class="soon">Android: em breve na Google Play</p>
+    </div>
+  </section>
+
+  <section class="game esconde">
+    <div class="top">
+      <img src="esconde.png" alt="Ícone do Esconde-Esconde">
+      <div>
+        <h2>Esconde-Esconde</h2>
+        <p class="tag">Esconda-se e tente achar, contra a máquina ou um amigo. Grátis 🙈</p>
+      </div>
+    </div>
+    <div class="btns">
+      <a class="btn" href="https://apps.apple.com/br/app/id6819893974" target="_blank" rel="noopener">Baixar na App Store</a>
+      <p class="soon">Android: em breve na Google Play</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Gelada: bebidas 100% virtuais, 0% álcool. Beba com moderação.</span>
+    <span><a href="https://renatoarial-source.github.io/gelada-privacidade/">Privacidade Gelada</a> · <a href="https://renatoarial-source.github.io/esconde-privacidade/">Privacidade Esconde-Esconde</a></span>
+  </footer>
+</main>
+</body>
+</html>
