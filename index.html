@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Arial Gamer</title>
-<meta name="description" content="Jogos do Arial: Gelada (bebidas virtuais no celular) e Esconde-Esconde (esconde-esconde para a família).">
+<meta name="description" content="Jogos do Arial: Gelada (bebidas virtuais no celular), Esconde-Esconde (esconde-esconde para a família) e, em breve, Gol de Placa (pênaltis e faltas).">
 <meta property="og:title" content="Arial Gamer">
-<meta property="og:description" content="Gelada e Esconde-Esconde: baixe os jogos do Arial.">
+<meta property="og:description" content="Gelada e Esconde-Esconde: baixe os jogos do Arial. Em breve: Gol de Placa ⚽">
 <meta property="og:image" content="https://arialgamer.github.io/gelada.png">
 <link rel="icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +43,9 @@ h2 { font-family: var(--display); font-size: clamp(22px, 6.5vw, 26px); line-heig
 .btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; border-radius: 14px;
   font-weight: 700; font-size: 16px; text-decoration: none; color: var(--amber-ink); background: var(--amber) }
 .esconde .btn { background: var(--violet); color: #15102e }
+.gol { border-color: rgba(61,220,132,.45) }
+.gol .deal { background: #3ddc84; color: #06301a }
+.gol .btn { background: rgba(61,220,132,.16); color: #b9f5d2; border: 1px dashed rgba(61,220,132,.6); cursor: default }
 .deal { justify-self: start; background: #e8261c; color: #fff; font-weight: 800; font-size: 14px; padding: 4px 10px; border-radius: 8px }
 .soon { text-align: center; color: var(--muted); font-size: 14px; margin: 0 }
 .btn:focus-visible, .tiktok:focus-visible { outline: 3px solid #fff; outline-offset: 3px }
@@ -97,9 +100,24 @@ footer a { color: var(--muted) }
     </div>
   </section>
 
+  <section class="game gol">
+    <div class="top">
+      <img src="gol.png" alt="Ícone do Gol de Placa">
+      <div>
+        <h2>Gol de Placa</h2>
+        <p class="tag">Pênaltis e faltas: seja o batedor ou o goleiro ⚽🧤</p>
+      </div>
+    </div>
+    <div class="btns">
+      <span class="deal">⚽ Novo jogo · em breve</span>
+      <span class="btn" aria-disabled="true">Em breve na App Store</span>
+      <p class="soon">Seleções, times, chuva, neve, noite e narração em 8 idiomas</p>
+    </div>
+  </section>
+
   <footer>
     <span>Gelada: bebidas 100% virtuais, 0% álcool. Beba com moderação.</span>
-    <span><a href="https://renatoarial-source.github.io/gelada-privacidade/">Privacidade Gelada</a> · <a href="https://renatoarial-source.github.io/esconde-privacidade/">Privacidade Esconde-Esconde</a></span>
+    <span><a href="https://renatoarial-source.github.io/gelada-privacidade/">Privacidade Gelada</a> · <a href="https://renatoarial-source.github.io/esconde-privacidade/">Privacidade Esconde-Esconde</a> · <a href="gol-privacidade/">Privacidade Gol de Placa</a></span>
   </footer>
 </main>
 </body>
