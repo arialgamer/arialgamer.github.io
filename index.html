@@ -47,8 +47,10 @@ h2 { font-family: var(--display); font-size: clamp(22px, 6.5vw, 26px); line-heig
 .gol .deal { background: #3ddc84; color: #06301a }
 .gol .btn { background: rgba(61,220,132,.16); color: #b9f5d2; border: 1px dashed rgba(61,220,132,.6); cursor: default }
 .deal { justify-self: start; background: #e8261c; color: #fff; font-weight: 800; font-size: 14px; padding: 4px 10px; border-radius: 8px }
+.badge { justify-self: center; color: var(--text); display: block; line-height: 0; border-radius: 10px }
+.badge img { display: block; width: 168px; height: 56px }
 .soon { text-align: center; color: var(--muted); font-size: 14px; margin: 0 }
-.btn:focus-visible, .tiktok:focus-visible { outline: 3px solid #fff; outline-offset: 3px }
+.btn:focus-visible, .badge:focus-visible, .tiktok:focus-visible { outline: 3px solid #fff; outline-offset: 3px }
 .tiktok { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; border-radius: 999px;
   background: #fff; color: #111; text-decoration: none; font-weight: 700; font-size: 17px }
 .tiktok svg { width: 22px; height: 22px }
@@ -80,7 +82,7 @@ footer a { color: var(--muted) }
     </div>
     <div class="btns">
       <span class="deal">🔥 Promoção: R$ 1,90</span>
-      <a class="btn" href="https://apps.apple.com/br/app/id6819882963" target="_blank" rel="noopener">Baixar na App Store</a>
+      <a class="badge" href="https://apps.apple.com/br/app/id6819882963" target="_blank" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/pt-br" alt="Baixar Gelada na App Store" width="168" height="56" onerror="this.parentNode.className='btn';this.parentNode.textContent='Baixar na App Store'"></a>
       <p class="soon">Android: em breve na Google Play</p>
     </div>
   </section>
@@ -95,7 +97,7 @@ footer a { color: var(--muted) }
     </div>
     <div class="btns">
       <span class="deal">🔥 Promoção: R$ 1,90 · todos os cenários R$ 2,90</span>
-      <a class="btn" href="https://apps.apple.com/br/app/id6819893974" target="_blank" rel="noopener">Baixar na App Store</a>
+      <a class="badge" href="https://apps.apple.com/br/app/id6819893974" target="_blank" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/pt-br" alt="Baixar Esconde-Esconde na App Store" width="168" height="56" onerror="this.parentNode.className='btn';this.parentNode.textContent='Baixar na App Store'"></a>
       <p class="soon">Android: em breve na Google Play</p>
     </div>
   </section>
