@@ -151,7 +151,7 @@ def jsonld(k, j):
            "author": {"@id": SITE + "#org"}, "publisher": {"@id": SITE + "#org"},
            "offers": {"@type": "Offer", "price": "1.90", "priceCurrency": "BRL", "availability": "https://schema.org/InStock"}}
     org = {"@type": "Organization", "@id": SITE + "#org", "name": "Arial Gamer", "url": SITE, "logo": SITE + "logo-1080.jpg",
-           "sameAs": ["https://www.tiktok.com/@arial.gamer", "https://www.instagram.com/arial.gamer/"]}
+           "sameAs": ["https://www.tiktok.com/@arial.gamer", "https://www.instagram.com/arial.gamer/", "https://www.youtube.com/@arialgamer"]}
     crumbs = {"@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Arial Gamer", "item": SITE},
         {"@type": "ListItem", "position": 2, "name": j["nome"], "item": url}]}
