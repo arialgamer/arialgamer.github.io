@@ -160,8 +160,13 @@ def gerar(cod, L):
     head = re.sub(r'<link rel="alternate" hreflang=[^>]*>\n', '', head)
     corpo = re.sub(r'    <nav aria-label="Idioma / Language">.*?</nav>\n', '', corpo, flags=re.S)
     # links "Tudo sobre…" e a lista de jogos do rodapé levam a páginas só em português
-    corpo = re.sub(r'\s*<a class="more"[^>]*>.*?</a>', "", corpo)
-    corpo = re.sub(r'\s*<nav aria-label="Jogos">.*?</nav>', "", corpo, flags=re.S)
+    if cod == "en":  # em inglês as páginas dos jogos existem
+        corpo = re.sub(r'<a class="more" href="([a-z-]+/)">Tudo sobre o ([^<]+) →</a>', lambda m: f'<a class="more" href="/en/{m.group(1)}">All about {m.group(2)} →</a>', corpo)
+        corpo = re.sub(r'(<nav aria-label="Jogos">.*?</nav>)', lambda m: re.sub(r'href="([a-z-]+/)"', lambda n: f'href="/en/{n.group(1)}"', m.group(1)), corpo, flags=re.S)
+        corpo = re.sub(r'(<nav aria-label="Jogos">.*?)(\s*</nav>)', lambda m: m.group(1) + '<a href="/press/">Press kit</a>' + m.group(2), corpo, count=1, flags=re.S)
+    else:
+        corpo = re.sub(r'\s*<a class="more"[^>]*>.*?</a>', "", corpo)
+        corpo = re.sub(r'\s*<nav aria-label="Jogos">.*?</nav>', "", corpo, flags=re.S)
     # seletor de idioma no rodapé (antes de traduzir os rótulos)
     corpo = corpo.replace('    <nav aria-label="Privacidade">', idiomas_nav(cod) + '    <nav aria-label="Privacidade">', 1)
     # preços em reais saem; no lugar, "sem anúncios"
@@ -235,7 +240,8 @@ def atualizar_pt():
     s = s.replace('    <nav aria-label="Privacidade">', nav + '    <nav aria-label="Privacidade">', 1)
     open(p, "w", encoding="utf-8", newline="").write(s)
 
-atualizar_pt()
-pt = open(os.path.join(RAIZ, "index.html"), encoding="utf-8").read()
-for cod, L in {**IDIOMAS, **IDIOMAS_MAIS}.items():
-    gerar(cod, L)
+if __name__ == "__main__":
+    atualizar_pt()
+    pt = open(os.path.join(RAIZ, "index.html"), encoding="utf-8").read()
+    for cod, L in {**IDIOMAS, **IDIOMAS_MAIS}.items():
+        gerar(cod, L)

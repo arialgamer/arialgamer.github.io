@@ -196,6 +196,9 @@ def pagina(k):
 <meta name="description" content="{e(j["descricao"])}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="{url}">
+<link rel="alternate" hreflang="pt-BR" href="{url}">
+<link rel="alternate" hreflang="en" href="{SITE}en/{j["pasta"]}/">
+<link rel="alternate" hreflang="x-default" href="{url}">
 <meta name="theme-color" content="#0d0a20">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Arial Gamer">
