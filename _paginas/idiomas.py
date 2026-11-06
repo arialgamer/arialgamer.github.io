@@ -1,6 +1,8 @@
 # Gera o site em inglês (/en/) e em espanhol (/es/) a partir do index.html em português.
 # Rode de novo depois de mudar o index.html:  python _paginas/idiomas.py
-import json, os, re
+import json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from idiomas_mais import IDIOMAS_MAIS, TRAD, TRAD_LUG, DIA_NOITE
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://arialgamer.com.br/"
@@ -153,7 +155,7 @@ def absoluto(s):
     return re.sub(r'(\s(?:src|poster|data-src|href))="(?!https?:|#|/|mailto:)', r'\1="/', s)
 
 def gerar(cod, L):
-    i = L["i"]; s = pt
+    i = L.get("i", 1); s = pt
     head, corpo = s[:s.index("<body")], s[s.index("<body"):]
     head = re.sub(r'<link rel="alternate" hreflang=[^>]*>\n', '', head)
     corpo = re.sub(r'    <nav aria-label="Idioma / Language">.*?</nav>\n', '', corpo, flags=re.S)
@@ -167,16 +169,20 @@ def gerar(cod, L):
         corpo, n = troca_texto(corpo, velho, novo); assert n, velho
     corpo, n = troca_texto(corpo, "R$ 1,90", L["facts_preco"]); assert n
     faltou = []
+    extra = cod not in ("en", "es")
     for linha in T:
-        corpo, n = troca_texto(corpo, linha[0], linha[i])
+        alvo = TRAD[cod][linha[1]] if extra else linha[i]
+        corpo, n = troca_texto(corpo, linha[0], alvo)
         if not n: faltou.append(linha[0])
-    for p, *tr in LUGARES:
-        for d_pt, d_tr in [(" de dia", [" by day", " de día"]), (" à noite", [" at night", " de noche"])]:
-            corpo, _ = troca_texto(corpo, p + d_pt, tr[i - 1] + d_tr[i - 1])
-        corpo = re.sub(r"(<figcaption>\S+ )" + re.escape(p) + "(</figcaption>)", lambda m: m.group(1) + tr[i - 1] + m.group(2), corpo)
+    for p, en_nome, es_nome in LUGARES:
+        nome = TRAD_LUG[cod][en_nome] if extra else (en_nome if cod == "en" else es_nome)
+        dia, noite = DIA_NOITE[cod] if extra else ((" by day", " at night") if cod == "en" else (" de día", " de noche"))
+        corpo, _ = troca_texto(corpo, p + " de dia", nome + dia)
+        corpo, _ = troca_texto(corpo, p + " à noite", nome + noite)
+        corpo = re.sub(r"(<figcaption>\S+ )" + re.escape(p) + "(</figcaption>)", lambda m: m.group(1) + nome + m.group(2), corpo)
     # lojas: página internacional da App Store e Google Play no idioma
     corpo = corpo.replace("https://apps.apple.com/br/app/", "https://apps.apple.com/app/")
-    corpo = re.sub(r'(play\.google\.com/store/apps/details\?id=[\w.]+)"', r'\1&amp;hl=' + cod + '"', corpo)
+    corpo = re.sub(r'(play\.google\.com/store/apps/details\?id=[\w.]+)"', r'\1&amp;hl=' + L.get("hl", cod) + '"', corpo)
     corpo = corpo.replace("'Olha esses jogos: Gelada, Esconde-Esconde e Gol de Placa 🎮'", repr(L["share"]))
     corpo = corpo.replace("'https://arialgamer.com.br/'", f"'{SITE}{cod}/'")
     # cabeçalho
@@ -197,16 +203,17 @@ def gerar(cod, L):
     print("ok", cod, "| sem tradução:", faltou)
 
 def hreflang():
-    return "".join(f'<link rel="alternate" hreflang="{h}" href="{SITE}{p}">\n' for h, p in [("pt-BR", ""), ("en", "en/"), ("es", "es/"), ("x-default", "")])
+    pares = [("pt-BR", ""), ("en", "en/"), ("es", "es/")] + [(L["lang"], c + "/") for c, L in IDIOMAS_MAIS.items()] + [("x-default", "")]
+    return "".join(f'<link rel="alternate" hreflang="{h}" href="{SITE}{p}">\n' for h, p in pares)
 
 def idiomas_nav(atual):
-    itens = [("pt", "", "Português"), ("en", "en/", "English"), ("es", "es/", "Español")]
+    itens = [("pt", "", "Português"), ("en", "en/", "English"), ("es", "es/", "Español")] + [(c, c + "/", L["nome_idioma"]) for c, L in IDIOMAS_MAIS.items()]
     links = "\n".join(f'      <a href="/{p}" hreflang="{c}" lang="{c}"{" aria-current=\"page\"" if c == atual else ""}>{n}</a>' for c, p, n in itens)
     return f'    <nav aria-label="Idioma / Language">\n{links}\n    </nav>\n'
 
 def jsonld(cod, L):
-    lojas = {"gelada": ["https://apps.apple.com/app/id6819882963", f"https://play.google.com/store/apps/details?id=com.arial.gelada&hl={cod}"],
-             "esconde": ["https://apps.apple.com/app/id6819893974", f"https://play.google.com/store/apps/details?id=com.arial.escondeesconde&hl={cod}"],
+    lojas = {"gelada": ["https://apps.apple.com/app/id6819882963", f"https://play.google.com/store/apps/details?id=com.arial.gelada&hl={L.get("hl", cod)}"],
+             "esconde": ["https://apps.apple.com/app/id6819893974", f"https://play.google.com/store/apps/details?id=com.arial.escondeesconde&hl={L.get("hl", cod)}"],
              "gol": ["https://apps.apple.com/app/id6823608331"]}
     org = {"@type": "Organization", "@id": SITE + "#org", "name": "Arial Gamer", "url": SITE, "logo": SITE + "logo-1080.jpg",
            "alternateName": ["arialgamer", "arialgamer.com.br"],
@@ -224,11 +231,11 @@ def atualizar_pt():
     s = re.sub(r'<link rel="alternate" hreflang=[^>]*>\n', '', s)
     s = s.replace(f'<link rel="canonical" href="{SITE}">\n', f'<link rel="canonical" href="{SITE}">\n' + hreflang(), 1)
     s = re.sub(r'    <nav aria-label="Idioma / Language">.*?</nav>\n', '', s, flags=re.S)
-    nav = idiomas_nav("pt").replace('href="/"', 'href="./"').replace('href="/en/"', 'href="en/"').replace('href="/es/"', 'href="es/"')
+    nav = idiomas_nav("pt").replace('href="/"', 'href="./"').replace('href="/', 'href="')
     s = s.replace('    <nav aria-label="Privacidade">', nav + '    <nav aria-label="Privacidade">', 1)
     open(p, "w", encoding="utf-8", newline="").write(s)
 
 atualizar_pt()
 pt = open(os.path.join(RAIZ, "index.html"), encoding="utf-8").read()
-for cod, L in IDIOMAS.items():
+for cod, L in {**IDIOMAS, **IDIOMAS_MAIS}.items():
     gerar(cod, L)
