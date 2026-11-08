@@ -146,6 +146,7 @@ def gerar(k):
     head, corpo = s[:corpo_i], s[corpo_i:]
     for velho, novo in zip(["🍺 R$ 1,90", "🙈 R$ 1,90 · todos os cenários R$ 1,90", "⚽ Novo jogo · R$ 1,90"], EN["precos"][1:]):
         corpo, _ = troca_texto(corpo, velho, novo)
+    corpo = re.sub(r'<span class="price free">[^<]*</span>', "", corpo)  # o selo de preço em inglês já diz "No ads"
     for linha in T:
         corpo, _ = troca_texto(corpo, linha[0], linha[1])
     for p_, en_, _es in LUGARES:

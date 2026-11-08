@@ -111,6 +111,27 @@ T = [
  ("Privacidade Gelada", "Gelada privacy", "Privacidad Gelada"),
  ("Privacidade Esconde-Esconde", "Esconde-Esconde privacy", "Privacidad Esconde-Esconde"),
  ("Privacidade Gol de Placa", "Gol de Placa privacy", "Privacidad Gol de Placa"),
+ # áreas novas: sem anúncios, Apoie (Pix) e Comentários e sugestões
+ ('Sem anúncios', 'No ads', 'Sin anuncios'),
+ ('Nenhum dos nossos jogos tem propaganda. Nada interrompe a diversão.', 'None of our games have ads. Nothing interrupts the fun.', 'Ninguno de nuestros juegos tiene anuncios. Nada interrumpe la diversión.'),
+ ('anúncios', 'ads', 'anuncios'),
+ ('Apoie', 'Support', 'Apoya'),
+ ('Apoie o Arial Gamer', 'Support Arial Gamer', 'Apoya a Arial Gamer'),
+ ('Aqui ninguém vê propaganda. Quem mantém os jogos é você: qualquer valor no Pix já faz diferença. Obrigado! 💛', "No one sees ads here. You're the one who keeps the games going: any amount via Pix (Brazil's instant payment) makes a difference. Thank you! 💛", 'Aquí nadie ve publicidad. Quien mantiene los juegos eres tú: cualquier monto por Pix (el pago instantáneo de Brasil) ya marca la diferencia. ¡Gracias! 💛'),
+ ('Chave Pix (e-mail)', 'Pix key (email)', 'Clave Pix (correo)'),
+ ('Copiar chave', 'Copy key', 'Copiar clave'),
+ ('Chave copiada! Agora é só colar no app do seu banco.', 'Key copied! Now just paste it in your bank app.', '¡Clave copiada! Ahora solo pégala en la app de tu banco.'),
+ ('Fale com a gente', 'Talk to us', 'Habla con nosotros'),
+ ('Comentários e sugestões', 'Comments and suggestions', 'Comentarios y sugerencias'),
+ ('Gostou de um jogo, achou algum problema ou tem uma ideia nova? Conte pra gente. Todas as mensagens são lidas.', 'Loved a game, found a problem or have a new idea? Tell us. We read every message.', '¿Te gustó un juego, encontraste algún problema o tienes una idea nueva? Cuéntanos. Leemos todos los mensajes.'),
+ ('Nome (opcional)', 'Name (optional)', 'Nombre (opcional)'),
+ ('E-mail (opcional)', 'Email (optional)', 'Correo (opcional)'),
+ ('Mensagem', 'Message', 'Mensaje'),
+ ('Quer resposta? Deixe o seu e-mail.', 'Want a reply? Leave your email.', '¿Quieres respuesta? Deja tu correo.'),
+ ('Enviar mensagem', 'Send message', 'Enviar mensaje'),
+ ('Enviando…', 'Sending…', 'Enviando…'),
+ ('Obrigado pela mensagem! Ela chegou direitinho e vamos ler com carinho.', "Thanks for your message! It arrived safely and we'll read it with care.", '¡Gracias por tu mensaje! Llegó bien y lo leeremos con cariño.'),
+ ('Não deu para enviar agora. Tente de novo daqui a pouco.', "Couldn't send right now. Please try again in a moment.", 'No se pudo enviar ahora. Inténtalo de nuevo en un momento.'),
 ]
 LUGARES = [("Casa", "House", "Casa"), ("Praia", "Beach", "Playa"), ("Sítio", "Farm", "Granja"), ("Acampamento", "Campsite", "Campamento"),
   ("Geleira", "Glacier", "Glaciar"), ("Parque", "Theme park", "Parque"), ("Escola", "School", "Escuela"), ("Navio pirata", "Pirate ship", "Barco pirata"),
@@ -173,6 +194,8 @@ def gerar(cod, L):
     for velho, novo in zip(["🍺 R$ 1,90", "🙈 R$ 1,90 · todos os cenários R$ 1,90", "⚽ Novo jogo · R$ 1,90"], L["precos"][1:]):
         corpo, n = troca_texto(corpo, velho, novo); assert n, velho
     corpo, n = troca_texto(corpo, "R$ 1,90", L["facts_preco"]); assert n
+    # o selo "Sem anúncios" ao lado do preço sai: nos outros idiomas o próprio selo de preço já diz isso
+    corpo, n = re.subn(r'<span class="price free">[^<]*</span>', "", corpo); assert n == 3
     faltou = []
     extra = cod not in ("en", "es")
     for linha in T:

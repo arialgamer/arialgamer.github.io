@@ -363,6 +363,54 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .no-js .reveal { opacity: 1; transform: none }
 .more { display: inline-block; margin-top: 18px; font-weight: 700; color: var(--c, var(--ink)); text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px }
 .more:hover { filter: brightness(1.15) }
+
+/* ---------- Sem anúncios ---------- */
+.noads { display: inline-flex; align-items: center; gap: 12px; margin: -10px 0 28px; padding: 10px 18px 10px 12px; border-radius: 16px; background: rgba(255,210,63,.1); border: 1px solid rgba(255,210,63,.45); max-width: 46ch }
+.noads i { font-style: normal; font-size: 26px; line-height: 1 }
+.noads b { display: block; font-family: var(--display); font-size: 22px; line-height: 1.1; color: var(--gold) }
+.noads span { display: block; color: var(--muted); font-size: 15px; line-height: 1.35 }
+.facts .zero b { color: var(--gold) }
+.facts .zero span { color: var(--ink); font-weight: 700 }
+.price.free { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--c); margin-left: 6px }
+@media (max-width: 720px) { .facts .zero { grid-column: 1 / -1 } }
+@media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(5, 1fr) } }
+
+/* ---------- Apoie e Comentários ---------- */
+.extra { padding: 0 0 100px }
+.extra .card { position: relative; overflow: hidden; border-radius: 32px; padding: clamp(28px, 5vw, 60px); display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  background: linear-gradient(135deg, #1a1540, #110d28); border: 1px solid var(--line); isolation: isolate }
+.extra .card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(45% 60% at 0% 0%, var(--g1), transparent 70%), radial-gradient(45% 60% at 100% 100%, var(--g2), transparent 70%) }
+.extra .pix { --g1: rgba(61,220,132,.2); --g2: rgba(255,210,63,.2) }
+.extra .talk { --g1: rgba(180,156,255,.24); --g2: rgba(255,79,163,.18); align-items: start }
+.extra h2 { font-size: clamp(34px, 4.4vw, 52px); font-weight: 800; margin: 10px 0 14px }
+.extra .card > div > p:not(.eyebrow) { color: var(--muted); margin: 0; max-width: 42ch }
+.pixbox { display: grid; gap: 14px; justify-items: start; padding: 26px; border-radius: 24px; background: var(--glass); border: 1px solid var(--line) }
+.pixbox .lbl { font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
+.pixbox code { font: 700 clamp(19px, 2.4vw, 26px)/1.2 var(--body); color: var(--ink); word-break: break-all; user-select: all }
+.pixbox .btn svg { width: 22px; height: 22px }
+.pixbox .note { margin: 0; color: var(--muted); font-size: 14.5px }
+.copied { min-height: 1.4em; font-weight: 700; color: var(--green) }
+.btn.green { background: var(--green); color: #06301a }
+.fale { display: grid; gap: 14px }
+.fale label { display: grid; gap: 6px; font-weight: 600; font-size: 15px }
+.fale input, .fale textarea { width: 100%; padding: 13px 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.06); color: var(--ink); font: 16px/1.4 var(--body); transition: border-color .2s, background .2s }
+.fale textarea { resize: vertical; min-height: 130px }
+.fale input:focus, .fale textarea:focus { outline: none; border-color: var(--violet); background: rgba(255,255,255,.09) }
+.fale .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
+.fale .btn { justify-self: start; border: 0; cursor: pointer; font-family: inherit }
+.fale .btn[disabled] { opacity: .6; cursor: wait }
+.fale .hint { margin: -4px 0 0; color: var(--muted); font-size: 14px }
+.fale .msg { margin: 0; padding: 14px 16px; border-radius: 14px; font-weight: 600 }
+.fale .msg.ok { background: rgba(61,220,132,.14); border: 1px solid rgba(61,220,132,.5) }
+.fale .msg.err { background: rgba(255,79,163,.12); border: 1px solid rgba(255,79,163,.5) }
+.hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0 }
+@media (max-width: 860px) {
+  .extra .card { grid-template-columns: 1fr; gap: 28px }
+  .extra .card > div:first-child { text-align: center }
+  .extra .card > div > p:not(.eyebrow) { margin-inline: auto }
+  .pixbox { justify-items: center; text-align: center }
+}
+@media (max-width: 520px) { .fale .row2 { grid-template-columns: 1fr } .fale .btn, .pixbox .btn { width: 100%; justify-self: stretch } }
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -376,6 +424,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
   <symbol id="i-sound" viewBox="0 0 24 24"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></symbol>
   <symbol id="i-insta" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9A3.1 3.1 0 1 1 12 8.9a3.1 3.1 0 0 1 0 6.2zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM12 3.6c2.7 0 3 0 4.1.1 2.7.1 4 1.4 4.1 4.1.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 2.7-1.4 4-4.1 4.1-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-2.7-.1-4-1.4-4.1-4.1C3.6 15 3.6 14.7 3.6 12s0-3 .1-4.1c.1-2.7 1.4-4 4.1-4.1 1.1-.1 1.4-.1 4.1-.1zM12 2c-2.7 0-3.1 0-4.2.1C4.2 2.2 2.2 4.2 2.1 7.8 2 8.9 2 9.3 2 12s0 3.1.1 4.2c.1 3.6 2.1 5.6 5.7 5.7 1.1.1 1.5.1 4.2.1s3.1 0 4.2-.1c3.6-.1 5.6-2.1 5.7-5.7.1-1.1.1-1.5.1-4.2s0-3.1-.1-4.2c-.1-3.6-2.1-5.6-5.7-5.7C15.1 2 14.7 2 12 2z"/></symbol>
   <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></symbol>
   <symbol id="i-share" viewBox="0 0 24 24"><path fill="currentColor" d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.4a3 3 0 0 0 0-1.6l6.7-3.4A3 3 0 1 0 15 7c0 .3 0 .5.1.8L8.4 11.2a3 3 0 1 0 0 1.6l6.7 3.4A3 3 0 1 0 18 16z"/></symbol>
 </svg>
 
@@ -401,6 +450,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
         <p class="eyebrow">Arial Gamer · Mobile Game Studio</p>
         <h1>ブラジル生まれの <span class="grad">スマホゲーム</span></h1>
         <p class="lead">グラスを満たして、スマホを傾けて飲もう。月の裏にかくれよう。ラストワンミニッツでPKを決めるか、止めるか。ひとりでも友だちとでも遊べる3つのゲーム。</p>
+        <p class="noads"><i aria-hidden="true">🚫</i><span><b>広告なし</b><span>どのゲームにも広告はありません。楽しい時間をじゃまするものはゼロ。</span></span></p>
         <div class="ctas">
           <a class="btn primary" href="#gelada">ゲームを見る</a>
           <a class="btn ghost" href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>TikTokで見る</a>
@@ -421,6 +471,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 
   <div class="facts">
     <div class="wrap">
+      <div class="zero"><b>0</b><span>広告</span></div>
       <div><b>3</b><span>ゲーム配信中</span></div>
       <div><b>8</b><span>各ゲームの対応言語</span></div>
       <div><b>100</b><span>Geladaのドリンク</span></div>
@@ -587,12 +638,66 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       </div>
     </div>
   </section>
+
+  <!-- ================= APOIE ================= -->
+  <section class="extra" id="apoie">
+    <div class="wrap">
+      <div class="card pix reveal">
+        <div>
+          <p class="eyebrow">応援</p>
+          <h2>Arial Gamerを応援</h2>
+          <p>ここでは広告は一切表示されません。ゲームを支えているのはあなたです。Pix（ブラジルの即時決済）での応援は、どんな金額でも大きな力になります。ありがとう！💛</p>
+        </div>
+        <div class="pixbox">
+          <span class="lbl">Pixキー（メール）</span>
+          <code id="pix-key">arial83gamer@gmail.com</code>
+          <button class="btn green" type="button" id="pix-copy"><svg aria-hidden="true"><use href="#i-copy"/></svg><span>キーをコピー</span></button>
+          <span class="copied" id="pix-ok" role="status" aria-live="polite"></span>
+          <span hidden id="t-copied">キーをコピーしました！銀行アプリに貼り付けてください。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMENTÁRIOS ================= -->
+  <section class="extra" id="contato">
+    <div class="wrap">
+      <div class="card talk reveal">
+        <div>
+          <p class="eyebrow">お問い合わせ</p>
+          <h2>ご意見・ご要望</h2>
+          <p>気に入ったゲーム、見つけた不具合、新しいアイデアなど、なんでも教えてください。メッセージはすべて読んでいます。</p>
+        </div>
+        <form class="fale" id="fale" action="https://formsubmit.co/renato@arialgamer.com.br" method="POST">
+          <input type="hidden" name="_subject" value="Comentário no site Arial Gamer">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="idioma" value="pt-BR">
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="row2">
+            <label><span>お名前（任意）</span><input type="text" name="nome" autocomplete="name" maxlength="80"></label>
+            <label><span>メール（任意）</span><input type="email" name="email" autocomplete="email" maxlength="120"></label>
+          </div>
+          <label><span>メッセージ</span><textarea name="mensagem" required maxlength="3000" rows="5"></textarea></label>
+          <p class="hint">返信が必要な方はメールアドレスをご記入ください。</p>
+          <button class="btn primary" type="submit">送信する</button>
+          <span hidden id="t-sending">送信中…</span>
+          <p class="msg ok" role="status" hidden>メッセージありがとうございます！ちゃんと届きました。大切に読みますね。</p>
+          <p class="msg err" role="alert" hidden>今は送信できませんでした。少し待ってからもう一度お試しください。</p>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <img class="sig" src="/assinatura.svg" alt="Arial">
     <span>Gelada：100%バーチャルドリンク、アルコール0%。お酒は適量を。</span>
+    <nav aria-label="Arial Gamer">
+      <a href="#contato">ご意見・ご要望</a>
+      <a href="#apoie">Arial Gamerを応援</a>
+    </nav>
     <nav aria-label="SNS">
       <a href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener">TikTok</a>
       <a href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener">Instagram</a>
@@ -671,6 +776,42 @@ document.getElementById('share').addEventListener('click', async () => {
   const data = { title: 'Arial Gamer', text: 'このゲームを見て：Gelada、Esconde-Esconde、Gol de Placa 🎮', url: 'https://arialgamer.com.br/ja/' };
   if (navigator.share) { try { await navigator.share(data); } catch {} return; }
   open('https://wa.me/?text=' + encodeURIComponent(data.text + ' ' + data.url), '_blank', 'noopener');
+});
+
+// Pix: botão copia a chave (com plano B para navegadores antigos)
+const pixBtn = document.getElementById('pix-copy');
+if (pixBtn) pixBtn.addEventListener('click', async () => {
+  const key = document.getElementById('pix-key');
+  const ok = document.getElementById('pix-ok');
+  try { await navigator.clipboard.writeText(key.textContent.trim()); }
+  catch {
+    const sel = getSelection(), r = document.createRange();
+    r.selectNodeContents(key); sel.removeAllRanges(); sel.addRange(r);
+    try { document.execCommand('copy'); } catch {}
+  }
+  ok.textContent = document.getElementById('t-copied').textContent;
+  clearTimeout(pixBtn._t); pixBtn._t = setTimeout(() => { ok.textContent = ''; }, 5000);
+});
+
+// Comentários e sugestões: envia pelo FormSubmit sem sair da página
+const fale = document.getElementById('fale');
+if (fale) fale.addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const btn = fale.querySelector('button[type=submit]'), okMsg = fale.querySelector('.msg.ok'), errMsg = fale.querySelector('.msg.err');
+  okMsg.hidden = errMsg.hidden = true;
+  if (fale.elements._honey.value) { fale.reset(); okMsg.hidden = false; return; } // robô caiu no campo escondido
+  const label = btn.textContent;
+  btn.disabled = true; btn.textContent = document.getElementById('t-sending').textContent;
+  const data = new FormData(fale);
+  data.set('idioma', document.documentElement.lang);
+  data.set('pagina', location.href);
+  try {
+    const r = await fetch(fale.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || String(j.success) !== 'true') throw new Error(j.message || r.status);
+    fale.reset(); okMsg.hidden = false;
+  } catch (e) { console.warn('formulário:', e); errMsg.hidden = false; }
+  btn.disabled = false; btn.textContent = label;
 });
 </script>
 </body>
