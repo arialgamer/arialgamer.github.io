@@ -39,26 +39,49 @@
 </head>
 <body>
 <main>
-  <div class="marca"><img src="/acervo.png" alt="">Acervo · por Arial Gamer</div>
+  <div class="marca"><img src="/acervo.png" alt=""><span id="tMarca">Acervo · por Arial Gamer</span></div>
   <p id="vCarregando">Carregando…</p>
   <p id="vErro" hidden></p>
   <section id="vItem" hidden>
     <p id="vNome"></p>
     <h1 id="vTitulo"></h1>
-    <p class="aviso" id="vReplica" hidden>Não original</p>
+    <p class="aviso" id="vReplica" hidden><span id="tReplica">Não original</span></p>
     <div class="fotos" id="vFotos"></div>
     <dl id="vDados"></dl>
-    <div class="valor" id="vValor" hidden>Valor estimado de mercado: <b id="vValorNum"></b></div>
+    <div class="valor" id="vValor" hidden><span id="tValor">Valor estimado de mercado:</span> <b id="vValorNum"></b></div>
     <div id="vGruposBox" hidden>
-      <h2>Onde conversar sobre ele</h2>
+      <h2 id="tGrupos">Onde conversar sobre ele</h2>
       <div id="vGrupos"></div>
     </div>
   </section>
   <a class="cta" id="vLoja" href="https://arialgamer.com.br/#acervo">Catalogue a sua coleção com o Acervo</a>
-  <p class="rodape">O Acervo é um app de <a href="https://arialgamer.com.br/">Arial Gamer</a>. <a href="/acervo/privacidade/">Privacidade</a></p>
+  <p class="rodape"><span id="tRodape">O Acervo é um app de</span> <a href="https://arialgamer.com.br/">Arial Gamer</a>. <a href="/acervo/privacidade/" id="tPriv">Privacidade</a></p>
 </main>
 <script>
 (() => {
+  // Textos no idioma do navegador (os 8 do app; os demais em inglês)
+  const TXT = {
+    pt: { marca: 'Acervo · por Arial Gamer', carregando: 'Carregando…', replica: 'Não original', valor: 'Valor estimado de mercado:', grupos: 'Onde conversar sobre ele', cta: 'Catalogue a sua coleção com o Acervo', rodape: 'O Acervo é um app de', priv: 'Privacidade', erro: 'Este item não está mais compartilhado.', quem: n => `${n} compartilhou um item da coleção`, alguem: 'Um colecionador', item: 'Item da coleção', umItem: 'Um item da coleção', intl: 'Internacional', campos: ['Categoria', 'Marca', 'Modelo', 'Ano'], rel: { exato: 'modelo exato', parecido: 'modelo parecido', marca: 'marca' }, cat: {} },
+    en: { marca: 'Acervo · by Arial Gamer', carregando: 'Loading…', replica: 'Non-original', valor: 'Estimated market value:', grupos: 'Where to talk about it', cta: 'Catalog your collection with Acervo', rodape: 'Acervo is an app by', priv: 'Privacy', erro: 'This item is no longer shared.', quem: n => `${n} shared an item from their collection`, alguem: 'A collector', item: 'Collection item', umItem: 'A collection item', intl: 'International', campos: ['Category', 'Brand', 'Model', 'Year'], rel: { exato: 'exact model', parecido: 'similar model', marca: 'brand' },
+      cat: { Relógios: 'Watches', Moedas: 'Coins', Cédulas: 'Banknotes', Selos: 'Stamps', 'Cartas colecionáveis': 'Trading cards', Discos: 'Records', Canetas: 'Pens', Miniaturas: 'Scale models', Brinquedos: 'Toys', Livros: 'Books' } },
+    es: { marca: 'Acervo · de Arial Gamer', carregando: 'Cargando…', replica: 'No original', valor: 'Valor de mercado estimado:', grupos: 'Dónde hablar de él', cta: 'Cataloga tu colección con Acervo', rodape: 'Acervo es una app de', priv: 'Privacidad', erro: 'Este artículo ya no está compartido.', quem: n => `${n} compartió un artículo de su colección`, alguem: 'Un coleccionista', item: 'Artículo de la colección', umItem: 'Un artículo de la colección', intl: 'Internacional', campos: ['Categoría', 'Marca', 'Modelo', 'Año'], rel: { exato: 'modelo exacto', parecido: 'modelo parecido', marca: 'marca' },
+      cat: { Relógios: 'Relojes', Moedas: 'Monedas', Cédulas: 'Billetes', Selos: 'Sellos', 'Cartas colecionáveis': 'Cartas coleccionables', Discos: 'Discos', Canetas: 'Plumas', Miniaturas: 'Miniaturas', Brinquedos: 'Juguetes', Livros: 'Libros' } },
+    de: { marca: 'Acervo · von Arial Gamer', carregando: 'Wird geladen…', replica: 'Kein Original', valor: 'Geschätzter Marktwert:', grupos: 'Wo man darüber spricht', cta: 'Erfasse deine Sammlung mit Acervo', rodape: 'Acervo ist eine App von', priv: 'Datenschutz', erro: 'Dieses Objekt wird nicht mehr geteilt.', quem: n => `${n} hat ein Objekt aus der Sammlung geteilt`, alguem: 'Ein Sammler', item: 'Objekt der Sammlung', umItem: 'Ein Objekt der Sammlung', intl: 'International', campos: ['Kategorie', 'Marke', 'Modell', 'Jahr'], rel: { exato: 'genau dieses Modell', parecido: 'ähnliches Modell', marca: 'Marke' },
+      cat: { Relógios: 'Uhren', Moedas: 'Münzen', Cédulas: 'Banknoten', Selos: 'Briefmarken', 'Cartas colecionáveis': 'Sammelkarten', Discos: 'Schallplatten', Canetas: 'Füller', Miniaturas: 'Modelle', Brinquedos: 'Spielzeug', Livros: 'Bücher' } },
+    fr: { marca: 'Acervo · par Arial Gamer', carregando: 'Chargement…', replica: 'Non original', valor: 'Valeur de marché estimée :', grupos: 'Où en parler', cta: 'Cataloguez votre collection avec Acervo', rodape: 'Acervo est une app de', priv: 'Confidentialité', erro: 'Cet objet n’est plus partagé.', quem: n => `${n} a partagé un objet de sa collection`, alguem: 'Un collectionneur', item: 'Objet de collection', umItem: 'Un objet de collection', intl: 'International', campos: ['Catégorie', 'Marque', 'Modèle', 'Année'], rel: { exato: 'modèle exact', parecido: 'modèle proche', marca: 'marque' },
+      cat: { Relógios: 'Montres', Moedas: 'Pièces', Cédulas: 'Billets', Selos: 'Timbres', 'Cartas colecionáveis': 'Cartes à collectionner', Discos: 'Disques', Canetas: 'Stylos', Miniaturas: 'Miniatures', Brinquedos: 'Jouets', Livros: 'Livres' } },
+    it: { marca: 'Acervo · di Arial Gamer', carregando: 'Caricamento…', replica: 'Non originale', valor: 'Valore di mercato stimato:', grupos: 'Dove parlarne', cta: 'Cataloga la tua collezione con Acervo', rodape: 'Acervo è un’app di', priv: 'Privacy', erro: 'Questo oggetto non è più condiviso.', quem: n => `${n} ha condiviso un oggetto della sua collezione`, alguem: 'Un collezionista', item: 'Oggetto della collezione', umItem: 'Un oggetto della collezione', intl: 'Internazionale', campos: ['Categoria', 'Marca', 'Modello', 'Anno'], rel: { exato: 'modello esatto', parecido: 'modello simile', marca: 'marca' },
+      cat: { Relógios: 'Orologi', Moedas: 'Monete', Cédulas: 'Banconote', Selos: 'Francobolli', 'Cartas colecionáveis': 'Carte collezionabili', Discos: 'Dischi', Canetas: 'Penne', Miniaturas: 'Modellini', Brinquedos: 'Giocattoli', Livros: 'Libri' } },
+    zh: { marca: 'Acervo · Arial Gamer 出品', carregando: '正在加载…', replica: '非原装', valor: '估计市场价值：', grupos: '在哪里交流', cta: '用 Acervo 登记你的收藏', rodape: 'Acervo 是一款应用，来自', priv: '隐私', erro: '这件藏品已不再分享。', quem: n => `${n} 分享了一件藏品`, alguem: '一位藏家', item: '藏品', umItem: '一件藏品', intl: '国际', campos: ['类别', '品牌', '型号', '年份'], rel: { exato: '完全相同型号', parecido: '相似型号', marca: '品牌' },
+      cat: { Relógios: '手表', Moedas: '硬币', Cédulas: '纸币', Selos: '邮票', 'Cartas colecionáveis': '收藏卡', Discos: '唱片', Canetas: '钢笔', Miniaturas: '模型', Brinquedos: '玩具', Livros: '书籍' } },
+    ja: { marca: 'Acervo · Arial Gamer', carregando: '読み込み中…', replica: '非オリジナル', valor: '推定市場価格：', grupos: '語り合える場所', cta: 'Acervo でコレクションを登録', rodape: 'Acervo のアプリ提供：', priv: 'プライバシー', erro: 'このアイテムはもう共有されていません。', quem: n => `${n} さんがコレクションのアイテムを共有しました`, alguem: 'あるコレクター', item: 'コレクションのアイテム', umItem: 'コレクションのアイテム', intl: '国際', campos: ['カテゴリー', 'ブランド', 'モデル', '年'], rel: { exato: '同じモデル', parecido: '似たモデル', marca: 'ブランド' },
+      cat: { Relógios: '時計', Moedas: 'コイン', Cédulas: '紙幣', Selos: '切手', 'Cartas colecionáveis': 'トレーディングカード', Discos: 'レコード', Canetas: '万年筆・ペン', Miniaturas: '模型', Brinquedos: 'おもちゃ', Livros: '本' } },
+  };
+  const LANG = { pt: 'pt-BR', en: 'en', es: 'es', de: 'de', fr: 'fr', it: 'it', zh: 'zh-CN', ja: 'ja' };
+  const cod = (navigator.languages || [navigator.language]).map(l => String(l).slice(0, 2).toLowerCase()).find(l => TXT[l]) || 'en';
+  const L = TXT[cod];
+  document.documentElement.lang = LANG[cod];
+  for (const [id, k] of [['tMarca', 'marca'], ['vCarregando', 'carregando'], ['tReplica', 'replica'], ['tValor', 'valor'], ['tGrupos', 'grupos'], ['vLoja', 'cta'], ['tRodape', 'rodape'], ['tPriv', 'priv']]) document.getElementById(id).textContent = L[k];
   const FUNCAO = 'https://xmppelpzwtvxztesnspc.supabase.co/functions/v1/compartilhado';
   const ua = navigator.userAgent;
   const loja = /iPhone|iPad|iPod/.test(ua) ? 'https://apps.apple.com/app/id6832553837'
@@ -70,21 +93,21 @@
   const el = (tag, texto, classe) => { const e = document.createElement(tag); if (texto != null) e.textContent = texto; if (classe) e.className = classe; return e; };
   const bandeira = p => /^[A-Z]{2}$/.test(p) && p !== 'XX' ? String.fromCodePoint(...[...p].map(l => 0x1f1e6 + l.charCodeAt(0) - 65)) : '🌐';
   let nomes = null;
-  const nomePais = p => { if (!/^[A-Z]{2}$/.test(p) || p === 'XX') return 'Internacional'; try { nomes = nomes || new Intl.DisplayNames(['pt-BR'], { type: 'region' }); return nomes.of(p) || p; } catch { return p; } };
-  const RELACAO = { exato: 'modelo exato', parecido: 'modelo parecido', marca: 'marca' };
+  const nomePais = p => { if (!/^[A-Z]{2}$/.test(p) || p === 'XX') return L.intl; try { nomes = nomes || new Intl.DisplayNames([LANG[cod]], { type: 'region' }); return nomes.of(p) || p; } catch { return p; } };
+  const RELACAO = L.rel;
   const seguro = u => { try { const x = new URL(u); return x.protocol === 'https:' ? x.href : null; } catch { return null; } };
 
   function erro() {
     $('vCarregando').hidden = true;
-    $('vErro').textContent = 'Este item não está mais compartilhado.';
+    $('vErro').textContent = L.erro;
     $('vErro').hidden = false;
   }
 
   function mostrar(c) {
     $('vCarregando').hidden = true;
-    $('vNome').textContent = `${c.nome || 'Um colecionador'} compartilhou um item da coleção`;
-    $('vTitulo').textContent = c.titulo || 'Item da coleção';
-    document.title = `${c.titulo || 'Um item da coleção'} · Acervo`;
+    $('vNome').textContent = L.quem(c.nome || L.alguem);
+    $('vTitulo').textContent = c.titulo || L.item;
+    document.title = `${c.titulo || L.umItem} · Acervo`;
     $('vReplica').hidden = !c.naoOriginal;
     for (const f of (c.fotos || [])) {
       const u = /^data:image\//.test(f) ? f : seguro(f);
@@ -92,12 +115,12 @@
       const img = el('img'); img.src = u; img.alt = c.titulo || ''; img.loading = 'lazy';
       $('vFotos').append(img);
     }
-    for (const [rotulo, valor] of [['Categoria', c.categoria], ['Marca', c.marca], ['Modelo', c.modelo], ['Ano', c.ano]]) {
+    for (const [rotulo, valor] of [[L.campos[0], L.cat[c.categoria] || c.categoria], [L.campos[1], c.marca], [L.campos[2], c.modelo], [L.campos[3], c.ano]]) {
       if (!valor) continue;
       $('vDados').append(el('dt', rotulo), el('dd', valor));
     }
     if (c.valor && typeof c.valor.medio === 'number') {
-      try { $('vValorNum').textContent = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: c.valor.moeda || 'BRL', maximumFractionDigits: 0 }).format(c.valor.medio); }
+      try { $('vValorNum').textContent = new Intl.NumberFormat(LANG[cod], { style: 'currency', currency: c.valor.moeda || 'BRL', maximumFractionDigits: 0 }).format(c.valor.medio); }
       catch { $('vValorNum').textContent = String(c.valor.medio); }
       $('vValor').hidden = false;
     }

@@ -255,6 +255,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .gelada { --c: var(--amber); --c-ink: #2a1703; --glow: rgba(246,184,58,.2); --gx: 72% }
 .esconde { --c: var(--violet); --c-ink: #15102e; --glow: rgba(180,156,255,.22); --gx: 28%; background: linear-gradient(180deg, transparent, rgba(23,18,54,.6), transparent) }
 .gol { --c: var(--green); --c-ink: #06301a; --glow: rgba(61,220,132,.18); --gx: 72% }
+.acervo { --c: #D0AC72; --c-ink: #1B232E; --glow: rgba(208,172,114,.2); --gx: 28% }
+.acervo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 
 .info .head { display: flex; align-items: center; gap: 18px; margin-bottom: 18px }
 .info .head img { width: 84px; height: 84px; border-radius: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.4) }
@@ -435,6 +437,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <li><a href="#gelada">Gelada</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
+      <li><a href="#acervo">Acervo</a></li>
       <li><a href="#siga">Réseaux</a></li>
     </ul>
     <a class="ig-round" href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener" aria-label="Instagram @arial.gamer"><svg><use href="#i-insta"/></svg></a>
@@ -459,6 +462,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
           <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
           <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
+          <a class="chip" href="#acervo"><img src="/acervo.png" alt="" width="34" height="34">Acervo</a>
         </div>
       </div>
       <div class="fan" aria-label="Vidéos des trois jeux">
@@ -611,6 +615,47 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <figure class="reveal"><img src="/media/gol-shot-gol.jpg" alt="Une joueuse célèbre un but de nuit et gagne la vignette But de nuit" loading="lazy"><figcaption>But ! Et une nouvelle vignette</figcaption></figure>
       <figure class="reveal"><img src="/media/gol-shot-falta.jpg" alt="Coup franc avec mur et neige sur la pelouse" loading="lazy"><figcaption>Coup franc avec mur, dans la neige</figcaption></figure>
       <figure class="reveal"><img src="/media/gol-shot-goleiro.jpg" alt="Gardien qui s'étire pour arrêter sous la pluie" loading="lazy"><figcaption>À toi d'arrêter !</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================= ACERVO ================= -->
+  <section class="game acervo flip" id="acervo">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/acervo.png" alt="Icône d’Acervo : Votre Collection" width="84" height="84">
+          <div><p class="eyebrow">Nouvelle app</p><h2>Acervo : Votre Collection</h2></div>
+        </div>
+        <p class="tag">Le catalogue de votre collection, avec la valeur de chaque objet ⌚🪙</p>
+        <span class="price">📦 Gratuit pour commencer · 🚫 Sans publicité</span>
+        <ul class="feats">
+          <li><i>📸</i><span><b>Cataloguez en photos</b> : montres, pièces, cartes, disques et plus</span></li>
+          <li><i>✨</i><span><b>Identification par les photos</b> avec l’IA (Premium)</span></li>
+          <li><i>💰</i><span><b>Sa valeur sur le marché de l’occasion</b> de votre pays, dans votre devise</span></li>
+          <li><i>☁️</i><span><b>Dans le cloud et hors ligne</b>, avec rapport et tableur</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>Gratuit :</b> jusqu’à 5 objets avec 3 photos chacun, rapport et cloud.</p>
+          <p><b>Premium :</b> objets illimités, jusqu’à 20 photos et toute l’estimation par IA, au mois ou à l’année.</p>
+          <p><b>Bientôt :</b> Acervo en français et dans 7 autres langues, avec les valeurs dans la devise de votre pays 🌍</p>
+          <p><b>Bientôt :</b> Trouver des collectionneurs (Premium) : groupes, forums et vidéos sur votre modèle 🔎</p>
+          <p><b>Bientôt :</b> partagez un objet par lien et voyez combien de collectionneurs d’Acervo ont votre modèle ; contact seulement si les deux acceptent 🤝</p>
+        </div>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/app/id6832553837" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Télécharger dans</small><strong>App Store</strong></span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.acervo&amp;hl=fr" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponible sur</small><strong>Google Play</strong></span></a>
+        </div>
+        <a class="more" href="/acervo/privacidade/">Politique de confidentialité d’Acervo →</a>
+      </div>
+      <div class="player reveal">
+        <div class="phone"><div class="screen"><img src="/media/acervo-shot-colecao-fr.jpg" alt="Acervo : collection de montres avec la valeur totale estimée" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/acervo-shot-detalhe-fr.jpg" alt="Détail d’une montre avec prix minimum, typique et maximum" loading="lazy"><figcaption>Ce que vaut chaque objet</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-identificar-fr.jpg" alt="Identification par les photos remplissant nom, modèle et année" loading="lazy"><figcaption>Identifiez par les photos</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-relatorio-fr.jpg" alt="Rapport avec valeur totale et plus-value" loading="lazy"><figcaption>Rapport de la collection</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-colecao-fr.jpg" alt="Acervo : collection de montres avec la valeur totale estimée" loading="lazy"><figcaption>Tout bien rangé</figcaption></figure>
     </div>
   </section>
 

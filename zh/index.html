@@ -255,6 +255,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .gelada { --c: var(--amber); --c-ink: #2a1703; --glow: rgba(246,184,58,.2); --gx: 72% }
 .esconde { --c: var(--violet); --c-ink: #15102e; --glow: rgba(180,156,255,.22); --gx: 28%; background: linear-gradient(180deg, transparent, rgba(23,18,54,.6), transparent) }
 .gol { --c: var(--green); --c-ink: #06301a; --glow: rgba(61,220,132,.18); --gx: 72% }
+.acervo { --c: #D0AC72; --c-ink: #1B232E; --glow: rgba(208,172,114,.2); --gx: 28% }
+.acervo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 
 .info .head { display: flex; align-items: center; gap: 18px; margin-bottom: 18px }
 .info .head img { width: 84px; height: 84px; border-radius: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.4) }
@@ -435,6 +437,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <li><a href="#gelada">Gelada</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
+      <li><a href="#acervo">Acervo</a></li>
       <li><a href="#siga">社交媒体</a></li>
     </ul>
     <a class="ig-round" href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener" aria-label="Instagram @arial.gamer"><svg><use href="#i-insta"/></svg></a>
@@ -459,6 +462,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
           <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
           <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
+          <a class="chip" href="#acervo"><img src="/acervo.png" alt="" width="34" height="34">Acervo</a>
         </div>
       </div>
       <div class="fan" aria-label="三款游戏的视频">
@@ -611,6 +615,47 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <figure class="reveal"><img src="/media/gol-shot-gol.jpg" alt="女球员在夜场进球并获得贴纸“夜场进球”" loading="lazy"><figcaption>进球！还有新贴纸</figcaption></figure>
       <figure class="reveal"><img src="/media/gol-shot-falta.jpg" alt="有人墙和积雪球场的任意球" loading="lazy"><figcaption>有人墙的任意球，雪中</figcaption></figure>
       <figure class="reveal"><img src="/media/gol-shot-goleiro.jpg" alt="守门员在雨中飞身扑救" loading="lazy"><figcaption>现在扑出去！</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================= ACERVO ================= -->
+  <section class="game acervo flip" id="acervo">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/acervo.png" alt="Acervo：你的收藏 图标" width="84" height="84">
+          <div><p class="eyebrow">新应用</p><h2>Acervo：你的收藏</h2></div>
+        </div>
+        <p class="tag">你的收藏目录，附带每件藏品的价值 ⌚🪙</p>
+        <span class="price">📦 免费开始 · 🚫 无广告</span>
+        <ul class="feats">
+          <li><i>📸</i><span><b>用照片登记</b>：手表、硬币、卡片、唱片等</span></li>
+          <li><i>✨</i><span><b>通过照片识别</b>，使用 AI（Premium）</span></li>
+          <li><i>💰</i><span><b>二手市场价值</b>，按你的国家和货币估算</span></li>
+          <li><i>☁️</i><span><b>云端同步，离线可用</b>，附报告和表格</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>免费：</b> 最多 5 件藏品，每件 3 张照片，含报告和云端。</p>
+          <p><b>Premium：</b> 不限藏品，每件最多 20 张照片，全部 AI 估值，按月或按年订阅。</p>
+          <p><b>即将推出：</b> Acervo 中文版及另外 7 种语言，估值使用你所在国家的货币 🌍</p>
+          <p><b>即将推出：</b> 寻找藏家（Premium）：关于你的型号的群组、论坛和视频 🔎</p>
+          <p><b>即将推出：</b> 用链接分享藏品，查看有多少 Acervo 藏家拥有你的型号；双方都接受后才交换联系方式 🤝</p>
+        </div>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/app/id6832553837" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>下载于</small><strong>App Store</strong></span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.acervo&amp;hl=zh-CN" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>获取于</small><strong>Google Play</strong></span></a>
+        </div>
+        <a class="more" href="/acervo/privacidade/">Acervo 隐私政策 →</a>
+      </div>
+      <div class="player reveal">
+        <div class="phone"><div class="screen"><img src="/media/acervo-shot-colecao-zh.jpg" alt="Acervo：手表收藏及总估值" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/acervo-shot-detalhe-zh.jpg" alt="手表详情，含最低、典型和最高价格" loading="lazy"><figcaption>每件藏品的价值</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-identificar-zh.jpg" alt="通过照片识别，自动填写名称、型号和年份" loading="lazy"><figcaption>通过照片识别</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-relatorio-zh.jpg" alt="报告：总价值和升值" loading="lazy"><figcaption>收藏报告</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-colecao-zh.jpg" alt="Acervo：手表收藏及总估值" loading="lazy"><figcaption>井井有条</figcaption></figure>
     </div>
   </section>
 

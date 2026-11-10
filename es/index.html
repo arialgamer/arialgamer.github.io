@@ -255,6 +255,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .gelada { --c: var(--amber); --c-ink: #2a1703; --glow: rgba(246,184,58,.2); --gx: 72% }
 .esconde { --c: var(--violet); --c-ink: #15102e; --glow: rgba(180,156,255,.22); --gx: 28%; background: linear-gradient(180deg, transparent, rgba(23,18,54,.6), transparent) }
 .gol { --c: var(--green); --c-ink: #06301a; --glow: rgba(61,220,132,.18); --gx: 72% }
+.acervo { --c: #D0AC72; --c-ink: #1B232E; --glow: rgba(208,172,114,.2); --gx: 28% }
+.acervo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 
 .info .head { display: flex; align-items: center; gap: 18px; margin-bottom: 18px }
 .info .head img { width: 84px; height: 84px; border-radius: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.4) }
@@ -435,6 +437,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <li><a href="#gelada">Gelada</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
+      <li><a href="#acervo">Acervo</a></li>
       <li><a href="#siga">Redes</a></li>
     </ul>
     <a class="ig-round" href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener" aria-label="Instagram @arial.gamer"><svg><use href="#i-insta"/></svg></a>
@@ -459,6 +462,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
           <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
           <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
+          <a class="chip" href="#acervo"><img src="/acervo.png" alt="" width="34" height="34">Acervo</a>
         </div>
       </div>
       <div class="fan" aria-label="Videos de los tres juegos">
@@ -611,6 +615,47 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <figure class="reveal"><img src="/media/gol-shot-gol.jpg" alt="Una jugadora festeja un gol de noche y gana la figurita Gol de noche" loading="lazy"><figcaption>¡Gol! Y figurita nueva</figcaption></figure>
       <figure class="reveal"><img src="/media/gol-shot-falta.jpg" alt="Tiro libre con barrera y nieve en la cancha" loading="lazy"><figcaption>Tiro libre con barrera, en la nieve</figcaption></figure>
       <figure class="reveal"><img src="/media/gol-shot-goleiro.jpg" alt="Portero estirándose para atajar bajo la lluvia" loading="lazy"><figcaption>¡Ahora ataja!</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================= ACERVO ================= -->
+  <section class="game acervo flip" id="acervo">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/acervo.png" alt="Ícono de Acervo: Tu Colección" width="84" height="84">
+          <div><p class="eyebrow">App nueva</p><h2>Acervo: Tu Colección</h2></div>
+        </div>
+        <p class="tag">El catálogo de tu colección, con lo que vale cada artículo ⌚🪙</p>
+        <span class="price">📦 Gratis para empezar · 🚫 Sin anuncios</span>
+        <ul class="feats">
+          <li><i>📸</i><span><b>Cataloga con fotos</b>: relojes, monedas, cartas, discos y más</span></li>
+          <li><i>✨</i><span><b>Identificación por las fotos</b> con IA (Premium)</span></li>
+          <li><i>💰</i><span><b>Cuánto vale en el mercado de segunda mano</b> de tu país, en tu moneda</span></li>
+          <li><i>☁️</i><span><b>En la nube y sin internet</b>, con informe y hoja de cálculo</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>Gratis:</b> hasta 5 artículos con 3 fotos cada uno, informe y nube.</p>
+          <p><b>Premium:</b> artículos ilimitados, hasta 20 fotos y toda la valoración con IA, mensual o anual.</p>
+          <p><b>Muy pronto:</b> Acervo en español y 7 idiomas más, con valores en la moneda de tu país 🌍</p>
+          <p><b>Muy pronto:</b> Encontrar coleccionistas (Premium): grupos, foros y vídeos sobre tu modelo 🔎</p>
+          <p><b>Muy pronto:</b> comparte un artículo por enlace y mira cuántos coleccionistas de Acervo tienen tu modelo; contacto solo si los dos aceptan 🤝</p>
+        </div>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/app/id6832553837" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Descárgalo en</small><strong>App Store</strong></span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.acervo&amp;hl=es" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponible en</small><strong>Google Play</strong></span></a>
+        </div>
+        <a class="more" href="/acervo/privacidade/">Política de privacidad de Acervo →</a>
+      </div>
+      <div class="player reveal">
+        <div class="phone"><div class="screen"><img src="/media/acervo-shot-colecao-es.jpg" alt="Acervo: colección de relojes con el valor total estimado" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/acervo-shot-detalhe-es.jpg" alt="Detalle de un reloj con precio mínimo, típico y máximo" loading="lazy"><figcaption>Cuánto vale cada artículo</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-identificar-es.jpg" alt="Identificación por las fotos rellenando nombre, modelo y año" loading="lazy"><figcaption>Identifica por las fotos</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-relatorio-es.jpg" alt="Informe con valor total y revalorización" loading="lazy"><figcaption>Informe de la colección</figcaption></figure>
+      <figure class="reveal"><img src="/media/acervo-shot-colecao-es.jpg" alt="Acervo: colección de relojes con el valor total estimado" loading="lazy"><figcaption>Todo organizado</figcaption></figure>
     </div>
   </section>
 
