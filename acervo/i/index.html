@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Um item da coleção · Acervo</title>
+<meta name="description" content="Um item compartilhado com o Acervo: Sua Coleção, o catálogo da sua coleção com o valor de cada item.">
+<meta property="og:title" content="Um item da coleção · Acervo">
+<meta property="og:description" content="Veja o item e onde conversar sobre ele. Catalogue a sua coleção com o Acervo.">
+<meta property="og:image" content="https://arialgamer.com.br/acervo.png">
+<link rel="icon" href="/acervo.png">
+<style>
+  :root { --bg: #1B232E; --brass: #D0AC72; --cream: #F1E6D3; --muted: #A9B0BA; --card: #232D3A; --line: #334050; }
+  * { box-sizing: border-box }
+  body { margin: 0; background: var(--bg); color: var(--cream); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif }
+  main { max-width: 560px; margin: 0 auto; padding: 24px 16px 40px; display: grid; gap: 16px }
+  .marca { color: var(--brass); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; display: flex; align-items: center; gap: 8px }
+  .marca img { width: 28px; height: 28px; border-radius: 7px }
+  h1 { font: 400 1.6rem/1.2 Georgia, serif; margin: 0 }
+  #vNome { color: var(--muted); margin: 0 }
+  .fotos { display: grid; grid-auto-flow: column; grid-auto-columns: 85%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory }
+  .fotos img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; background: var(--card); scroll-snap-align: start }
+  dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 0 }
+  dt { color: var(--muted) }
+  dd { margin: 0 }
+  .aviso { border: 1px solid var(--brass); color: var(--brass); border-radius: 8px; padding: 8px 12px }
+  .valor { background: var(--card); border-radius: 10px; padding: 12px }
+  .valor b { font: 400 1.4rem Georgia, serif; color: var(--brass) }
+  h2 { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--brass); margin: 8px 0 0 }
+  #vGrupos { display: grid }
+  #vGrupos a { display: grid; gap: 2px; padding: 10px 0; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none }
+  #vGrupos small { color: var(--muted) }
+  .cta { display: block; text-align: center; background: var(--brass); color: var(--bg); font-weight: 600; text-decoration: none; border-radius: 10px; padding: 14px }
+  .rodape { color: var(--muted); font-size: .8rem; text-align: center }
+  .rodape a { color: var(--muted) }
+  [hidden] { display: none !important }
+</style>
+</head>
+<body>
+<main>
+  <div class="marca"><img src="/acervo.png" alt="">Acervo · por Arial Gamer</div>
+  <p id="vCarregando">Carregando…</p>
+  <p id="vErro" hidden></p>
+  <section id="vItem" hidden>
+    <p id="vNome"></p>
+    <h1 id="vTitulo"></h1>
+    <p class="aviso" id="vReplica" hidden>Não original</p>
+    <div class="fotos" id="vFotos"></div>
+    <dl id="vDados"></dl>
+    <div class="valor" id="vValor" hidden>Valor estimado de mercado: <b id="vValorNum"></b></div>
+    <div id="vGruposBox" hidden>
+      <h2>Onde conversar sobre ele</h2>
+      <div id="vGrupos"></div>
+    </div>
+  </section>
+  <a class="cta" id="vLoja" href="https://arialgamer.com.br/#acervo">Catalogue a sua coleção com o Acervo</a>
+  <p class="rodape">O Acervo é um app de <a href="https://arialgamer.com.br/">Arial Gamer</a>. <a href="/acervo/privacidade/">Privacidade</a></p>
+</main>
+<script>
+(() => {
+  const FUNCAO = 'https://xmppelpzwtvxztesnspc.supabase.co/functions/v1/compartilhado';
+  const ua = navigator.userAgent;
+  const loja = /iPhone|iPad|iPod/.test(ua) ? 'https://apps.apple.com/app/id6832553837'
+    : /Android/.test(ua) ? 'https://play.google.com/store/apps/details?id=com.arial.acervo'
+    : 'https://arialgamer.com.br/#acervo';
+  document.getElementById('vLoja').href = loja;
+
+  const $ = id => document.getElementById(id);
+  const el = (tag, texto, classe) => { const e = document.createElement(tag); if (texto != null) e.textContent = texto; if (classe) e.className = classe; return e; };
+  const bandeira = p => /^[A-Z]{2}$/.test(p) && p !== 'XX' ? String.fromCodePoint(...[...p].map(l => 0x1f1e6 + l.charCodeAt(0) - 65)) : '🌐';
+  let nomes = null;
+  const nomePais = p => { if (!/^[A-Z]{2}$/.test(p) || p === 'XX') return 'Internacional'; try { nomes = nomes || new Intl.DisplayNames(['pt-BR'], { type: 'region' }); return nomes.of(p) || p; } catch { return p; } };
+  const RELACAO = { exato: 'modelo exato', parecido: 'modelo parecido', marca: 'marca' };
+  const seguro = u => { try { const x = new URL(u); return x.protocol === 'https:' ? x.href : null; } catch { return null; } };
+
+  function erro() {
+    $('vCarregando').hidden = true;
+    $('vErro').textContent = 'Este item não está mais compartilhado.';
+    $('vErro').hidden = false;
+  }
+
+  function mostrar(c) {
+    $('vCarregando').hidden = true;
+    $('vNome').textContent = `${c.nome || 'Um colecionador'} compartilhou um item da coleção`;
+    $('vTitulo').textContent = c.titulo || 'Item da coleção';
+    document.title = `${c.titulo || 'Um item da coleção'} · Acervo`;
+    $('vReplica').hidden = !c.naoOriginal;
+    for (const f of (c.fotos || [])) {
+      const u = /^data:image\//.test(f) ? f : seguro(f);
+      if (!u) continue;
+      const img = el('img'); img.src = u; img.alt = c.titulo || ''; img.loading = 'lazy';
+      $('vFotos').append(img);
+    }
+    for (const [rotulo, valor] of [['Categoria', c.categoria], ['Marca', c.marca], ['Modelo', c.modelo], ['Ano', c.ano]]) {
+      if (!valor) continue;
+      $('vDados').append(el('dt', rotulo), el('dd', valor));
+    }
+    if (c.valor && typeof c.valor.medio === 'number') {
+      try { $('vValorNum').textContent = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: c.valor.moeda || 'BRL', maximumFractionDigits: 0 }).format(c.valor.medio); }
+      catch { $('vValorNum').textContent = String(c.valor.medio); }
+      $('vValor').hidden = false;
+    }
+    const grupos = (c.grupos || []).filter(g => seguro(g.url));
+    for (const g of grupos) {
+      const a = el('a'); a.href = seguro(g.url); a.target = '_blank'; a.rel = 'noopener nofollow';
+      a.append(el('span', `${bandeira(g.pais)} ${nomePais(g.pais)}`, 'pais'), el('strong', g.titulo), el('small', [g.resumo, RELACAO[g.relacao]].filter(Boolean).join(' · ')));
+      $('vGrupos').append(a);
+    }
+    $('vGruposBox').hidden = grupos.length === 0;
+    $('vItem').hidden = false;
+  }
+
+  const t = new URLSearchParams(location.search).get('t') || '';
+  if (!/^[A-Za-z0-9]{12}$/.test(t)) { erro(); return; }
+  fetch(`${FUNCAO}?t=${encodeURIComponent(t)}`)
+    .then(r => r.json())
+    .then(r => (r && r.ok && r.conteudo ? mostrar(r.conteudo) : erro()))
+    .catch(erro);
+})();
+</script>
+</body>
+</html>
