@@ -856,7 +856,7 @@ document.querySelectorAll('[data-player]').forEach((p) => {
   });
   if (sound) sound.addEventListener('click', () => {
     video.muted = !video.muted;
-    sound.setAttribute('aria-label', video.muted ? 'Ligar o som' : 'Desligar o som');
+    sound.setAttribute('aria-label', video.muted ? "Turn sound on" : "Turn sound off");
     sound.querySelector('use').setAttribute('href', video.muted ? '#i-muted' : '#i-sound');
     if (video.paused) video.play().catch(() => {});
   });

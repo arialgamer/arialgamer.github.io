@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baixar o Esconde-Esconde</title>
+<meta name="description" content="Baixe o Esconde-Esconde na App Store ou no Google Play.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://arialgamer.com.br/esconde-esconde/">
+<meta property="og:title" content="Esconde-Esconde">
+<meta property="og:description" content="Esconda-se e tente achar, contra a máquina ou um amigo. Veja os vídeos e baixe.">
+<meta property="og:image" content="https://arialgamer.com.br/media/esconde-lua.jpg">
+<link rel="icon" href="/favicon.png">
+<script>
+// Abre direto a loja do celular; no computador, mostra os botões e o QR code.
+(function () {
+  var ua = navigator.userAgent;
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/app/id6819893974');
+  else if (/Android/.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.arial.escondeesconde');
+})();
+</script>
+<style>
+:root { color-scheme: dark }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0d0a20; color: #fff; font: 17px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; text-align: center; padding: 24px 16px; box-sizing: border-box }
+main { max-width: 420px }
+img.icone { width: 96px; height: 96px; border-radius: 22px }
+h1 { font-size: 26px; margin: 14px 0 4px }
+p { margin: 0 0 22px; color: #c9c3e6 }
+.loja { display: block; margin: 10px 0; padding: 14px 18px; border-radius: 14px; background: #fff; color: #111; font-weight: 700; text-decoration: none }
+.breve { background: transparent; color: #aab; border: 1px dashed #556 }
+img.qr { width: 180px; height: 180px; margin-top: 18px; border-radius: 12px; background: #fff; padding: 8px }
+small { display: block; color: #9aa5b1; margin-top: 6px }
+small a { color: #fff }
+</style>
+</head>
+<body>
+<main>
+  <img class="icone" src="/esconde.png" alt="">
+  <h1>Esconde-Esconde</h1>
+  <p>Esconda-se e tente achar, contra a máquina ou um amigo 🙈</p>
+  <a class="loja" href="https://apps.apple.com/app/id6819893974">App Store</a>
+  <a class="loja" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde">Google Play</a>
+  <img class="qr" src="/esconde-esconde/baixar/qr.png" alt="QR code para baixar o Esconde-Esconde">
+  <small>Aponte a câmera do celular · Point your phone camera</small>
+  <small><a href="/esconde-esconde/">Conheça o Esconde-Esconde →</a></small>
+</main>
+</body>
+</html>

@@ -62,7 +62,7 @@
    ],
    "name": "Gelada: Bebidas Virtuales",
    "description": "Cerveza, vino, cócteles y café en tu móvil. Llena el vaso, inclina para beber e inventa mezclas. 100 bebidas, barman que habla y trago del día. 0% alcohol.",
-   "url": "https://arialgamer.com.br/es/#gelada",
+   "url": "https://arialgamer.com.br/es/gelada/",
    "image": "https://arialgamer.com.br/gelada.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS, Android",
@@ -91,7 +91,7 @@
    ],
    "name": "Esconde-Esconde: Escondite",
    "description": "El escondite en tu móvil: 22 lugares de día y de noche, contra la máquina, pasando el móvil u online con un amigo. Para jugar en familia.",
-   "url": "https://arialgamer.com.br/es/#esconde",
+   "url": "https://arialgamer.com.br/es/esconde-esconde/",
    "image": "https://arialgamer.com.br/esconde.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS, Android",
@@ -120,7 +120,7 @@
    ],
    "name": "Gol de Placa: Penaltis",
    "description": "Penales y tiros libres en 3D: clávala al ángulo o sé el portero, crea tu crack, juega con selecciones y clubes, y online con un amigo.",
-   "url": "https://arialgamer.com.br/es/#gol",
+   "url": "https://arialgamer.com.br/es/gol-de-placa/",
    "image": "https://arialgamer.com.br/gol.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS",
@@ -544,6 +544,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6819882963" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Descárgalo en</small><strong>App Store</strong></span></a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.gelada&amp;hl=es" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponible en</small><strong>Google Play</strong></span></a>
         </div>
+        <a class="more" href="/es/gelada/">Todo sobre Gelada →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -583,6 +584,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6819893974" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Descárgalo en</small><strong>App Store</strong></span></a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde&amp;hl=es" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponible en</small><strong>Google Play</strong></span></a>
         </div>
+        <a class="more" href="/es/esconde-esconde/">Todo sobre Esconde-Esconde →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -630,6 +632,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6823608331" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Descárgalo en</small><strong>App Store</strong></span></a>
           <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>Muy pronto</strong></span></span>
         </div>
+        <a class="more" href="/es/gol-de-placa/">Todo sobre Gol de Placa →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -788,6 +791,12 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <a href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
+    <nav aria-label="Jogos">
+      <a href="/es/gelada/">Gelada</a>
+      <a href="/es/esconde-esconde/">Esconde-Esconde</a>
+      <a href="/es/gol-de-placa/">Gol de Placa</a>
+      <a href="/es/acervo/">Acervo</a>
+    </nav>
     <nav aria-label="Idioma / Language">
       <a href="/" hreflang="pt" lang="pt">Português</a>
       <a href="/en/" hreflang="en" lang="en">English</a>
@@ -847,7 +856,7 @@ document.querySelectorAll('[data-player]').forEach((p) => {
   });
   if (sound) sound.addEventListener('click', () => {
     video.muted = !video.muted;
-    sound.setAttribute('aria-label', video.muted ? 'Ligar o som' : 'Desligar o som');
+    sound.setAttribute('aria-label', video.muted ? "Activar sonido" : "Desactivar sonido");
     sound.querySelector('use').setAttribute('href', video.muted ? '#i-muted' : '#i-sound');
     if (video.paused) video.play().catch(() => {});
   });

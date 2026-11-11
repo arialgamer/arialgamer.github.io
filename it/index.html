@@ -62,7 +62,7 @@
    ],
    "name": "Gelada: Bevande Virtuali",
    "description": "Birra, vino, cocktail e caffè sul telefono. Riempi il bicchiere, inclina per bere e inventa mix. 100 bevande, un barista che parla e il drink del giorno. 0% alcol.",
-   "url": "https://arialgamer.com.br/it/#gelada",
+   "url": "https://arialgamer.com.br/it/gelada/",
    "image": "https://arialgamer.com.br/gelada.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS, Android",
@@ -91,7 +91,7 @@
    ],
    "name": "Esconde-Esconde: Nascondino",
    "description": "Nascondino sul telefono: 22 luoghi di giorno e di notte, contro il computer, passandosi il telefono o online con un amico.",
-   "url": "https://arialgamer.com.br/it/#esconde",
+   "url": "https://arialgamer.com.br/it/esconde-esconde/",
    "image": "https://arialgamer.com.br/esconde.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS, Android",
@@ -120,7 +120,7 @@
    ],
    "name": "Gol de Placa: Rigori",
    "description": "Rigori e punizioni in 3D: mettila all'incrocio o fai il portiere, crea il tuo campione e gioca online con un amico.",
-   "url": "https://arialgamer.com.br/it/#gol",
+   "url": "https://arialgamer.com.br/it/gol-de-placa/",
    "image": "https://arialgamer.com.br/gol.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS",
@@ -544,6 +544,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6819882963" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Scarica su</small><strong>App Store</strong></span></a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.gelada&amp;hl=it" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponibile su</small><strong>Google Play</strong></span></a>
         </div>
+        <a class="more" href="/it/gelada/">Tutto su Gelada →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -583,6 +584,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6819893974" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Scarica su</small><strong>App Store</strong></span></a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde&amp;hl=it" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponibile su</small><strong>Google Play</strong></span></a>
         </div>
+        <a class="more" href="/it/esconde-esconde/">Tutto su Esconde-Esconde →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -630,6 +632,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6823608331" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Scarica su</small><strong>App Store</strong></span></a>
           <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>In arrivo</strong></span></span>
         </div>
+        <a class="more" href="/it/gol-de-placa/">Tutto su Gol de Placa →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -788,6 +791,12 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <a href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
+    <nav aria-label="Jogos">
+      <a href="/it/gelada/">Gelada</a>
+      <a href="/it/esconde-esconde/">Esconde-Esconde</a>
+      <a href="/it/gol-de-placa/">Gol de Placa</a>
+      <a href="/it/acervo/">Acervo</a>
+    </nav>
     <nav aria-label="Idioma / Language">
       <a href="/" hreflang="pt" lang="pt">Português</a>
       <a href="/en/" hreflang="en" lang="en">English</a>
@@ -847,7 +856,7 @@ document.querySelectorAll('[data-player]').forEach((p) => {
   });
   if (sound) sound.addEventListener('click', () => {
     video.muted = !video.muted;
-    sound.setAttribute('aria-label', video.muted ? 'Ligar o som' : 'Desligar o som');
+    sound.setAttribute('aria-label', video.muted ? "Attiva l'audio" : "Disattiva l'audio");
     sound.querySelector('use').setAttribute('href', video.muted ? '#i-muted' : '#i-sound');
     if (video.paused) video.play().catch(() => {});
   });

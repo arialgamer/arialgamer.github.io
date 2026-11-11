@@ -99,9 +99,7 @@ def url_tipo(cod, tid):
 
 
 def url_jogo(cod, k):
-    if cod == "pt": return f"/{PASTA_JOGO[k]}/"
-    if cod == "en": return f"/en/{PASTA_JOGO[k]}/"
-    return f"/{cod}/#{k}"
+    return f"/{pre(cod)}{PASTA_JOGO[k]}/"
 
 
 def caminho(url):

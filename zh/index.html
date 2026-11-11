@@ -62,7 +62,7 @@
    ],
    "name": "Gelada：虚拟饮品",
    "description": "手机里的啤酒、葡萄酒、鸡尾酒和咖啡。倒满杯子，倾斜就能喝，还能发明新调配。100 种饮品、会说话的调酒师和每日一饮。零酒精。",
-   "url": "https://arialgamer.com.br/zh/#gelada",
+   "url": "https://arialgamer.com.br/zh/gelada/",
    "image": "https://arialgamer.com.br/gelada.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS, Android",
@@ -91,7 +91,7 @@
    ],
    "name": "Esconde-Esconde：捉迷藏",
    "description": "手机上的捉迷藏：白天和黑夜的 22 个地点，对战电脑、轮流传手机或和朋友在线玩。",
-   "url": "https://arialgamer.com.br/zh/#esconde",
+   "url": "https://arialgamer.com.br/zh/esconde-esconde/",
    "image": "https://arialgamer.com.br/esconde.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS, Android",
@@ -120,7 +120,7 @@
    ],
    "name": "Gol de Placa：点球",
    "description": "3D 点球和任意球：射向死角或当守门员，打造你的球员，和朋友在线对战。",
-   "url": "https://arialgamer.com.br/zh/#gol",
+   "url": "https://arialgamer.com.br/zh/gol-de-placa/",
    "image": "https://arialgamer.com.br/gol.png",
    "applicationCategory": "GameApplication",
    "operatingSystem": "iOS",
@@ -544,6 +544,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6819882963" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>下载于</small><strong>App Store</strong></span></a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.gelada&amp;hl=zh-CN" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>获取于</small><strong>Google Play</strong></span></a>
         </div>
+        <a class="more" href="/zh/gelada/">了解 Gelada →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -583,6 +584,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6819893974" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>下载于</small><strong>App Store</strong></span></a>
           <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde&amp;hl=zh-CN" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>获取于</small><strong>Google Play</strong></span></a>
         </div>
+        <a class="more" href="/zh/esconde-esconde/">了解 Esconde-Esconde →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -630,6 +632,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <a class="store" href="https://apps.apple.com/app/id6823608331" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>下载于</small><strong>App Store</strong></span></a>
           <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>即将推出</strong></span></span>
         </div>
+        <a class="more" href="/zh/gol-de-placa/">了解 Gol de Placa →</a>
       </div>
       <div class="player reveal" data-player>
         <div class="phone"><div class="screen">
@@ -788,6 +791,12 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <a href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
+    <nav aria-label="Jogos">
+      <a href="/zh/gelada/">Gelada</a>
+      <a href="/zh/esconde-esconde/">Esconde-Esconde</a>
+      <a href="/zh/gol-de-placa/">Gol de Placa</a>
+      <a href="/zh/acervo/">Acervo</a>
+    </nav>
     <nav aria-label="Idioma / Language">
       <a href="/" hreflang="pt" lang="pt">Português</a>
       <a href="/en/" hreflang="en" lang="en">English</a>
@@ -847,7 +856,7 @@ document.querySelectorAll('[data-player]').forEach((p) => {
   });
   if (sound) sound.addEventListener('click', () => {
     video.muted = !video.muted;
-    sound.setAttribute('aria-label', video.muted ? 'Ligar o som' : 'Desligar o som');
+    sound.setAttribute('aria-label', video.muted ? "打开声音" : "关闭声音");
     sound.querySelector('use').setAttribute('href', video.muted ? '#i-muted' : '#i-sound');
     if (video.paused) video.play().catch(() => {});
   });
