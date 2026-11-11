@@ -215,6 +215,15 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .chip { display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px 6px 6px; border-radius: 999px; background: var(--glass); border: 1px solid var(--line); text-decoration: none; font-weight: 700; font-size: 15px; transition: background .2s, transform .2s }
 .chip:hover { background: var(--glass-2); transform: translateY(-1px) }
 .chip img { width: 34px; height: 34px; border-radius: 10px }
+.chipgroups { display: grid; gap: 14px; margin-top: 34px }
+.chipgroup .chips { margin-top: 8px }
+.chiplabel { display: block; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted) }
+.divisao { padding: 84px 0 0; text-align: center }
+.divisao h2 { font-size: clamp(30px, 6vw, 46px); line-height: 1.1; margin: 6px 0 0 }
+.divisao p.sub { color: var(--muted); margin: 8px 0 0 }
+.divisao + .game { padding-top: 56px }
+.nav ul li.app { margin-left: 10px; padding-left: 10px; border-left: 1px solid var(--line) }
+@media (max-width: 760px) { .chipgroup { text-align: center } .divisao { padding-top: 64px } }
 
 /* Três celulares em leque */
 .fan { position: relative; height: 600px; display: flex; justify-content: center; align-items: center }
@@ -437,7 +446,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <li><a href="#gelada">Gelada</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
-      <li><a href="#acervo">Acervo</a></li>
+      <li class="app"><a href="#acervo">Acervo</a></li>
       <li><a href="#siga">Réseaux</a></li>
     </ul>
     <a class="ig-round" href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener" aria-label="Instagram @arial.gamer"><svg><use href="#i-insta"/></svg></a>
@@ -455,14 +464,22 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
         <p class="lead">Remplis un verre et penche le téléphone pour boire. Cache-toi derrière la lune. Tire le penalty ou arrête-le à la dernière minute. Trois jeux à jouer seul ou avec un ami.</p>
         <p class="noads"><i aria-hidden="true">🚫</i><span><b>Sans publicité</b><span>Aucun de nos jeux n'a de publicité. Rien n'interrompt le plaisir.</span></span></p>
         <div class="ctas">
-          <a class="btn primary" href="#gelada">Voir les jeux</a>
+          <a class="btn primary" href="#jogos">Voir les jeux</a>
           <a class="btn ghost" href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>Voir sur TikTok</a>
         </div>
-        <div class="chips">
-          <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
-          <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
-          <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
-          <a class="chip" href="#acervo"><img src="/acervo.png" alt="" width="34" height="34">Acervo</a>
+        <div class="chipgroups">
+          <div class="chipgroup"><span class="chiplabel">🎮 Jeux</span>
+            <div class="chips">
+              <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
+              <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
+              <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
+            </div>
+          </div>
+          <div class="chipgroup"><span class="chiplabel">📱 Applications</span>
+            <div class="chips">
+              <a class="chip" href="#acervo"><img src="/acervo.png" alt="" width="34" height="34">Acervo</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="fan" aria-label="Vidéos des trois jeux">
@@ -482,6 +499,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <div><b>22</b><span>lieux dans Esconde-Esconde</span></div>
     </div>
   </div>
+
+  <!-- ================= JOGOS ================= -->
+  <div class="divisao" id="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>Jeux</h2><p class="sub">Pour jouer seul ou avec un ami</p></div></div>
 
   <!-- ================= GELADA ================= -->
   <section class="game gelada" id="gelada">
@@ -618,13 +638,16 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
     </div>
   </section>
 
+  <!-- ================= APLICATIVOS ================= -->
+  <div class="divisao" id="apps"><div class="wrap"><p class="eyebrow">📱 Arial Gamer</p><h2>Applications</h2><p class="sub">Pour organiser ce que vous collectionnez</p></div></div>
+
   <!-- ================= ACERVO ================= -->
   <section class="game acervo flip" id="acervo">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
           <img src="/acervo.png" alt="Icône d’Acervo : Votre Collection" width="84" height="84">
-          <div><p class="eyebrow">Nouvelle app</p><h2>Acervo : Votre Collection</h2></div>
+          <div><p class="eyebrow">Application · nouvelle</p><h2>Acervo : Votre Collection</h2></div>
         </div>
         <p class="tag">Le catalogue de votre collection, avec la valeur de chaque objet ⌚🪙</p>
         <span class="price">📦 Gratuit pour commencer · 🚫 Sans publicité</span>
