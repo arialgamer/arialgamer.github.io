@@ -310,9 +310,90 @@ small a {{ color: #fff }}
         print("aviso: sem a biblioteca qrcode, o qr.png não foi refeito (pip install qrcode)")
 
 
+# Página do convite para a sala online (/esconde-esconde/sala/?c=1234 e /gol-de-placa/sala/?c=1234):
+# o jogo manda esse link; quem já tem o jogo abre direto na sala, quem não tem vai para a loja.
+SALA_TXT = {
+    "pt": ("Você foi convidado para jogar online!", "Sala", "Abrir no jogo", "Ainda não tem o jogo? Baixar", "Depois de instalar, abra o jogo, toque em Online e digite o código da sala."),
+    "en": ("You're invited to play online!", "Room", "Open in the game", "Don't have the game yet? Download", "After installing, open the game, tap Online and type the room code."),
+    "es": ("¡Te invitaron a jugar en línea!", "Sala", "Abrir en el juego", "¿Aún no tienes el juego? Descargar", "Después de instalarlo, abre el juego, toca En línea y escribe el código de la sala."),
+    "de": ("Du bist zum Online-Spiel eingeladen!", "Raum", "Im Spiel öffnen", "Noch nicht installiert? Laden", "Nach der Installation das Spiel öffnen, auf Online tippen und den Raumcode eingeben."),
+    "fr": ("Tu es invité à jouer en ligne !", "Salle", "Ouvrir dans le jeu", "Pas encore le jeu ? Télécharger", "Après l'installation, ouvre le jeu, touche En ligne et saisis le code de la salle."),
+    "it": ("Sei invitato a giocare online!", "Stanza", "Apri nel gioco", "Non hai ancora il gioco? Scarica", "Dopo l'installazione, apri il gioco, tocca Online e inserisci il codice della stanza."),
+    "ja": ("オンライン対戦に招待されました！", "ルーム", "ゲームで開く", "まだ持っていない？ダウンロード", "インストール後、ゲームを開いて「オンライン」をタップし、ルームコードを入力してください。"),
+    "zh": ("你被邀请在线一起玩！", "房间", "在游戏中打开", "还没有这款游戏？下载", "安装后打开游戏，点击“在线”，输入房间码。"),
+}
+ESQUEMA = {"esconde": "escondeesconde", "gol": "goldeplaca"}
+
+
+def sala(k):
+    pasta, nome, icone, ios_id, android_id, capa = JOGOS[k]
+    txt = json.dumps(SALA_TXT, ensure_ascii=False)
+    pagina = f"""<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id={ios_id}">
+<title>{nome}: convite para jogar online</title>
+<meta name="description" content="Convite para jogar {nome} online com um amigo.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="{nome}: bora jogar online?">
+<meta property="og:description" content="Toque para entrar na sala do seu amigo ou baixar o jogo.">
+<meta property="og:image" content="{SITE}{capa}">
+<link rel="icon" href="/favicon.png">
+<style>
+:root {{ color-scheme: dark }}
+body {{ margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0d0a20; color: #fff; font: 17px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; text-align: center; padding: 24px 16px; box-sizing: border-box }}
+main {{ max-width: 420px }}
+img.icone {{ width: 96px; height: 96px; border-radius: 22px }}
+h1 {{ font-size: 24px; margin: 14px 0 6px }}
+.codigo {{ font-size: 56px; font-weight: 900; letter-spacing: 10px; color: #ffd34f; margin: 4px 0 18px }}
+.rot {{ color: #c9c3e6; font-size: 14px; text-transform: uppercase; letter-spacing: .12em }}
+.btn {{ display: block; margin: 10px 0; padding: 15px 18px; border-radius: 14px; background: #ffd34f; color: #111; font-weight: 800; text-decoration: none }}
+.btn.alt {{ background: #fff }}
+p.dica {{ color: #c9c3e6; font-size: 15px; margin-top: 16px }}
+</style>
+</head>
+<body>
+<main>
+  <img class="icone" src="/{icone}" alt="">
+  <h1 id="tTitulo"></h1>
+  <div class="rot" id="tSala"></div>
+  <div class="codigo" id="vCodigo">····</div>
+  <a class="btn" id="vAbrir" href="#"></a>
+  <a class="btn alt" id="vBaixar" href="/{pasta}/baixar/"></a>
+  <p class="dica" id="tDica"></p>
+</main>
+<script>
+(function () {{
+  var T = {txt};
+  var cod = (navigator.languages || [navigator.language]).map(function (l) {{ return String(l).slice(0, 2).toLowerCase(); }}).filter(function (l) {{ return T[l]; }})[0] || 'en';
+  var X = T[cod];
+  document.documentElement.lang = cod;
+  var c = (new URLSearchParams(location.search).get('c') || '').replace(/[^0-9]/g, '').slice(0, 4);
+  document.getElementById('tTitulo').textContent = X[0];
+  document.getElementById('tSala').textContent = X[1];
+  document.getElementById('vAbrir').textContent = X[2];
+  document.getElementById('vBaixar').textContent = X[3];
+  document.getElementById('tDica').textContent = X[4];
+  if (/^[0-9]{{4}}$/.test(c)) {{
+    document.getElementById('vCodigo').textContent = c;
+    document.getElementById('vAbrir').href = '{ESQUEMA[k]}://sala/' + c;
+  }} else document.getElementById('vAbrir').hidden = true;
+}})();
+</script>
+</body>
+</html>
+"""
+    d = os.path.join(RAIZ, pasta, "sala"); os.makedirs(d, exist_ok=True)
+    open(os.path.join(d, "index.html"), "w", encoding="utf-8", newline="\n").write(pagina)
+
+
 if __name__ == "__main__":
     feitas = [pagina(cod, k) for k in JOGOS for cod in ORDEM]
     for k in JOGOS:
         baixar(k)
+    for k in ESQUEMA:
+        sala(k)
     open(os.path.join(RAIZ, "_paginas", "jogos_urls.txt"), "w", encoding="utf-8").write("\n".join(feitas) + "\n")
     print(len(feitas), "páginas + 3 endereços /baixar/")
