@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baixar os apps da Arial Gamer</title>
+<meta name="description" content="Acervo, Gelada, Esconde-Esconde e Gol de Placa: baixe na App Store ou no Google Play.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://arialgamer.com.br/">
+<meta property="og:title" content="Apps e jogos da Arial Gamer">
+<meta property="og:description" content="Acervo, Gelada, Esconde-Esconde e Gol de Placa. Sem anúncios.">
+<meta property="og:image" content="https://arialgamer.com.br/logo-1080.jpg">
+<link rel="icon" href="/favicon.png">
+<style>
+:root { color-scheme: dark }
+body { margin: 0; min-height: 100vh; background: #0d0a20; color: #fff; font: 17px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; padding: 28px 16px; box-sizing: border-box }
+main { max-width: 460px; margin: 0 auto }
+h1 { font-size: 24px; text-align: center; margin: 10px 0 22px }
+.logo { display: block; width: 72px; height: 72px; border-radius: 18px; margin: 0 auto }
+.app { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px; margin: 10px 0; border-radius: 18px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12) }
+.app img { width: 52px; height: 52px; border-radius: 13px }
+.app b { flex: 1; min-width: 120px }
+.loja { padding: 9px 14px; border-radius: 12px; background: #fff; color: #111; font-weight: 700; font-size: 15px; text-decoration: none }
+.breve { background: transparent; color: #aab; border: 1px dashed #556 }
+.ios-so .and, .and-so .ios { display: none }
+p { text-align: center; color: #aab; font-size: 15px }
+p a { color: #fff }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="/logo.png" alt="">
+  <h1>Apps e jogos da Arial Gamer</h1>
+  <div class="app"><img src="/acervo.png" alt=""><b>Acervo: Sua Coleção</b><a class="loja ios" href="https://apps.apple.com/app/id6832553837">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.acervo">Google Play</a></div>
+  <div class="app"><img src="/gelada.png" alt=""><b>Gelada</b><a class="loja ios" href="https://apps.apple.com/app/id6819882963">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.gelada">Google Play</a></div>
+  <div class="app"><img src="/esconde.png" alt=""><b>Esconde-Esconde</b><a class="loja ios" href="https://apps.apple.com/app/id6819893974">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde">Google Play</a></div>
+  <div class="app"><img src="/gol.png" alt=""><b>Gol de Placa</b><a class="loja ios" href="https://apps.apple.com/app/id6823608331">App Store</a><span class="loja and breve">Android: em breve</span></div>
+  <p>Sem anúncios em todos. <a href="/">Conheça no site →</a></p>
+</main>
+<script>
+// No iPhone mostra só a App Store; no Android, só o Google Play; no computador, os dois.
+var ua = navigator.userAgent;
+if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) document.body.className = 'ios-so';
+else if (/Android/.test(ua)) document.body.className = 'and-so';
+</script>
+</body>
+</html>

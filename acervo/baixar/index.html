@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baixar o Acervo: Sua Coleção</title>
+<meta name="description" content="Baixe o Acervo: Sua Coleção na App Store ou no Google Play.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://arialgamer.com.br/acervo/">
+<meta property="og:title" content="Acervo: Sua Coleção">
+<meta property="og:description" content="O catálogo da sua coleção, com o valor de cada item. Grátis para começar, sem anúncios.">
+<meta property="og:image" content="https://arialgamer.com.br/media/acervo-shot-colecao.jpg">
+<link rel="icon" href="/favicon.png">
+<script>
+// Abre direto a loja do celular; no computador, mostra os dois botões e o QR code.
+(function () {
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (ios) location.replace('https://apps.apple.com/app/id6832553837');
+  else if (/Android/.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.arial.acervo');
+})();
+</script>
+<style>
+:root { color-scheme: dark }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #1B232E; color: #F1E6D3; font: 17px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; text-align: center; padding: 24px 16px; box-sizing: border-box }
+main { max-width: 420px }
+img.icone { width: 96px; height: 96px; border-radius: 22px }
+h1 { font-size: 26px; margin: 14px 0 4px }
+p { margin: 0 0 22px; color: #D0AC72 }
+a.loja { display: block; margin: 10px 0; padding: 14px 18px; border-radius: 14px; background: #F1E6D3; color: #1B232E; font-weight: 700; text-decoration: none }
+img.qr { width: 180px; height: 180px; margin-top: 18px; border-radius: 12px; background: #fff; padding: 8px }
+small { display: block; color: #9aa5b1; margin-top: 6px }
+</style>
+</head>
+<body>
+<main>
+  <img class="icone" src="/acervo.png" alt="">
+  <h1>Acervo: Sua Coleção</h1>
+  <p>O catálogo da sua coleção, com o valor de cada item</p>
+  <a class="loja" href="https://apps.apple.com/app/id6832553837">App Store</a>
+  <a class="loja" href="https://play.google.com/store/apps/details?id=com.arial.acervo">Google Play</a>
+  <img class="qr" src="/acervo/baixar/qr.png" alt="QR code para baixar o Acervo">
+  <small>Aponte a câmera do celular · Point your phone camera</small>
+</main>
+</body>
+</html>
