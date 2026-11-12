@@ -36,7 +36,7 @@ G = {"gelada": {}, "esconde": {}, "gol": {}}
 # ---------------------------------------------------------------- GELADA
 G["gelada"]["pt"] = dict(
  titulo="Gelada: simulador de cerveja e drinks no celular",
- desc="Gelada transforma o celular num copo: encha de cerveja, vinho, drinks ou café, incline para beber e invente misturas. 100 bebidas, barman que fala e drink do dia. R$ 1,90 no iPhone e no Android. Sem anúncios. 0% álcool.",
+ desc="Gelada transforma o celular num copo: encha de cerveja, vinho, drinks ou café, incline para beber e invente misturas. 100 bebidas, barman que fala e drink do dia. R$ 2,90 no iPhone e no Android. Sem anúncios. 0% álcool.",
  ogdesc="Cerveja, vinho, drinks e café no celular. Incline para beber e misture. Veja os vídeos e baixe.",
  app="Gelada: Bebidas Virtuais", genero="Simulação, Casual",
  como_h2="Como é o Gelada", como_sub="Lembra do app em que o celular virava um copo de cerveja? O Gelada traz a ideia de volta, muito mais completo.",
@@ -48,7 +48,7 @@ G["gelada"]["pt"] = dict(
         ("🎬", "Vídeo de pegadinha", "Grave o copo enchendo e mande para os amigos como se fosse de verdade.")],
  faq_sub="Tudo o que perguntam sobre o Gelada.",
  faq=[("O Gelada tem álcool de verdade?", "Não. As bebidas são 100% virtuais: é uma brincadeira no celular, com 0% de álcool. Beba com moderação na vida real."),
-      ("Quanto custa?", "R$ 1,90 para baixar, no iPhone e no Android. Não tem anúncios nem assinatura."),
+      ("Quanto custa?", "R$ 2,90 para baixar, no iPhone e no Android. Não tem anúncios nem assinatura."),
       ("Tem bebidas sem álcool?", "Sim, mais de 40: sucos como caju, açaí e acerola, refrigerantes, cafés, chás, caldo de cana, milkshake e vitamina. Menores de 18 anos veem só as sem álcool, e o responsável pode liberar as outras com um PIN."),
       ("Precisa de internet ou cadastro?", "Não. O Gelada funciona offline, sem cadastro, e não coleta dados."),
       ("Em quais idiomas?", "Português, inglês, espanhol, alemão, francês, italiano, chinês e japonês.")],
@@ -197,7 +197,7 @@ G["gelada"]["zh"] = dict(
 # ---------------------------------------------------------------- ESCONDE-ESCONDE
 G["esconde"]["pt"] = dict(
  titulo="Esconde-Esconde: jogo de esconde-esconde para celular",
- desc="Esconde-Esconde para celular: 22 lugares de dia e de noite, contra a máquina, passando o celular ou online com um amigo. Narrador, radar quente ou frio e modo para os pequenos. R$ 1,90 no iPhone e no Android. Sem anúncios.",
+ desc="Esconde-Esconde para celular: 22 lugares de dia e de noite, contra a máquina, passando o celular ou online com um amigo. Narrador, radar quente ou frio e modo para os pequenos. R$ 2,90 no iPhone e no Android. Sem anúncios.",
  ogdesc="Esconda-se e tente achar, contra a máquina ou um amigo. Veja os vídeos e baixe.",
  app="Esconde-Esconde", genero="Família, Casual",
  como_h2="Como é o Esconde-Esconde", como_sub="A brincadeira de sempre, feita para o celular: esconda-se, passe o aparelho e veja se a outra pessoa te encontra.",
@@ -208,7 +208,7 @@ G["esconde"]["pt"] = dict(
         ("🎉", "Festa de 3 ou 4", "Passe o celular: cada um se esconde uma vez por rodada, e no fim tem classificação com medalhas."),
         ("🌧️", "Chuva e relâmpagos", "Às vezes chove e os barulhos ficam abafados. À noite, os relâmpagos iluminam tudo por um instante.")],
  faq_sub="Tudo o que perguntam sobre o Esconde-Esconde.",
- faq=[("Quanto custa o Esconde-Esconde?", "R$ 1,90 para baixar, no iPhone e no Android. Não tem anúncios nem assinatura."),
+ faq=[("Quanto custa o Esconde-Esconde?", "R$ 2,90 para baixar, no iPhone e no Android. Não tem anúncios nem assinatura."),
       ("Dá para jogar com outra pessoa?", "Sim: passando o mesmo celular, em festa de 3 ou 4 pessoas, ou online com um amigo, cada um no seu celular, com código de sala."),
       ("É bom para crianças?", "Sim. É um jogo para a família, tem modo para os pequenos e narrador que conta tudo, sem anúncios."),
       ("Quais lugares tem?", "São 22, como casa, praia, sítio, geleira, navio pirata, estação espacial, castelo, terra dos dinossauros, circo e museu, todos de dia e de noite."),
@@ -358,7 +358,7 @@ G["esconde"]["zh"] = dict(
 # ---------------------------------------------------------------- GOL DE PLACA
 G["gol"]["pt"] = dict(
  titulo="Gol de Placa: jogo de pênalti e falta para celular",
- desc="Gol de Placa: pênaltis e faltas em 3D no celular. Bata no ângulo ou seja o goleiro, monte o seu craque e jogue online com um amigo. Seleções, times, chuva, neve e narração. R$ 1,90 no iPhone. Sem anúncios.",
+ desc="Gol de Placa: pênaltis e faltas em 3D no celular. Bata no ângulo ou seja o goleiro, monte o seu craque e jogue online com um amigo. Seleções, times, chuva, neve e narração. R$ 3,90 no iPhone. Sem anúncios.",
  ogdesc="Pênaltis e faltas em 3D: seja o batedor ou o goleiro. Veja os vídeos e baixe.",
  app="Gol de Placa: Pênalti e Falta", genero="Esporte, Futebol",
  como_h2="Como é o Gol de Placa", como_sub="Arraste o dedo da bola até o canto do gol e solte o chute. Ou vá para o gol e tente defender.",
@@ -369,7 +369,7 @@ G["gol"]["pt"] = dict(
         ("🌦️", "Clima e torcida", "Dia, noite com refletores, chuva e neve. Torcida com batucada, a ola e festa no gol."),
         ("📒", "Figurinhas e desafios", "Figurinhas para colecionar e desafios novos todo dia.")],
  faq_sub="Tudo o que perguntam sobre o Gol de Placa.",
- faq=[("Quanto custa o Gol de Placa?", "R$ 1,90 para baixar na App Store. Não tem anúncios nem assinatura."),
+ faq=[("Quanto custa o Gol de Placa?", "R$ 3,90 para baixar na App Store. Não tem anúncios nem assinatura."),
       ("Tem para Android?", "Ainda não. A versão para Android está chegando; siga @arial.gamer para saber quando sair."),
       ("Dá para jogar com um amigo?", "Sim, online, cada um no seu celular."),
       ("É bom para crianças?", "Sim. É um jogo para a família, com bonecos de blocos, sem violência e sem anúncios. Também tem versão adulta, com jogadores realistas."),

@@ -66,7 +66,7 @@ JOGOS = {
   "gelada": dict(
     pasta="gelada", nome="Gelada", nome_loja="Gelada: Bebidas Virtuais", icone="gelada.png",
     titulo="Gelada: simulador de cerveja e drinks no celular · Arial Gamer",
-    descricao="Gelada transforma o celular num copo: encha de cerveja, vinho, drinks ou café, incline para beber e invente misturas. 100 bebidas, barman que fala e drink do dia. R$ 1,90 no iPhone e no Android. Sem anúncios. 0% álcool.",
+    descricao="Gelada transforma o celular num copo: encha de cerveja, vinho, drinks ou café, incline para beber e invente misturas. 100 bebidas, barman que fala e drink do dia. R$ 2,90 no iPhone e no Android. Sem anúncios. 0% álcool.",
     resumo="Cerveja, vinho, drinks e café no celular. Incline para beber e misture.",
     categoria="Simulação, Casual", os="iOS, Android", imagem="media/gelada-saude.jpg",
     lojas=["https://apps.apple.com/br/app/id6819882963", "https://play.google.com/store/apps/details?id=com.arial.gelada"],
@@ -81,14 +81,14 @@ JOGOS = {
            ("🗣️", "Barman que fala", "Um barman (ou uma barwoman) comenta suas misturas, comemora o brinde e te desafia, em 8 idiomas."),
            ("🎬", "Vídeo de pegadinha", "Grave o copo enchendo e mande para os amigos como se fosse de verdade.")],
     faq=[("O Gelada tem álcool de verdade?", "Não. As bebidas são 100% virtuais: é uma brincadeira no celular, com 0% de álcool. Beba com moderação na vida real."),
-         ("Quanto custa?", "R$ 1,90 para baixar, no iPhone e no Android. Não tem anúncios nem assinatura."),
+         ("Quanto custa?", "R$ 2,90 para baixar, no iPhone e no Android. Não tem anúncios nem assinatura."),
          ("Tem bebidas sem álcool?", "Sim, mais de 40: sucos como caju, açaí e acerola, refrigerantes, cafés, chás, caldo de cana, milkshake e vitamina. Menores de 18 anos veem só as sem álcool, e o responsável pode liberar as outras com um PIN."),
          ("Precisa de internet ou cadastro?", "Não. O Gelada funciona offline, sem cadastro, e não coleta dados."),
          ("Em quais idiomas?", "Português, inglês, espanhol, alemão, francês, italiano, chinês e japonês.")]),
   "esconde": dict(
     pasta="esconde-esconde", nome="Esconde-Esconde", nome_loja="Esconde-Esconde", icone="esconde.png",
     titulo="Esconde-Esconde: jogo de esconde-esconde para celular · Arial Gamer",
-    descricao="Esconde-Esconde para celular: 22 lugares de dia e de noite, contra a máquina, passando o celular ou online com um amigo. Narrador, radar quente ou frio e modo para os pequenos. R$ 1,90 no iPhone e no Android. Sem anúncios.",
+    descricao="Esconde-Esconde para celular: 22 lugares de dia e de noite, contra a máquina, passando o celular ou online com um amigo. Narrador, radar quente ou frio e modo para os pequenos. R$ 2,90 no iPhone e no Android. Sem anúncios.",
     resumo="Esconda-se e tente achar, contra a máquina ou um amigo.",
     categoria="Família, Casual", os="iOS, Android", imagem="media/esconde-lua.jpg",
     lojas=["https://apps.apple.com/br/app/id6819893974", "https://play.google.com/store/apps/details?id=com.arial.escondeesconde"],
@@ -103,15 +103,15 @@ JOGOS = {
            ("🤖", "A máquina aprende", "Três níveis de dificuldade. A máquina lembra onde você costuma se esconder e onde costuma procurar."),
            ("🎉", "Festa de 3 ou 4", "Passe o celular: cada um se esconde uma vez por rodada, e no fim tem classificação com medalhas."),
            ("🌧️", "Chuva e relâmpagos", "Às vezes chove e os barulhos ficam abafados. À noite, os relâmpagos iluminam tudo por um instante.")],
-    faq=[("Quanto custa o Esconde-Esconde?", "R$ 1,90 para baixar, no iPhone e no Android. Não tem anúncios nem assinatura."),
+    faq=[("Quanto custa o Esconde-Esconde?", "R$ 2,90 para baixar, no iPhone e no Android. Não tem anúncios nem assinatura."),
          ("Dá para jogar com outra pessoa?", "Sim: passando o mesmo celular, em festa de 3 ou 4 pessoas, ou online com um amigo, cada um no seu celular, com código de sala."),
          ("É bom para crianças?", "Sim. É um jogo para a família, tem modo para os pequenos e narrador que conta tudo, sem anúncios."),
          ("Quais lugares tem?", "São 22, como casa, praia, sítio, geleira, navio pirata, estação espacial, castelo, terra dos dinossauros, circo e museu, todos de dia e de noite."),
          ("Precisa de cadastro?", "Não. O jogo não pede cadastro e não coleta dados.")]),
   "gol": dict(
-    pasta="gol-de-placa", nome="Gol de Placa", nome_loja="Gol de Placa: Pênalti e Falta", icone="gol.png",
+    pasta="gol-de-placa", nome="Gol de Placa", nome_loja="Gol de Placa: Pênalti e Falta", icone="gol.png", preco="3.90",
     titulo="Gol de Placa: jogo de pênalti e falta para celular · Arial Gamer",
-    descricao="Gol de Placa: pênaltis e faltas em 3D no celular. Bata no ângulo ou seja o goleiro, monte o seu craque e jogue online com um amigo. Seleções, times, chuva, neve e narração. R$ 1,90 no iPhone. Sem anúncios.",
+    descricao="Gol de Placa: pênaltis e faltas em 3D no celular. Bata no ângulo ou seja o goleiro, monte o seu craque e jogue online com um amigo. Seleções, times, chuva, neve e narração. R$ 3,90 no iPhone. Sem anúncios.",
     resumo="Pênaltis e faltas em 3D: seja o batedor ou o goleiro.",
     categoria="Esporte, Futebol", os="iOS", imagem="media/gol-adulta.jpg",
     lojas=["https://apps.apple.com/br/app/id6823608331"],
@@ -126,7 +126,7 @@ JOGOS = {
            ("🧑", "Monte o seu craque", "Pele, cabelo, chuteira, número e nome na camisa, e a comemoração: aviãozinho, dancinha, cambalhota…"),
            ("🌦️", "Clima e torcida", "Dia, noite com refletores, chuva e neve. Torcida com batucada, a ola e festa no gol."),
            ("📒", "Figurinhas e desafios", "Figurinhas para colecionar e desafios novos todo dia.")],
-    faq=[("Quanto custa o Gol de Placa?", "R$ 1,90 para baixar na App Store. Não tem anúncios nem assinatura."),
+    faq=[("Quanto custa o Gol de Placa?", "R$ 3,90 para baixar na App Store. Não tem anúncios nem assinatura."),
          ("Tem para Android?", "Ainda não. A versão para Android está chegando; siga @arial.gamer para saber quando sair."),
          ("Dá para jogar com um amigo?", "Sim, online, cada um no seu celular."),
          ("É bom para crianças?", "Sim. É um jogo para a família, com bonecos de blocos, sem violência e sem anúncios. Também tem versão adulta, com jogadores realistas."),
@@ -149,7 +149,7 @@ def jsonld(k, j):
            "applicationCategory": "GameApplication", "genre": j["categoria"], "operatingSystem": j["os"], "inLanguage": "pt-BR",
            "installUrl": j["lojas"], "downloadUrl": j["lojas"],
            "author": {"@id": SITE + "#org"}, "publisher": {"@id": SITE + "#org"},
-           "offers": {"@type": "Offer", "price": "1.90", "priceCurrency": "BRL", "availability": "https://schema.org/InStock"}}
+           "offers": {"@type": "Offer", "price": j.get("preco", "2.90"), "priceCurrency": "BRL", "availability": "https://schema.org/InStock"}}
     org = {"@type": "Organization", "@id": SITE + "#org", "name": "Arial Gamer", "url": SITE, "logo": SITE + "logo-1080.jpg",
            "sameAs": ["https://www.tiktok.com/@arial.gamer", "https://www.instagram.com/arial.gamer/", "https://www.youtube.com/@arialgamer"]}
     crumbs = {"@type": "BreadcrumbList", "itemListElement": [
@@ -253,7 +253,7 @@ def pagina(k):
   <section class="block">
     <div class="wrap">
       <h2>Outros jogos da Arial Gamer</h2>
-      <p class="sub">Também por R$ 1,90 e sem anúncios.</p>
+      <p class="sub">Também a partir de R$ 2,90 e sem anúncios.</p>
       <div class="others">
 {outros}
       </div>

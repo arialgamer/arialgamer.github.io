@@ -24,7 +24,7 @@ T = [
  ("Gol de Placa: cobrança de pênalti", "Gol de Placa: penalty kick", "Gol de Placa: cobro de penal"),
  ("Esconde-Esconde: escondido na estação espacial", "Esconde-Esconde: hiding on the space station", "Esconde-Esconde: escondido en la estación espacial"),
  ("jogos no ar", "games out now", "juegos disponibles"),
- ("cada jogo", "languages in each game", "idiomas en cada juego"),
+ ("por jogo, a partir de", "languages in each game", "idiomas en cada juego"),
  ("bebidas no Gelada", "drinks in Gelada", "bebidas en Gelada"),
  ("lugares no Esconde-Esconde", "places in Esconde-Esconde", "lugares en Esconde-Esconde"),
  ("Ícone do Gelada", "Gelada icon", "Ícono de Gelada"),
@@ -191,9 +191,9 @@ def gerar(cod, L):
     # seletor de idioma no rodapé (antes de traduzir os rótulos)
     corpo = corpo.replace('    <nav aria-label="Privacidade">', idiomas_nav(cod) + '    <nav aria-label="Privacidade">', 1)
     # preços em reais saem; no lugar, "sem anúncios"
-    for velho, novo in zip(["🍺 R$ 1,90", "🙈 R$ 1,90 · todos os cenários R$ 1,90", "⚽ Novo jogo · R$ 1,90"], L["precos"][1:]):
+    for velho, novo in zip(["🍺 R$ 2,90", "🙈 R$ 2,90", "⚽ Novo jogo · R$ 3,90"], L["precos"][1:]):
         corpo, n = troca_texto(corpo, velho, novo); assert n, velho
-    corpo, n = troca_texto(corpo, "R$ 1,90", L["facts_preco"]); assert n
+    corpo, n = troca_texto(corpo, "R$ 2,90", L["facts_preco"]); assert n
     # o selo "Sem anúncios" ao lado do preço sai: nos outros idiomas o próprio selo de preço já diz isso
     corpo, n = re.subn(r'<span class="price free">[^<]*</span>', "", corpo); assert n == 3
     faltou = []
