@@ -165,6 +165,7 @@ def pagina(cod, k):
     </ul>
 {P["nav_dir"]}
   </div>
+  <script src="/contador.js" defer></script>
 </header>
 """
     cards = "\n".join(f'        <article class="reveal"><div class="em">{em}</div><h3>{e(t)}</h3><p>{e(d)}</p></article>' for em, t, d in T["cards"])

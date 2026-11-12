@@ -172,6 +172,7 @@ def nav(atual):
     <a class="ig-round" href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener" aria-label="Instagram @arial.gamer"><svg><use href="#i-insta"/></svg></a>
     <a class="pill" href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>Seguir</a>
   </div>
+  <script src="/contador.js" defer></script>
 </header>"""
 
 def pagina(k):

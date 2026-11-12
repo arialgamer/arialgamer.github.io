@@ -157,6 +157,7 @@ def nav(cod):
     </ul>
     <a class="pill" href="/acervo/baixar/"><img src="/acervo.png" alt="" width="22" height="22" style="border-radius:6px">{e(T["baixar"])}</a>
   </div>
+  <script src="/contador.js" defer></script>
 </header>
 """
 
