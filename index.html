@@ -563,6 +563,10 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .pixbox .note { margin: 0; color: var(--muted); font-size: 14.5px }
 .copied { min-height: 1.4em; font-weight: 700; color: var(--green) }
 .btn.green { background: var(--green); color: #06301a }
+.btn.kofi { background: #72a4f2; color: #0b1f3d }
+.pixbox .ou { color: var(--muted); font-size: 14.5px; margin-top: 4px }
+html:not([lang=pt-BR]) .pixbox .kofi { order: -2 }
+html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 .fale { display: grid; gap: 14px }
 .fale label { display: grid; gap: 6px; font-weight: 600; font-size: 15px }
 .fale input, .fale textarea { width: 100%; padding: 13px 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.06); color: var(--ink); font: 16px/1.4 var(--body); transition: border-color .2s, background .2s }
@@ -885,6 +889,8 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <button class="btn green" type="button" id="pix-copy"><svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar chave</span></button>
           <span class="copied" id="pix-ok" role="status" aria-live="polite"></span>
           <span hidden id="t-copied">Chave copiada! Agora é só colar no app do seu banco.</span>
+          <span class="ou">Fora do Brasil ou prefere cartão?</span>
+          <a class="btn kofi" href="https://ko-fi.com/arialgamer" target="_blank" rel="noopener"><span aria-hidden="true">☕</span><span>Apoiar no Ko-fi</span></a>
         </div>
       </div>
     </div>
