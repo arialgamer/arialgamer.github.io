@@ -206,7 +206,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 @media (max-width: 400px) { .nav .wrap { gap: 10px } .brand { font-size: 18px; gap: 8px } .brand img { width: 34px; height: 34px } .nav .pill { padding: 0 14px } }
 
 /* ---------- Abertura ---------- */
-.hero { position: relative; padding: calc(120px + env(safe-area-inset-top, 0px)) 0 90px; overflow: hidden; isolation: isolate }
+.hero { position: relative; padding: calc(110px + env(safe-area-inset-top, 0px)) 0 90px; overflow: hidden; isolation: isolate }
 .hero::before { content: ""; position: absolute; inset: -20% -10% 0; z-index: -2;
   background: radial-gradient(40% 50% at 18% 30%, rgba(246,184,58,.28), transparent 70%),
               radial-gradient(38% 46% at 52% 18%, rgba(180,156,255,.32), transparent 70%),
@@ -444,6 +444,17 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
   .pixbox { justify-items: center; text-align: center }
 }
 @media (max-width: 520px) { .fale .row2 { grid-template-columns: 1fr } .fale .btn, .pixbox .btn { width: 100%; justify-self: stretch } }
+/* ---------- Abas: Jogos | Aplicativos ---------- */
+.abas { display: flex; width: max-content; max-width: calc(100% - 32px); margin: 0 auto 44px; padding: 5px; gap: 4px; border-radius: 999px;
+  background: rgba(13,10,32,.55); border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px) }
+.abas a { padding: 10px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 16px; color: var(--muted); white-space: nowrap; transition: color .2s, background .2s }
+.abas a:hover { color: var(--ink); background: var(--glass) }
+.abas a[aria-current] { background: linear-gradient(135deg, var(--gold), var(--amber-2)); color: #2a1703 }
+body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vista="jogos"] { display: none }
+.vista-apps .hero { padding-bottom: 0 }
+.vista-apps .abas { margin-bottom: 0 }
+.vista-apps #apps { padding-top: 44px }
+@media (max-width: 400px) { .abas a { padding: 9px 16px; font-size: 15px } }
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -465,9 +476,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
   <div class="wrap">
     <a class="brand" href="#topo"><img src="/logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
-      <li><a href="#gelada">Gelada</a></li>
-      <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
+      <li><a href="#esconde">Esconde-Esconde</a></li>
+      <li><a href="#gelada">Gelada</a></li>
       <li class="app"><a href="#acervo">Acervo</a></li>
       <li><a href="#siga">SNS</a></li>
     </ul>
@@ -480,7 +491,11 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 <main id="topo">
   <section class="hero">
     <div class="stars" aria-hidden="true"></div>
-    <div class="wrap">
+    <nav class="abas" aria-label="Arial Gamer">
+      <a href="#jogos" data-aba="jogos" aria-current="page">🎮 ゲーム</a>
+      <a href="#apps" data-aba="apps">📱 アプリ</a>
+    </nav>
+    <div class="wrap" data-vista="jogos">
       <div>
         <p class="eyebrow">Arial Gamer · Mobile Game Studio</p>
         <h1>ブラジル生まれの <span class="grad">スマホゲーム</span></h1>
@@ -493,9 +508,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
         <div class="chipgroups">
           <div class="chipgroup"><span class="chiplabel">🎮 ゲーム</span>
             <div class="chips">
-              <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
-              <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
               <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
+              <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
+              <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
             </div>
           </div>
           <div class="chipgroup"><span class="chiplabel">📱 アプリ</span>
@@ -513,7 +528,7 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
     </div>
   </section>
 
-  <div class="facts">
+  <div class="facts" data-vista="jogos">
     <div class="wrap">
       <div class="zero"><b>0</b><span>広告</span></div>
       <div><b>3</b><span>ゲーム配信中</span></div>
@@ -524,96 +539,10 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
   </div>
 
   <!-- ================= JOGOS ================= -->
-  <div class="divisao" id="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>ゲーム</h2><p class="sub">ひとりでも友だちとでも</p></div></div>
-
-  <!-- ================= GELADA ================= -->
-  <section class="game gelada" id="gelada">
-    <div class="wrap">
-      <div class="info reveal">
-        <div class="head">
-          <img src="/gelada.png" alt="Geladaのアイコン" width="84" height="84">
-          <div><p class="eyebrow">バーチャルドリンク</p><h2>Gelada</h2></div>
-        </div>
-        <p class="tag">ビール、カクテル、コーヒーまでスマホで。グラスを満たして傾けて飲もう 🍺</p>
-        <span class="price">🍺 広告なし · アルコール0%</span>
-        <ul class="feats">
-          <li><i>🍹</i><span><b>100種類のドリンク</b>：ビール、ワイン、カクテル、コーヒー</span></li>
-          <li><i>🧑‍🍳</i><span><b>しゃべるバーテンダー</b> ミックスを0〜10点で採点</span></li>
-          <li><i>⭐</i><span><b>今日のドリンク</b>：毎日新しいレシピ</span></li>
-          <li><i>📱</i><span><b>スマホを傾けて</b> ほんとうに飲む感覚、アルコールゼロ</span></li>
-        </ul>
-        <div class="soon">
-          <p><b>12月：</b> クリスマス版、エッグノッグとパンチ付き 🎄</p>
-        </div>
-        <div class="stores">
-          <a class="store" href="https://apps.apple.com/app/id6819882963" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>ダウンロード</small><strong>App Store</strong></span></a>
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.gelada&amp;hl=ja" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>入手先</small><strong>Google Play</strong></span></a>
-        </div>
-        <a class="more" href="/ja/gelada/">Gelada について →</a>
-      </div>
-      <div class="player reveal" data-player>
-        <div class="phone"><div class="screen">
-          <video muted playsinline preload="none" poster="/media/gelada-saude.jpg"><source src="/media/gelada-saude.mp4" type="video/mp4"></video>
-          <button class="sound" type="button" aria-label="音をオンにする"><svg><use href="#i-muted"/></svg></button>
-        </div></div>
-        <div class="clips" role="group" aria-label="Geladaの動画を選ぶ">
-          <button class="clip" type="button" aria-pressed="true" data-src="/media/gelada-saude"><img src="/media/gelada-saude.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>乾杯！</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/gelada-cuba-libre"><img src="/media/gelada-cuba-libre.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>10点満点</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/gelada-caipirinha"><img src="/media/gelada-caipirinha.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Caipirinha</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/gelada-talhou"><img src="/media/gelada-talhou.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>分離しちゃった！</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ESCONDE-ESCONDE ================= -->
-  <section class="game esconde flip" id="esconde">
-    <div class="wrap">
-      <div class="info reveal">
-        <div class="head">
-          <img src="/esconde.png" alt="Esconde-Escondeのアイコン" width="84" height="84">
-          <div><p class="eyebrow">家族みんなで</p><h2>Esconde-Esconde</h2></div>
-        </div>
-        <p class="tag">コンピューターや友だちとかくれんぼ 🙈</p>
-        <span class="price">🙈 広告なし · 家族みんなで</span>
-        <ul class="feats">
-          <li><i>🌐</i><span><b>友だちとオンライン</b>、それぞれのスマホでルームコードを使って</span></li>
-          <li><i>🗺️</i><span><b>22か所</b>：ビーチ、氷河、海賊船、宇宙ステーション…</span></li>
-          <li><i>📡</i><span><b>あったかい・つめたいレーダー</b>、好きな遊び方で</span></li>
-          <li><i>🦆</i><span><b>小さな子ども向けモード</b> と、すべてを伝えるナレーター</span></li>
-        </ul>
-        <div class="soon">
-          <p><b>新機能：</b> 22か所すべてダウンロードに含まれ、アプリ内課金なし</p>
-        </div>
-        <div class="stores">
-          <a class="store" href="https://apps.apple.com/app/id6819893974" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>ダウンロード</small><strong>App Store</strong></span></a>
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde&amp;hl=ja" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>入手先</small><strong>Google Play</strong></span></a>
-        </div>
-        <a class="more" href="/ja/esconde-esconde/">Esconde-Esconde について →</a>
-      </div>
-      <div class="player reveal" data-player>
-        <div class="phone"><div class="screen">
-          <video muted playsinline preload="none" poster="/media/esconde-lua.jpg"><source src="/media/esconde-lua.mp4" type="video/mp4"></video>
-          <button class="sound" type="button" aria-label="音をオンにする"><svg><use href="#i-muted"/></svg></button>
-        </div></div>
-        <div class="clips" role="group" aria-label="Esconde-Escondeの動画を選ぶ">
-          <button class="clip" type="button" aria-pressed="true" data-src="/media/esconde-lua"><img src="/media/esconde-lua.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>月の上で</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/esconde-maquina"><img src="/media/esconde-maquina.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>コンピューターと対戦</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/esconde-pirata"><img src="/media/esconde-pirata.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>海賊船</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/esconde-geleira"><img src="/media/esconde-geleira.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>氷河</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/esconde-dia-noite"><img src="/media/esconde-dia-noite.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>昼と夜</button>
-        </div>
-      </div>
-    </div>
-    <div class="places reveal">
-      <div class="wrap"><h3>昼も夜も、かくれる場所がいっぱい</h3></div>
-      <div class="track"><div class="row"><figure><img src="/media/lugares/casa-dia.jpg" alt="家（昼）" loading="lazy" width="150" height="219"><figcaption>🏠 家</figcaption></figure><figure><img src="/media/lugares/praia-dia.jpg" alt="ビーチ（昼）" loading="lazy" width="150" height="219"><figcaption>🏖️ ビーチ</figcaption></figure><figure><img src="/media/lugares/sitio-dia.jpg" alt="農場（昼）" loading="lazy" width="150" height="219"><figcaption>🐄 農場</figcaption></figure><figure><img src="/media/lugares/acamp-dia.jpg" alt="キャンプ場（昼）" loading="lazy" width="150" height="219"><figcaption>⛺ キャンプ場</figcaption></figure><figure><img src="/media/lugares/geleira-dia.jpg" alt="氷河（昼）" loading="lazy" width="150" height="219"><figcaption>🏔️ 氷河</figcaption></figure><figure><img src="/media/lugares/parque-dia.jpg" alt="遊園地（昼）" loading="lazy" width="150" height="219"><figcaption>🎡 遊園地</figcaption></figure><figure><img src="/media/lugares/escola-dia.jpg" alt="学校（昼）" loading="lazy" width="150" height="219"><figcaption>🏫 学校</figcaption></figure><figure><img src="/media/lugares/navio-dia.jpg" alt="海賊船（昼）" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ 海賊船</figcaption></figure><figure><img src="/media/lugares/espaco-dia.jpg" alt="宇宙ステーション（昼）" loading="lazy" width="150" height="219"><figcaption>🚀 宇宙ステーション</figcaption></figure><figure><img src="/media/lugares/halloween-dia.jpg" alt="おばけ屋敷（昼）" loading="lazy" width="150" height="219"><figcaption>🎃 おばけ屋敷</figcaption></figure><figure><img src="/media/lugares/natal-dia.jpg" alt="サンタの村（昼）" loading="lazy" width="150" height="219"><figcaption>🎅 サンタの村</figcaption></figure><figure><img src="/media/lugares/fundomar-dia.jpg" alt="海の底（昼）" loading="lazy" width="150" height="219"><figcaption>🐠 海の底</figcaption></figure><figure><img src="/media/lugares/castelo-dia.jpg" alt="お城（昼）" loading="lazy" width="150" height="219"><figcaption>🏰 お城</figcaption></figure><figure><img src="/media/lugares/dinos-dia.jpg" alt="恐竜の国（昼）" loading="lazy" width="150" height="219"><figcaption>🦕 恐竜の国</figcaption></figure><figure><img src="/media/lugares/circo-dia.jpg" alt="サーカス（昼）" loading="lazy" width="150" height="219"><figcaption>🎪 サーカス</figcaption></figure><figure><img src="/media/lugares/mercado-dia.jpg" alt="スーパー（昼）" loading="lazy" width="150" height="219"><figcaption>🛒 スーパー</figcaption></figure><figure><img src="/media/lugares/museu-dia.jpg" alt="博物館（昼）" loading="lazy" width="150" height="219"><figcaption>🏛️ 博物館</figcaption></figure><figure><img src="/media/lugares/deserto-dia.jpg" alt="砂漠とピラミッド（昼）" loading="lazy" width="150" height="219"><figcaption>🐪 砂漠とピラミッド</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="/media/lugares/casa-dia.jpg" alt="家（昼）" loading="lazy" width="150" height="219"><figcaption>🏠 家</figcaption></figure><figure><img src="/media/lugares/praia-dia.jpg" alt="ビーチ（昼）" loading="lazy" width="150" height="219"><figcaption>🏖️ ビーチ</figcaption></figure><figure><img src="/media/lugares/sitio-dia.jpg" alt="農場（昼）" loading="lazy" width="150" height="219"><figcaption>🐄 農場</figcaption></figure><figure><img src="/media/lugares/acamp-dia.jpg" alt="キャンプ場（昼）" loading="lazy" width="150" height="219"><figcaption>⛺ キャンプ場</figcaption></figure><figure><img src="/media/lugares/geleira-dia.jpg" alt="氷河（昼）" loading="lazy" width="150" height="219"><figcaption>🏔️ 氷河</figcaption></figure><figure><img src="/media/lugares/parque-dia.jpg" alt="遊園地（昼）" loading="lazy" width="150" height="219"><figcaption>🎡 遊園地</figcaption></figure><figure><img src="/media/lugares/escola-dia.jpg" alt="学校（昼）" loading="lazy" width="150" height="219"><figcaption>🏫 学校</figcaption></figure><figure><img src="/media/lugares/navio-dia.jpg" alt="海賊船（昼）" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ 海賊船</figcaption></figure><figure><img src="/media/lugares/espaco-dia.jpg" alt="宇宙ステーション（昼）" loading="lazy" width="150" height="219"><figcaption>🚀 宇宙ステーション</figcaption></figure><figure><img src="/media/lugares/halloween-dia.jpg" alt="おばけ屋敷（昼）" loading="lazy" width="150" height="219"><figcaption>🎃 おばけ屋敷</figcaption></figure><figure><img src="/media/lugares/natal-dia.jpg" alt="サンタの村（昼）" loading="lazy" width="150" height="219"><figcaption>🎅 サンタの村</figcaption></figure><figure><img src="/media/lugares/fundomar-dia.jpg" alt="海の底（昼）" loading="lazy" width="150" height="219"><figcaption>🐠 海の底</figcaption></figure><figure><img src="/media/lugares/castelo-dia.jpg" alt="お城（昼）" loading="lazy" width="150" height="219"><figcaption>🏰 お城</figcaption></figure><figure><img src="/media/lugares/dinos-dia.jpg" alt="恐竜の国（昼）" loading="lazy" width="150" height="219"><figcaption>🦕 恐竜の国</figcaption></figure><figure><img src="/media/lugares/circo-dia.jpg" alt="サーカス（昼）" loading="lazy" width="150" height="219"><figcaption>🎪 サーカス</figcaption></figure><figure><img src="/media/lugares/mercado-dia.jpg" alt="スーパー（昼）" loading="lazy" width="150" height="219"><figcaption>🛒 スーパー</figcaption></figure><figure><img src="/media/lugares/museu-dia.jpg" alt="博物館（昼）" loading="lazy" width="150" height="219"><figcaption>🏛️ 博物館</figcaption></figure><figure><img src="/media/lugares/deserto-dia.jpg" alt="砂漠とピラミッド（昼）" loading="lazy" width="150" height="219"><figcaption>🐪 砂漠とピラミッド</figcaption></figure></div></div>
-      <div class="track rev"><div class="row"><figure><img src="/media/lugares/casa-noite.jpg" alt="家（夜）" loading="lazy" width="150" height="219"><figcaption>🏠 家</figcaption></figure><figure><img src="/media/lugares/praia-noite.jpg" alt="ビーチ（夜）" loading="lazy" width="150" height="219"><figcaption>🏖️ ビーチ</figcaption></figure><figure><img src="/media/lugares/sitio-noite.jpg" alt="農場（夜）" loading="lazy" width="150" height="219"><figcaption>🐄 農場</figcaption></figure><figure><img src="/media/lugares/acamp-noite.jpg" alt="キャンプ場（夜）" loading="lazy" width="150" height="219"><figcaption>⛺ キャンプ場</figcaption></figure><figure><img src="/media/lugares/geleira-noite.jpg" alt="氷河（夜）" loading="lazy" width="150" height="219"><figcaption>🏔️ 氷河</figcaption></figure><figure><img src="/media/lugares/parque-noite.jpg" alt="遊園地（夜）" loading="lazy" width="150" height="219"><figcaption>🎡 遊園地</figcaption></figure><figure><img src="/media/lugares/escola-noite.jpg" alt="学校（夜）" loading="lazy" width="150" height="219"><figcaption>🏫 学校</figcaption></figure><figure><img src="/media/lugares/navio-noite.jpg" alt="海賊船（夜）" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ 海賊船</figcaption></figure><figure><img src="/media/lugares/espaco-noite.jpg" alt="宇宙ステーション（夜）" loading="lazy" width="150" height="219"><figcaption>🚀 宇宙ステーション</figcaption></figure><figure><img src="/media/lugares/halloween-noite.jpg" alt="おばけ屋敷（夜）" loading="lazy" width="150" height="219"><figcaption>🎃 おばけ屋敷</figcaption></figure><figure><img src="/media/lugares/natal-noite.jpg" alt="サンタの村（夜）" loading="lazy" width="150" height="219"><figcaption>🎅 サンタの村</figcaption></figure><figure><img src="/media/lugares/fundomar-noite.jpg" alt="海の底（夜）" loading="lazy" width="150" height="219"><figcaption>🐠 海の底</figcaption></figure><figure><img src="/media/lugares/castelo-noite.jpg" alt="お城（夜）" loading="lazy" width="150" height="219"><figcaption>🏰 お城</figcaption></figure><figure><img src="/media/lugares/dinos-noite.jpg" alt="恐竜の国（夜）" loading="lazy" width="150" height="219"><figcaption>🦕 恐竜の国</figcaption></figure><figure><img src="/media/lugares/circo-noite.jpg" alt="サーカス（夜）" loading="lazy" width="150" height="219"><figcaption>🎪 サーカス</figcaption></figure><figure><img src="/media/lugares/mercado-noite.jpg" alt="スーパー（夜）" loading="lazy" width="150" height="219"><figcaption>🛒 スーパー</figcaption></figure><figure><img src="/media/lugares/museu-noite.jpg" alt="博物館（夜）" loading="lazy" width="150" height="219"><figcaption>🏛️ 博物館</figcaption></figure><figure><img src="/media/lugares/deserto-noite.jpg" alt="砂漠とピラミッド（夜）" loading="lazy" width="150" height="219"><figcaption>🐪 砂漠とピラミッド</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="/media/lugares/casa-noite.jpg" alt="家（夜）" loading="lazy" width="150" height="219"><figcaption>🏠 家</figcaption></figure><figure><img src="/media/lugares/praia-noite.jpg" alt="ビーチ（夜）" loading="lazy" width="150" height="219"><figcaption>🏖️ ビーチ</figcaption></figure><figure><img src="/media/lugares/sitio-noite.jpg" alt="農場（夜）" loading="lazy" width="150" height="219"><figcaption>🐄 農場</figcaption></figure><figure><img src="/media/lugares/acamp-noite.jpg" alt="キャンプ場（夜）" loading="lazy" width="150" height="219"><figcaption>⛺ キャンプ場</figcaption></figure><figure><img src="/media/lugares/geleira-noite.jpg" alt="氷河（夜）" loading="lazy" width="150" height="219"><figcaption>🏔️ 氷河</figcaption></figure><figure><img src="/media/lugares/parque-noite.jpg" alt="遊園地（夜）" loading="lazy" width="150" height="219"><figcaption>🎡 遊園地</figcaption></figure><figure><img src="/media/lugares/escola-noite.jpg" alt="学校（夜）" loading="lazy" width="150" height="219"><figcaption>🏫 学校</figcaption></figure><figure><img src="/media/lugares/navio-noite.jpg" alt="海賊船（夜）" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ 海賊船</figcaption></figure><figure><img src="/media/lugares/espaco-noite.jpg" alt="宇宙ステーション（夜）" loading="lazy" width="150" height="219"><figcaption>🚀 宇宙ステーション</figcaption></figure><figure><img src="/media/lugares/halloween-noite.jpg" alt="おばけ屋敷（夜）" loading="lazy" width="150" height="219"><figcaption>🎃 おばけ屋敷</figcaption></figure><figure><img src="/media/lugares/natal-noite.jpg" alt="サンタの村（夜）" loading="lazy" width="150" height="219"><figcaption>🎅 サンタの村</figcaption></figure><figure><img src="/media/lugares/fundomar-noite.jpg" alt="海の底（夜）" loading="lazy" width="150" height="219"><figcaption>🐠 海の底</figcaption></figure><figure><img src="/media/lugares/castelo-noite.jpg" alt="お城（夜）" loading="lazy" width="150" height="219"><figcaption>🏰 お城</figcaption></figure><figure><img src="/media/lugares/dinos-noite.jpg" alt="恐竜の国（夜）" loading="lazy" width="150" height="219"><figcaption>🦕 恐竜の国</figcaption></figure><figure><img src="/media/lugares/circo-noite.jpg" alt="サーカス（夜）" loading="lazy" width="150" height="219"><figcaption>🎪 サーカス</figcaption></figure><figure><img src="/media/lugares/mercado-noite.jpg" alt="スーパー（夜）" loading="lazy" width="150" height="219"><figcaption>🛒 スーパー</figcaption></figure><figure><img src="/media/lugares/museu-noite.jpg" alt="博物館（夜）" loading="lazy" width="150" height="219"><figcaption>🏛️ 博物館</figcaption></figure><figure><img src="/media/lugares/deserto-noite.jpg" alt="砂漠とピラミッド（夜）" loading="lazy" width="150" height="219"><figcaption>🐪 砂漠とピラミッド</figcaption></figure></div></div>
-    </div>
-  </section>
+  <div class="divisao" id="jogos" data-vista="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>ゲーム</h2><p class="sub">ひとりでも友だちとでも</p></div></div>
 
   <!-- ================= GOL DE PLACA ================= -->
-  <section class="game gol" id="gol">
+  <section class="game gol" data-vista="jogos" id="gol">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -662,11 +591,97 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
     </div>
   </section>
 
+  <!-- ================= ESCONDE-ESCONDE ================= -->
+  <section class="game esconde flip" data-vista="jogos" id="esconde">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/esconde.png" alt="Esconde-Escondeのアイコン" width="84" height="84">
+          <div><p class="eyebrow">家族みんなで</p><h2>Esconde-Esconde</h2></div>
+        </div>
+        <p class="tag">コンピューターや友だちとかくれんぼ 🙈</p>
+        <span class="price">🙈 広告なし · 家族みんなで</span>
+        <ul class="feats">
+          <li><i>🌐</i><span><b>友だちとオンライン</b>、それぞれのスマホでルームコードを使って</span></li>
+          <li><i>🗺️</i><span><b>22か所</b>：ビーチ、氷河、海賊船、宇宙ステーション…</span></li>
+          <li><i>📡</i><span><b>あったかい・つめたいレーダー</b>、好きな遊び方で</span></li>
+          <li><i>🦆</i><span><b>小さな子ども向けモード</b> と、すべてを伝えるナレーター</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>新機能：</b> 22か所すべてダウンロードに含まれ、アプリ内課金なし</p>
+        </div>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/app/id6819893974" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>ダウンロード</small><strong>App Store</strong></span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde&amp;hl=ja" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>入手先</small><strong>Google Play</strong></span></a>
+        </div>
+        <a class="more" href="/ja/esconde-esconde/">Esconde-Esconde について →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/esconde-lua.jpg"><source src="/media/esconde-lua.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="音をオンにする"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="Esconde-Escondeの動画を選ぶ">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/esconde-lua"><img src="/media/esconde-lua.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>月の上で</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/esconde-maquina"><img src="/media/esconde-maquina.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>コンピューターと対戦</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/esconde-pirata"><img src="/media/esconde-pirata.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>海賊船</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/esconde-geleira"><img src="/media/esconde-geleira.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>氷河</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/esconde-dia-noite"><img src="/media/esconde-dia-noite.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>昼と夜</button>
+        </div>
+      </div>
+    </div>
+    <div class="places reveal">
+      <div class="wrap"><h3>昼も夜も、かくれる場所がいっぱい</h3></div>
+      <div class="track"><div class="row"><figure><img src="/media/lugares/casa-dia.jpg" alt="家（昼）" loading="lazy" width="150" height="219"><figcaption>🏠 家</figcaption></figure><figure><img src="/media/lugares/praia-dia.jpg" alt="ビーチ（昼）" loading="lazy" width="150" height="219"><figcaption>🏖️ ビーチ</figcaption></figure><figure><img src="/media/lugares/sitio-dia.jpg" alt="農場（昼）" loading="lazy" width="150" height="219"><figcaption>🐄 農場</figcaption></figure><figure><img src="/media/lugares/acamp-dia.jpg" alt="キャンプ場（昼）" loading="lazy" width="150" height="219"><figcaption>⛺ キャンプ場</figcaption></figure><figure><img src="/media/lugares/geleira-dia.jpg" alt="氷河（昼）" loading="lazy" width="150" height="219"><figcaption>🏔️ 氷河</figcaption></figure><figure><img src="/media/lugares/parque-dia.jpg" alt="遊園地（昼）" loading="lazy" width="150" height="219"><figcaption>🎡 遊園地</figcaption></figure><figure><img src="/media/lugares/escola-dia.jpg" alt="学校（昼）" loading="lazy" width="150" height="219"><figcaption>🏫 学校</figcaption></figure><figure><img src="/media/lugares/navio-dia.jpg" alt="海賊船（昼）" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ 海賊船</figcaption></figure><figure><img src="/media/lugares/espaco-dia.jpg" alt="宇宙ステーション（昼）" loading="lazy" width="150" height="219"><figcaption>🚀 宇宙ステーション</figcaption></figure><figure><img src="/media/lugares/halloween-dia.jpg" alt="おばけ屋敷（昼）" loading="lazy" width="150" height="219"><figcaption>🎃 おばけ屋敷</figcaption></figure><figure><img src="/media/lugares/natal-dia.jpg" alt="サンタの村（昼）" loading="lazy" width="150" height="219"><figcaption>🎅 サンタの村</figcaption></figure><figure><img src="/media/lugares/fundomar-dia.jpg" alt="海の底（昼）" loading="lazy" width="150" height="219"><figcaption>🐠 海の底</figcaption></figure><figure><img src="/media/lugares/castelo-dia.jpg" alt="お城（昼）" loading="lazy" width="150" height="219"><figcaption>🏰 お城</figcaption></figure><figure><img src="/media/lugares/dinos-dia.jpg" alt="恐竜の国（昼）" loading="lazy" width="150" height="219"><figcaption>🦕 恐竜の国</figcaption></figure><figure><img src="/media/lugares/circo-dia.jpg" alt="サーカス（昼）" loading="lazy" width="150" height="219"><figcaption>🎪 サーカス</figcaption></figure><figure><img src="/media/lugares/mercado-dia.jpg" alt="スーパー（昼）" loading="lazy" width="150" height="219"><figcaption>🛒 スーパー</figcaption></figure><figure><img src="/media/lugares/museu-dia.jpg" alt="博物館（昼）" loading="lazy" width="150" height="219"><figcaption>🏛️ 博物館</figcaption></figure><figure><img src="/media/lugares/deserto-dia.jpg" alt="砂漠とピラミッド（昼）" loading="lazy" width="150" height="219"><figcaption>🐪 砂漠とピラミッド</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="/media/lugares/casa-dia.jpg" alt="家（昼）" loading="lazy" width="150" height="219"><figcaption>🏠 家</figcaption></figure><figure><img src="/media/lugares/praia-dia.jpg" alt="ビーチ（昼）" loading="lazy" width="150" height="219"><figcaption>🏖️ ビーチ</figcaption></figure><figure><img src="/media/lugares/sitio-dia.jpg" alt="農場（昼）" loading="lazy" width="150" height="219"><figcaption>🐄 農場</figcaption></figure><figure><img src="/media/lugares/acamp-dia.jpg" alt="キャンプ場（昼）" loading="lazy" width="150" height="219"><figcaption>⛺ キャンプ場</figcaption></figure><figure><img src="/media/lugares/geleira-dia.jpg" alt="氷河（昼）" loading="lazy" width="150" height="219"><figcaption>🏔️ 氷河</figcaption></figure><figure><img src="/media/lugares/parque-dia.jpg" alt="遊園地（昼）" loading="lazy" width="150" height="219"><figcaption>🎡 遊園地</figcaption></figure><figure><img src="/media/lugares/escola-dia.jpg" alt="学校（昼）" loading="lazy" width="150" height="219"><figcaption>🏫 学校</figcaption></figure><figure><img src="/media/lugares/navio-dia.jpg" alt="海賊船（昼）" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ 海賊船</figcaption></figure><figure><img src="/media/lugares/espaco-dia.jpg" alt="宇宙ステーション（昼）" loading="lazy" width="150" height="219"><figcaption>🚀 宇宙ステーション</figcaption></figure><figure><img src="/media/lugares/halloween-dia.jpg" alt="おばけ屋敷（昼）" loading="lazy" width="150" height="219"><figcaption>🎃 おばけ屋敷</figcaption></figure><figure><img src="/media/lugares/natal-dia.jpg" alt="サンタの村（昼）" loading="lazy" width="150" height="219"><figcaption>🎅 サンタの村</figcaption></figure><figure><img src="/media/lugares/fundomar-dia.jpg" alt="海の底（昼）" loading="lazy" width="150" height="219"><figcaption>🐠 海の底</figcaption></figure><figure><img src="/media/lugares/castelo-dia.jpg" alt="お城（昼）" loading="lazy" width="150" height="219"><figcaption>🏰 お城</figcaption></figure><figure><img src="/media/lugares/dinos-dia.jpg" alt="恐竜の国（昼）" loading="lazy" width="150" height="219"><figcaption>🦕 恐竜の国</figcaption></figure><figure><img src="/media/lugares/circo-dia.jpg" alt="サーカス（昼）" loading="lazy" width="150" height="219"><figcaption>🎪 サーカス</figcaption></figure><figure><img src="/media/lugares/mercado-dia.jpg" alt="スーパー（昼）" loading="lazy" width="150" height="219"><figcaption>🛒 スーパー</figcaption></figure><figure><img src="/media/lugares/museu-dia.jpg" alt="博物館（昼）" loading="lazy" width="150" height="219"><figcaption>🏛️ 博物館</figcaption></figure><figure><img src="/media/lugares/deserto-dia.jpg" alt="砂漠とピラミッド（昼）" loading="lazy" width="150" height="219"><figcaption>🐪 砂漠とピラミッド</figcaption></figure></div></div>
+      <div class="track rev"><div class="row"><figure><img src="/media/lugares/casa-noite.jpg" alt="家（夜）" loading="lazy" width="150" height="219"><figcaption>🏠 家</figcaption></figure><figure><img src="/media/lugares/praia-noite.jpg" alt="ビーチ（夜）" loading="lazy" width="150" height="219"><figcaption>🏖️ ビーチ</figcaption></figure><figure><img src="/media/lugares/sitio-noite.jpg" alt="農場（夜）" loading="lazy" width="150" height="219"><figcaption>🐄 農場</figcaption></figure><figure><img src="/media/lugares/acamp-noite.jpg" alt="キャンプ場（夜）" loading="lazy" width="150" height="219"><figcaption>⛺ キャンプ場</figcaption></figure><figure><img src="/media/lugares/geleira-noite.jpg" alt="氷河（夜）" loading="lazy" width="150" height="219"><figcaption>🏔️ 氷河</figcaption></figure><figure><img src="/media/lugares/parque-noite.jpg" alt="遊園地（夜）" loading="lazy" width="150" height="219"><figcaption>🎡 遊園地</figcaption></figure><figure><img src="/media/lugares/escola-noite.jpg" alt="学校（夜）" loading="lazy" width="150" height="219"><figcaption>🏫 学校</figcaption></figure><figure><img src="/media/lugares/navio-noite.jpg" alt="海賊船（夜）" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ 海賊船</figcaption></figure><figure><img src="/media/lugares/espaco-noite.jpg" alt="宇宙ステーション（夜）" loading="lazy" width="150" height="219"><figcaption>🚀 宇宙ステーション</figcaption></figure><figure><img src="/media/lugares/halloween-noite.jpg" alt="おばけ屋敷（夜）" loading="lazy" width="150" height="219"><figcaption>🎃 おばけ屋敷</figcaption></figure><figure><img src="/media/lugares/natal-noite.jpg" alt="サンタの村（夜）" loading="lazy" width="150" height="219"><figcaption>🎅 サンタの村</figcaption></figure><figure><img src="/media/lugares/fundomar-noite.jpg" alt="海の底（夜）" loading="lazy" width="150" height="219"><figcaption>🐠 海の底</figcaption></figure><figure><img src="/media/lugares/castelo-noite.jpg" alt="お城（夜）" loading="lazy" width="150" height="219"><figcaption>🏰 お城</figcaption></figure><figure><img src="/media/lugares/dinos-noite.jpg" alt="恐竜の国（夜）" loading="lazy" width="150" height="219"><figcaption>🦕 恐竜の国</figcaption></figure><figure><img src="/media/lugares/circo-noite.jpg" alt="サーカス（夜）" loading="lazy" width="150" height="219"><figcaption>🎪 サーカス</figcaption></figure><figure><img src="/media/lugares/mercado-noite.jpg" alt="スーパー（夜）" loading="lazy" width="150" height="219"><figcaption>🛒 スーパー</figcaption></figure><figure><img src="/media/lugares/museu-noite.jpg" alt="博物館（夜）" loading="lazy" width="150" height="219"><figcaption>🏛️ 博物館</figcaption></figure><figure><img src="/media/lugares/deserto-noite.jpg" alt="砂漠とピラミッド（夜）" loading="lazy" width="150" height="219"><figcaption>🐪 砂漠とピラミッド</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="/media/lugares/casa-noite.jpg" alt="家（夜）" loading="lazy" width="150" height="219"><figcaption>🏠 家</figcaption></figure><figure><img src="/media/lugares/praia-noite.jpg" alt="ビーチ（夜）" loading="lazy" width="150" height="219"><figcaption>🏖️ ビーチ</figcaption></figure><figure><img src="/media/lugares/sitio-noite.jpg" alt="農場（夜）" loading="lazy" width="150" height="219"><figcaption>🐄 農場</figcaption></figure><figure><img src="/media/lugares/acamp-noite.jpg" alt="キャンプ場（夜）" loading="lazy" width="150" height="219"><figcaption>⛺ キャンプ場</figcaption></figure><figure><img src="/media/lugares/geleira-noite.jpg" alt="氷河（夜）" loading="lazy" width="150" height="219"><figcaption>🏔️ 氷河</figcaption></figure><figure><img src="/media/lugares/parque-noite.jpg" alt="遊園地（夜）" loading="lazy" width="150" height="219"><figcaption>🎡 遊園地</figcaption></figure><figure><img src="/media/lugares/escola-noite.jpg" alt="学校（夜）" loading="lazy" width="150" height="219"><figcaption>🏫 学校</figcaption></figure><figure><img src="/media/lugares/navio-noite.jpg" alt="海賊船（夜）" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ 海賊船</figcaption></figure><figure><img src="/media/lugares/espaco-noite.jpg" alt="宇宙ステーション（夜）" loading="lazy" width="150" height="219"><figcaption>🚀 宇宙ステーション</figcaption></figure><figure><img src="/media/lugares/halloween-noite.jpg" alt="おばけ屋敷（夜）" loading="lazy" width="150" height="219"><figcaption>🎃 おばけ屋敷</figcaption></figure><figure><img src="/media/lugares/natal-noite.jpg" alt="サンタの村（夜）" loading="lazy" width="150" height="219"><figcaption>🎅 サンタの村</figcaption></figure><figure><img src="/media/lugares/fundomar-noite.jpg" alt="海の底（夜）" loading="lazy" width="150" height="219"><figcaption>🐠 海の底</figcaption></figure><figure><img src="/media/lugares/castelo-noite.jpg" alt="お城（夜）" loading="lazy" width="150" height="219"><figcaption>🏰 お城</figcaption></figure><figure><img src="/media/lugares/dinos-noite.jpg" alt="恐竜の国（夜）" loading="lazy" width="150" height="219"><figcaption>🦕 恐竜の国</figcaption></figure><figure><img src="/media/lugares/circo-noite.jpg" alt="サーカス（夜）" loading="lazy" width="150" height="219"><figcaption>🎪 サーカス</figcaption></figure><figure><img src="/media/lugares/mercado-noite.jpg" alt="スーパー（夜）" loading="lazy" width="150" height="219"><figcaption>🛒 スーパー</figcaption></figure><figure><img src="/media/lugares/museu-noite.jpg" alt="博物館（夜）" loading="lazy" width="150" height="219"><figcaption>🏛️ 博物館</figcaption></figure><figure><img src="/media/lugares/deserto-noite.jpg" alt="砂漠とピラミッド（夜）" loading="lazy" width="150" height="219"><figcaption>🐪 砂漠とピラミッド</figcaption></figure></div></div>
+    </div>
+  </section>
+
+  <!-- ================= GELADA ================= -->
+  <section class="game gelada" data-vista="jogos" id="gelada">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/gelada.png" alt="Geladaのアイコン" width="84" height="84">
+          <div><p class="eyebrow">バーチャルドリンク</p><h2>Gelada</h2></div>
+        </div>
+        <p class="tag">ビール、カクテル、コーヒーまでスマホで。グラスを満たして傾けて飲もう 🍺</p>
+        <span class="price">🍺 広告なし · アルコール0%</span>
+        <ul class="feats">
+          <li><i>🍹</i><span><b>100種類のドリンク</b>：ビール、ワイン、カクテル、コーヒー</span></li>
+          <li><i>🧑‍🍳</i><span><b>しゃべるバーテンダー</b> ミックスを0〜10点で採点</span></li>
+          <li><i>⭐</i><span><b>今日のドリンク</b>：毎日新しいレシピ</span></li>
+          <li><i>📱</i><span><b>スマホを傾けて</b> ほんとうに飲む感覚、アルコールゼロ</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>12月：</b> クリスマス版、エッグノッグとパンチ付き 🎄</p>
+        </div>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/app/id6819882963" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>ダウンロード</small><strong>App Store</strong></span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.gelada&amp;hl=ja" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>入手先</small><strong>Google Play</strong></span></a>
+        </div>
+        <a class="more" href="/ja/gelada/">Gelada について →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/gelada-saude.jpg"><source src="/media/gelada-saude.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="音をオンにする"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="Geladaの動画を選ぶ">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/gelada-saude"><img src="/media/gelada-saude.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>乾杯！</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/gelada-cuba-libre"><img src="/media/gelada-cuba-libre.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>10点満点</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/gelada-caipirinha"><img src="/media/gelada-caipirinha.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Caipirinha</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/gelada-talhou"><img src="/media/gelada-talhou.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>分離しちゃった！</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= APLICATIVOS ================= -->
-  <div class="divisao" id="apps"><div class="wrap"><p class="eyebrow">📱 Arial Gamer</p><h2>アプリ</h2><p class="sub">コレクションを整理する</p></div></div>
+  <div class="divisao" id="apps" data-vista="apps"><div class="wrap"><p class="eyebrow">📱 Arial Gamer</p><h2>アプリ</h2><p class="sub">コレクションを整理する</p></div></div>
 
   <!-- ================= ACERVO ================= -->
-  <section class="game acervo flip" id="acervo">
+  <section class="game acervo flip" data-vista="apps" id="acervo">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -799,9 +814,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
     <nav aria-label="Jogos">
-      <a href="/ja/gelada/">Gelada</a>
-      <a href="/ja/esconde-esconde/">Esconde-Esconde</a>
       <a href="/ja/gol-de-placa/">Gol de Placa</a>
+      <a href="/ja/esconde-esconde/">Esconde-Esconde</a>
+      <a href="/ja/gelada/">Gelada</a>
       <a href="/ja/acervo/">Acervo</a>
     </nav>
     <nav aria-label="Idioma / Language">
@@ -825,6 +840,44 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 <script>
 document.body.classList.remove('no-js');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Abas Jogos | Aplicativos: mostra só os jogos (padrão) ou só os aplicativos; redes, apoie e comentários aparecem nas duas
+const abas = [...document.querySelectorAll('.abas a')];
+let vista = 'jogos';
+const vistaDe = (id) => {
+  if (id === 'jogos' || id === 'apps') return id;
+  const el = id && document.getElementById(id);
+  const v = el && el.closest('[data-vista]');
+  return v ? v.dataset.vista : null;
+};
+const mostrar = (v) => {
+  vista = v;
+  document.body.classList.toggle('vista-apps', v === 'apps');
+  abas.forEach((a) => (a.dataset.aba === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current')));
+  dispatchEvent(new Event('vista'));
+};
+document.addEventListener('click', (ev) => {
+  const a = ev.target.closest('a[href^="#"]');
+  if (!a) return;
+  const v = vistaDe(decodeURIComponent(a.getAttribute('href').slice(1)));
+  if (a.dataset.aba) {  // troca de aba sem pular na página
+    ev.preventDefault();
+    if (v !== vista) mostrar(v);
+    history.replaceState(null, '', v === 'apps' ? '#apps' : location.pathname + location.search);
+  } else if (v && v !== vista) mostrar(v);  // link para um jogo ou para o Acervo: troca de aba e o navegador rola até lá
+});
+const abrirHash = () => {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const v = vistaDe(id);
+  if (!v || v === vista) return;
+  mostrar(v);
+  requestAnimationFrame(() => {
+    if (id === 'apps') scrollTo(0, 0);
+    else { const el = document.getElementById(id); if (el) el.scrollIntoView(); }
+  });
+};
+addEventListener('hashchange', abrirHash);
+abrirHash();
 
 // Barra do topo fica sólida ao rolar
 const nav = document.getElementById('nav');

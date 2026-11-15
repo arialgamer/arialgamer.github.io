@@ -122,6 +122,7 @@
   let larg = innerWidth;
   addEventListener('resize', () => { if (innerWidth !== larg) { larg = innerWidth; montar(); } pedir(); });
   addEventListener('load', () => { montar(); pedir(); });
+  addEventListener('vista', () => { montar(); pedir(); }); // troca de aba Jogos | Aplicativos na página principal
   montar(); quadro();
   setTimeout(() => { montar(); pedir(); }, 1500); // imagens e vídeos mudam a altura das seções
 })();

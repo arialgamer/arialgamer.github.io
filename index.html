@@ -349,7 +349,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 @media (max-width: 400px) { .nav .wrap { gap: 10px } .brand { font-size: 18px; gap: 8px } .brand img { width: 34px; height: 34px } .nav .pill { padding: 0 14px } }
 
 /* ---------- Abertura ---------- */
-.hero { position: relative; padding: calc(120px + env(safe-area-inset-top, 0px)) 0 90px; overflow: hidden; isolation: isolate }
+.hero { position: relative; padding: calc(110px + env(safe-area-inset-top, 0px)) 0 90px; overflow: hidden; isolation: isolate }
 .hero::before { content: ""; position: absolute; inset: -20% -10% 0; z-index: -2;
   background: radial-gradient(40% 50% at 18% 30%, rgba(246,184,58,.28), transparent 70%),
               radial-gradient(38% 46% at 52% 18%, rgba(180,156,255,.32), transparent 70%),
@@ -587,6 +587,17 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
   .pixbox { justify-items: center; text-align: center }
 }
 @media (max-width: 520px) { .fale .row2 { grid-template-columns: 1fr } .fale .btn, .pixbox .btn { width: 100%; justify-self: stretch } }
+/* ---------- Abas: Jogos | Aplicativos ---------- */
+.abas { display: flex; width: max-content; max-width: calc(100% - 32px); margin: 0 auto 44px; padding: 5px; gap: 4px; border-radius: 999px;
+  background: rgba(13,10,32,.55); border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px) }
+.abas a { padding: 10px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 16px; color: var(--muted); white-space: nowrap; transition: color .2s, background .2s }
+.abas a:hover { color: var(--ink); background: var(--glass) }
+.abas a[aria-current] { background: linear-gradient(135deg, var(--gold), var(--amber-2)); color: #2a1703 }
+body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vista="jogos"] { display: none }
+.vista-apps .hero { padding-bottom: 0 }
+.vista-apps .abas { margin-bottom: 0 }
+.vista-apps #apps { padding-top: 44px }
+@media (max-width: 400px) { .abas a { padding: 9px 16px; font-size: 15px } }
 </style>
 </head>
 <body class="no-js">
@@ -607,9 +618,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
   <div class="wrap">
     <a class="brand" href="#topo"><img src="logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
-      <li><a href="#gelada">Gelada</a></li>
-      <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
+      <li><a href="#esconde">Esconde-Esconde</a></li>
+      <li><a href="#gelada">Gelada</a></li>
       <li class="app"><a href="#acervo">Acervo</a></li>
       <li><a href="#siga">Redes</a></li>
     </ul>
@@ -622,7 +633,11 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 <main id="topo">
   <section class="hero">
     <div class="stars" aria-hidden="true"></div>
-    <div class="wrap">
+    <nav class="abas" aria-label="Arial Gamer">
+      <a href="#jogos" data-aba="jogos" aria-current="page">🎮 Jogos</a>
+      <a href="#apps" data-aba="apps">📱 Aplicativos</a>
+    </nav>
+    <div class="wrap" data-vista="jogos">
       <div>
         <p class="eyebrow">Arial Gamer · Mobile Game Studio</p>
         <h1>Jogos para celular <span class="grad">feitos no Brasil</span></h1>
@@ -635,9 +650,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
         <div class="chipgroups">
           <div class="chipgroup"><span class="chiplabel">🎮 Jogos</span>
             <div class="chips">
-              <a class="chip" href="#gelada"><img src="gelada.png" alt="" width="34" height="34">Gelada</a>
-              <a class="chip" href="#esconde"><img src="esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
               <a class="chip" href="#gol"><img src="gol.png" alt="" width="34" height="34">Gol de Placa</a>
+              <a class="chip" href="#esconde"><img src="esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
+              <a class="chip" href="#gelada"><img src="gelada.png" alt="" width="34" height="34">Gelada</a>
             </div>
           </div>
           <div class="chipgroup"><span class="chiplabel">📱 Aplicativos</span>
@@ -655,7 +670,7 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
     </div>
   </section>
 
-  <div class="facts">
+  <div class="facts" data-vista="jogos">
     <div class="wrap">
       <div class="zero"><b>0</b><span>anúncios</span></div>
       <div><b>3</b><span>jogos no ar</span></div>
@@ -666,96 +681,10 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
   </div>
 
   <!-- ================= JOGOS ================= -->
-  <div class="divisao" id="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>Jogos</h2><p class="sub">Para jogar sozinho ou com um amigo</p></div></div>
-
-  <!-- ================= GELADA ================= -->
-  <section class="game gelada" id="gelada">
-    <div class="wrap">
-      <div class="info reveal">
-        <div class="head">
-          <img src="gelada.png" alt="Ícone do Gelada" width="84" height="84">
-          <div><p class="eyebrow">Bebidas virtuais</p><h2>Gelada</h2></div>
-        </div>
-        <p class="tag">Cerveja, drinks e até café no seu celular. Encha o copo e incline para beber 🍺</p>
-        <span class="price">🍺 R$ 2,90</span><span class="price free">🚫 Sem anúncios</span>
-        <ul class="feats">
-          <li><i>🍹</i><span><b>100 bebidas</b>: cervejas, vinhos, drinks e cafés</span></li>
-          <li><i>🧑‍🍳</i><span><b>Barman que fala</b> e nota de 0 a 10 para a sua mistura</span></li>
-          <li><i>⭐</i><span><b>Drink do dia</b>: uma receita nova para provar</span></li>
-          <li><i>📱</i><span><b>Incline o celular</b> e beba de verdade, sem álcool</span></li>
-        </ul>
-        <div class="soon">
-          <p><b>Em dezembro:</b> edição de Natal, com Gemada e Ponche 🎄</p>
-        </div>
-        <div class="stores">
-          <a class="store" href="https://apps.apple.com/br/app/id6819882963" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Baixar na</small><strong>App Store</strong></span></a>
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.gelada" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponível no</small><strong>Google Play</strong></span></a>
-        </div>
-        <a class="more" href="gelada/">Tudo sobre o Gelada →</a>
-      </div>
-      <div class="player reveal" data-player>
-        <div class="phone"><div class="screen">
-          <video muted playsinline preload="none" poster="media/gelada-saude.jpg"><source src="media/gelada-saude.mp4" type="video/mp4"></video>
-          <button class="sound" type="button" aria-label="Ligar o som"><svg><use href="#i-muted"/></svg></button>
-        </div></div>
-        <div class="clips" role="group" aria-label="Escolha um vídeo do Gelada">
-          <button class="clip" type="button" aria-pressed="true" data-src="media/gelada-saude"><img src="media/gelada-saude.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Saúde!</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/gelada-cuba-libre"><img src="media/gelada-cuba-libre.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Nota 10</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/gelada-caipirinha"><img src="media/gelada-caipirinha.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Caipirinha</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/gelada-talhou"><img src="media/gelada-talhou.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Talhou!</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ESCONDE-ESCONDE ================= -->
-  <section class="game esconde flip" id="esconde">
-    <div class="wrap">
-      <div class="info reveal">
-        <div class="head">
-          <img src="esconde.png" alt="Ícone do Esconde-Esconde" width="84" height="84">
-          <div><p class="eyebrow">Para a família</p><h2>Esconde-Esconde</h2></div>
-        </div>
-        <p class="tag">Esconda-se e tente achar, contra a máquina ou um amigo 🙈</p>
-        <span class="price">🙈 R$ 2,90</span><span class="price free">🚫 Sem anúncios</span>
-        <ul class="feats">
-          <li><i>🌐</i><span><b>Online com um amigo</b>, cada um no seu celular, com código de sala</span></li>
-          <li><i>🗺️</i><span><b>22 lugares</b>: praia, geleira, navio pirata, estação espacial…</span></li>
-          <li><i>📡</i><span><b>Radar quente ou frio</b>, do jeito que você preferir</span></li>
-          <li><i>🦆</i><span><b>Modo para os pequenos</b> e narrador que conta tudo</span></li>
-        </ul>
-        <div class="soon">
-          <p><b>Novo:</b> os 22 lugares liberados para quem baixa, sem compras dentro do app</p>
-        </div>
-        <div class="stores">
-          <a class="store" href="https://apps.apple.com/br/app/id6819893974" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Baixar na</small><strong>App Store</strong></span></a>
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponível no</small><strong>Google Play</strong></span></a>
-        </div>
-        <a class="more" href="esconde-esconde/">Tudo sobre o Esconde-Esconde →</a>
-      </div>
-      <div class="player reveal" data-player>
-        <div class="phone"><div class="screen">
-          <video muted playsinline preload="none" poster="media/esconde-lua.jpg"><source src="media/esconde-lua.mp4" type="video/mp4"></video>
-          <button class="sound" type="button" aria-label="Ligar o som"><svg><use href="#i-muted"/></svg></button>
-        </div></div>
-        <div class="clips" role="group" aria-label="Escolha um vídeo do Esconde-Esconde">
-          <button class="clip" type="button" aria-pressed="true" data-src="media/esconde-lua"><img src="media/esconde-lua.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Na lua</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/esconde-maquina"><img src="media/esconde-maquina.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Contra a máquina</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/esconde-pirata"><img src="media/esconde-pirata.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Navio pirata</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/esconde-geleira"><img src="media/esconde-geleira.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Geleira</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/esconde-dia-noite"><img src="media/esconde-dia-noite.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Dia e noite</button>
-        </div>
-      </div>
-    </div>
-    <div class="places reveal">
-      <div class="wrap"><h3>Lugares para se esconder, de dia ou de noite</h3></div>
-      <div class="track"><div class="row"><figure><img src="media/lugares/casa-dia.jpg" alt="Casa de dia" loading="lazy" width="150" height="219"><figcaption>🏠 Casa</figcaption></figure><figure><img src="media/lugares/praia-dia.jpg" alt="Praia de dia" loading="lazy" width="150" height="219"><figcaption>🏖️ Praia</figcaption></figure><figure><img src="media/lugares/sitio-dia.jpg" alt="Sítio de dia" loading="lazy" width="150" height="219"><figcaption>🐄 Sítio</figcaption></figure><figure><img src="media/lugares/acamp-dia.jpg" alt="Acampamento de dia" loading="lazy" width="150" height="219"><figcaption>⛺ Acampamento</figcaption></figure><figure><img src="media/lugares/geleira-dia.jpg" alt="Geleira de dia" loading="lazy" width="150" height="219"><figcaption>🏔️ Geleira</figcaption></figure><figure><img src="media/lugares/parque-dia.jpg" alt="Parque de dia" loading="lazy" width="150" height="219"><figcaption>🎡 Parque</figcaption></figure><figure><img src="media/lugares/escola-dia.jpg" alt="Escola de dia" loading="lazy" width="150" height="219"><figcaption>🏫 Escola</figcaption></figure><figure><img src="media/lugares/navio-dia.jpg" alt="Navio pirata de dia" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ Navio pirata</figcaption></figure><figure><img src="media/lugares/espaco-dia.jpg" alt="Estação espacial de dia" loading="lazy" width="150" height="219"><figcaption>🚀 Estação espacial</figcaption></figure><figure><img src="media/lugares/halloween-dia.jpg" alt="Casa assombrada de dia" loading="lazy" width="150" height="219"><figcaption>🎃 Casa assombrada</figcaption></figure><figure><img src="media/lugares/natal-dia.jpg" alt="Vila do Papai Noel de dia" loading="lazy" width="150" height="219"><figcaption>🎅 Vila do Papai Noel</figcaption></figure><figure><img src="media/lugares/fundomar-dia.jpg" alt="Fundo do mar de dia" loading="lazy" width="150" height="219"><figcaption>🐠 Fundo do mar</figcaption></figure><figure><img src="media/lugares/castelo-dia.jpg" alt="Castelo de dia" loading="lazy" width="150" height="219"><figcaption>🏰 Castelo</figcaption></figure><figure><img src="media/lugares/dinos-dia.jpg" alt="Terra dos dinossauros de dia" loading="lazy" width="150" height="219"><figcaption>🦕 Terra dos dinossauros</figcaption></figure><figure><img src="media/lugares/circo-dia.jpg" alt="Circo de dia" loading="lazy" width="150" height="219"><figcaption>🎪 Circo</figcaption></figure><figure><img src="media/lugares/mercado-dia.jpg" alt="Supermercado de dia" loading="lazy" width="150" height="219"><figcaption>🛒 Supermercado</figcaption></figure><figure><img src="media/lugares/museu-dia.jpg" alt="Museu de dia" loading="lazy" width="150" height="219"><figcaption>🏛️ Museu</figcaption></figure><figure><img src="media/lugares/deserto-dia.jpg" alt="Deserto e pirâmides de dia" loading="lazy" width="150" height="219"><figcaption>🐪 Deserto e pirâmides</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="media/lugares/casa-dia.jpg" alt="Casa de dia" loading="lazy" width="150" height="219"><figcaption>🏠 Casa</figcaption></figure><figure><img src="media/lugares/praia-dia.jpg" alt="Praia de dia" loading="lazy" width="150" height="219"><figcaption>🏖️ Praia</figcaption></figure><figure><img src="media/lugares/sitio-dia.jpg" alt="Sítio de dia" loading="lazy" width="150" height="219"><figcaption>🐄 Sítio</figcaption></figure><figure><img src="media/lugares/acamp-dia.jpg" alt="Acampamento de dia" loading="lazy" width="150" height="219"><figcaption>⛺ Acampamento</figcaption></figure><figure><img src="media/lugares/geleira-dia.jpg" alt="Geleira de dia" loading="lazy" width="150" height="219"><figcaption>🏔️ Geleira</figcaption></figure><figure><img src="media/lugares/parque-dia.jpg" alt="Parque de dia" loading="lazy" width="150" height="219"><figcaption>🎡 Parque</figcaption></figure><figure><img src="media/lugares/escola-dia.jpg" alt="Escola de dia" loading="lazy" width="150" height="219"><figcaption>🏫 Escola</figcaption></figure><figure><img src="media/lugares/navio-dia.jpg" alt="Navio pirata de dia" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ Navio pirata</figcaption></figure><figure><img src="media/lugares/espaco-dia.jpg" alt="Estação espacial de dia" loading="lazy" width="150" height="219"><figcaption>🚀 Estação espacial</figcaption></figure><figure><img src="media/lugares/halloween-dia.jpg" alt="Casa assombrada de dia" loading="lazy" width="150" height="219"><figcaption>🎃 Casa assombrada</figcaption></figure><figure><img src="media/lugares/natal-dia.jpg" alt="Vila do Papai Noel de dia" loading="lazy" width="150" height="219"><figcaption>🎅 Vila do Papai Noel</figcaption></figure><figure><img src="media/lugares/fundomar-dia.jpg" alt="Fundo do mar de dia" loading="lazy" width="150" height="219"><figcaption>🐠 Fundo do mar</figcaption></figure><figure><img src="media/lugares/castelo-dia.jpg" alt="Castelo de dia" loading="lazy" width="150" height="219"><figcaption>🏰 Castelo</figcaption></figure><figure><img src="media/lugares/dinos-dia.jpg" alt="Terra dos dinossauros de dia" loading="lazy" width="150" height="219"><figcaption>🦕 Terra dos dinossauros</figcaption></figure><figure><img src="media/lugares/circo-dia.jpg" alt="Circo de dia" loading="lazy" width="150" height="219"><figcaption>🎪 Circo</figcaption></figure><figure><img src="media/lugares/mercado-dia.jpg" alt="Supermercado de dia" loading="lazy" width="150" height="219"><figcaption>🛒 Supermercado</figcaption></figure><figure><img src="media/lugares/museu-dia.jpg" alt="Museu de dia" loading="lazy" width="150" height="219"><figcaption>🏛️ Museu</figcaption></figure><figure><img src="media/lugares/deserto-dia.jpg" alt="Deserto e pirâmides de dia" loading="lazy" width="150" height="219"><figcaption>🐪 Deserto e pirâmides</figcaption></figure></div></div>
-      <div class="track rev"><div class="row"><figure><img src="media/lugares/casa-noite.jpg" alt="Casa à noite" loading="lazy" width="150" height="219"><figcaption>🏠 Casa</figcaption></figure><figure><img src="media/lugares/praia-noite.jpg" alt="Praia à noite" loading="lazy" width="150" height="219"><figcaption>🏖️ Praia</figcaption></figure><figure><img src="media/lugares/sitio-noite.jpg" alt="Sítio à noite" loading="lazy" width="150" height="219"><figcaption>🐄 Sítio</figcaption></figure><figure><img src="media/lugares/acamp-noite.jpg" alt="Acampamento à noite" loading="lazy" width="150" height="219"><figcaption>⛺ Acampamento</figcaption></figure><figure><img src="media/lugares/geleira-noite.jpg" alt="Geleira à noite" loading="lazy" width="150" height="219"><figcaption>🏔️ Geleira</figcaption></figure><figure><img src="media/lugares/parque-noite.jpg" alt="Parque à noite" loading="lazy" width="150" height="219"><figcaption>🎡 Parque</figcaption></figure><figure><img src="media/lugares/escola-noite.jpg" alt="Escola à noite" loading="lazy" width="150" height="219"><figcaption>🏫 Escola</figcaption></figure><figure><img src="media/lugares/navio-noite.jpg" alt="Navio pirata à noite" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ Navio pirata</figcaption></figure><figure><img src="media/lugares/espaco-noite.jpg" alt="Estação espacial à noite" loading="lazy" width="150" height="219"><figcaption>🚀 Estação espacial</figcaption></figure><figure><img src="media/lugares/halloween-noite.jpg" alt="Casa assombrada à noite" loading="lazy" width="150" height="219"><figcaption>🎃 Casa assombrada</figcaption></figure><figure><img src="media/lugares/natal-noite.jpg" alt="Vila do Papai Noel à noite" loading="lazy" width="150" height="219"><figcaption>🎅 Vila do Papai Noel</figcaption></figure><figure><img src="media/lugares/fundomar-noite.jpg" alt="Fundo do mar à noite" loading="lazy" width="150" height="219"><figcaption>🐠 Fundo do mar</figcaption></figure><figure><img src="media/lugares/castelo-noite.jpg" alt="Castelo à noite" loading="lazy" width="150" height="219"><figcaption>🏰 Castelo</figcaption></figure><figure><img src="media/lugares/dinos-noite.jpg" alt="Terra dos dinossauros à noite" loading="lazy" width="150" height="219"><figcaption>🦕 Terra dos dinossauros</figcaption></figure><figure><img src="media/lugares/circo-noite.jpg" alt="Circo à noite" loading="lazy" width="150" height="219"><figcaption>🎪 Circo</figcaption></figure><figure><img src="media/lugares/mercado-noite.jpg" alt="Supermercado à noite" loading="lazy" width="150" height="219"><figcaption>🛒 Supermercado</figcaption></figure><figure><img src="media/lugares/museu-noite.jpg" alt="Museu à noite" loading="lazy" width="150" height="219"><figcaption>🏛️ Museu</figcaption></figure><figure><img src="media/lugares/deserto-noite.jpg" alt="Deserto e pirâmides à noite" loading="lazy" width="150" height="219"><figcaption>🐪 Deserto e pirâmides</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="media/lugares/casa-noite.jpg" alt="Casa à noite" loading="lazy" width="150" height="219"><figcaption>🏠 Casa</figcaption></figure><figure><img src="media/lugares/praia-noite.jpg" alt="Praia à noite" loading="lazy" width="150" height="219"><figcaption>🏖️ Praia</figcaption></figure><figure><img src="media/lugares/sitio-noite.jpg" alt="Sítio à noite" loading="lazy" width="150" height="219"><figcaption>🐄 Sítio</figcaption></figure><figure><img src="media/lugares/acamp-noite.jpg" alt="Acampamento à noite" loading="lazy" width="150" height="219"><figcaption>⛺ Acampamento</figcaption></figure><figure><img src="media/lugares/geleira-noite.jpg" alt="Geleira à noite" loading="lazy" width="150" height="219"><figcaption>🏔️ Geleira</figcaption></figure><figure><img src="media/lugares/parque-noite.jpg" alt="Parque à noite" loading="lazy" width="150" height="219"><figcaption>🎡 Parque</figcaption></figure><figure><img src="media/lugares/escola-noite.jpg" alt="Escola à noite" loading="lazy" width="150" height="219"><figcaption>🏫 Escola</figcaption></figure><figure><img src="media/lugares/navio-noite.jpg" alt="Navio pirata à noite" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ Navio pirata</figcaption></figure><figure><img src="media/lugares/espaco-noite.jpg" alt="Estação espacial à noite" loading="lazy" width="150" height="219"><figcaption>🚀 Estação espacial</figcaption></figure><figure><img src="media/lugares/halloween-noite.jpg" alt="Casa assombrada à noite" loading="lazy" width="150" height="219"><figcaption>🎃 Casa assombrada</figcaption></figure><figure><img src="media/lugares/natal-noite.jpg" alt="Vila do Papai Noel à noite" loading="lazy" width="150" height="219"><figcaption>🎅 Vila do Papai Noel</figcaption></figure><figure><img src="media/lugares/fundomar-noite.jpg" alt="Fundo do mar à noite" loading="lazy" width="150" height="219"><figcaption>🐠 Fundo do mar</figcaption></figure><figure><img src="media/lugares/castelo-noite.jpg" alt="Castelo à noite" loading="lazy" width="150" height="219"><figcaption>🏰 Castelo</figcaption></figure><figure><img src="media/lugares/dinos-noite.jpg" alt="Terra dos dinossauros à noite" loading="lazy" width="150" height="219"><figcaption>🦕 Terra dos dinossauros</figcaption></figure><figure><img src="media/lugares/circo-noite.jpg" alt="Circo à noite" loading="lazy" width="150" height="219"><figcaption>🎪 Circo</figcaption></figure><figure><img src="media/lugares/mercado-noite.jpg" alt="Supermercado à noite" loading="lazy" width="150" height="219"><figcaption>🛒 Supermercado</figcaption></figure><figure><img src="media/lugares/museu-noite.jpg" alt="Museu à noite" loading="lazy" width="150" height="219"><figcaption>🏛️ Museu</figcaption></figure><figure><img src="media/lugares/deserto-noite.jpg" alt="Deserto e pirâmides à noite" loading="lazy" width="150" height="219"><figcaption>🐪 Deserto e pirâmides</figcaption></figure></div></div>
-    </div>
-  </section>
+  <div class="divisao" id="jogos" data-vista="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>Jogos</h2><p class="sub">Para jogar sozinho ou com um amigo</p></div></div>
 
   <!-- ================= GOL DE PLACA ================= -->
-  <section class="game gol" id="gol">
+  <section class="game gol" data-vista="jogos" id="gol">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -804,11 +733,97 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
     </div>
   </section>
 
+  <!-- ================= ESCONDE-ESCONDE ================= -->
+  <section class="game esconde flip" data-vista="jogos" id="esconde">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="esconde.png" alt="Ícone do Esconde-Esconde" width="84" height="84">
+          <div><p class="eyebrow">Para a família</p><h2>Esconde-Esconde</h2></div>
+        </div>
+        <p class="tag">Esconda-se e tente achar, contra a máquina ou um amigo 🙈</p>
+        <span class="price">🙈 R$ 2,90</span><span class="price free">🚫 Sem anúncios</span>
+        <ul class="feats">
+          <li><i>🌐</i><span><b>Online com um amigo</b>, cada um no seu celular, com código de sala</span></li>
+          <li><i>🗺️</i><span><b>22 lugares</b>: praia, geleira, navio pirata, estação espacial…</span></li>
+          <li><i>📡</i><span><b>Radar quente ou frio</b>, do jeito que você preferir</span></li>
+          <li><i>🦆</i><span><b>Modo para os pequenos</b> e narrador que conta tudo</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>Novo:</b> os 22 lugares liberados para quem baixa, sem compras dentro do app</p>
+        </div>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/br/app/id6819893974" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Baixar na</small><strong>App Store</strong></span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponível no</small><strong>Google Play</strong></span></a>
+        </div>
+        <a class="more" href="esconde-esconde/">Tudo sobre o Esconde-Esconde →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone"><div class="screen">
+          <video muted playsinline preload="none" poster="media/esconde-lua.jpg"><source src="media/esconde-lua.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="Ligar o som"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="Escolha um vídeo do Esconde-Esconde">
+          <button class="clip" type="button" aria-pressed="true" data-src="media/esconde-lua"><img src="media/esconde-lua.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Na lua</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/esconde-maquina"><img src="media/esconde-maquina.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Contra a máquina</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/esconde-pirata"><img src="media/esconde-pirata.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Navio pirata</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/esconde-geleira"><img src="media/esconde-geleira.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Geleira</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/esconde-dia-noite"><img src="media/esconde-dia-noite.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Dia e noite</button>
+        </div>
+      </div>
+    </div>
+    <div class="places reveal">
+      <div class="wrap"><h3>Lugares para se esconder, de dia ou de noite</h3></div>
+      <div class="track"><div class="row"><figure><img src="media/lugares/casa-dia.jpg" alt="Casa de dia" loading="lazy" width="150" height="219"><figcaption>🏠 Casa</figcaption></figure><figure><img src="media/lugares/praia-dia.jpg" alt="Praia de dia" loading="lazy" width="150" height="219"><figcaption>🏖️ Praia</figcaption></figure><figure><img src="media/lugares/sitio-dia.jpg" alt="Sítio de dia" loading="lazy" width="150" height="219"><figcaption>🐄 Sítio</figcaption></figure><figure><img src="media/lugares/acamp-dia.jpg" alt="Acampamento de dia" loading="lazy" width="150" height="219"><figcaption>⛺ Acampamento</figcaption></figure><figure><img src="media/lugares/geleira-dia.jpg" alt="Geleira de dia" loading="lazy" width="150" height="219"><figcaption>🏔️ Geleira</figcaption></figure><figure><img src="media/lugares/parque-dia.jpg" alt="Parque de dia" loading="lazy" width="150" height="219"><figcaption>🎡 Parque</figcaption></figure><figure><img src="media/lugares/escola-dia.jpg" alt="Escola de dia" loading="lazy" width="150" height="219"><figcaption>🏫 Escola</figcaption></figure><figure><img src="media/lugares/navio-dia.jpg" alt="Navio pirata de dia" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ Navio pirata</figcaption></figure><figure><img src="media/lugares/espaco-dia.jpg" alt="Estação espacial de dia" loading="lazy" width="150" height="219"><figcaption>🚀 Estação espacial</figcaption></figure><figure><img src="media/lugares/halloween-dia.jpg" alt="Casa assombrada de dia" loading="lazy" width="150" height="219"><figcaption>🎃 Casa assombrada</figcaption></figure><figure><img src="media/lugares/natal-dia.jpg" alt="Vila do Papai Noel de dia" loading="lazy" width="150" height="219"><figcaption>🎅 Vila do Papai Noel</figcaption></figure><figure><img src="media/lugares/fundomar-dia.jpg" alt="Fundo do mar de dia" loading="lazy" width="150" height="219"><figcaption>🐠 Fundo do mar</figcaption></figure><figure><img src="media/lugares/castelo-dia.jpg" alt="Castelo de dia" loading="lazy" width="150" height="219"><figcaption>🏰 Castelo</figcaption></figure><figure><img src="media/lugares/dinos-dia.jpg" alt="Terra dos dinossauros de dia" loading="lazy" width="150" height="219"><figcaption>🦕 Terra dos dinossauros</figcaption></figure><figure><img src="media/lugares/circo-dia.jpg" alt="Circo de dia" loading="lazy" width="150" height="219"><figcaption>🎪 Circo</figcaption></figure><figure><img src="media/lugares/mercado-dia.jpg" alt="Supermercado de dia" loading="lazy" width="150" height="219"><figcaption>🛒 Supermercado</figcaption></figure><figure><img src="media/lugares/museu-dia.jpg" alt="Museu de dia" loading="lazy" width="150" height="219"><figcaption>🏛️ Museu</figcaption></figure><figure><img src="media/lugares/deserto-dia.jpg" alt="Deserto e pirâmides de dia" loading="lazy" width="150" height="219"><figcaption>🐪 Deserto e pirâmides</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="media/lugares/casa-dia.jpg" alt="Casa de dia" loading="lazy" width="150" height="219"><figcaption>🏠 Casa</figcaption></figure><figure><img src="media/lugares/praia-dia.jpg" alt="Praia de dia" loading="lazy" width="150" height="219"><figcaption>🏖️ Praia</figcaption></figure><figure><img src="media/lugares/sitio-dia.jpg" alt="Sítio de dia" loading="lazy" width="150" height="219"><figcaption>🐄 Sítio</figcaption></figure><figure><img src="media/lugares/acamp-dia.jpg" alt="Acampamento de dia" loading="lazy" width="150" height="219"><figcaption>⛺ Acampamento</figcaption></figure><figure><img src="media/lugares/geleira-dia.jpg" alt="Geleira de dia" loading="lazy" width="150" height="219"><figcaption>🏔️ Geleira</figcaption></figure><figure><img src="media/lugares/parque-dia.jpg" alt="Parque de dia" loading="lazy" width="150" height="219"><figcaption>🎡 Parque</figcaption></figure><figure><img src="media/lugares/escola-dia.jpg" alt="Escola de dia" loading="lazy" width="150" height="219"><figcaption>🏫 Escola</figcaption></figure><figure><img src="media/lugares/navio-dia.jpg" alt="Navio pirata de dia" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ Navio pirata</figcaption></figure><figure><img src="media/lugares/espaco-dia.jpg" alt="Estação espacial de dia" loading="lazy" width="150" height="219"><figcaption>🚀 Estação espacial</figcaption></figure><figure><img src="media/lugares/halloween-dia.jpg" alt="Casa assombrada de dia" loading="lazy" width="150" height="219"><figcaption>🎃 Casa assombrada</figcaption></figure><figure><img src="media/lugares/natal-dia.jpg" alt="Vila do Papai Noel de dia" loading="lazy" width="150" height="219"><figcaption>🎅 Vila do Papai Noel</figcaption></figure><figure><img src="media/lugares/fundomar-dia.jpg" alt="Fundo do mar de dia" loading="lazy" width="150" height="219"><figcaption>🐠 Fundo do mar</figcaption></figure><figure><img src="media/lugares/castelo-dia.jpg" alt="Castelo de dia" loading="lazy" width="150" height="219"><figcaption>🏰 Castelo</figcaption></figure><figure><img src="media/lugares/dinos-dia.jpg" alt="Terra dos dinossauros de dia" loading="lazy" width="150" height="219"><figcaption>🦕 Terra dos dinossauros</figcaption></figure><figure><img src="media/lugares/circo-dia.jpg" alt="Circo de dia" loading="lazy" width="150" height="219"><figcaption>🎪 Circo</figcaption></figure><figure><img src="media/lugares/mercado-dia.jpg" alt="Supermercado de dia" loading="lazy" width="150" height="219"><figcaption>🛒 Supermercado</figcaption></figure><figure><img src="media/lugares/museu-dia.jpg" alt="Museu de dia" loading="lazy" width="150" height="219"><figcaption>🏛️ Museu</figcaption></figure><figure><img src="media/lugares/deserto-dia.jpg" alt="Deserto e pirâmides de dia" loading="lazy" width="150" height="219"><figcaption>🐪 Deserto e pirâmides</figcaption></figure></div></div>
+      <div class="track rev"><div class="row"><figure><img src="media/lugares/casa-noite.jpg" alt="Casa à noite" loading="lazy" width="150" height="219"><figcaption>🏠 Casa</figcaption></figure><figure><img src="media/lugares/praia-noite.jpg" alt="Praia à noite" loading="lazy" width="150" height="219"><figcaption>🏖️ Praia</figcaption></figure><figure><img src="media/lugares/sitio-noite.jpg" alt="Sítio à noite" loading="lazy" width="150" height="219"><figcaption>🐄 Sítio</figcaption></figure><figure><img src="media/lugares/acamp-noite.jpg" alt="Acampamento à noite" loading="lazy" width="150" height="219"><figcaption>⛺ Acampamento</figcaption></figure><figure><img src="media/lugares/geleira-noite.jpg" alt="Geleira à noite" loading="lazy" width="150" height="219"><figcaption>🏔️ Geleira</figcaption></figure><figure><img src="media/lugares/parque-noite.jpg" alt="Parque à noite" loading="lazy" width="150" height="219"><figcaption>🎡 Parque</figcaption></figure><figure><img src="media/lugares/escola-noite.jpg" alt="Escola à noite" loading="lazy" width="150" height="219"><figcaption>🏫 Escola</figcaption></figure><figure><img src="media/lugares/navio-noite.jpg" alt="Navio pirata à noite" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ Navio pirata</figcaption></figure><figure><img src="media/lugares/espaco-noite.jpg" alt="Estação espacial à noite" loading="lazy" width="150" height="219"><figcaption>🚀 Estação espacial</figcaption></figure><figure><img src="media/lugares/halloween-noite.jpg" alt="Casa assombrada à noite" loading="lazy" width="150" height="219"><figcaption>🎃 Casa assombrada</figcaption></figure><figure><img src="media/lugares/natal-noite.jpg" alt="Vila do Papai Noel à noite" loading="lazy" width="150" height="219"><figcaption>🎅 Vila do Papai Noel</figcaption></figure><figure><img src="media/lugares/fundomar-noite.jpg" alt="Fundo do mar à noite" loading="lazy" width="150" height="219"><figcaption>🐠 Fundo do mar</figcaption></figure><figure><img src="media/lugares/castelo-noite.jpg" alt="Castelo à noite" loading="lazy" width="150" height="219"><figcaption>🏰 Castelo</figcaption></figure><figure><img src="media/lugares/dinos-noite.jpg" alt="Terra dos dinossauros à noite" loading="lazy" width="150" height="219"><figcaption>🦕 Terra dos dinossauros</figcaption></figure><figure><img src="media/lugares/circo-noite.jpg" alt="Circo à noite" loading="lazy" width="150" height="219"><figcaption>🎪 Circo</figcaption></figure><figure><img src="media/lugares/mercado-noite.jpg" alt="Supermercado à noite" loading="lazy" width="150" height="219"><figcaption>🛒 Supermercado</figcaption></figure><figure><img src="media/lugares/museu-noite.jpg" alt="Museu à noite" loading="lazy" width="150" height="219"><figcaption>🏛️ Museu</figcaption></figure><figure><img src="media/lugares/deserto-noite.jpg" alt="Deserto e pirâmides à noite" loading="lazy" width="150" height="219"><figcaption>🐪 Deserto e pirâmides</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="media/lugares/casa-noite.jpg" alt="Casa à noite" loading="lazy" width="150" height="219"><figcaption>🏠 Casa</figcaption></figure><figure><img src="media/lugares/praia-noite.jpg" alt="Praia à noite" loading="lazy" width="150" height="219"><figcaption>🏖️ Praia</figcaption></figure><figure><img src="media/lugares/sitio-noite.jpg" alt="Sítio à noite" loading="lazy" width="150" height="219"><figcaption>🐄 Sítio</figcaption></figure><figure><img src="media/lugares/acamp-noite.jpg" alt="Acampamento à noite" loading="lazy" width="150" height="219"><figcaption>⛺ Acampamento</figcaption></figure><figure><img src="media/lugares/geleira-noite.jpg" alt="Geleira à noite" loading="lazy" width="150" height="219"><figcaption>🏔️ Geleira</figcaption></figure><figure><img src="media/lugares/parque-noite.jpg" alt="Parque à noite" loading="lazy" width="150" height="219"><figcaption>🎡 Parque</figcaption></figure><figure><img src="media/lugares/escola-noite.jpg" alt="Escola à noite" loading="lazy" width="150" height="219"><figcaption>🏫 Escola</figcaption></figure><figure><img src="media/lugares/navio-noite.jpg" alt="Navio pirata à noite" loading="lazy" width="150" height="219"><figcaption>🏴‍☠️ Navio pirata</figcaption></figure><figure><img src="media/lugares/espaco-noite.jpg" alt="Estação espacial à noite" loading="lazy" width="150" height="219"><figcaption>🚀 Estação espacial</figcaption></figure><figure><img src="media/lugares/halloween-noite.jpg" alt="Casa assombrada à noite" loading="lazy" width="150" height="219"><figcaption>🎃 Casa assombrada</figcaption></figure><figure><img src="media/lugares/natal-noite.jpg" alt="Vila do Papai Noel à noite" loading="lazy" width="150" height="219"><figcaption>🎅 Vila do Papai Noel</figcaption></figure><figure><img src="media/lugares/fundomar-noite.jpg" alt="Fundo do mar à noite" loading="lazy" width="150" height="219"><figcaption>🐠 Fundo do mar</figcaption></figure><figure><img src="media/lugares/castelo-noite.jpg" alt="Castelo à noite" loading="lazy" width="150" height="219"><figcaption>🏰 Castelo</figcaption></figure><figure><img src="media/lugares/dinos-noite.jpg" alt="Terra dos dinossauros à noite" loading="lazy" width="150" height="219"><figcaption>🦕 Terra dos dinossauros</figcaption></figure><figure><img src="media/lugares/circo-noite.jpg" alt="Circo à noite" loading="lazy" width="150" height="219"><figcaption>🎪 Circo</figcaption></figure><figure><img src="media/lugares/mercado-noite.jpg" alt="Supermercado à noite" loading="lazy" width="150" height="219"><figcaption>🛒 Supermercado</figcaption></figure><figure><img src="media/lugares/museu-noite.jpg" alt="Museu à noite" loading="lazy" width="150" height="219"><figcaption>🏛️ Museu</figcaption></figure><figure><img src="media/lugares/deserto-noite.jpg" alt="Deserto e pirâmides à noite" loading="lazy" width="150" height="219"><figcaption>🐪 Deserto e pirâmides</figcaption></figure></div></div>
+    </div>
+  </section>
+
+  <!-- ================= GELADA ================= -->
+  <section class="game gelada" data-vista="jogos" id="gelada">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="gelada.png" alt="Ícone do Gelada" width="84" height="84">
+          <div><p class="eyebrow">Bebidas virtuais</p><h2>Gelada</h2></div>
+        </div>
+        <p class="tag">Cerveja, drinks e até café no seu celular. Encha o copo e incline para beber 🍺</p>
+        <span class="price">🍺 R$ 2,90</span><span class="price free">🚫 Sem anúncios</span>
+        <ul class="feats">
+          <li><i>🍹</i><span><b>100 bebidas</b>: cervejas, vinhos, drinks e cafés</span></li>
+          <li><i>🧑‍🍳</i><span><b>Barman que fala</b> e nota de 0 a 10 para a sua mistura</span></li>
+          <li><i>⭐</i><span><b>Drink do dia</b>: uma receita nova para provar</span></li>
+          <li><i>📱</i><span><b>Incline o celular</b> e beba de verdade, sem álcool</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>Em dezembro:</b> edição de Natal, com Gemada e Ponche 🎄</p>
+        </div>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/br/app/id6819882963" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg><span><small>Baixar na</small><strong>App Store</strong></span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.gelada" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Disponível no</small><strong>Google Play</strong></span></a>
+        </div>
+        <a class="more" href="gelada/">Tudo sobre o Gelada →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone"><div class="screen">
+          <video muted playsinline preload="none" poster="media/gelada-saude.jpg"><source src="media/gelada-saude.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="Ligar o som"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="Escolha um vídeo do Gelada">
+          <button class="clip" type="button" aria-pressed="true" data-src="media/gelada-saude"><img src="media/gelada-saude.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Saúde!</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/gelada-cuba-libre"><img src="media/gelada-cuba-libre.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Nota 10</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/gelada-caipirinha"><img src="media/gelada-caipirinha.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Caipirinha</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/gelada-talhou"><img src="media/gelada-talhou.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Talhou!</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= APLICATIVOS ================= -->
-  <div class="divisao" id="apps"><div class="wrap"><p class="eyebrow">📱 Arial Gamer</p><h2>Aplicativos</h2><p class="sub">Para organizar o que você coleciona</p></div></div>
+  <div class="divisao" id="apps" data-vista="apps"><div class="wrap"><p class="eyebrow">📱 Arial Gamer</p><h2>Aplicativos</h2><p class="sub">Para organizar o que você coleciona</p></div></div>
 
   <!-- ================= ACERVO ================= -->
-  <section class="game acervo flip" id="acervo">
+  <section class="game acervo flip" data-vista="apps" id="acervo">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -941,9 +956,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
     <nav aria-label="Jogos">
-      <a href="gelada/">Gelada</a>
-      <a href="esconde-esconde/">Esconde-Esconde</a>
       <a href="gol-de-placa/">Gol de Placa</a>
+      <a href="esconde-esconde/">Esconde-Esconde</a>
+      <a href="gelada/">Gelada</a>
       <a href="acervo/">Acervo</a>
     </nav>
     <nav aria-label="Idioma / Language">
@@ -967,6 +982,44 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 <script>
 document.body.classList.remove('no-js');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Abas Jogos | Aplicativos: mostra só os jogos (padrão) ou só os aplicativos; redes, apoie e comentários aparecem nas duas
+const abas = [...document.querySelectorAll('.abas a')];
+let vista = 'jogos';
+const vistaDe = (id) => {
+  if (id === 'jogos' || id === 'apps') return id;
+  const el = id && document.getElementById(id);
+  const v = el && el.closest('[data-vista]');
+  return v ? v.dataset.vista : null;
+};
+const mostrar = (v) => {
+  vista = v;
+  document.body.classList.toggle('vista-apps', v === 'apps');
+  abas.forEach((a) => (a.dataset.aba === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current')));
+  dispatchEvent(new Event('vista'));
+};
+document.addEventListener('click', (ev) => {
+  const a = ev.target.closest('a[href^="#"]');
+  if (!a) return;
+  const v = vistaDe(decodeURIComponent(a.getAttribute('href').slice(1)));
+  if (a.dataset.aba) {  // troca de aba sem pular na página
+    ev.preventDefault();
+    if (v !== vista) mostrar(v);
+    history.replaceState(null, '', v === 'apps' ? '#apps' : location.pathname + location.search);
+  } else if (v && v !== vista) mostrar(v);  // link para um jogo ou para o Acervo: troca de aba e o navegador rola até lá
+});
+const abrirHash = () => {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const v = vistaDe(id);
+  if (!v || v === vista) return;
+  mostrar(v);
+  requestAnimationFrame(() => {
+    if (id === 'apps') scrollTo(0, 0);
+    else { const el = document.getElementById(id); if (el) el.scrollIntoView(); }
+  });
+};
+addEventListener('hashchange', abrirHash);
+abrirHash();
 
 // Barra do topo fica sólida ao rolar
 const nav = document.getElementById('nav');
