@@ -16,6 +16,7 @@
 (function () {
   var ua = navigator.userAgent;
   if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/' + (/^pt/i.test(navigator.language || '') ? 'br/' : '') + 'app/id6823608331');
+  else if (/Android/.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.arial.goldeplaca');
 })();
 </script>
 <style>
@@ -38,7 +39,7 @@ small a { color: #fff }
   <h1>Gol de Placa</h1>
   <p>Pênaltis e faltas: seja o batedor ou o goleiro ⚽🧤</p>
   <a class="loja" href="https://apps.apple.com/br/app/id6823608331">App Store</a>
-  <span class="loja breve">Android: em breve · coming soon</span>
+  <a class="loja" href="https://play.google.com/store/apps/details?id=com.arial.goldeplaca">Google Play</a>
   <img class="qr" src="/gol-de-placa/baixar/qr.png" alt="QR code para baixar o Gol de Placa">
   <small>Aponte a câmera do celular · Point your phone camera</small>
   <small><a href="/gol-de-placa/">Conheça o Gol de Placa →</a></small>

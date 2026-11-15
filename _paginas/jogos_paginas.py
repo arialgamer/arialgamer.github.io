@@ -17,7 +17,7 @@ NOME_IDIOMA = {"pt": "Português", "en": "English", "es": "Español", "de": "Deu
 JOGOS = {
     "gelada": ("gelada", "Gelada", "gelada.png", "6819882963", "com.arial.gelada", "media/gelada-saude.jpg"),
     "esconde": ("esconde-esconde", "Esconde-Esconde", "esconde.png", "6819893974", "com.arial.escondeesconde", "media/esconde-lua.jpg"),
-    "gol": ("gol-de-placa", "Gol de Placa", "gol.png", "6823608331", None, "media/gol-adulta.jpg"),
+    "gol": ("gol-de-placa", "Gol de Placa", "gol.png", "6823608331", "com.arial.goldeplaca", "media/gol-adulta.jpg"),
 }
 e = html.escape
 

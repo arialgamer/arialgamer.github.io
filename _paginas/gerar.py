@@ -114,7 +114,7 @@ JOGOS = {
     descricao="Gol de Placa: pênaltis e faltas em 3D no celular. Bata no ângulo ou seja o goleiro, monte o seu craque e jogue online com um amigo. Seleções, times, chuva, neve e narração. R$ 3,90 no iPhone. Sem anúncios.",
     resumo="Pênaltis e faltas em 3D: seja o batedor ou o goleiro.",
     categoria="Esporte, Futebol", os="iOS", imagem="media/gol-adulta.jpg",
-    lojas=["https://apps.apple.com/br/app/id6823608331"],
+    lojas=["https://apps.apple.com/br/app/id6823608331", "https://play.google.com/store/apps/details?id=com.arial.goldeplaca"],
     videos=[("gol-adulta", "Gol de Placa: versão adulta, com jogadores e torcida realistas"), ("gol-penalti", "Gol de Placa: cobrança de pênalti"), ("gol-falta-neve", "Gol de Placa: gol de falta na neve"),
             ("gol-defesa-chuva", "Gol de Placa: defesa do goleiro na chuva"), ("gol-noite", "Gol de Placa: gol à noite"),
             ("gol-craque", "Gol de Placa: montando o seu craque")],

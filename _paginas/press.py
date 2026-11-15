@@ -56,8 +56,8 @@ GAMES = [
       video="media/esconde-lua.mp4"),
  dict(nome="Gol de Placa", sub="Penalties and free kicks", icon="gol-de-placa-icon.png", page="en/gol-de-placa/",
       pitch="A 3D penalty and free-kick game: drag from the ball to the corner and let it fly, or stand in goal and dive. Pick the kids version with colorful blocky players or the grown-up version with realistic players and fans. National teams and clubs, rain, snow and night games, a Cup mode, stickers, daily challenges, commentary in 14 languages and online play with a friend.",
-      facts=[("Platforms", "iPhone (Android coming soon)"), ("Genre", "Sports, soccer, family"), ("Players", "1–2, local or online"), ("Ads", "None")],
-      stores=[("App Store", "https://apps.apple.com/app/id6823608331")],
+      facts=[("Platforms", "iPhone, Android"), ("Genre", "Sports, soccer, family"), ("Players", "1–2, local or online"), ("Ads", "None")],
+      stores=[("App Store", "https://apps.apple.com/app/id6823608331"), ("Google Play", "https://play.google.com/store/apps/details?id=com.arial.goldeplaca&hl=en")],
       video="media/gol-adulta.mp4"),
 ]
 

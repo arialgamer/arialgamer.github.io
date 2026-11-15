@@ -51,7 +51,7 @@ JOGOS = {
    titulo="Gol de Placa: penalty and free kick soccer game for your phone · Arial Gamer",
    descricao="Gol de Placa: 3D penalties and free kicks on your phone. Hit the top corner or be the goalkeeper, build your player and play online with a friend. National teams, clubs, rain, snow and commentary. On iPhone, no ads.",
    resumo="3D penalties and free kicks: be the kicker or the goalkeeper.",
-   lojas=["https://apps.apple.com/app/id6823608331"],
+   lojas=["https://apps.apple.com/app/id6823608331", "https://play.google.com/store/apps/details?id=com.arial.goldeplaca&hl=en"],
    como="What is Gol de Placa like", como_sub="Drag from the ball to the corner of the goal and shoot. Or stand in goal and try to save it.",
    cards=[("⚽", "Real shots", "The ball goes where you aim: top corner, low along the grass or curled around the wall. It hits the post and ripples the net."),
           ("🧤", "Or be the goalkeeper", "Tap the goal to dive. The keeper dives, jumps and catches the ball."),

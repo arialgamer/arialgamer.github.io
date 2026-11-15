@@ -244,7 +244,7 @@ def idiomas_nav(atual):
 def jsonld(cod, L):
     lojas = {"gelada": ["https://apps.apple.com/app/id6819882963", f"https://play.google.com/store/apps/details?id=com.arial.gelada&hl={L.get("hl", cod)}"],
              "esconde": ["https://apps.apple.com/app/id6819893974", f"https://play.google.com/store/apps/details?id=com.arial.escondeesconde&hl={L.get("hl", cod)}"],
-             "gol": ["https://apps.apple.com/app/id6823608331"]}
+             "gol": ["https://apps.apple.com/app/id6823608331", f"https://play.google.com/store/apps/details?id=com.arial.goldeplaca&hl={L.get("hl", cod)}"]}
     org = {"@type": "Organization", "@id": SITE + "#org", "name": "Arial Gamer", "url": SITE, "logo": SITE + "logo-1080.jpg",
            "alternateName": ["arialgamer", "arialgamer.com.br"],
            "sameAs": ["https://www.tiktok.com/@arial.gamer", "https://www.instagram.com/arial.gamer/", "https://www.youtube.com/@arialgamer"]}

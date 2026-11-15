@@ -418,7 +418,7 @@ APPS = [  # nome, ícone, App Store, Google Play (None = ainda não saiu)
     ("Acervo: Sua Coleção", "acervo.png", IOS, ANDROID),
     ("Gelada", "gelada.png", "https://apps.apple.com/app/id6819882963", "https://play.google.com/store/apps/details?id=com.arial.gelada"),
     ("Esconde-Esconde", "esconde.png", "https://apps.apple.com/app/id6819893974", "https://play.google.com/store/apps/details?id=com.arial.escondeesconde"),
-    ("Gol de Placa", "gol.png", "https://apps.apple.com/app/id6823608331", None),
+    ("Gol de Placa", "gol.png", "https://apps.apple.com/app/id6823608331", "https://play.google.com/store/apps/details?id=com.arial.goldeplaca"),
 ]
 _linhas = "\n".join(
     f'  <div class="app"><img src="/{ic}" alt=""><b>{e(n)}</b>'
