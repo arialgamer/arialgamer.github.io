@@ -22,7 +22,7 @@ ORG_SAMEAS = [
 HOME_TITULO = ("<title>Arial Gamer · Jogos e apps para celular: Gelada, Esconde-Esconde, Gol de Placa e Acervo</title>",
                "<title>Arial Gamer · Jogos e apps para celular: Gol de Placa, Esconde-Esconde, Gelada, Deicida, Rota Estelar e Acervo</title>")
 HOME_DESC_FIM = ("E o Acervo: Sua Coleção, app grátis para catalogar e avaliar coleções.",
-                 "Em breve: Deicida (ação contra os deuses do Egito) e Rota Estelar (nave espacial por 31 planetas). E o Acervo: Sua Coleção, app grátis para catalogar e avaliar coleções.")
+                 "Novo: Rota Estelar (nave espacial por 31 planetas), já na App Store. Em breve: Deicida (ação contra os deuses do Egito). E o Acervo: Sua Coleção, app grátis para catalogar e avaliar coleções.")
 
 
 def ajusta_no(n):
@@ -78,7 +78,7 @@ def main():
             novo = ajusta_jsonld(s) if TAG in s else s
             if rel == ".":
                 novo = novo.replace(*HOME_TITULO)
-                if "Em breve: Deicida" not in novo:
+                if "Em breve: Deicida" not in novo and "Novo: Rota Estelar" not in novo:
                     novo = novo.replace(*HOME_DESC_FIM)
             if novo != s:
                 open(p, "w", encoding="utf-8", newline="").write(novo)
