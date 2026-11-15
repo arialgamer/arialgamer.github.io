@@ -66,7 +66,7 @@
   }
 
   // Está em cima de algo que a pessoa lê ou toca? (só a parte da figurinha que aparece na tela)
-  const CONTEUDO = 'p,h1,h2,h3,h4,a,button,li,img,video,figure,.phone,.chip,.store,.btn,.price,.noads,.soon,dl,table,input,select,textarea,label';
+  const CONTEUDO = '.fact,p,h1,h2,h3,h4,a,button,li,img,video,figure,.phone,.chip,.store,.btn,.price,.noads,.soon,dl,table,input,select,textarea,label';
   function cobre(x, y, t) {
     const x0 = Math.max(0, x), x1 = Math.min(W, x + t);
     if (x1 - x0 < 8) return false;
