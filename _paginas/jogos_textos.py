@@ -197,7 +197,7 @@ G["gelada"]["zh"] = dict(
 # ---------------------------------------------------------------- ESCONDE-ESCONDE
 G["esconde"]["pt"] = dict(
  titulo="Esconde-Esconde: jogo de esconde-esconde para celular",
- desc="Esconde-Esconde para celular: 22 lugares de dia e de noite, contra a máquina, passando o celular ou online com um amigo. Narrador, radar quente ou frio e modo para os pequenos. R$ 2,90 no iPhone e no Android. Sem anúncios.",
+ desc="Esconde-Esconde para celular: 24 lugares de dia e de noite, contra a máquina, passando o celular ou online com um amigo. Narrador, radar quente ou frio e modo para os pequenos. R$ 2,90 no iPhone e no Android. Sem anúncios.",
  ogdesc="Esconda-se e tente achar, contra a máquina ou um amigo. Veja os vídeos e baixe.",
  app="Esconde-Esconde", genero="Família, Casual",
  como_h2="Como é o Esconde-Esconde", como_sub="A brincadeira de sempre, feita para o celular: esconda-se, passe o aparelho e veja se a outra pessoa te encontra.",
@@ -217,7 +217,7 @@ G["esconde"]["pt"] = dict(
 
 G["esconde"]["en"] = dict(
  titulo="Esconde-Esconde: hide and seek game for your phone",
- desc="Hide and seek on your phone: 22 places by day and night, against the computer, passing the phone around or online with a friend. Narrator, hot or cold radar and a mode for little ones. iPhone and Android, no ads.",
+ desc="Hide and seek on your phone: 24 places by day and night, against the computer, passing the phone around or online with a friend. Narrator, hot or cold radar and a mode for little ones. iPhone and Android, no ads.",
  ogdesc="Hide and seek against the computer or a friend. Watch the videos and download.",
  app="Esconde-Esconde: Hide & Seek", genero="Family, Casual",
  como_h2="What is Esconde-Esconde like", como_sub="The classic game, made for your phone: hide, pass the phone and see if the other person finds you.",
@@ -237,7 +237,7 @@ G["esconde"]["en"] = dict(
 
 G["esconde"]["es"] = dict(
  titulo="Esconde-Esconde: juego de escondite para el móvil",
- desc="El escondite en el móvil: 22 lugares de día y de noche, contra la máquina, pasando el móvil o en línea con un amigo. Narrador, radar frío o caliente y modo para los peques. iPhone y Android, sin anuncios.",
+ desc="El escondite en el móvil: 24 lugares de día y de noche, contra la máquina, pasando el móvil o en línea con un amigo. Narrador, radar frío o caliente y modo para los peques. iPhone y Android, sin anuncios.",
  ogdesc="Escóndete e intenta encontrar, contra la máquina o un amigo. Mira los videos y descarga.",
  app="Esconde-Esconde: El Escondite", genero="Familia, Casual",
  como_h2="Cómo es Esconde-Esconde", como_sub="El juego de siempre, hecho para el móvil: escóndete, pasa el aparato y mira si la otra persona te encuentra.",
@@ -257,7 +257,7 @@ G["esconde"]["es"] = dict(
 
 G["esconde"]["de"] = dict(
  titulo="Esconde-Esconde: Versteckspiel fürs Handy",
- desc="Verstecken auf dem Handy: 22 Orte bei Tag und Nacht, gegen den Computer, mit Handy-Weitergeben oder online mit einem Freund. Erzähler, Heiß-oder-kalt-Radar und ein Modus für die Kleinen. iPhone und Android, ohne Werbung.",
+ desc="Verstecken auf dem Handy: 24 Orte bei Tag und Nacht, gegen den Computer, mit Handy-Weitergeben oder online mit einem Freund. Erzähler, Heiß-oder-kalt-Radar und ein Modus für die Kleinen. iPhone und Android, ohne Werbung.",
  ogdesc="Versteck dich und such, gegen den Computer oder einen Freund. Videos ansehen und laden.",
  app="Esconde-Esconde: Verstecken", genero="Familie, Casual",
  como_h2="So ist Esconde-Esconde", como_sub="Das klassische Spiel, gemacht fürs Handy: Versteck dich, gib das Gerät weiter und schau, ob die andere Person dich findet.",
@@ -277,7 +277,7 @@ G["esconde"]["de"] = dict(
 
 G["esconde"]["fr"] = dict(
  titulo="Esconde-Esconde : jeu de cache-cache sur mobile",
- desc="Le cache-cache sur ton téléphone : 22 lieux de jour comme de nuit, contre l'ordinateur, en se passant le téléphone ou en ligne avec un ami. Narrateur, radar chaud ou froid et mode pour les petits. iPhone et Android, sans publicité.",
+ desc="Le cache-cache sur ton téléphone : 24 lieux de jour comme de nuit, contre l'ordinateur, en se passant le téléphone ou en ligne avec un ami. Narrateur, radar chaud ou froid et mode pour les petits. iPhone et Android, sans publicité.",
  ogdesc="Cache-toi et cherche, contre l'ordinateur ou un ami. Regarde les vidéos et télécharge.",
  app="Esconde-Esconde : Cache-Cache", genero="Famille, Casual",
  como_h2="À quoi ressemble Esconde-Esconde", como_sub="Le jeu de toujours, fait pour le téléphone : cache-toi, passe l'appareil et vois si l'autre te trouve.",
@@ -297,7 +297,7 @@ G["esconde"]["fr"] = dict(
 
 G["esconde"]["it"] = dict(
  titulo="Esconde-Esconde: gioco di nascondino per smartphone",
- desc="Nascondino sul telefono: 22 luoghi di giorno e di notte, contro il computer, passandosi il telefono o online con un amico. Narratore, radar caldo o freddo e modalità per i più piccoli. iPhone e Android, senza pubblicità.",
+ desc="Nascondino sul telefono: 24 luoghi di giorno e di notte, contro il computer, passandosi il telefono o online con un amico. Narratore, radar caldo o freddo e modalità per i più piccoli. iPhone e Android, senza pubblicità.",
  ogdesc="Nasconditi e cerca, contro il computer o un amico. Guarda i video e scarica.",
  app="Esconde-Esconde: Nascondino", genero="Famiglia, Casual",
  como_h2="Com'è Esconde-Esconde", como_sub="Il gioco di sempre, fatto per il telefono: nasconditi, passa il telefono e vedi se l'altra persona ti trova.",
@@ -317,7 +317,7 @@ G["esconde"]["it"] = dict(
 
 G["esconde"]["ja"] = dict(
  titulo="Esconde-Esconde：スマホのかくれんぼゲーム",
- desc="スマホでかくれんぼ：昼と夜の 22 か所で、コンピューター相手に、スマホを回して、または友だちとオンラインで。ナレーター、ホット・コールドのレーダー、小さな子ども向けモード。iPhone と Android、広告なし。",
+ desc="スマホでかくれんぼ：昼と夜の 24 か所で、コンピューター相手に、スマホを回して、または友だちとオンラインで。ナレーター、ホット・コールドのレーダー、小さな子ども向けモード。iPhone と Android、広告なし。",
  ogdesc="隠れて、探そう。コンピューターや友だちと対戦。動画を見てダウンロード。",
  app="Esconde-Esconde: かくれんぼ", genero="ファミリー, カジュアル",
  como_h2="Esconde-Esconde はこんなゲーム", como_sub="おなじみの遊びをスマホで。隠れて、スマホを渡して、相手に見つかるか試そう。",
@@ -331,13 +331,13 @@ G["esconde"]["ja"] = dict(
  faq=[("どのスマホで遊べますか？", "iPhone と Android です。広告もサブスクリプションもありません。"),
       ("ほかの人と遊べますか？", "はい。1 台のスマホを回して、3〜4 人のパーティーで、または友だちとオンラインで、それぞれのスマホでルームコードを使って遊べます。"),
       ("子どもにも向いていますか？", "はい。家族で遊べるゲームで、小さな子ども向けモードと、すべてを伝えてくれるナレーターがあり、広告もありません。"),
-      ("どんな場所がありますか？", "家、ビーチ、牧場、氷河、海賊船、宇宙ステーション、お城、恐竜の国、サーカス、博物館など 22 か所。どれも昼と夜があります。"),
+      ("どんな場所がありますか？", "家、ビーチ、牧場、氷河、海賊船、宇宙ステーション、お城、恐竜の国、サーカス、博物館など 24 か所。どれも昼と夜があります。"),
       ("登録は必要ですか？", "いいえ。登録は不要で、データも集めません。")],
  videos=["Esconde-Esconde：月に隠れる", "Esconde-Esconde：コンピューターと対戦", "Esconde-Esconde：海賊船", "Esconde-Esconde：氷河", "Esconde-Esconde：同じ場所の昼と夜"])
 
 G["esconde"]["zh"] = dict(
  titulo="Esconde-Esconde：手机捉迷藏游戏",
- desc="手机上的捉迷藏：22 个场景，白天黑夜都有，可以和电脑对战、轮流传手机，或和朋友在线玩。旁白、冷热雷达和小朋友模式。iPhone 和 Android，无广告。",
+ desc="手机上的捉迷藏：24 个场景，白天黑夜都有，可以和电脑对战、轮流传手机，或和朋友在线玩。旁白、冷热雷达和小朋友模式。iPhone 和 Android，无广告。",
  ogdesc="躲起来，再去找，和电脑或朋友一起玩。观看视频并下载。",
  app="Esconde-Esconde：捉迷藏", genero="家庭, 休闲",
  como_h2="Esconde-Esconde 是什么样的", como_sub="经典的游戏，为手机打造：躲起来，把手机递出去，看看对方能不能找到你。",
@@ -351,7 +351,7 @@ G["esconde"]["zh"] = dict(
  faq=[("支持哪些手机？", "iPhone 和 Android。没有广告，也没有订阅。"),
       ("可以和别人一起玩吗？", "可以：轮流用同一部手机，3 到 4 人派对，或者和朋友在线玩，各用各的手机，输入房间码即可。"),
       ("适合孩子吗？", "适合。这是一款家庭游戏，有小朋友模式和讲解一切的旁白，没有广告。"),
-      ("有哪些场景？", "共 22 个，比如房子、海滩、农场、冰川、海盗船、空间站、城堡、恐龙乐园、马戏团和博物馆，每个都有白天和黑夜。"),
+      ("有哪些场景？", "共 24 个，比如房子、海滩、农场、冰川、海盗船、空间站、城堡、恐龙乐园、马戏团和博物馆，每个都有白天和黑夜。"),
       ("需要注册吗？", "不需要。游戏无需注册，也不收集数据。")],
  videos=["Esconde-Esconde：躲在月球上", "Esconde-Esconde：和电脑对战", "Esconde-Esconde：海盗船", "Esconde-Esconde：冰川", "Esconde-Esconde：同一个地方的白天和黑夜"])
 

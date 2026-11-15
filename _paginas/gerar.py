@@ -88,7 +88,7 @@ JOGOS = {
   "esconde": dict(
     pasta="esconde-esconde", nome="Esconde-Esconde", nome_loja="Esconde-Esconde", icone="esconde.png",
     titulo="Esconde-Esconde: jogo de esconde-esconde para celular · Arial Gamer",
-    descricao="Esconde-Esconde para celular: 22 lugares de dia e de noite, contra a máquina, passando o celular ou online com um amigo. Narrador, radar quente ou frio e modo para os pequenos. R$ 2,90 no iPhone e no Android. Sem anúncios.",
+    descricao="Esconde-Esconde para celular: 24 lugares de dia e de noite, contra a máquina, passando o celular ou online com um amigo. Narrador, radar quente ou frio e modo para os pequenos. R$ 2,90 no iPhone e no Android. Sem anúncios.",
     resumo="Esconda-se e tente achar, contra a máquina ou um amigo.",
     categoria="Família, Casual", os="iOS, Android", imagem="media/esconde-lua.jpg",
     lojas=["https://apps.apple.com/br/app/id6819893974", "https://play.google.com/store/apps/details?id=com.arial.escondeesconde"],

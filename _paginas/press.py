@@ -50,7 +50,7 @@ GAMES = [
       stores=[("App Store", "https://apps.apple.com/app/id6819882963"), ("Google Play", "https://play.google.com/store/apps/details?id=com.arial.gelada&hl=en")],
       video="media/gelada-talhou.mp4"),
  dict(nome="Esconde-Esconde", sub="Hide and seek", icon="esconde-esconde-icon.png", page="en/esconde-esconde/",
-      pitch="A brand-new hide-and-seek game made for the phone: hide, pass the phone and see if the other player finds you, or challenge the computer, which learns your tricks. 22 places by day and by night, a flashlight, a hot-or-cold radar, decoys, rain and lightning, a narrator and a mode for little ones. Online play with a room code.",
+      pitch="A brand-new hide-and-seek game made for the phone: hide, pass the phone and see if the other player finds you, or challenge the computer, which learns your tricks. 24 places by day and by night, a flashlight, a hot-or-cold radar, decoys, rain and lightning, a narrator and a mode for little ones. Online play with a room code.",
       facts=[("Platforms", "iPhone, Android"), ("Genre", "Family, casual"), ("Players", "1–4, local or online"), ("Ads", "None")],
       stores=[("App Store", "https://apps.apple.com/app/id6819893974"), ("Google Play", "https://play.google.com/store/apps/details?id=com.arial.escondeesconde&hl=en")],
       video="media/esconde-lua.mp4"),

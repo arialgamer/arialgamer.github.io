@@ -31,7 +31,7 @@ JOGOS = {
  "esconde": dict(pasta="esconde-esconde", nome="Esconde-Esconde", icone="esconde.png", imagem="media/esconde-lua.jpg",
    loja="Esconde-Esconde: Hide & Seek", os="iOS, Android",
    titulo="Esconde-Esconde: hide and seek game for your phone · Arial Gamer",
-   descricao="Hide and seek on your phone: 22 places by day and night, against the computer, passing the phone around or online with a friend. Narrator, hot or cold radar and a mode for little ones. iPhone and Android, no ads.",
+   descricao="Hide and seek on your phone: 24 places by day and night, against the computer, passing the phone around or online with a friend. Narrator, hot or cold radar and a mode for little ones. iPhone and Android, no ads.",
    resumo="Hide and seek against the computer or a friend.",
    lojas=["https://apps.apple.com/app/id6819893974", "https://play.google.com/store/apps/details?id=com.arial.escondeesconde&hl=en"],
    como="What is Esconde-Esconde like", como_sub="The classic game, made for your phone: hide, pass the phone and see if the other person finds you.",
