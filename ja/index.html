@@ -118,6 +118,61 @@
     "MobileApplication",
     "VideoGame"
    ],
+   "name": "Rota Estelar：宇宙シューティング",
+   "description": "Rota Estelar：宇宙船を操縦して、地球からこれまでに見つかった最も遠い惑星へ。本物の惑星31個、クリーチャー20種、巨大ボス、機体10機と武器6種、ナレーション付きで子ども向けのかんたんモードも。iPhone と Android で近日公開、広告なし。",
+   "url": "https://arialgamer.com.br/ja/rota-estelar/",
+   "image": "https://arialgamer.com.br/rota.png",
+   "applicationCategory": "GameApplication",
+   "operatingSystem": "iOS, Android",
+   "inLanguage": [
+    "pt-BR",
+    "en",
+    "es",
+    "de",
+    "fr",
+    "it",
+    "zh",
+    "ja"
+   ],
+   "author": {
+    "@id": "https://arialgamer.com.br/#org"
+   },
+   "alternateName": "Rota Estelar",
+   "genre": "アクション、シューティング",
+   "screenshot": "https://arialgamer.com.br/media/rota-chefe.jpg"
+  },
+  {
+   "@type": [
+    "MobileApplication",
+    "VideoGame"
+   ],
+   "name": "Deicida",
+   "description": "Deicida：ひとりの人間がエジプトの神々を狩り、倒していく。二本のケペシュ、コンボ、パリィ、スローモーションのとどめ技で戦う、スマホ向けシネマティック・ハック＆スラッシュ。iPhone と Android で近日公開、広告なし。",
+   "url": "https://arialgamer.com.br/ja/deicida/",
+   "image": "https://arialgamer.com.br/deicida.png",
+   "applicationCategory": "GameApplication",
+   "operatingSystem": "iOS, Android",
+   "inLanguage": [
+    "pt-BR",
+    "en",
+    "es",
+    "de",
+    "fr",
+    "it",
+    "zh",
+    "ja"
+   ],
+   "author": {
+    "@id": "https://arialgamer.com.br/#org"
+   },
+   "genre": "アクション、ハック＆スラッシュ",
+   "screenshot": "https://arialgamer.com.br/media/deicida-shot-eclipse.jpg"
+  },
+  {
+   "@type": [
+    "MobileApplication",
+    "VideoGame"
+   ],
    "name": "Gol de Placa：PK",
    "description": "3DのPKとフリーキック：ゴールの隅を狙うか、キーパーになろう。自分の選手をつくって、友だちとオンライン対戦。",
    "url": "https://arialgamer.com.br/ja/gol-de-placa/",
@@ -455,6 +510,19 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .vista-apps .abas { margin-bottom: 0 }
 .vista-apps #apps { padding-top: 44px }
 @media (max-width: 400px) { .abas a { padding: 9px 16px; font-size: 15px } }
+
+/* Jogos na horizontal (Rota Estelar, Deicida): player deitado */
+.rota { --c: #ffb547; --c-ink: #2a1500; --glow: rgba(90,130,255,.24); --gx: 30%; background: linear-gradient(180deg, transparent, rgba(14,22,60,.55), transparent) }
+.deicida { --c: #f2a24a; --c-ink: #2a0d02; --glow: rgba(255,96,40,.22); --gx: 70%; background: linear-gradient(180deg, transparent, rgba(64,16,8,.55), transparent) }
+.game.wide .wrap:not(.shots) { grid-template-columns: 1fr minmax(0, 560px) }
+.game.wide.flip .wrap:not(.shots) { grid-template-columns: minmax(0, 560px) 1fr }
+.player .phone.wide { width: min(560px, 90vw); aspect-ratio: 19.5 / 9; border-radius: 34px }
+.phone.wide .screen { border-radius: 26px }
+.wide .clips { max-width: 560px }
+.wide .clip { width: 84px }
+.wide .clip img { width: 84px; height: 48px; border-radius: 10px }
+.wide .wrap.shots img { aspect-ratio: 16 / 9 }
+@media (max-width: 960px) { .game.wide .wrap:not(.shots), .game.wide.flip .wrap:not(.shots) { grid-template-columns: 1fr } }
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -476,6 +544,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   <div class="wrap">
     <a class="brand" href="#topo"><img src="/logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
+      <li><a href="#rota">Rota Estelar</a></li>
+      <li><a href="#deicida">Deicida</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gelada">Gelada</a></li>
@@ -508,6 +578,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         <div class="chipgroups">
           <div class="chipgroup"><span class="chiplabel">🎮 ゲーム</span>
             <div class="chips">
+              <a class="chip" href="#rota"><img src="/rota.png" alt="" width="34" height="34">Rota Estelar</a>
+              <a class="chip" href="#deicida"><img src="/deicida.png" alt="" width="34" height="34">Deicida</a>
               <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
               <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
               <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
@@ -540,6 +612,100 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 
   <!-- ================= JOGOS ================= -->
   <div class="divisao" id="jogos" data-vista="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>ゲーム</h2><p class="sub">ひとりでも友だちとでも</p></div></div>
+
+  <!-- ================= ROTA ESTELAR ================= -->
+  <section class="game rota wide" data-vista="jogos" id="rota">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/rota.png" alt="Rota Estelarのアイコン" width="84" height="84">
+          <div><p class="eyebrow">近日公開</p><h2>Rota Estelar</h2></div>
+        </div>
+        <p class="tag">宇宙船で地球から、これまでに見つかった最も遠い惑星へ 🚀👾</p>
+        <span class="price">🚀 近日公開</span><span class="price free">🚫 広告なし</span>
+        <ul class="feats">
+          <li><i>🪐</i><span><b>本物の惑星31個</b>：太陽系から系外惑星まで</span></li>
+          <li><i>👾</i><span><b>クリーチャー20種</b>と惑星ごとの巨大ボス</span></li>
+          <li><i>🚀</i><span><b>機体10機と武器6種</b>、シールド・ドローン・ボムも</span></li>
+          <li><i>🎙️</i><span><b>ナレーション付き</b>、子ども向けのかんたんモード</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>近日公開</b>：iPhone と Android に登場。アプリ内課金なしの完全版です。発売日は @arial.gamer でお知らせします。</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>近日公開</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>近日公開</strong></span></span>
+        </div>
+        <a class="more" href="/ja/rota-estelar/">Rota Estelar について →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone wide"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/rota-chefe.jpg"><source src="/media/rota-chefe.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="音をオンにする"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="Rota Estelarの動画を選ぶ">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/rota-chefe"><img src="/media/rota-chefe.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>巨大ボス</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-criaturas"><img src="/media/rota-criaturas.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>クリーチャー</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-ruinas"><img src="/media/rota-ruinas.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>遺跡</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-meteoros"><img src="/media/rota-meteoros.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>流星雨</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-guardiao"><img src="/media/rota-guardiao.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>ガーディアン</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-tempestade"><img src="/media/rota-tempestade.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>電気嵐</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/rota-shot-mapa.jpg" alt="水星、ケレス、木星、土星、天王星、海王星、冥王星のマップ" loading="lazy"><figcaption>探査ルート</figcaption></figure>
+      <figure class="reveal"><img src="/media/rota-shot-hangar.jpg" alt="機体を選べる格納庫" loading="lazy"><figcaption>機体10機と武器6種</figcaption></figure>
+      <figure class="reveal"><img src="/media/rota-shot-catalogo.jpg" alt="見つけたクリーチャーの図鑑" loading="lazy"><figcaption>クリーチャー図鑑</figcaption></figure>
+      <figure class="reveal"><img src="/media/rota-shot-guardiao.jpg" alt="巨大な月ガニのガーディアンと戦う宇宙船" loading="lazy"><figcaption>巨大ガーディアン</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================= DEICIDA ================= -->
+  <section class="game deicida wide flip" data-vista="jogos" id="deicida">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/deicida.png" alt="Deicida のアイコン" width="84" height="84">
+          <div><p class="eyebrow">近日公開</p><h2>Deicida</h2></div>
+        </div>
+        <p class="tag">ひとりの人間がエジプトの神々に挑む ⚔️☀️</p>
+        <span class="price">⚔️ 近日公開</span><span class="price free">🚫 広告なし</span>
+        <ul class="feats">
+          <li><i>🏺</i><span><b>第1章：エジプト</b>：全10ステージ、各ステージのボスは神</span></li>
+          <li><i>⚔️</i><span><b>二本のケペシュ</b>：コンボ、回避、パリィ、スローモーションのとどめ技</span></li>
+          <li><i>✨</i><span><b>神々の力</b>：倒した神から新しい力を手に入れる</span></li>
+          <li><i>🎭</i><span><b>主人公は男性でも女性でも</b>自由にカスタマイズ、壮大なナレーション付き</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>近日公開</b>：iPhone と Android に登場。プロローグと最初の3ステージは無料の予定です。画像はティザーのもので、ゲームは制作中です。</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>近日公開</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>近日公開</strong></span></span>
+        </div>
+        <a class="more" href="/ja/rota-estelar/">Deicida について →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone wide"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/deicida-eclipse.jpg"><source src="/media/deicida-eclipse.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="音をオンにする"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="Deicidaの動画を選ぶ">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/deicida-eclipse"><img src="/media/deicida-eclipse.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>日食</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-deuses"><img src="/media/deicida-deuses.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>神々</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-barca"><img src="/media/deicida-barca.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>太陽の船</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-combate"><img src="/media/deicida-combate.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>バトル</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/deicida-shot-eclipse.jpg" alt="ピラミッドの上の日食を前にした主人公のシルエット" loading="lazy"><figcaption>人間 対 神々</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-combate.jpg" alt="二本の刃でネクロポリスのミイラと戦う主人公" loading="lazy"><figcaption>二本のケペシュでコンボ</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-barca.jpg" alt="蛇アペプが空を横切る中、ドゥアトを進む太陽の船" loading="lazy"><figcaption>太陽の船とアペプ</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-mapa.jpg" alt="10ステージと神々（セベク、セルケト、アヌビス、アメミット、コンス、セト、セクメト、トト、ホルス、ラー）を記したナイル川の地図" loading="lazy"><figcaption>第1章：10柱の神</figcaption></figure>
+    </div>
+  </section>
 
   <!-- ================= GOL DE PLACA ================= -->
   <section class="game gol" data-vista="jogos" id="gol">
@@ -814,6 +980,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
     <nav aria-label="Jogos">
+      <a href="/ja/rota-estelar/">Rota Estelar</a>
+      <a href="/ja/deicida/">Deicida</a>
       <a href="/ja/gol-de-placa/">Gol de Placa</a>
       <a href="/ja/esconde-esconde/">Esconde-Esconde</a>
       <a href="/ja/gelada/">Gelada</a>

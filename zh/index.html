@@ -118,6 +118,61 @@
     "MobileApplication",
     "VideoGame"
    ],
+   "name": "Rota Estelar：太空射击",
+   "description": "Rota Estelar：驾驶飞船从地球飞向迄今发现的最遥远的行星。31 颗真实行星、20 种生物、巨型首领、10 艘飞船和 6 种武器，有旁白，还有适合孩子的简单模式。即将登陆 iPhone 和 Android，无广告。",
+   "url": "https://arialgamer.com.br/zh/rota-estelar/",
+   "image": "https://arialgamer.com.br/rota.png",
+   "applicationCategory": "GameApplication",
+   "operatingSystem": "iOS, Android",
+   "inLanguage": [
+    "pt-BR",
+    "en",
+    "es",
+    "de",
+    "fr",
+    "it",
+    "zh",
+    "ja"
+   ],
+   "author": {
+    "@id": "https://arialgamer.com.br/#org"
+   },
+   "alternateName": "Rota Estelar",
+   "genre": "动作，太空射击",
+   "screenshot": "https://arialgamer.com.br/media/rota-chefe.jpg"
+  },
+  {
+   "@type": [
+    "MobileApplication",
+    "VideoGame"
+   ],
+   "name": "Deicida",
+   "description": "Deicida：一个凡人追猎并击杀埃及众神。手机上的电影级砍杀动作游戏，双持弯刀、连招、格挡反击和慢动作终结技。即将登陆 iPhone 和 Android，无广告。",
+   "url": "https://arialgamer.com.br/zh/deicida/",
+   "image": "https://arialgamer.com.br/deicida.png",
+   "applicationCategory": "GameApplication",
+   "operatingSystem": "iOS, Android",
+   "inLanguage": [
+    "pt-BR",
+    "en",
+    "es",
+    "de",
+    "fr",
+    "it",
+    "zh",
+    "ja"
+   ],
+   "author": {
+    "@id": "https://arialgamer.com.br/#org"
+   },
+   "genre": "动作，砍杀",
+   "screenshot": "https://arialgamer.com.br/media/deicida-shot-eclipse.jpg"
+  },
+  {
+   "@type": [
+    "MobileApplication",
+    "VideoGame"
+   ],
    "name": "Gol de Placa：点球",
    "description": "3D 点球和任意球：射向死角或当守门员，打造你的球员，和朋友在线对战。",
    "url": "https://arialgamer.com.br/zh/gol-de-placa/",
@@ -455,6 +510,19 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .vista-apps .abas { margin-bottom: 0 }
 .vista-apps #apps { padding-top: 44px }
 @media (max-width: 400px) { .abas a { padding: 9px 16px; font-size: 15px } }
+
+/* Jogos na horizontal (Rota Estelar, Deicida): player deitado */
+.rota { --c: #ffb547; --c-ink: #2a1500; --glow: rgba(90,130,255,.24); --gx: 30%; background: linear-gradient(180deg, transparent, rgba(14,22,60,.55), transparent) }
+.deicida { --c: #f2a24a; --c-ink: #2a0d02; --glow: rgba(255,96,40,.22); --gx: 70%; background: linear-gradient(180deg, transparent, rgba(64,16,8,.55), transparent) }
+.game.wide .wrap:not(.shots) { grid-template-columns: 1fr minmax(0, 560px) }
+.game.wide.flip .wrap:not(.shots) { grid-template-columns: minmax(0, 560px) 1fr }
+.player .phone.wide { width: min(560px, 90vw); aspect-ratio: 19.5 / 9; border-radius: 34px }
+.phone.wide .screen { border-radius: 26px }
+.wide .clips { max-width: 560px }
+.wide .clip { width: 84px }
+.wide .clip img { width: 84px; height: 48px; border-radius: 10px }
+.wide .wrap.shots img { aspect-ratio: 16 / 9 }
+@media (max-width: 960px) { .game.wide .wrap:not(.shots), .game.wide.flip .wrap:not(.shots) { grid-template-columns: 1fr } }
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -476,6 +544,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   <div class="wrap">
     <a class="brand" href="#topo"><img src="/logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
+      <li><a href="#rota">Rota Estelar</a></li>
+      <li><a href="#deicida">Deicida</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gelada">Gelada</a></li>
@@ -508,6 +578,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         <div class="chipgroups">
           <div class="chipgroup"><span class="chiplabel">🎮 游戏</span>
             <div class="chips">
+              <a class="chip" href="#rota"><img src="/rota.png" alt="" width="34" height="34">Rota Estelar</a>
+              <a class="chip" href="#deicida"><img src="/deicida.png" alt="" width="34" height="34">Deicida</a>
               <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
               <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
               <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
@@ -540,6 +612,100 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 
   <!-- ================= JOGOS ================= -->
   <div class="divisao" id="jogos" data-vista="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>游戏</h2><p class="sub">一个人玩或和朋友一起玩</p></div></div>
+
+  <!-- ================= ROTA ESTELAR ================= -->
+  <section class="game rota wide" data-vista="jogos" id="rota">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/rota.png" alt="Rota Estelar 图标" width="84" height="84">
+          <div><p class="eyebrow">即将推出</p><h2>Rota Estelar</h2></div>
+        </div>
+        <p class="tag">驾驶飞船从地球飞向迄今发现的最遥远的行星 🚀👾</p>
+        <span class="price">🚀 即将推出</span><span class="price free">🚫 无广告</span>
+        <ul class="feats">
+          <li><i>🪐</i><span><b>31 颗真实行星</b>，从太阳系到系外行星</span></li>
+          <li><i>👾</i><span><b>20 种生物</b>，每颗行星都有巨型首领</span></li>
+          <li><i>🚀</i><span><b>10 艘飞船和 6 种武器</b>，还有护盾、无人机和炸弹</span></li>
+          <li><i>🎙️</i><span><b>男声或女声旁白</b>，还有适合孩子的简单模式</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>即将推出</b>：登陆 iPhone 和 Android。完整版游戏，无应用内购买。关注 @arial.gamer，第一时间获知上线日期。</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>即将推出</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>即将推出</strong></span></span>
+        </div>
+        <a class="more" href="/zh/rota-estelar/">了解 Rota Estelar →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone wide"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/rota-chefe.jpg"><source src="/media/rota-chefe.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="打开声音"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="选择 Rota Estelar 视频">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/rota-chefe"><img src="/media/rota-chefe.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>巨型首领</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-criaturas"><img src="/media/rota-criaturas.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>生物</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-ruinas"><img src="/media/rota-ruinas.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>外星遗迹</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-meteoros"><img src="/media/rota-meteoros.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>流星雨</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-guardiao"><img src="/media/rota-guardiao.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>守卫者</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/rota-tempestade"><img src="/media/rota-tempestade.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>电暴</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/rota-shot-mapa.jpg" alt="包含水星、谷神星、木星、土星、天王星、海王星和冥王星的地图" loading="lazy"><figcaption>探索路线</figcaption></figure>
+      <figure class="reveal"><img src="/media/rota-shot-hangar.jpg" alt="可以挑选飞船的机库" loading="lazy"><figcaption>10 艘飞船和 6 种武器</figcaption></figure>
+      <figure class="reveal"><img src="/media/rota-shot-catalogo.jpg" alt="已发现生物的图鉴" loading="lazy"><figcaption>生物图鉴</figcaption></figure>
+      <figure class="reveal"><img src="/media/rota-shot-guardiao.jpg" alt="飞船迎战守卫者——巨型月蟹" loading="lazy"><figcaption>巨型守卫者</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================= DEICIDA ================= -->
+  <section class="game deicida wide flip" data-vista="jogos" id="deicida">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/deicida.png" alt="Deicida 图标" width="84" height="84">
+          <div><p class="eyebrow">即将推出</p><h2>Deicida</h2></div>
+        </div>
+        <p class="tag">一个凡人，挑战埃及众神 ⚔️☀️</p>
+        <span class="price">⚔️ 即将推出</span><span class="price free">🚫 无广告</span>
+        <ul class="feats">
+          <li><i>🏺</i><span><b>第一章：埃及</b>，共 10 关，每关的首领都是一位神</span></li>
+          <li><i>⚔️</i><span><b>双持弯刀</b>：连招、闪避、格挡反击和慢动作终结技</span></li>
+          <li><i>✨</i><span><b>众神之力</b>：每击败一位神，就获得一种新能力</span></li>
+          <li><i>🎭</i><span><b>男女主角任选</b>，自由定制外观，还有史诗旁白</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>即将推出</b>：登陆 iPhone 和 Android。序章和前 3 关将免费。图片来自预告片，游戏正在制作中。</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>即将推出</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>即将推出</strong></span></span>
+        </div>
+        <a class="more" href="/zh/rota-estelar/">了解 Deicida →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone wide"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/deicida-eclipse.jpg"><source src="/media/deicida-eclipse.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="打开声音"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="选择 Deicida 视频">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/deicida-eclipse"><img src="/media/deicida-eclipse.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>日食</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-deuses"><img src="/media/deicida-deuses.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>众神</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-barca"><img src="/media/deicida-barca.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>太阳船</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-combate"><img src="/media/deicida-combate.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>战斗</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/deicida-shot-eclipse.jpg" alt="金字塔上空日食前的主角剪影" loading="lazy"><figcaption>凡人对抗众神</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-combate.jpg" alt="手持双刃的主角在墓地对战木乃伊" loading="lazy"><figcaption>双持弯刀连招</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-barca.jpg" alt="巨蛇阿佩普划过天空，太阳船驶过冥界杜阿特" loading="lazy"><figcaption>太阳船与阿佩普</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-mapa.jpg" alt="尼罗河地图，标出 10 个关卡和众神：索贝克、塞尔凯特、阿努比斯、阿米特、孔苏、赛特、塞赫美特、托特、荷鲁斯和拉" loading="lazy"><figcaption>第一章：10 位神</figcaption></figure>
+    </div>
+  </section>
 
   <!-- ================= GOL DE PLACA ================= -->
   <section class="game gol" data-vista="jogos" id="gol">
@@ -814,6 +980,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
     <nav aria-label="Jogos">
+      <a href="/zh/rota-estelar/">Rota Estelar</a>
+      <a href="/zh/deicida/">Deicida</a>
       <a href="/zh/gol-de-placa/">Gol de Placa</a>
       <a href="/zh/esconde-esconde/">Esconde-Esconde</a>
       <a href="/zh/gelada/">Gelada</a>
