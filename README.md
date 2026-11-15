@@ -21,3 +21,7 @@ Ficam em `media/`. Os vídeos são verticais (540×960, H.264), com capa `.jpg` 
 - **Apoie o Arial Gamer** (`#apoie`): chave Pix arial83gamer@gmail.com com botão "Copiar chave".
 - **Comentários e sugestões** (`#contato`): formulário enviado pelo [FormSubmit](https://formsubmit.co) (grátis, sem servidor) para renato@arialgamer.com.br, que o ImprovMX encaminha para o Gmail. Tem campo escondido contra robôs (`_honey`). Na primeira mensagem enviada do site publicado, o FormSubmit manda um e-mail "Activate Form": é só clicar uma vez.
 - As duas áreas também aparecem nas páginas dos jogos (vêm do `index.html` pelo `gerar.py`). Os textos traduzidos ficam no fim da lista `T` de `idiomas.py` e das listas de `idiomas_mais.py`: se mudar uma frase em português, mude a chave lá também e rode os scripts de novo.
+
+## Busca do Google
+
+`python _paginas/seo.py` ajusta direto as páginas publicadas: preço R$ 1,90, links de cada jogo para as lojas e da marca para as redes e lojas (dados estruturados `sameAs`) e o título da home com todos os jogos. Rode de novo sempre que rodar os outros scripts de `_paginas/`, porque eles ainda têm os preços antigos. Depois, atualize o `<lastmod>` das páginas que mudaram no `sitemap.xml`.
