@@ -87,7 +87,7 @@
   for (const [id, k] of [['tMarca', 'marca'], ['vCarregando', 'carregando'], ['tReplica', 'replica'], ['tValor', 'valor'], ['tGrupos', 'grupos'], ['vLoja', 'cta'], ['tPitch', 'pitch'], ['tRodape', 'rodape'], ['tPriv', 'priv']]) document.getElementById(id).textContent = L[k];
   const FUNCAO = 'https://xmppelpzwtvxztesnspc.supabase.co/functions/v1/compartilhado';
   const ua = navigator.userAgent;
-  const loja = /iPhone|iPad|iPod/.test(ua) ? 'https://apps.apple.com/app/id6832553837'
+  const loja = /iPhone|iPad|iPod/.test(ua) ? 'https://apps.apple.com/' + (cod === 'pt' ? 'br/' : '') + 'app/id6832553837'
     : /Android/.test(ua) ? 'https://play.google.com/store/apps/details?id=com.arial.acervo&referrer=utm_source%3Dacervo_item%26utm_medium%3Dcompartilhado'
     : `https://arialgamer.com.br/${cod === 'pt' ? '' : cod + '/'}acervo/`;
   document.getElementById('vLoja').href = loja;

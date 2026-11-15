@@ -15,7 +15,7 @@
 // Abre direto a loja do celular; no computador, mostra os botões e o QR code.
 (function () {
   var ua = navigator.userAgent;
-  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/app/id6819893974');
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/' + (/^pt/i.test(navigator.language || '') ? 'br/' : '') + 'app/id6819893974');
   else if (/Android/.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.arial.escondeesconde');
 })();
 </script>
@@ -38,11 +38,12 @@ small a { color: #fff }
   <img class="icone" src="/esconde.png" alt="">
   <h1>Esconde-Esconde</h1>
   <p>Esconda-se e tente achar, contra a máquina ou um amigo 🙈</p>
-  <a class="loja" href="https://apps.apple.com/app/id6819893974">App Store</a>
+  <a class="loja" href="https://apps.apple.com/br/app/id6819893974">App Store</a>
   <a class="loja" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde">Google Play</a>
   <img class="qr" src="/esconde-esconde/baixar/qr.png" alt="QR code para baixar o Esconde-Esconde">
   <small>Aponte a câmera do celular · Point your phone camera</small>
   <small><a href="/esconde-esconde/">Conheça o Esconde-Esconde →</a></small>
 </main>
+<script data-pais-loja>if (!/^pt/i.test(navigator.language || '')) document.querySelectorAll('a[href*="apps.apple.com/br/"]').forEach(function (a) { a.href = a.href.replace('apps.apple.com/br/', 'apps.apple.com/'); });</script>
 </body>
 </html>

@@ -15,7 +15,7 @@
 // Abre direto a loja do celular; no computador, mostra os botões e o QR code.
 (function () {
   var ua = navigator.userAgent;
-  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/app/id6819882963');
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/' + (/^pt/i.test(navigator.language || '') ? 'br/' : '') + 'app/id6819882963');
   else if (/Android/.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.arial.gelada');
 })();
 </script>
@@ -38,11 +38,12 @@ small a { color: #fff }
   <img class="icone" src="/gelada.png" alt="">
   <h1>Gelada</h1>
   <p>Cerveja, drinks e até café no seu celular. Encha o copo e incline para beber 🍺</p>
-  <a class="loja" href="https://apps.apple.com/app/id6819882963">App Store</a>
+  <a class="loja" href="https://apps.apple.com/br/app/id6819882963">App Store</a>
   <a class="loja" href="https://play.google.com/store/apps/details?id=com.arial.gelada">Google Play</a>
   <img class="qr" src="/gelada/baixar/qr.png" alt="QR code para baixar o Gelada">
   <small>Aponte a câmera do celular · Point your phone camera</small>
   <small><a href="/gelada/">Conheça o Gelada →</a></small>
 </main>
+<script data-pais-loja>if (!/^pt/i.test(navigator.language || '')) document.querySelectorAll('a[href*="apps.apple.com/br/"]').forEach(function (a) { a.href = a.href.replace('apps.apple.com/br/', 'apps.apple.com/'); });</script>
 </body>
 </html>

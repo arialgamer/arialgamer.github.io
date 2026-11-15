@@ -31,10 +31,10 @@ p a { color: #fff }
 <main>
   <img class="logo" src="/logo.png" alt="">
   <h1>Apps e jogos da Arial Gamer</h1>
-  <div class="app"><img src="/acervo.png" alt=""><b>Acervo: Sua Coleção</b><a class="loja ios" href="https://apps.apple.com/app/id6832553837">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.acervo">Google Play</a></div>
-  <div class="app"><img src="/gelada.png" alt=""><b>Gelada</b><a class="loja ios" href="https://apps.apple.com/app/id6819882963">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.gelada">Google Play</a></div>
-  <div class="app"><img src="/esconde.png" alt=""><b>Esconde-Esconde</b><a class="loja ios" href="https://apps.apple.com/app/id6819893974">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde">Google Play</a></div>
-  <div class="app"><img src="/gol.png" alt=""><b>Gol de Placa</b><a class="loja ios" href="https://apps.apple.com/app/id6823608331">App Store</a><span class="loja and breve">Android: em breve</span></div>
+  <div class="app"><img src="/acervo.png" alt=""><b>Acervo: Sua Coleção</b><a class="loja ios" href="https://apps.apple.com/br/app/id6832553837">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.acervo">Google Play</a></div>
+  <div class="app"><img src="/gelada.png" alt=""><b>Gelada</b><a class="loja ios" href="https://apps.apple.com/br/app/id6819882963">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.gelada">Google Play</a></div>
+  <div class="app"><img src="/esconde.png" alt=""><b>Esconde-Esconde</b><a class="loja ios" href="https://apps.apple.com/br/app/id6819893974">App Store</a><a class="loja and" href="https://play.google.com/store/apps/details?id=com.arial.escondeesconde">Google Play</a></div>
+  <div class="app"><img src="/gol.png" alt=""><b>Gol de Placa</b><a class="loja ios" href="https://apps.apple.com/br/app/id6823608331">App Store</a><span class="loja and breve">Android: em breve</span></div>
   <p>Sem anúncios em todos. <a href="/">Conheça no site →</a></p>
 </main>
 <script>
@@ -43,5 +43,6 @@ var ua = navigator.userAgent;
 if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) document.body.className = 'ios-so';
 else if (/Android/.test(ua)) document.body.className = 'and-so';
 </script>
+<script data-pais-loja>if (!/^pt/i.test(navigator.language || '')) document.querySelectorAll('a[href*="apps.apple.com/br/"]').forEach(function (a) { a.href = a.href.replace('apps.apple.com/br/', 'apps.apple.com/'); });</script>
 </body>
 </html>

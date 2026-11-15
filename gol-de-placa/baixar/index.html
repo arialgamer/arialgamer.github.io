@@ -15,7 +15,7 @@
 // Abre direto a loja do celular; no computador, mostra os botões e o QR code.
 (function () {
   var ua = navigator.userAgent;
-  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/app/id6823608331');
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/' + (/^pt/i.test(navigator.language || '') ? 'br/' : '') + 'app/id6823608331');
 })();
 </script>
 <style>
@@ -37,11 +37,12 @@ small a { color: #fff }
   <img class="icone" src="/gol.png" alt="">
   <h1>Gol de Placa</h1>
   <p>Pênaltis e faltas: seja o batedor ou o goleiro ⚽🧤</p>
-  <a class="loja" href="https://apps.apple.com/app/id6823608331">App Store</a>
+  <a class="loja" href="https://apps.apple.com/br/app/id6823608331">App Store</a>
   <span class="loja breve">Android: em breve · coming soon</span>
   <img class="qr" src="/gol-de-placa/baixar/qr.png" alt="QR code para baixar o Gol de Placa">
   <small>Aponte a câmera do celular · Point your phone camera</small>
   <small><a href="/gol-de-placa/">Conheça o Gol de Placa →</a></small>
 </main>
+<script data-pais-loja>if (!/^pt/i.test(navigator.language || '')) document.querySelectorAll('a[href*="apps.apple.com/br/"]').forEach(function (a) { a.href = a.href.replace('apps.apple.com/br/', 'apps.apple.com/'); });</script>
 </body>
 </html>
