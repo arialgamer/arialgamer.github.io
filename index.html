@@ -434,11 +434,15 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 /* Três celulares em leque */
 .fan { position: relative; height: 600px; display: flex; justify-content: center; align-items: center }
 .fan .phone { position: absolute; width: 250px; transition: transform .6s cubic-bezier(.2,.8,.2,1) }
-.fan .phone:nth-child(1) { transform: translateX(-62%) rotate(-9deg) translateY(28px); z-index: 1 }
-.fan .phone:nth-child(2) { transform: translateY(-14px); z-index: 3 }
-.fan .phone:nth-child(3) { transform: translateX(62%) rotate(9deg) translateY(28px); z-index: 2 }
-.fan:hover .phone:nth-child(1) { transform: translateX(-70%) rotate(-12deg) translateY(20px) }
-.fan:hover .phone:nth-child(3) { transform: translateX(70%) rotate(12deg) translateY(20px) }
+.fan .phone:nth-child(1) { transform: translateX(-104%) rotate(-14deg) translateY(70px) scale(.78); z-index: 1 }
+.fan .phone:nth-child(2) { transform: translateX(-54%) rotate(-7deg) translateY(26px) scale(.9); z-index: 3 }
+.fan .phone:nth-child(3) { transform: translateY(-14px); z-index: 5 }
+.fan .phone:nth-child(4) { transform: translateX(54%) rotate(7deg) translateY(26px) scale(.9); z-index: 4 }
+.fan .phone:nth-child(5) { transform: translateX(104%) rotate(14deg) translateY(70px) scale(.78); z-index: 2 }
+.fan:hover .phone:nth-child(1) { transform: translateX(-114%) rotate(-16deg) translateY(62px) scale(.78) }
+.fan:hover .phone:nth-child(2) { transform: translateX(-60%) rotate(-9deg) translateY(20px) scale(.9) }
+.fan:hover .phone:nth-child(4) { transform: translateX(60%) rotate(9deg) translateY(20px) scale(.9) }
+.fan:hover .phone:nth-child(5) { transform: translateX(114%) rotate(16deg) translateY(62px) scale(.78) }
 
 .phone { aspect-ratio: 9 / 19.5; border-radius: 40px; padding: 9px; background: linear-gradient(145deg, #3a3550, #15121f 60%); box-shadow: 0 40px 80px rgba(0,0,0,.55), inset 0 0 0 1.5px rgba(255,255,255,.14) }
 .phone .screen { position: relative; height: 100%; border-radius: 32px; overflow: hidden; background: #000 }
@@ -452,7 +456,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
   .fan { height: 470px; margin-top: 10px }
   .fan .phone { width: 196px }
 }
-@media (max-width: 480px) { .fan { height: 400px } .fan .phone { width: 168px } .fan .phone:nth-child(1) { transform: translateX(-56%) rotate(-8deg) translateY(24px) } .fan .phone:nth-child(3) { transform: translateX(56%) rotate(8deg) translateY(24px) } }
+@media (min-width: 961px) and (max-width: 1240px) { .fan .phone { width: 190px } }
+@media (max-width: 480px) { .fan { height: 360px } .fan .phone { width: 140px } .fan .phone:nth-child(1) { transform: translateX(-86%) rotate(-12deg) translateY(50px) scale(.78) } .fan .phone:nth-child(2) { transform: translateX(-50%) rotate(-6deg) translateY(20px) scale(.9) } .fan .phone:nth-child(4) { transform: translateX(50%) rotate(6deg) translateY(20px) scale(.9) } .fan .phone:nth-child(5) { transform: translateX(86%) rotate(12deg) translateY(50px) scale(.78) } }
 
 /* ---------- Faixa de números ---------- */
 .facts { border-block: 1px solid var(--line); background: rgba(255,255,255,.02) }
@@ -589,8 +594,8 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .facts .zero b { color: var(--gold) }
 .facts .zero span { color: var(--ink); font-weight: 700 }
 .price.free { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--c); margin-left: 6px }
-@media (max-width: 720px) { .facts .zero { grid-column: 1 / -1 } }
-@media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(5, 1fr) } }
+@media (max-width: 720px) { .facts .zero { grid-column: auto } }
+@media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(6, 1fr) } }
 
 /* ---------- Apoie e Comentários ---------- */
 .extra { padding: 0 0 100px }
@@ -676,8 +681,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   <div class="wrap">
     <a class="brand" href="#topo"><img src="logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
-      <li><a href="#rota">Rota Estelar</a></li>
       <li><a href="#deicida">Deicida</a></li>
+      <li><a href="#rota">Rota Estelar</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gelada">Gelada</a></li>
@@ -701,7 +706,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <div>
         <p class="eyebrow">Arial Gamer · Mobile Game Studio</p>
         <h1>Jogos para celular <span class="grad">feitos no Brasil</span></h1>
-        <p class="lead">Encha um copo e incline para beber. Esconda-se até atrás da lua. Bata o pênalti ou defenda no último minuto. Três jogos para jogar sozinho ou com um amigo. E o Acervo, para catalogar a sua coleção.</p>
+        <p class="lead">Enfrente os deuses do Egito. Pilote uma nave até o planeta mais distante. Bata o pênalti ou defenda no último minuto. Esconda-se até atrás da lua. Encha um copo e incline para beber. Cinco jogos para jogar sozinho ou com um amigo, dois deles chegando em breve. E o Acervo, para catalogar a sua coleção.</p>
         <p class="noads"><i aria-hidden="true">🚫</i><span><b>Sem anúncios</b><span>Nenhum dos nossos jogos tem propaganda. Nada interrompe a diversão.</span></span></p>
         <div class="ctas">
           <a class="btn primary" href="#jogos">Conhecer os jogos</a>
@@ -710,8 +715,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         <div class="chipgroups">
           <div class="chipgroup"><span class="chiplabel">🎮 Jogos</span>
             <div class="chips">
-              <a class="chip" href="#rota"><img src="rota.png" alt="" width="34" height="34">Rota Estelar</a>
               <a class="chip" href="#deicida"><img src="deicida.png" alt="" width="34" height="34">Deicida</a>
+              <a class="chip" href="#rota"><img src="rota.png" alt="" width="34" height="34">Rota Estelar</a>
               <a class="chip" href="#gol"><img src="gol.png" alt="" width="34" height="34">Gol de Placa</a>
               <a class="chip" href="#esconde"><img src="esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
               <a class="chip" href="#gelada"><img src="gelada.png" alt="" width="34" height="34">Gelada</a>
@@ -724,10 +729,12 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
           </div>
         </div>
       </div>
-      <div class="fan" aria-label="Vídeos dos três jogos">
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/gelada-saude.jpg" aria-label="Gelada: cerveja enchendo e sendo bebida no celular"><source src="media/gelada-saude.mp4" type="video/mp4"></video></div></div>
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/gol-penalti.jpg" aria-label="Gol de Placa: cobrança de pênalti"><source src="media/gol-penalti.mp4" type="video/mp4"></video></div></div>
+      <div class="fan" aria-label="Vídeos dos cinco jogos">
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/esconde-lua.jpg" aria-label="Esconde-Esconde: escondido na estação espacial"><source src="media/esconde-lua.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/rota-guardiao.jpg" aria-label="Rota Estelar: Guardião" style="object-position: 55% 50%"><source src="media/rota-guardiao.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/deicida-combate.jpg" aria-label="Teaser do Deicida: Combate" style="object-position: 50% 50%"><source src="media/deicida-combate.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/gol-penalti.jpg" aria-label="Gol de Placa: cobrança de pênalti"><source src="media/gol-penalti.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/gelada-saude.jpg" aria-label="Gelada: cerveja enchendo e sendo bebida no celular"><source src="media/gelada-saude.mp4" type="video/mp4"></video></div></div>
       </div>
     </div>
   </section>
@@ -735,18 +742,65 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   <div class="facts" data-vista="jogos">
     <div class="wrap">
       <div class="zero"><b>0</b><span>anúncios</span></div>
-      <div><b>3</b><span>jogos no ar</span></div>
-      <div><b>R$ 2,90</b><span>por jogo, a partir de</span></div>
-      <div><b>100</b><span>bebidas no Gelada</span></div>
+      <div><b>10</b><span>deuses no Deicida</span></div>
+      <div><b>31</b><span>planetas no Rota Estelar</span></div>
+      <div><b>14</b><span>idiomas de narração no Gol de Placa</span></div>
       <div><b>22</b><span>lugares no Esconde-Esconde</span></div>
+      <div><b>100</b><span>bebidas no Gelada</span></div>
     </div>
   </div>
 
   <!-- ================= JOGOS ================= -->
   <div class="divisao" id="jogos" data-vista="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>Jogos</h2><p class="sub">Para jogar sozinho ou com um amigo</p></div></div>
 
+  <!-- ================= DEICIDA ================= -->
+  <section class="game deicida wide" data-vista="jogos" id="deicida">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="deicida.png" alt="Ícone do Deicida" width="84" height="84">
+          <div><p class="eyebrow">Em breve</p><h2>Deicida</h2></div>
+        </div>
+        <p class="tag">Um mortal contra os deuses do Egito ⚔️☀️</p>
+        <span class="price">⚔️ Em breve</span><span class="price free">🚫 Sem anúncios</span>
+        <ul class="feats">
+          <li><i>🏺</i><span><b>Capítulo I: Egito</b>, com 10 fases e um deus como chefe em cada uma</span></li>
+          <li><i>⚔️</i><span><b>Duas khopesh</b>: combos, esquiva, parry e golpe final em câmera lenta</span></li>
+          <li><i>✨</i><span><b>Poderes dos deuses</b>: cada deus derrotado deixa um poder novo</span></li>
+          <li><i>🎭</i><span><b>Herói ou heroína</b> do seu jeito, com narração épica</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>Em breve</b> no iPhone e no Android. O prólogo e as 3 primeiras fases serão grátis. As imagens são do teaser: o jogo está em produção.</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>Em breve</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>Em breve</strong></span></span>
+        </div>
+        <a class="more" href="rota-estelar/">Tudo sobre o Deicida →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone wide"><div class="screen">
+          <video muted playsinline preload="none" poster="media/deicida-eclipse.jpg"><source src="media/deicida-eclipse.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="Ligar o som"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="Escolha um vídeo do Deicida">
+          <button class="clip" type="button" aria-pressed="true" data-src="media/deicida-eclipse"><img src="media/deicida-eclipse.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Eclipse</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/deicida-deuses"><img src="media/deicida-deuses.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Os deuses</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/deicida-barca"><img src="media/deicida-barca.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Barca Solar</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/deicida-combate"><img src="media/deicida-combate.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Combate</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="media/deicida-shot-eclipse.jpg" alt="Herói em silhueta diante de um eclipse sobre as pirâmides" loading="lazy"><figcaption>Um mortal contra os deuses</figcaption></figure>
+      <figure class="reveal"><img src="media/deicida-shot-combate.jpg" alt="Herói com duas lâminas enfrenta múmias numa necrópole" loading="lazy"><figcaption>Combos com duas khopesh</figcaption></figure>
+      <figure class="reveal"><img src="media/deicida-shot-barca.jpg" alt="A Barca Solar navega no Duat enquanto a serpente Apófis cruza o céu" loading="lazy"><figcaption>A Barca Solar e Apófis</figcaption></figure>
+      <figure class="reveal"><img src="media/deicida-shot-mapa.jpg" alt="Mapa do Nilo com as 10 fases e os deuses Sobek, Serket, Anúbis, Ammit, Khonsu, Set, Sekhmet, Thoth, Hórus e Rá" loading="lazy"><figcaption>Capítulo I: 10 deuses</figcaption></figure>
+    </div>
+  </section>
+
   <!-- ================= ROTA ESTELAR ================= -->
-  <section class="game rota wide" data-vista="jogos" id="rota">
+  <section class="game rota wide flip" data-vista="jogos" id="rota">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -790,52 +844,6 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <figure class="reveal"><img src="media/rota-shot-hangar.jpg" alt="Hangar com as naves para escolher" loading="lazy"><figcaption>10 naves e 6 armas</figcaption></figure>
       <figure class="reveal"><img src="media/rota-shot-catalogo.jpg" alt="Catálogo com as criaturas encontradas" loading="lazy"><figcaption>Catálogo de criaturas</figcaption></figure>
       <figure class="reveal"><img src="media/rota-shot-guardiao.jpg" alt="Nave enfrentando o Guardião, um caranguejo-lua gigante" loading="lazy"><figcaption>Guardião gigante</figcaption></figure>
-    </div>
-  </section>
-
-  <!-- ================= DEICIDA ================= -->
-  <section class="game deicida wide flip" data-vista="jogos" id="deicida">
-    <div class="wrap">
-      <div class="info reveal">
-        <div class="head">
-          <img src="deicida.png" alt="Ícone do Deicida" width="84" height="84">
-          <div><p class="eyebrow">Em breve</p><h2>Deicida</h2></div>
-        </div>
-        <p class="tag">Um mortal contra os deuses do Egito ⚔️☀️</p>
-        <span class="price">⚔️ Em breve</span><span class="price free">🚫 Sem anúncios</span>
-        <ul class="feats">
-          <li><i>🏺</i><span><b>Capítulo I: Egito</b>, com 10 fases e um deus como chefe em cada uma</span></li>
-          <li><i>⚔️</i><span><b>Duas khopesh</b>: combos, esquiva, parry e golpe final em câmera lenta</span></li>
-          <li><i>✨</i><span><b>Poderes dos deuses</b>: cada deus derrotado deixa um poder novo</span></li>
-          <li><i>🎭</i><span><b>Herói ou heroína</b> do seu jeito, com narração épica</span></li>
-        </ul>
-        <div class="soon">
-          <p><b>Em breve</b> no iPhone e no Android. O prólogo e as 3 primeiras fases serão grátis. As imagens são do teaser: o jogo está em produção.</p>
-        </div>
-        <div class="stores">
-          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>Em breve</strong></span></span>
-          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>Em breve</strong></span></span>
-        </div>
-        <a class="more" href="rota-estelar/">Tudo sobre o Deicida →</a>
-      </div>
-      <div class="player reveal" data-player>
-        <div class="phone wide"><div class="screen">
-          <video muted playsinline preload="none" poster="media/deicida-eclipse.jpg"><source src="media/deicida-eclipse.mp4" type="video/mp4"></video>
-          <button class="sound" type="button" aria-label="Ligar o som"><svg><use href="#i-muted"/></svg></button>
-        </div></div>
-        <div class="clips" role="group" aria-label="Escolha um vídeo do Deicida">
-          <button class="clip" type="button" aria-pressed="true" data-src="media/deicida-eclipse"><img src="media/deicida-eclipse.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Eclipse</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/deicida-deuses"><img src="media/deicida-deuses.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Os deuses</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/deicida-barca"><img src="media/deicida-barca.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Barca Solar</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="media/deicida-combate"><img src="media/deicida-combate.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Combate</button>
-        </div>
-      </div>
-    </div>
-    <div class="wrap shots">
-      <figure class="reveal"><img src="media/deicida-shot-eclipse.jpg" alt="Herói em silhueta diante de um eclipse sobre as pirâmides" loading="lazy"><figcaption>Um mortal contra os deuses</figcaption></figure>
-      <figure class="reveal"><img src="media/deicida-shot-combate.jpg" alt="Herói com duas lâminas enfrenta múmias numa necrópole" loading="lazy"><figcaption>Combos com duas khopesh</figcaption></figure>
-      <figure class="reveal"><img src="media/deicida-shot-barca.jpg" alt="A Barca Solar navega no Duat enquanto a serpente Apófis cruza o céu" loading="lazy"><figcaption>A Barca Solar e Apófis</figcaption></figure>
-      <figure class="reveal"><img src="media/deicida-shot-mapa.jpg" alt="Mapa do Nilo com as 10 fases e os deuses Sobek, Serket, Anúbis, Ammit, Khonsu, Set, Sekhmet, Thoth, Hórus e Rá" loading="lazy"><figcaption>Capítulo I: 10 deuses</figcaption></figure>
     </div>
   </section>
 
@@ -1112,8 +1120,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
     <nav aria-label="Jogos">
-      <a href="rota-estelar/">Rota Estelar</a>
       <a href="deicida/">Deicida</a>
+      <a href="rota-estelar/">Rota Estelar</a>
       <a href="gol-de-placa/">Gol de Placa</a>
       <a href="esconde-esconde/">Esconde-Esconde</a>
       <a href="gelada/">Gelada</a>

@@ -301,11 +301,15 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 /* Três celulares em leque */
 .fan { position: relative; height: 600px; display: flex; justify-content: center; align-items: center }
 .fan .phone { position: absolute; width: 250px; transition: transform .6s cubic-bezier(.2,.8,.2,1) }
-.fan .phone:nth-child(1) { transform: translateX(-62%) rotate(-9deg) translateY(28px); z-index: 1 }
-.fan .phone:nth-child(2) { transform: translateY(-14px); z-index: 3 }
-.fan .phone:nth-child(3) { transform: translateX(62%) rotate(9deg) translateY(28px); z-index: 2 }
-.fan:hover .phone:nth-child(1) { transform: translateX(-70%) rotate(-12deg) translateY(20px) }
-.fan:hover .phone:nth-child(3) { transform: translateX(70%) rotate(12deg) translateY(20px) }
+.fan .phone:nth-child(1) { transform: translateX(-104%) rotate(-14deg) translateY(70px) scale(.78); z-index: 1 }
+.fan .phone:nth-child(2) { transform: translateX(-54%) rotate(-7deg) translateY(26px) scale(.9); z-index: 3 }
+.fan .phone:nth-child(3) { transform: translateY(-14px); z-index: 5 }
+.fan .phone:nth-child(4) { transform: translateX(54%) rotate(7deg) translateY(26px) scale(.9); z-index: 4 }
+.fan .phone:nth-child(5) { transform: translateX(104%) rotate(14deg) translateY(70px) scale(.78); z-index: 2 }
+.fan:hover .phone:nth-child(1) { transform: translateX(-114%) rotate(-16deg) translateY(62px) scale(.78) }
+.fan:hover .phone:nth-child(2) { transform: translateX(-60%) rotate(-9deg) translateY(20px) scale(.9) }
+.fan:hover .phone:nth-child(4) { transform: translateX(60%) rotate(9deg) translateY(20px) scale(.9) }
+.fan:hover .phone:nth-child(5) { transform: translateX(114%) rotate(16deg) translateY(62px) scale(.78) }
 
 .phone { aspect-ratio: 9 / 19.5; border-radius: 40px; padding: 9px; background: linear-gradient(145deg, #3a3550, #15121f 60%); box-shadow: 0 40px 80px rgba(0,0,0,.55), inset 0 0 0 1.5px rgba(255,255,255,.14) }
 .phone .screen { position: relative; height: 100%; border-radius: 32px; overflow: hidden; background: #000 }
@@ -319,7 +323,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
   .fan { height: 470px; margin-top: 10px }
   .fan .phone { width: 196px }
 }
-@media (max-width: 480px) { .fan { height: 400px } .fan .phone { width: 168px } .fan .phone:nth-child(1) { transform: translateX(-56%) rotate(-8deg) translateY(24px) } .fan .phone:nth-child(3) { transform: translateX(56%) rotate(8deg) translateY(24px) } }
+@media (min-width: 961px) and (max-width: 1240px) { .fan .phone { width: 190px } }
+@media (max-width: 480px) { .fan { height: 360px } .fan .phone { width: 140px } .fan .phone:nth-child(1) { transform: translateX(-86%) rotate(-12deg) translateY(50px) scale(.78) } .fan .phone:nth-child(2) { transform: translateX(-50%) rotate(-6deg) translateY(20px) scale(.9) } .fan .phone:nth-child(4) { transform: translateX(50%) rotate(6deg) translateY(20px) scale(.9) } .fan .phone:nth-child(5) { transform: translateX(86%) rotate(12deg) translateY(50px) scale(.78) } }
 
 /* ---------- Faixa de números ---------- */
 .facts { border-block: 1px solid var(--line); background: rgba(255,255,255,.02) }
@@ -456,8 +461,8 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .facts .zero b { color: var(--gold) }
 .facts .zero span { color: var(--ink); font-weight: 700 }
 .price.free { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--c); margin-left: 6px }
-@media (max-width: 720px) { .facts .zero { grid-column: 1 / -1 } }
-@media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(5, 1fr) } }
+@media (max-width: 720px) { .facts .zero { grid-column: auto } }
+@media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(6, 1fr) } }
 
 /* ---------- Apoie e Comentários ---------- */
 .extra { padding: 0 0 100px }
@@ -544,8 +549,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   <div class="wrap">
     <a class="brand" href="#topo"><img src="/logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
-      <li><a href="#rota">Rota Estelar</a></li>
       <li><a href="#deicida">Deicida</a></li>
+      <li><a href="#rota">Rota Estelar</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gelada">Gelada</a></li>
@@ -569,7 +574,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <div>
         <p class="eyebrow">Arial Gamer · Mobile Game Studio</p>
         <h1>ブラジル生まれの <span class="grad">スマホゲーム</span></h1>
-        <p class="lead">グラスを満たして、スマホを傾けて飲もう。月の裏にかくれよう。ラストワンミニッツでPKを決めるか、止めるか。ひとりでも友だちとでも遊べる3つのゲーム。そして、コレクションを整理する Acervo。</p>
+        <p class="lead">エジプトの神々に挑もう。宇宙船で最も遠い惑星へ。ラストワンミニッツでPKを決めるか、止めるか。月の裏にかくれよう。グラスを満たして、スマホを傾けて飲もう。ひとりでも友だちとでも遊べる5つのゲーム（うち2つは近日公開）。そして、コレクションを整理する Acervo。</p>
         <p class="noads"><i aria-hidden="true">🚫</i><span><b>広告なし</b><span>どのゲームにも広告はありません。楽しい時間をじゃまするものはゼロ。</span></span></p>
         <div class="ctas">
           <a class="btn primary" href="#jogos">ゲームを見る</a>
@@ -578,8 +583,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         <div class="chipgroups">
           <div class="chipgroup"><span class="chiplabel">🎮 ゲーム</span>
             <div class="chips">
-              <a class="chip" href="#rota"><img src="/rota.png" alt="" width="34" height="34">Rota Estelar</a>
               <a class="chip" href="#deicida"><img src="/deicida.png" alt="" width="34" height="34">Deicida</a>
+              <a class="chip" href="#rota"><img src="/rota.png" alt="" width="34" height="34">Rota Estelar</a>
               <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
               <a class="chip" href="#esconde"><img src="/esconde.png" alt="" width="34" height="34">Esconde-Esconde</a>
               <a class="chip" href="#gelada"><img src="/gelada.png" alt="" width="34" height="34">Gelada</a>
@@ -592,10 +597,12 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
           </div>
         </div>
       </div>
-      <div class="fan" aria-label="3つのゲームの動画">
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gelada-saude.jpg" aria-label="Gelada：スマホの中でビールが注がれて飲まれる様子"><source src="/media/gelada-saude.mp4" type="video/mp4"></video></div></div>
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gol-penalti.jpg" aria-label="Gol de Placa：PK"><source src="/media/gol-penalti.mp4" type="video/mp4"></video></div></div>
+      <div class="fan" aria-label="5つのゲームの動画">
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/esconde-lua.jpg" aria-label="Esconde-Esconde：宇宙ステーションにかくれる"><source src="/media/esconde-lua.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/rota-guardiao.jpg" aria-label="Rota Estelar: ガーディアン" style="object-position: 55% 50%"><source src="/media/rota-guardiao.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/deicida-combate.jpg" aria-label="Deicida ティザー: バトル" style="object-position: 50% 50%"><source src="/media/deicida-combate.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gol-penalti.jpg" aria-label="Gol de Placa：PK"><source src="/media/gol-penalti.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gelada-saude.jpg" aria-label="Gelada：スマホの中でビールが注がれて飲まれる様子"><source src="/media/gelada-saude.mp4" type="video/mp4"></video></div></div>
       </div>
     </div>
   </section>
@@ -603,18 +610,65 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   <div class="facts" data-vista="jogos">
     <div class="wrap">
       <div class="zero"><b>0</b><span>広告</span></div>
-      <div><b>3</b><span>ゲーム配信中</span></div>
-      <div><b>8</b><span>各ゲームの対応言語</span></div>
-      <div><b>100</b><span>Geladaのドリンク</span></div>
+      <div><b>10</b><span>Deicidaの神々</span></div>
+      <div><b>31</b><span>Rota Estelarの惑星</span></div>
+      <div><b>14</b><span>Gol de Placaの実況言語</span></div>
       <div><b>22</b><span>Esconde-Escondeの場所</span></div>
+      <div><b>100</b><span>Geladaのドリンク</span></div>
     </div>
   </div>
 
   <!-- ================= JOGOS ================= -->
   <div class="divisao" id="jogos" data-vista="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>ゲーム</h2><p class="sub">ひとりでも友だちとでも</p></div></div>
 
+  <!-- ================= DEICIDA ================= -->
+  <section class="game deicida wide" data-vista="jogos" id="deicida">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/deicida.png" alt="Deicida のアイコン" width="84" height="84">
+          <div><p class="eyebrow">近日公開</p><h2>Deicida</h2></div>
+        </div>
+        <p class="tag">ひとりの人間がエジプトの神々に挑む ⚔️☀️</p>
+        <span class="price">⚔️ 近日公開</span><span class="price free">🚫 広告なし</span>
+        <ul class="feats">
+          <li><i>🏺</i><span><b>第1章：エジプト</b>：全10ステージ、各ステージのボスは神</span></li>
+          <li><i>⚔️</i><span><b>二本のケペシュ</b>：コンボ、回避、パリィ、スローモーションのとどめ技</span></li>
+          <li><i>✨</i><span><b>神々の力</b>：倒した神から新しい力を手に入れる</span></li>
+          <li><i>🎭</i><span><b>主人公は男性でも女性でも</b>自由にカスタマイズ、壮大なナレーション付き</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>近日公開</b>：iPhone と Android に登場。プロローグと最初の3ステージは無料の予定です。画像はティザーのもので、ゲームは制作中です。</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>近日公開</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>近日公開</strong></span></span>
+        </div>
+        <a class="more" href="/ja/rota-estelar/">Deicida について →</a>
+      </div>
+      <div class="player reveal" data-player>
+        <div class="phone wide"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/deicida-eclipse.jpg"><source src="/media/deicida-eclipse.mp4" type="video/mp4"></video>
+          <button class="sound" type="button" aria-label="音をオンにする"><svg><use href="#i-muted"/></svg></button>
+        </div></div>
+        <div class="clips" role="group" aria-label="Deicidaの動画を選ぶ">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/deicida-eclipse"><img src="/media/deicida-eclipse.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>日食</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-deuses"><img src="/media/deicida-deuses.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>神々</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-barca"><img src="/media/deicida-barca.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>太陽の船</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-combate"><img src="/media/deicida-combate.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>バトル</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/deicida-shot-eclipse.jpg" alt="ピラミッドの上の日食を前にした主人公のシルエット" loading="lazy"><figcaption>人間 対 神々</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-combate.jpg" alt="二本の刃でネクロポリスのミイラと戦う主人公" loading="lazy"><figcaption>二本のケペシュでコンボ</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-barca.jpg" alt="蛇アペプが空を横切る中、ドゥアトを進む太陽の船" loading="lazy"><figcaption>太陽の船とアペプ</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-shot-mapa.jpg" alt="10ステージと神々（セベク、セルケト、アヌビス、アメミット、コンス、セト、セクメト、トト、ホルス、ラー）を記したナイル川の地図" loading="lazy"><figcaption>第1章：10柱の神</figcaption></figure>
+    </div>
+  </section>
+
   <!-- ================= ROTA ESTELAR ================= -->
-  <section class="game rota wide" data-vista="jogos" id="rota">
+  <section class="game rota wide flip" data-vista="jogos" id="rota">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -658,52 +712,6 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <figure class="reveal"><img src="/media/rota-shot-hangar.jpg" alt="機体を選べる格納庫" loading="lazy"><figcaption>機体10機と武器6種</figcaption></figure>
       <figure class="reveal"><img src="/media/rota-shot-catalogo.jpg" alt="見つけたクリーチャーの図鑑" loading="lazy"><figcaption>クリーチャー図鑑</figcaption></figure>
       <figure class="reveal"><img src="/media/rota-shot-guardiao.jpg" alt="巨大な月ガニのガーディアンと戦う宇宙船" loading="lazy"><figcaption>巨大ガーディアン</figcaption></figure>
-    </div>
-  </section>
-
-  <!-- ================= DEICIDA ================= -->
-  <section class="game deicida wide flip" data-vista="jogos" id="deicida">
-    <div class="wrap">
-      <div class="info reveal">
-        <div class="head">
-          <img src="/deicida.png" alt="Deicida のアイコン" width="84" height="84">
-          <div><p class="eyebrow">近日公開</p><h2>Deicida</h2></div>
-        </div>
-        <p class="tag">ひとりの人間がエジプトの神々に挑む ⚔️☀️</p>
-        <span class="price">⚔️ 近日公開</span><span class="price free">🚫 広告なし</span>
-        <ul class="feats">
-          <li><i>🏺</i><span><b>第1章：エジプト</b>：全10ステージ、各ステージのボスは神</span></li>
-          <li><i>⚔️</i><span><b>二本のケペシュ</b>：コンボ、回避、パリィ、スローモーションのとどめ技</span></li>
-          <li><i>✨</i><span><b>神々の力</b>：倒した神から新しい力を手に入れる</span></li>
-          <li><i>🎭</i><span><b>主人公は男性でも女性でも</b>自由にカスタマイズ、壮大なナレーション付き</span></li>
-        </ul>
-        <div class="soon">
-          <p><b>近日公開</b>：iPhone と Android に登場。プロローグと最初の3ステージは無料の予定です。画像はティザーのもので、ゲームは制作中です。</p>
-        </div>
-        <div class="stores">
-          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>近日公開</strong></span></span>
-          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>近日公開</strong></span></span>
-        </div>
-        <a class="more" href="/ja/rota-estelar/">Deicida について →</a>
-      </div>
-      <div class="player reveal" data-player>
-        <div class="phone wide"><div class="screen">
-          <video muted playsinline preload="none" poster="/media/deicida-eclipse.jpg"><source src="/media/deicida-eclipse.mp4" type="video/mp4"></video>
-          <button class="sound" type="button" aria-label="音をオンにする"><svg><use href="#i-muted"/></svg></button>
-        </div></div>
-        <div class="clips" role="group" aria-label="Deicidaの動画を選ぶ">
-          <button class="clip" type="button" aria-pressed="true" data-src="/media/deicida-eclipse"><img src="/media/deicida-eclipse.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>日食</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-deuses"><img src="/media/deicida-deuses.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>神々</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-barca"><img src="/media/deicida-barca.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>太陽の船</button>
-          <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-combate"><img src="/media/deicida-combate.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>バトル</button>
-        </div>
-      </div>
-    </div>
-    <div class="wrap shots">
-      <figure class="reveal"><img src="/media/deicida-shot-eclipse.jpg" alt="ピラミッドの上の日食を前にした主人公のシルエット" loading="lazy"><figcaption>人間 対 神々</figcaption></figure>
-      <figure class="reveal"><img src="/media/deicida-shot-combate.jpg" alt="二本の刃でネクロポリスのミイラと戦う主人公" loading="lazy"><figcaption>二本のケペシュでコンボ</figcaption></figure>
-      <figure class="reveal"><img src="/media/deicida-shot-barca.jpg" alt="蛇アペプが空を横切る中、ドゥアトを進む太陽の船" loading="lazy"><figcaption>太陽の船とアペプ</figcaption></figure>
-      <figure class="reveal"><img src="/media/deicida-shot-mapa.jpg" alt="10ステージと神々（セベク、セルケト、アヌビス、アメミット、コンス、セト、セクメト、トト、ホルス、ラー）を記したナイル川の地図" loading="lazy"><figcaption>第1章：10柱の神</figcaption></figure>
     </div>
   </section>
 
@@ -980,8 +988,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
     </nav>
     <nav aria-label="Jogos">
-      <a href="/ja/rota-estelar/">Rota Estelar</a>
       <a href="/ja/deicida/">Deicida</a>
+      <a href="/ja/rota-estelar/">Rota Estelar</a>
       <a href="/ja/gol-de-placa/">Gol de Placa</a>
       <a href="/ja/esconde-esconde/">Esconde-Esconde</a>
       <a href="/ja/gelada/">Gelada</a>
