@@ -24,4 +24,4 @@ Ficam em `media/`. Os vídeos são verticais (540×960, H.264), com capa `.jpg` 
 
 ## Busca do Google
 
-`python _paginas/seo.py` ajusta direto as páginas publicadas: preço R$ 1,90, links de cada jogo para as lojas e da marca para as redes e lojas (dados estruturados `sameAs`) e o título da home com todos os jogos. Rode de novo sempre que rodar os outros scripts de `_paginas/`, porque eles ainda têm os preços antigos. Depois, atualize o `<lastmod>` das páginas que mudaram no `sitemap.xml`.
+`python _paginas/seo.py` ajusta direto as páginas publicadas (sem mexer nos preços): links de cada jogo para as lojas e da marca para as redes e lojas (dados estruturados `sameAs`) e o título da home com todos os jogos. Rode de novo sempre que rodar os outros scripts de `_paginas/`. Depois, atualize o `<lastmod>` das páginas que mudaram no `sitemap.xml`.

@@ -2,14 +2,13 @@
 # Pode rodar quantas vezes quiser (não duplica nada). Rode de novo depois dos outros scripts:
 #   python _paginas/seo.py
 #
-# - Preço de download R$ 1,90 (texto em português e "offers" dos dados estruturados).
+# - Não mexe em preços: eles ficam como estão nas páginas (iguais aos das lojas).
 # - Cada jogo diz ao Google quais são as páginas dele nas lojas ("sameAs").
 # - A marca Arial Gamer aponta para as redes e para as páginas de desenvolvedor nas lojas.
 # - Título e descrição da home citam todos os jogos e apps.
 import json, os, re
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PRECO = "1.90"
 TAG = '<script type="application/ld+json">'
 
 ORG_SAMEAS = [
@@ -18,15 +17,6 @@ ORG_SAMEAS = [
     "https://www.youtube.com/@arialgamer",
     "https://play.google.com/store/apps/dev?id=7102410817973589199",
     "https://apps.apple.com/br/developer/renato-nogueira/id6819882965",
-]
-
-# Textos em português com o preço antigo
-TROCAS_PT = [
-    ("R$ 3,90 para baixar na App Store.", "R$ 1,90 para baixar, no iPhone e no Android."),
-    ("R$ 3,90 no iPhone.", "R$ 1,90 no iPhone e no Android."),
-    ("a partir de R$ 2,90 no iPhone e no Android", "por R$ 1,90 no iPhone e no Android"),
-    ("R$ 2,90", "R$ 1,90"),
-    ("R$ 3,90", "R$ 1,90"),
 ]
 
 HOME_TITULO = ("<title>Arial Gamer · Jogos e apps para celular: Gelada, Esconde-Esconde, Gol de Placa e Acervo</title>",
@@ -40,9 +30,6 @@ def ajusta_no(n):
     if tipo == "Organization":
         n["sameAs"] = ORG_SAMEAS
     if "VideoGame" in tipo or "MobileApplication" in tipo:
-        of = n.get("offers")
-        if isinstance(of, dict) and of.get("price") not in (None, "0", PRECO):
-            of["price"] = PRECO
         lojas = n.get("installUrl")
         if lojas:
             lojas = lojas if isinstance(lojas, list) else [lojas]
@@ -89,10 +76,6 @@ def main():
             p = os.path.join(pasta, nome)
             s = open(p, encoding="utf-8").read()
             novo = ajusta_jsonld(s) if TAG in s else s
-            pt = re.search(r'<html[^>]*lang="pt', novo)
-            if pt:
-                for velho, bom in TROCAS_PT:
-                    novo = novo.replace(velho, bom)
             if rel == ".":
                 novo = novo.replace(*HOME_TITULO)
                 if "Em breve: Deicida" not in novo:
