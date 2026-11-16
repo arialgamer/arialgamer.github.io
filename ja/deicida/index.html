@@ -459,6 +459,16 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .cards h3 { font-size: 22px; margin: 10px 0 6px }
 .cards p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.5 }
 .cards .em { font-size: 30px; line-height: 1 }
+.cards .mito { padding: 22px; border-radius: 20px; background: var(--glass); border: 1px solid var(--line); cursor: pointer; transition: border-color .2s, background .2s }
+.cards .mito:hover, .cards .mito[open] { border-color: rgba(246,184,58,.45); background: var(--glass-2) }
+.cards:has(.mito) { align-items: start }
+.mito summary { list-style: none; outline-offset: 6px; border-radius: 12px }
+.mito summary::-webkit-details-marker { display: none }
+.mito .ver { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--amber) }
+.mito .ver::after { content: " ▾" }
+.mito[open] .ver::after { content: " ▴" }
+.mito ul { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 6px }
+.mito li { padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid var(--line); font-size: 14px; color: var(--text, #fff) }
 .faq { display: grid; gap: 10px; max-width: 860px }
 .faq details { border-radius: 16px; background: var(--glass); border: 1px solid var(--line); padding: 0 20px }
 .faq summary { cursor: pointer; font-weight: 700; font-size: 18px; padding: 18px 0; list-style: none; display: flex; justify-content: space-between; gap: 16px }
@@ -592,17 +602,17 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <h2>11の神話</h2>
       <p class="sub">各神話が1つの章になり、10ステージとその神々のボスが登場。旅はエジプトで始まり、ギリシャで終わります。</p>
       <div class="cards">
-        <article class="reveal"><div class="em">🏺</div><h3>エジプト</h3><p>砂漠、ピラミッド、冥界ドゥアト</p></article>
-        <article class="reveal"><div class="em">🦁</div><h3>メソポタミア</h3><p>ジッグラト、バビロン、ティアマトの深淵</p></article>
-        <article class="reveal"><div class="em">🐍</div><h3>アステカ</h3><p>密林のピラミッドとミクトラン</p></article>
-        <article class="reveal"><div class="em">🌿</div><h3>マヤ</h3><p>密林の都市とシバルバー</p></article>
-        <article class="reveal"><div class="em">🏔️</div><h3>インカ</h3><p>アンデスとマチュ・ピチュ</p></article>
-        <article class="reveal"><div class="em">🍀</div><h3>ケルト</h3><p>沼地、霧、環状列石</p></article>
-        <article class="reveal"><div class="em">🐺</div><h3>スラヴ</h3><p>暗い森と草原</p></article>
-        <article class="reveal"><div class="em">❄️</div><h3>フィンランド</h3><p>凍てつく北の地とトゥオネラ</p></article>
-        <article class="reveal"><div class="em">🦅</div><h3>ローマ</h3><p>帝政ローマとコロッセオ</p></article>
-        <article class="reveal"><div class="em">🌳</div><h3>北欧</h3><p>氷、森、ユグドラシル</p></article>
-        <article class="reveal"><div class="em">⚡</div><h3>ギリシャ</h3><p>神殿、オリュンポス、タルタロス</p></article>
+        <details class="reveal mito"><summary><div class="em">🏺</div><h3>エジプト</h3><p>砂漠、ピラミッド、冥界ドゥアト</p><span class="ver">神々を見る</span></summary><ul><li>セベク</li><li>セルケト</li><li>アヌビス</li><li>アメミット</li><li>コンス</li><li>セト</li><li>セクメト</li><li>トート</li><li>ホルス</li><li>ラー</li><li>アポピス</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🦁</div><h3>メソポタミア</h3><p>ジッグラト、バビロン、ティアマトの深淵</p><span class="ver">神々を見る</span></summary><ul><li>ネルガル</li><li>イシュタル</li><li>エンリル</li><li>マルドゥク</li><li>ティアマト</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🐍</div><h3>アステカ</h3><p>密林のピラミッドとミクトラン</p><span class="ver">神々を見る</span></summary><ul><li>テスカトリポカ</li><li>ウィツィロポチトリ</li><li>ケツァルコアトル</li><li>ミクトランテクトリ</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🌿</div><h3>マヤ</h3><p>密林の都市とシバルバー</p><span class="ver">神々を見る</span></summary><ul><li>シバルバーの王たち</li><li>カマソッツ</li><li>ククルカン</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🏔️</div><h3>インカ</h3><p>アンデスとマチュ・ピチュ</p><span class="ver">神々を見る</span></summary><ul><li>スパイ</li><li>イリャパ</li><li>ママ・キリャ</li><li>インティ</li><li>ビラコチャ</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🍀</div><h3>ケルト</h3><p>沼地、霧、環状列石</p><span class="ver">神々を見る</span></summary><ul><li>モリガン</li><li>バロール</li><li>ケルヌンノス</li><li>ルー</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🐺</div><h3>スラヴ</h3><p>暗い森と草原</p><span class="ver">神々を見る</span></summary><ul><li>ヴェレス</li><li>ペルーン</li><li>バーバ・ヤーガ</li><li>コシチェイ</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">❄️</div><h3>フィンランド</h3><p>凍てつく北の地とトゥオネラ</p><span class="ver">神々を見る</span></summary><ul><li>ロウヒ</li><li>トゥオニ</li><li>ウッコ</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🦅</div><h3>ローマ</h3><p>帝政ローマとコロッセオ</p><span class="ver">神々を見る</span></summary><ul><li>マルス</li><li>ユピテル</li><li>ネプトゥヌス</li><li>プルートー</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🌳</div><h3>北欧</h3><p>氷、森、ユグドラシル</p><span class="ver">神々を見る</span></summary><ul><li>トール</li><li>ロキ</li><li>フレイヤ</li><li>オーディン</li><li>フェンリル</li><li>ヨルムンガンド</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">⚡</div><h3>ギリシャ</h3><p>神殿、オリュンポス、タルタロス</p><span class="ver">神々を見る</span></summary><ul><li>アレス</li><li>ポセイドン</li><li>ハデス</li><li>ヘラ</li><li>ゼウス</li><li>クロノス</li><li>カオス</li></ul></details>
       </div>
     </div>
   </section>
