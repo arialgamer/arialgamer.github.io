@@ -469,6 +469,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .mito[open] .ver::after { content: " ▴" }
 .mito ul { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 6px }
 .mito li { padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid var(--line); font-size: 14px; color: var(--text, #fff) }
+.nota-mitos { margin: 18px 0 0; font-size: 13px; color: var(--muted); opacity: .8 }
 .faq { display: grid; gap: 10px; max-width: 860px }
 .faq details { border-radius: 16px; background: var(--glass); border: 1px solid var(--line); padding: 0 20px }
 .faq summary { cursor: pointer; font-weight: 700; font-size: 18px; padding: 18px 0; list-style: none; display: flex; justify-content: space-between; gap: 16px }
@@ -577,7 +578,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
     <div class="wrap shots">
       <figure><img src="/media/deicida-shot-eclipse.jpg" alt="Silhouette du héros devant une éclipse au-dessus des pyramides" loading="lazy"><figcaption>Un mortel contre les dieux</figcaption></figure>
       <figure><img src="/media/deicida-shot-deuses.jpg" alt="Mur de pierre avec les noms des 10 dieux d&#x27;Égypte dans des cartouches" loading="lazy"><figcaption>Les dieux d'Égypte</figcaption></figure>
-      <figure><img src="/media/deicida-shot-barca.jpg" alt="La barque solaire navigue dans la Douat pendant que le serpent Apophis traverse le ciel" loading="lazy"><figcaption>La barque solaire et Apophis</figcaption></figure>
+      <figure><img src="/media/deicida-shot-barca.jpg" alt="La barque solaire navigue dans la Douat sous un ciel assombri" loading="lazy"><figcaption>La barque solaire</figcaption></figure>
       <figure><img src="/media/deicida-shot-mapa.jpg" alt="Carte du Nil avec les 10 niveaux et les dieux Sobek, Serket, Anubis, Ammit, Khonsou, Seth, Sekhmet, Thot, Horus et Rê" loading="lazy"><figcaption>Chapitre I : 10 dieux</figcaption></figure>
     </div>
   </section>
@@ -591,7 +592,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
         <article class="reveal"><div class="em">🐊</div><h3>10 dieux d'Égypte</h3><p>Sobek, Serket, Anubis, Ammit, Khonsou, Seth, Sekhmet, Thot, Horus et Rê. Chaque boss a des attaques à apprendre, des phases et un coup de grâce cinématographique.</p></article>
         <article class="reveal"><div class="em">⚔️</div><h3>Le combat du bout des doigts</h3><p>Attaque légère et lourde, combos, esquive, blocage et parade au bon moment. Ennemi étourdi ? Coup de grâce au ralenti.</p></article>
         <article class="reveal"><div class="em">✨</div><h3>Æther</h3><p>L&#x27;énergie des dieux tués. Elle sert à faire progresser le héros et à équiper les pouvoirs pris à chaque dieu vaincu.</p></article>
-        <article class="reveal"><div class="em">🏹</div><h3>Armes</h3><p>Deux khépesh au départ, un arc gagné en chemin et la Divina, l&#x27;arme légendaire forgée dans le soleil de Rê et le chaos d&#x27;Apophis.</p></article>
+        <article class="reveal"><div class="em">🏹</div><h3>Armes</h3><p>Deux khépesh au départ, un arc gagné en chemin et la Divina, l&#x27;arme légendaire qui change de forme à chaque mythologie.</p></article>
         <article class="reveal"><div class="em">🎮</div><h3>Premium et honnête</h3><p>Sans pub, sans énergie et sans monnaie payante. Le prologue et les 3 premiers niveaux sont gratuits ; le chapitre complet est un achat unique.</p></article>
       </div>
     </div>
@@ -599,21 +600,22 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 
   <section class="block">
     <div class="wrap">
-      <h2>Les 11 mythologies</h2>
-      <p class="sub">Chaque mythologie est un chapitre de 10 niveaux, avec ses dieux comme boss. Le voyage commence en Égypte et se termine en Grèce.</p>
+      <h2>Ceux que tu vas affronter</h2>
+      <p class="sub">Onze mythologies. Touche chacune pour voir qui se dresse sur ta route.</p>
       <div class="cards">
-        <details class="reveal mito"><summary><div class="em">🏺</div><h3>Égyptienne</h3><p>Déserts, pyramides et la Douat</p><span class="ver">Voir les dieux</span></summary><ul><li>Sobek</li><li>Serket</li><li>Anubis</li><li>Ammit</li><li>Khonsou</li><li>Seth</li><li>Sekhmet</li><li>Thot</li><li>Horus</li><li>Râ</li><li>Apophis</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🦁</div><h3>Mésopotamienne</h3><p>Ziggourats, Babylone et l&#x27;abîme de Tiamat</p><span class="ver">Voir les dieux</span></summary><ul><li>Nergal</li><li>Ishtar</li><li>Enlil</li><li>Marduk</li><li>Tiamat</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🐍</div><h3>Aztèque</h3><p>Pyramides dans la jungle et Mictlan</p><span class="ver">Voir les dieux</span></summary><ul><li>Tezcatlipoca</li><li>Huitzilopochtli</li><li>Quetzalcoatl</li><li>Mictlantecuhtli</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🌿</div><h3>Maya</h3><p>Cités de la jungle et Xibalba</p><span class="ver">Voir les dieux</span></summary><ul><li>Seigneurs de Xibalba</li><li>Camazotz</li><li>Kukulkan</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🏔️</div><h3>Inca</h3><p>Les Andes et le Machu Picchu</p><span class="ver">Voir les dieux</span></summary><ul><li>Supay</li><li>Illapa</li><li>Mama Quilla</li><li>Inti</li><li>Viracocha</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🍀</div><h3>Celte</h3><p>Marais, brumes et cercles de pierres</p><span class="ver">Voir les dieux</span></summary><ul><li>Morrígan</li><li>Balor</li><li>Cernunnos</li><li>Lugh</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🐺</div><h3>Slave</h3><p>Forêts sombres et steppes</p><span class="ver">Voir les dieux</span></summary><ul><li>Veles</li><li>Peroun</li><li>Baba Yaga</li><li>Kochtcheï</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">❄️</div><h3>Finnoise</h3><p>Le Grand Nord glacé et Tuonela</p><span class="ver">Voir les dieux</span></summary><ul><li>Louhi</li><li>Tuoni</li><li>Ukko</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🦅</div><h3>Romaine</h3><p>La Rome impériale et ses colisées</p><span class="ver">Voir les dieux</span></summary><ul><li>Mars</li><li>Jupiter</li><li>Neptune</li><li>Pluton</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🌳</div><h3>Nordique</h3><p>Glace, forêts et Yggdrasil</p><span class="ver">Voir les dieux</span></summary><ul><li>Thor</li><li>Loki</li><li>Freyja</li><li>Odin</li><li>Fenrir</li><li>Jörmungand</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">⚡</div><h3>Grecque</h3><p>Temples, Olympe et Tartare</p><span class="ver">Voir les dieux</span></summary><ul><li>Arès</li><li>Poséidon</li><li>Hadès</li><li>Héra</li><li>Zeus</li><li>Cronos</li><li>Chaos</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🏺</div><h3>Égyptienne</h3><p>Déserts, pyramides et la Douat</p><span class="ver">Voir la liste</span></summary><ul><li>Sobek</li><li>Serket</li><li>Anubis</li><li>Ammit</li><li>Khonsou</li><li>Seth</li><li>Sekhmet</li><li>Thot</li><li>Horus</li><li>Râ</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🦁</div><h3>Mésopotamienne</h3><p>Ziggourats, Babylone et l&#x27;abîme de Tiamat</p><span class="ver">Voir la liste</span></summary><ul><li>Ishtar</li><li>Nergal</li><li>Ereshkigal</li><li>Enlil</li><li>Marduk</li><li>Tiamat</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🐍</div><h3>Aztèque</h3><p>Pyramides dans la jungle et Mictlan</p><span class="ver">Voir la liste</span></summary><ul><li>Tezcatlipoca</li><li>Huitzilopochtli</li><li>Quetzalcoatl</li><li>Mictlantecuhtli</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🌿</div><h3>Maya</h3><p>Cités de la jungle et Xibalba</p><span class="ver">Voir la liste</span></summary><ul><li>Seigneurs de Xibalba</li><li>Camazotz</li><li>Kukulkan</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🏔️</div><h3>Inca</h3><p>Les Andes et le Machu Picchu</p><span class="ver">Voir la liste</span></summary><ul><li>Supay</li><li>Illapa</li><li>Mama Quilla</li><li>Inti</li><li>Viracocha</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🍀</div><h3>Celte</h3><p>Marais, brumes et cercles de pierres</p><span class="ver">Voir la liste</span></summary><ul><li>Morrígan</li><li>Balor</li><li>Cernunnos</li><li>Lugh</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🐺</div><h3>Slave</h3><p>Forêts sombres et steppes</p><span class="ver">Voir la liste</span></summary><ul><li>Veles</li><li>Peroun</li><li>Baba Yaga</li><li>Kochtcheï l’Immortel</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">❄️</div><h3>Finnoise</h3><p>Le Grand Nord glacé et Tuonela</p><span class="ver">Voir la liste</span></summary><ul><li>Louhi</li><li>Tuoni</li><li>Ukko</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🦅</div><h3>Romaine</h3><p>La Rome impériale et ses colisées</p><span class="ver">Voir la liste</span></summary><ul><li>Janus</li><li>Bellone</li><li>Quirinus</li><li>Sol Invictus</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🌳</div><h3>Nordique</h3><p>Glace, forêts et Yggdrasil</p><span class="ver">Voir la liste</span></summary><ul><li>Thor</li><li>Loki</li><li>Freyja</li><li>Odin</li><li>Fenrir</li><li>Jörmungand</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">⚡</div><h3>Grecque</h3><p>Temples, Olympe et Tartare</p><span class="ver">Voir la liste</span></summary><ul><li>Arès</li><li>Poséidon</li><li>Hadès</li><li>Héra</li><li>Zeus</li><li>Cronos</li><li>???</li></ul></details>
       </div>
+      <p class="nota-mitos">Liste en cours d’élaboration, susceptible de changer.</p>
     </div>
   </section>
 

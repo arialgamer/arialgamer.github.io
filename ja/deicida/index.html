@@ -469,6 +469,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .mito[open] .ver::after { content: " ▴" }
 .mito ul { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 6px }
 .mito li { padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid var(--line); font-size: 14px; color: var(--text, #fff) }
+.nota-mitos { margin: 18px 0 0; font-size: 13px; color: var(--muted); opacity: .8 }
 .faq { display: grid; gap: 10px; max-width: 860px }
 .faq details { border-radius: 16px; background: var(--glass); border: 1px solid var(--line); padding: 0 20px }
 .faq summary { cursor: pointer; font-weight: 700; font-size: 18px; padding: 18px 0; list-style: none; display: flex; justify-content: space-between; gap: 16px }
@@ -577,7 +578,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
     <div class="wrap shots">
       <figure><img src="/media/deicida-shot-eclipse.jpg" alt="ピラミッドの上の日食を前にした主人公のシルエット" loading="lazy"><figcaption>人間 対 神々</figcaption></figure>
       <figure><img src="/media/deicida-shot-deuses.jpg" alt="カルトゥーシュに刻まれたエジプトの10柱の神の名が並ぶ石壁" loading="lazy"><figcaption>エジプトの神々</figcaption></figure>
-      <figure><img src="/media/deicida-shot-barca.jpg" alt="蛇アペプが空を横切る中、ドゥアトを進む太陽の船" loading="lazy"><figcaption>太陽の船とアペプ</figcaption></figure>
+      <figure><img src="/media/deicida-shot-barca.jpg" alt="暗い空の下、ドゥアトを進む太陽の船" loading="lazy"><figcaption>太陽の船</figcaption></figure>
       <figure><img src="/media/deicida-shot-mapa.jpg" alt="10ステージと神々（セベク、セルケト、アヌビス、アメミット、コンス、セト、セクメト、トト、ホルス、ラー）を記したナイル川の地図" loading="lazy"><figcaption>第1章：10柱の神</figcaption></figure>
     </div>
   </section>
@@ -591,7 +592,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
         <article class="reveal"><div class="em">🐊</div><h3>エジプトの10柱の神</h3><p>セベク、セルケト、アヌビス、アメミット、コンス、セト、セクメト、トト、ホルス、ラー。どのボスにも覚えるべき攻撃パターンと形態、映画のようなとどめ技があります。</p></article>
         <article class="reveal"><div class="em">⚔️</div><h3>指先で戦う</h3><p>弱攻撃と強攻撃、コンボ、回避、ガード、タイミングを合わせたパリィ。敵がひるんだら、スローモーションでとどめを。</p></article>
         <article class="reveal"><div class="em">✨</div><h3>エーテル</h3><p>倒した神々のエネルギー。主人公を強化し、倒した神から奪った力を装備するのに使います。</p></article>
-        <article class="reveal"><div class="em">🏹</div><h3>武器</h3><p>最初は二本のケペシュ、旅の途中で弓を手に入れ、やがてラーの太陽とアペプの混沌から鍛えられた伝説の武器「ディヴィナ」へ。</p></article>
+        <article class="reveal"><div class="em">🏹</div><h3>武器</h3><p>最初は二本のケペシュ、旅の途中で弓を手に入れ、やがて神話ごとに姿を変える伝説の武器「ディヴィナ」へ。</p></article>
         <article class="reveal"><div class="em">🎮</div><h3>買い切りで誠実</h3><p>広告なし、スタミナなし、有料通貨なし。プロローグと最初の3ステージは無料、章全体は一度の購入で遊べます。</p></article>
       </div>
     </div>
@@ -599,21 +600,22 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 
   <section class="block">
     <div class="wrap">
-      <h2>11の神話</h2>
-      <p class="sub">各神話が1つの章になり、10ステージとその神々のボスが登場。旅はエジプトで始まり、ギリシャで終わります。</p>
+      <h2>立ちはだかる者たち</h2>
+      <p class="sub">11の神話。それぞれをタップして、行く手に立ちはだかる者を見てみよう。</p>
       <div class="cards">
-        <details class="reveal mito"><summary><div class="em">🏺</div><h3>エジプト</h3><p>砂漠、ピラミッド、冥界ドゥアト</p><span class="ver">神々を見る</span></summary><ul><li>セベク</li><li>セルケト</li><li>アヌビス</li><li>アメミット</li><li>コンス</li><li>セト</li><li>セクメト</li><li>トート</li><li>ホルス</li><li>ラー</li><li>アポピス</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🦁</div><h3>メソポタミア</h3><p>ジッグラト、バビロン、ティアマトの深淵</p><span class="ver">神々を見る</span></summary><ul><li>ネルガル</li><li>イシュタル</li><li>エンリル</li><li>マルドゥク</li><li>ティアマト</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🐍</div><h3>アステカ</h3><p>密林のピラミッドとミクトラン</p><span class="ver">神々を見る</span></summary><ul><li>テスカトリポカ</li><li>ウィツィロポチトリ</li><li>ケツァルコアトル</li><li>ミクトランテクトリ</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🌿</div><h3>マヤ</h3><p>密林の都市とシバルバー</p><span class="ver">神々を見る</span></summary><ul><li>シバルバーの王たち</li><li>カマソッツ</li><li>ククルカン</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🏔️</div><h3>インカ</h3><p>アンデスとマチュ・ピチュ</p><span class="ver">神々を見る</span></summary><ul><li>スパイ</li><li>イリャパ</li><li>ママ・キリャ</li><li>インティ</li><li>ビラコチャ</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🍀</div><h3>ケルト</h3><p>沼地、霧、環状列石</p><span class="ver">神々を見る</span></summary><ul><li>モリガン</li><li>バロール</li><li>ケルヌンノス</li><li>ルー</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🐺</div><h3>スラヴ</h3><p>暗い森と草原</p><span class="ver">神々を見る</span></summary><ul><li>ヴェレス</li><li>ペルーン</li><li>バーバ・ヤーガ</li><li>コシチェイ</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">❄️</div><h3>フィンランド</h3><p>凍てつく北の地とトゥオネラ</p><span class="ver">神々を見る</span></summary><ul><li>ロウヒ</li><li>トゥオニ</li><li>ウッコ</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🦅</div><h3>ローマ</h3><p>帝政ローマとコロッセオ</p><span class="ver">神々を見る</span></summary><ul><li>マルス</li><li>ユピテル</li><li>ネプトゥヌス</li><li>プルートー</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🌳</div><h3>北欧</h3><p>氷、森、ユグドラシル</p><span class="ver">神々を見る</span></summary><ul><li>トール</li><li>ロキ</li><li>フレイヤ</li><li>オーディン</li><li>フェンリル</li><li>ヨルムンガンド</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">⚡</div><h3>ギリシャ</h3><p>神殿、オリュンポス、タルタロス</p><span class="ver">神々を見る</span></summary><ul><li>アレス</li><li>ポセイドン</li><li>ハデス</li><li>ヘラ</li><li>ゼウス</li><li>クロノス</li><li>カオス</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🏺</div><h3>エジプト</h3><p>砂漠、ピラミッド、冥界ドゥアト</p><span class="ver">リストを見る</span></summary><ul><li>セベク</li><li>セルケト</li><li>アヌビス</li><li>アメミット</li><li>コンス</li><li>セト</li><li>セクメト</li><li>トート</li><li>ホルス</li><li>ラー</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🦁</div><h3>メソポタミア</h3><p>ジッグラト、バビロン、ティアマトの深淵</p><span class="ver">リストを見る</span></summary><ul><li>イシュタル</li><li>ネルガル</li><li>エレシュキガル</li><li>エンリル</li><li>マルドゥク</li><li>ティアマト</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🐍</div><h3>アステカ</h3><p>密林のピラミッドとミクトラン</p><span class="ver">リストを見る</span></summary><ul><li>テスカトリポカ</li><li>ウィツィロポチトリ</li><li>ケツァルコアトル</li><li>ミクトランテクトリ</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🌿</div><h3>マヤ</h3><p>密林の都市とシバルバー</p><span class="ver">リストを見る</span></summary><ul><li>シバルバーの王たち</li><li>カマソッツ</li><li>ククルカン</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🏔️</div><h3>インカ</h3><p>アンデスとマチュ・ピチュ</p><span class="ver">リストを見る</span></summary><ul><li>スパイ</li><li>イリャパ</li><li>ママ・キリャ</li><li>インティ</li><li>ビラコチャ</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🍀</div><h3>ケルト</h3><p>沼地、霧、環状列石</p><span class="ver">リストを見る</span></summary><ul><li>モリガン</li><li>バロール</li><li>ケルヌンノス</li><li>ルー</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🐺</div><h3>スラヴ</h3><p>暗い森と草原</p><span class="ver">リストを見る</span></summary><ul><li>ヴェレス</li><li>ペルーン</li><li>バーバ・ヤーガ</li><li>不死身のコシチェイ</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">❄️</div><h3>フィンランド</h3><p>凍てつく北の地とトゥオネラ</p><span class="ver">リストを見る</span></summary><ul><li>ロウヒ</li><li>トゥオニ</li><li>ウッコ</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🦅</div><h3>ローマ</h3><p>帝政ローマとコロッセオ</p><span class="ver">リストを見る</span></summary><ul><li>ヤヌス</li><li>ベローナ</li><li>クィリヌス</li><li>ソル・インウィクトゥス</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">🌳</div><h3>北欧</h3><p>氷、森、ユグドラシル</p><span class="ver">リストを見る</span></summary><ul><li>トール</li><li>ロキ</li><li>フレイヤ</li><li>オーディン</li><li>フェンリル</li><li>ヨルムンガンド</li></ul></details>
+        <details class="reveal mito"><summary><div class="em">⚡</div><h3>ギリシャ</h3><p>神殿、オリュンポス、タルタロス</p><span class="ver">リストを見る</span></summary><ul><li>アレス</li><li>ポセイドン</li><li>ハデス</li><li>ヘラ</li><li>ゼウス</li><li>クロノス</li><li>???</li></ul></details>
       </div>
+      <p class="nota-mitos">リストは開発中のため、変更される場合があります。</p>
     </div>
   </section>
 
