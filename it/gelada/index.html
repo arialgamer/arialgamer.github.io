@@ -342,9 +342,10 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .sound { position: absolute; right: 14px; bottom: 14px; z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 0; display: grid; place-items: center; background: rgba(0,0,0,.55); color: #fff; cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px) }
 .sound svg { width: 22px; height: 22px }
 .sound[hidden] { display: none }
-.clips { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 420px }
-.clip { width: 74px; padding: 0; border: 0; background: none; color: var(--muted); cursor: pointer; font: 600 12px/1.25 var(--body); display: grid; gap: 6px; text-align: center; transition: color .2s }
-.clip img { width: 74px; height: 104px; object-fit: cover; border-radius: 14px; border: 2px solid transparent; opacity: .6; transition: opacity .2s, border-color .2s, transform .2s }
+.clips { display: flex; gap: 10px; justify-content: center; flex-wrap: nowrap; width: 100%; max-width: 480px }
+.clip { flex: 0 1 74px; min-width: 0; padding: 0; border: 0; background: none; color: var(--muted); cursor: pointer; font: 600 12px/1.25 var(--body); display: grid; gap: 6px; text-align: center; transition: color .2s }
+.clip img { width: 100%; height: auto; aspect-ratio: 74 / 104; object-fit: cover; border-radius: 14px; border: 2px solid transparent; opacity: .6; transition: opacity .2s, border-color .2s, transform .2s }
+@media (max-width: 520px) { .clips { gap: 6px } .clip { font-size: 11px } }
 .clip:hover img { opacity: .9; transform: translateY(-2px) }
 .clip[aria-pressed="true"] { color: var(--ink) }
 .clip[aria-pressed="true"] img { opacity: 1; border-color: var(--c) }
@@ -409,9 +410,18 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 
 /* ---------- Rodapé ---------- */
 footer { border-top: 1px solid var(--line); padding: 40px 0 calc(40px + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: 14px }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between }
-footer .sig { height: 44px; width: auto }
-footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px }
+footer .wrap { display: grid; grid-template-columns: 1.2fr 1.3fr 1fr 1.4fr; gap: 36px 40px; align-items: start }
+footer .sig { height: 44px; width: auto; display: block; margin-bottom: 14px }
+footer nav { display: grid; gap: 9px; justify-items: start }
+footer .ftit { margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); opacity: .75 }
+footer .fredes nav { display: flex; gap: 18px }
+footer .fredes a { display: grid; justify-items: center; gap: 6px; font-size: 12.5px }
+footer .fredes svg { width: 44px; height: 44px; padding: 11px; box-sizing: border-box; border-radius: 50%; background: var(--glass); border: 1px solid var(--line); color: var(--ink); transition: transform .2s }
+footer .fredes a:hover { text-decoration: none } footer .fredes a:hover svg { transform: translateY(-2px) }
+footer .fidiomas { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid var(--line) }
+footer .fidiomas nav { display: flex; flex-wrap: wrap; gap: 8px 22px }
+footer .fidiomas a[aria-current] { color: var(--ink); font-weight: 700 }
+@media (max-width: 820px) { footer .wrap { grid-template-columns: 1fr 1fr } footer .fmarca, footer .fredes { grid-column: 1 / -1 } }
 footer nav a { color: var(--muted); text-decoration: none }
 footer nav a:hover { color: var(--ink); text-decoration: underline }
 
@@ -701,42 +711,55 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 
 <footer>
   <div class="wrap">
-    <img class="sig" src="/assinatura.svg" alt="Arial">
-    <span>Gelada: bevande 100% virtuali, 0% alcol. Bevi responsabilmente.</span>
-    <nav aria-label="Arial Gamer">
-      <a href="#contato">Commenti e suggerimenti</a>
-      <a href="#apoie">Sostieni Arial Gamer</a>
-    </nav>
-    <nav aria-label="Social network">
-      <a href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
-    </nav>
-    <nav aria-label="Giochi e app">
-      <a href="/it/deicida/">Deicida</a>
-      <a href="/it/rota-estelar/">Rota Estelar</a>
-      <a href="/it/gol-de-placa/">Gol de Placa</a>
-      <a href="/it/esconde-esconde/">Esconde-Esconde</a>
-      <a href="/it/gelada/">Gelada</a>
-      <a href="/it/acervo/">Acervo</a>
-    </nav>
-    <nav aria-label="Idioma / Language">
-      <a href="/gelada/" hreflang="pt-BR" lang="pt-BR">Português</a>
-      <a href="/en/gelada/" hreflang="en" lang="en">English</a>
-      <a href="/es/gelada/" hreflang="es" lang="es">Español</a>
-      <a href="/de/gelada/" hreflang="de" lang="de">Deutsch</a>
-      <a href="/fr/gelada/" hreflang="fr" lang="fr">Français</a>
-      <a href="/it/gelada/" hreflang="it" lang="it" aria-current="page">Italiano</a>
-      <a href="/ja/gelada/" hreflang="ja" lang="ja">日本語</a>
-      <a href="/zh/gelada/" hreflang="zh-Hans" lang="zh-Hans">中文</a>
-    </nav>
-    <nav aria-label="Privacy">
-      <a href="/gelada-privacidade/">Privacy Gelada</a>
-      <a href="/esconde-privacidade/">Privacy Esconde-Esconde</a>
-      <a href="/gol-privacidade/">Privacy Gol de Placa</a>
-      <a href="/rota-estelar-privacidade/">Privacy Rota Estelar</a>
-      <a href="/acervo/privacidade/">Privacy Acervo</a>
-    </nav>
+    <div class="fmarca">
+      <img class="sig" src="/assinatura.svg" alt="Arial">
+      <nav aria-label="Arial Gamer">
+        <a href="#contato">Commenti e suggerimenti</a>
+        <a href="#apoie">Sostieni Arial Gamer</a>
+      </nav>
+    </div>
+    <div class="fredes">
+      <p class="ftit">Social network</p>
+      <nav aria-label="Social network">
+        <a href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tiktok"/></svg><span>TikTok</span></a>
+        <a href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-insta"/></svg><span>Instagram</span></a>
+        <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-yt"/></svg><span>YouTube</span></a>
+      </nav>
+    </div>
+    <div class="fjogos">
+      <p class="ftit">Giochi e app</p>
+      <nav aria-label="Giochi e app">
+        <a href="/it/deicida/">Deicida</a>
+        <a href="/it/rota-estelar/">Rota Estelar</a>
+        <a href="/it/gol-de-placa/">Gol de Placa</a>
+        <a href="/it/esconde-esconde/">Esconde-Esconde</a>
+        <a href="/it/gelada/">Gelada</a>
+        <a href="/it/acervo/">Acervo</a>
+      </nav>
+    </div>
+    <div class="fpriv">
+      <p class="ftit">Privacy</p>
+      <nav aria-label="Privacy">
+        <a href="/gelada-privacidade/">Privacy Gelada</a>
+        <a href="/esconde-privacidade/">Privacy Esconde-Esconde</a>
+        <a href="/gol-privacidade/">Privacy Gol de Placa</a>
+        <a href="/rota-estelar-privacidade/">Privacy Rota Estelar</a>
+        <a href="/acervo/privacidade/">Privacy Acervo</a>
+      </nav>
+    </div>
+    <div class="fidiomas">
+      <p class="ftit">Idioma / Language</p>
+      <nav aria-label="Idioma / Language">
+        <a href="/gelada/" hreflang="pt-BR" lang="pt-BR">Português</a>
+        <a href="/en/gelada/" hreflang="en" lang="en">English</a>
+        <a href="/es/gelada/" hreflang="es" lang="es">Español</a>
+        <a href="/de/gelada/" hreflang="de" lang="de">Deutsch</a>
+        <a href="/fr/gelada/" hreflang="fr" lang="fr">Français</a>
+        <a href="/it/gelada/" hreflang="it" lang="it" aria-current="page">Italiano</a>
+        <a href="/ja/gelada/" hreflang="ja" lang="ja">日本語</a>
+        <a href="/zh/gelada/" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+      </nav>
+    </div>
   </div>
 </footer>
 

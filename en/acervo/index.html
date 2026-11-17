@@ -300,9 +300,10 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .sound { position: absolute; right: 14px; bottom: 14px; z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 0; display: grid; place-items: center; background: rgba(0,0,0,.55); color: #fff; cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px) }
 .sound svg { width: 22px; height: 22px }
 .sound[hidden] { display: none }
-.clips { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 420px }
-.clip { width: 74px; padding: 0; border: 0; background: none; color: var(--muted); cursor: pointer; font: 600 12px/1.25 var(--body); display: grid; gap: 6px; text-align: center; transition: color .2s }
-.clip img { width: 74px; height: 104px; object-fit: cover; border-radius: 14px; border: 2px solid transparent; opacity: .6; transition: opacity .2s, border-color .2s, transform .2s }
+.clips { display: flex; gap: 10px; justify-content: center; flex-wrap: nowrap; width: 100%; max-width: 480px }
+.clip { flex: 0 1 74px; min-width: 0; padding: 0; border: 0; background: none; color: var(--muted); cursor: pointer; font: 600 12px/1.25 var(--body); display: grid; gap: 6px; text-align: center; transition: color .2s }
+.clip img { width: 100%; height: auto; aspect-ratio: 74 / 104; object-fit: cover; border-radius: 14px; border: 2px solid transparent; opacity: .6; transition: opacity .2s, border-color .2s, transform .2s }
+@media (max-width: 520px) { .clips { gap: 6px } .clip { font-size: 11px } }
 .clip:hover img { opacity: .9; transform: translateY(-2px) }
 .clip[aria-pressed="true"] { color: var(--ink) }
 .clip[aria-pressed="true"] img { opacity: 1; border-color: var(--c) }

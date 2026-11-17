@@ -416,9 +416,10 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .sound { position: absolute; right: 14px; bottom: 14px; z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 0; display: grid; place-items: center; background: rgba(0,0,0,.55); color: #fff; cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px) }
 .sound svg { width: 22px; height: 22px }
 .sound[hidden] { display: none }
-.clips { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 420px }
-.clip { width: 74px; padding: 0; border: 0; background: none; color: var(--muted); cursor: pointer; font: 600 12px/1.25 var(--body); display: grid; gap: 6px; text-align: center; transition: color .2s }
-.clip img { width: 74px; height: 104px; object-fit: cover; border-radius: 14px; border: 2px solid transparent; opacity: .6; transition: opacity .2s, border-color .2s, transform .2s }
+.clips { display: flex; gap: 10px; justify-content: center; flex-wrap: nowrap; width: 100%; max-width: 480px }
+.clip { flex: 0 1 74px; min-width: 0; padding: 0; border: 0; background: none; color: var(--muted); cursor: pointer; font: 600 12px/1.25 var(--body); display: grid; gap: 6px; text-align: center; transition: color .2s }
+.clip img { width: 100%; height: auto; aspect-ratio: 74 / 104; object-fit: cover; border-radius: 14px; border: 2px solid transparent; opacity: .6; transition: opacity .2s, border-color .2s, transform .2s }
+@media (max-width: 520px) { .clips { gap: 6px } .clip { font-size: 11px } }
 .clip:hover img { opacity: .9; transform: translateY(-2px) }
 .clip[aria-pressed="true"] { color: var(--ink) }
 .clip[aria-pressed="true"] img { opacity: 1; border-color: var(--c) }
@@ -483,9 +484,18 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 
 /* ---------- Rodapé ---------- */
 footer { border-top: 1px solid var(--line); padding: 40px 0 calc(40px + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: 14px }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between }
-footer .sig { height: 44px; width: auto }
-footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px }
+footer .wrap { display: grid; grid-template-columns: 1.2fr 1.3fr 1fr 1.4fr; gap: 36px 40px; align-items: start }
+footer .sig { height: 44px; width: auto; display: block; margin-bottom: 14px }
+footer nav { display: grid; gap: 9px; justify-items: start }
+footer .ftit { margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); opacity: .75 }
+footer .fredes nav { display: flex; gap: 18px }
+footer .fredes a { display: grid; justify-items: center; gap: 6px; font-size: 12.5px }
+footer .fredes svg { width: 44px; height: 44px; padding: 11px; box-sizing: border-box; border-radius: 50%; background: var(--glass); border: 1px solid var(--line); color: var(--ink); transition: transform .2s }
+footer .fredes a:hover { text-decoration: none } footer .fredes a:hover svg { transform: translateY(-2px) }
+footer .fidiomas { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid var(--line) }
+footer .fidiomas nav { display: flex; flex-wrap: wrap; gap: 8px 22px }
+footer .fidiomas a[aria-current] { color: var(--ink); font-weight: 700 }
+@media (max-width: 820px) { footer .wrap { grid-template-columns: 1fr 1fr } footer .fmarca, footer .fredes { grid-column: 1 / -1 } }
 footer nav a { color: var(--muted); text-decoration: none }
 footer nav a:hover { color: var(--ink); text-decoration: underline }
 
@@ -594,8 +604,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .player .phone.wide { width: min(560px, 90vw); aspect-ratio: 19.5 / 9; border-radius: 34px }
 .phone.wide .screen { border-radius: 26px }
 .wide .clips { max-width: 560px }
-.wide .clip { width: 84px }
-.wide .clip img { width: 84px; height: 48px; border-radius: 10px }
+.wide .clip { flex-basis: 84px }
+.wide .clip img { width: 100%; height: auto; aspect-ratio: 84 / 48; border-radius: 10px }
 .wide .wrap.shots img { aspect-ratio: 16 / 9 }
 @media (max-width: 960px) { .game.wide .wrap:not(.shots), .game.wide.flip .wrap:not(.shots) { grid-template-columns: 1fr } }
 </style>
@@ -644,7 +654,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <div>
         <p class="eyebrow">Arial Gamer · Mobile Game Studio</p>
         <h1>Handyspiele <span class="grad">aus Brasilien</span></h1>
-        <p class="lead">Stell dich den Göttern von 11 Mythologien. Flieg ein Raumschiff zum fernsten Planeten. Schieß den Elfmeter oder halt ihn in letzter Minute. Versteck dich hinter dem Mond. Füll ein Glas und kipp das Handy zum Trinken. Fünf Spiele für allein oder mit Freunden, zwei davon bald verfügbar. Und Acervo, um deine Sammlung zu erfassen.</p>
+        <p class="lead">Stell dich den Göttern von 11 Mythologien. Flieg ein Raumschiff zum fernsten Planeten. Schieß den Elfmeter oder halt ihn in letzter Minute. Versteck dich hinter dem Mond. Füll ein Glas und kipp das Handy zum Trinken. Fünf Spiele für allein oder mit Freunden, eins davon, Deicida, bald verfügbar. Und Acervo, um deine Sammlung zu erfassen.</p>
         <p class="noads"><i aria-hidden="true">🚫</i><span><b>Ohne Werbung</b><span>Keines unserer Spiele hat Werbung. Nichts unterbricht den Spaß.</span></span></p>
         <div class="ctas">
           <a class="btn primary" href="#jogos">Spiele ansehen</a>
@@ -1043,42 +1053,55 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 
 <footer>
   <div class="wrap">
-    <img class="sig" src="/assinatura.svg" alt="Arial">
-    <span>Gelada: 100 % virtuelle Getränke, 0 % Alkohol. Bitte verantwortungsvoll genießen.</span>
-    <nav aria-label="Arial Gamer">
-      <a href="#contato">Kommentare und Vorschläge</a>
-      <a href="#apoie">Unterstütze Arial Gamer</a>
-    </nav>
-    <nav aria-label="Soziale Netzwerke">
-      <a href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener">YouTube</a>
-    </nav>
-    <nav aria-label="Spiele und Apps">
-      <a href="/de/deicida/">Deicida</a>
-      <a href="/de/rota-estelar/">Rota Estelar</a>
-      <a href="/de/gol-de-placa/">Gol de Placa</a>
-      <a href="/de/esconde-esconde/">Esconde-Esconde</a>
-      <a href="/de/gelada/">Gelada</a>
-      <a href="/de/acervo/">Acervo</a>
-    </nav>
-    <nav aria-label="Idioma / Language">
-      <a href="/" hreflang="pt" lang="pt">Português</a>
-      <a href="/en/" hreflang="en" lang="en">English</a>
-      <a href="/es/" hreflang="es" lang="es">Español</a>
-      <a href="/de/" hreflang="de" lang="de" aria-current="page">Deutsch</a>
-      <a href="/fr/" hreflang="fr" lang="fr">Français</a>
-      <a href="/it/" hreflang="it" lang="it">Italiano</a>
-      <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
-      <a href="/zh/" hreflang="zh" lang="zh">中文</a>
-    </nav>
-    <nav aria-label="Datenschutz">
-      <a href="/gelada-privacidade/">Datenschutz Gelada</a>
-      <a href="/esconde-privacidade/">Datenschutz Esconde-Esconde</a>
-      <a href="/gol-privacidade/">Datenschutz Gol de Placa</a>
-      <a href="/rota-estelar-privacidade/">Datenschutz Rota Estelar</a>
-      <a href="/acervo/privacidade/">Datenschutz Acervo</a>
-    </nav>
+    <div class="fmarca">
+      <img class="sig" src="/assinatura.svg" alt="Arial">
+      <nav aria-label="Arial Gamer">
+        <a href="#contato">Kommentare und Vorschläge</a>
+        <a href="#apoie">Unterstütze Arial Gamer</a>
+      </nav>
+    </div>
+    <div class="fredes">
+      <p class="ftit">Soziale Netzwerke</p>
+      <nav aria-label="Soziale Netzwerke">
+        <a href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tiktok"/></svg><span>TikTok</span></a>
+        <a href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-insta"/></svg><span>Instagram</span></a>
+        <a href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-yt"/></svg><span>YouTube</span></a>
+      </nav>
+    </div>
+    <div class="fjogos">
+      <p class="ftit">Spiele und Apps</p>
+      <nav aria-label="Spiele und Apps">
+        <a href="/de/deicida/">Deicida</a>
+        <a href="/de/rota-estelar/">Rota Estelar</a>
+        <a href="/de/gol-de-placa/">Gol de Placa</a>
+        <a href="/de/esconde-esconde/">Esconde-Esconde</a>
+        <a href="/de/gelada/">Gelada</a>
+        <a href="/de/acervo/">Acervo</a>
+      </nav>
+    </div>
+    <div class="fpriv">
+      <p class="ftit">Datenschutz</p>
+      <nav aria-label="Datenschutz">
+        <a href="/gelada-privacidade/">Datenschutz Gelada</a>
+        <a href="/esconde-privacidade/">Datenschutz Esconde-Esconde</a>
+        <a href="/gol-privacidade/">Datenschutz Gol de Placa</a>
+        <a href="/rota-estelar-privacidade/">Datenschutz Rota Estelar</a>
+        <a href="/acervo/privacidade/">Datenschutz Acervo</a>
+      </nav>
+    </div>
+    <div class="fidiomas">
+      <p class="ftit">Idioma / Language</p>
+      <nav aria-label="Idioma / Language">
+        <a href="/" hreflang="pt" lang="pt">Português</a>
+        <a href="/en/" hreflang="en" lang="en">English</a>
+        <a href="/es/" hreflang="es" lang="es">Español</a>
+        <a href="/de/" hreflang="de" lang="de" aria-current="page">Deutsch</a>
+        <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+        <a href="/it/" hreflang="it" lang="it">Italiano</a>
+        <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+        <a href="/zh/" hreflang="zh" lang="zh">中文</a>
+      </nav>
+    </div>
   </div>
 </footer>
 
