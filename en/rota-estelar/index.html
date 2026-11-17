@@ -851,12 +851,20 @@ document.querySelectorAll('[data-player]').forEach((p) => {
   video.addEventListener('timeupdate', () => {
     if (video.duration) clips[i].querySelector('.bar span').style.width = (video.currentTime / video.duration * 100) + '%';
   });
-  if (sound) sound.addEventListener('click', () => {
-    video.muted = !video.muted;
+  const marcaSom = () => {
     sound.setAttribute('aria-label', video.muted ? "Turn sound on" : "Turn sound off");
     sound.querySelector('use').setAttribute('href', video.muted ? '#i-muted' : '#i-sound');
-    if (video.paused) video.play().catch(() => {});
-  });
+  };
+  if (sound) {
+    p.silenciar = () => { video.muted = true; marcaSom(); };
+    sound.addEventListener('click', () => {
+      video.muted = !video.muted;
+      // um som por vez: ligar o som de um jogo desliga o dos outros
+      if (!video.muted) document.querySelectorAll('[data-player]').forEach((q) => { if (q !== p && q.silenciar) q.silenciar(); });
+      marcaSom();
+      if (video.paused) video.play().catch(() => {});
+    });
+  }
   new IntersectionObserver((es) => es.forEach((e) => {
     if (e.isIntersecting && !reduce) { video.preload = 'auto'; video.play().catch(() => {}); } else video.pause();
   }), { threshold: .4 }).observe(video);

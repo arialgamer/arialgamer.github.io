@@ -326,6 +326,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .clip[aria-pressed="true"] img { opacity: 1; border-color: var(--c) }
 .clip .bar { height: 3px; border-radius: 3px; background: var(--line); overflow: hidden }
 .clip .bar span { display: block; height: 100%; width: 0; background: var(--c) }
+.credito { margin: 10px 0 0; font-size: 12px; color: var(--muted); text-align: center }
+.credito a { color: inherit }
 
 @media (max-width: 960px) {
   .game { padding: 80px 0 }
@@ -588,6 +590,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-deuses"><img src="/media/deicida-deuses.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Los dioses</button>
           <button class="clip" type="button" aria-pressed="false" data-src="/media/deicida-barca"><img src="/media/deicida-barca.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Barca Solar</button>
         </div>
+        <p class="credito">Música: “Ibn Al-Noor”, Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>), <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
       </div>
     </div>
     <div class="wrap shots">
@@ -835,12 +838,20 @@ document.querySelectorAll('[data-player]').forEach((p) => {
   video.addEventListener('timeupdate', () => {
     if (video.duration) clips[i].querySelector('.bar span').style.width = (video.currentTime / video.duration * 100) + '%';
   });
-  if (sound) sound.addEventListener('click', () => {
-    video.muted = !video.muted;
+  const marcaSom = () => {
     sound.setAttribute('aria-label', video.muted ? "Activar sonido" : "Desactivar sonido");
     sound.querySelector('use').setAttribute('href', video.muted ? '#i-muted' : '#i-sound');
-    if (video.paused) video.play().catch(() => {});
-  });
+  };
+  if (sound) {
+    p.silenciar = () => { video.muted = true; marcaSom(); };
+    sound.addEventListener('click', () => {
+      video.muted = !video.muted;
+      // um som por vez: ligar o som de um jogo desliga o dos outros
+      if (!video.muted) document.querySelectorAll('[data-player]').forEach((q) => { if (q !== p && q.silenciar) q.silenciar(); });
+      marcaSom();
+      if (video.paused) video.play().catch(() => {});
+    });
+  }
   new IntersectionObserver((es) => es.forEach((e) => {
     if (e.isIntersecting && !reduce) { video.preload = 'auto'; video.play().catch(() => {}); } else video.pause();
   }), { threshold: .4 }).observe(video);
