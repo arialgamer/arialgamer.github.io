@@ -685,11 +685,11 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         </div>
       </div>
       <div class="fan" aria-label="Vidéos des cinq jeux">
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/esconde-lua.jpg" aria-label="Esconde-Esconde : caché sur la lune"><source src="/media/esconde-lua.mp4" type="video/mp4"></video></div></div>
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/rota-nave.jpg" aria-label="Rota Estelar: Créatures"><source src="/media/rota-nave.mp4" type="video/mp4"></video></div></div>
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/deicida-chamada.jpg" aria-label="Teaser de Deicida"><source src="/media/deicida-chamada.mp4" type="video/mp4"></video></div></div>
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gol-adulta.jpg" aria-label="Gol de Placa : tir au but"><source src="/media/gol-adulta.mp4" type="video/mp4"></video></div></div>
-        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gelada-saude.jpg" aria-label="Gelada : une bière se remplit et se boit sur le téléphone"><source src="/media/gelada-saude.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/esconde-lua.jpg" aria-label="Esconde-Esconde : caché sur la lune"><source src="/media/topo/esconde-lua.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/rota-nave.jpg" aria-label="Rota Estelar: Créatures"><source src="/media/topo/rota-nave.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/deicida-chamada.jpg" aria-label="Teaser de Deicida"><source src="/media/topo/deicida-chamada.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gol-adulta.jpg" aria-label="Gol de Placa : tir au but"><source src="/media/topo/gol-adulta.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gelada-saude.jpg" aria-label="Gelada : une bière se remplit et se boit sur le téléphone"><source src="/media/topo/gelada-saude.mp4" type="video/mp4"></video></div></div>
       </div>
     </div>
   </section>
@@ -1170,11 +1170,12 @@ const playIfVisible = new IntersectionObserver((es) => es.forEach((e) => {
   const v = e.target;
   if (e.isIntersecting && !reduce) { v.preload = 'auto'; v.play().catch(() => {}); } else { v.pause(); }
 }), { threshold: .35 });
-document.querySelectorAll('video[data-auto]').forEach((v) => playIfVisible.observe(v));
+document.querySelectorAll('video[data-auto]').forEach((v) => { v.muted = true; v.defaultMuted = true; v.volume = 0; playIfVisible.observe(v); });
 
 // Players dos jogos: troca de vídeo, barra de progresso, avança sozinho e liga o som
 document.querySelectorAll('[data-player]').forEach((p) => {
   const video = p.querySelector('video');
+  video.muted = true; video.defaultMuted = true; video.volume = 0; // começa sempre sem som; só o botão liga
   const clips = [...p.querySelectorAll('.clip')];
   const sound = p.querySelector('.sound');
   let i = 0;
@@ -1196,9 +1197,10 @@ document.querySelectorAll('[data-player]').forEach((p) => {
     sound.querySelector('use').setAttribute('href', video.muted ? '#i-muted' : '#i-sound');
   };
   if (sound) {
-    p.silenciar = () => { video.muted = true; marcaSom(); };
+    p.silenciar = () => { video.muted = true; video.volume = 0; marcaSom(); };
     sound.addEventListener('click', () => {
       video.muted = !video.muted;
+      video.volume = video.muted ? 0 : 1;
       // um som por vez: ligar o som de um jogo desliga o dos outros
       if (!video.muted) document.querySelectorAll('[data-player]').forEach((q) => { if (q !== p && q.silenciar) q.silenciar(); });
       marcaSom();
