@@ -474,6 +474,9 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .ig-round { margin-left: auto; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: linear-gradient(45deg, #f9ce34, #ee2a7b 45%, #6228d7); transition: transform .2s }
 .ig-round:hover { transform: translateY(-1px) }
 .ig-round svg { width: 20px; height: 20px }
+.yt-round, .nav .yt-round { margin-left: 0; background: #ff0033 }
+.ig-round { flex-shrink: 0 }
+@media (max-width: 360px) { .nav .brand { font-size: 0; gap: 0 } }
 .nav ul + .ig-round { margin-left: 0 }
 .grid6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px }
 .grid6 a { position: relative; display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 9 / 14; border: 1px solid var(--line) }
@@ -639,6 +642,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <li><a href="#siga">Netzwerke</a></li>
     </ul>
     <a class="ig-round" href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener" aria-label="Instagram @arial.gamer"><svg><use href="#i-insta"/></svg></a>
+    <a class="ig-round yt-round" href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener" aria-label="YouTube @arialgamer"><svg><use href="#i-yt"/></svg></a>
     <a class="pill" href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>Folgen</a>
   </div>
   <script src="/contador.js" defer></script>
