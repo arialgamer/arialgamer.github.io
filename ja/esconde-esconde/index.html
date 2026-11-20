@@ -256,6 +256,9 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .pill svg { width: 18px; height: 18px; flex: none }
 .brand { white-space: nowrap }
 @media (max-width: 860px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
+.nav ul a { white-space: nowrap }
+@media (max-width: 1400px) { .nav ul a { padding: 8px 9px; font-size: 14px } .nav .wrap { gap: 12px } }
+@media (max-width: 1160px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
 @media (max-width: 400px) { .nav .wrap { gap: 10px } .brand { font-size: 18px; gap: 8px } .brand img { width: 34px; height: 34px } .nav .pill { padding: 0 14px } }
 
 /* ---------- Abertura ---------- */
@@ -530,6 +533,10 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
   .others { grid-template-columns: 1fr }
   .block { padding: 60px 0 }
 }
+.btn.kofi { background: #72a4f2; color: #0b1f3d }
+.pixbox .ou { color: var(--muted); font-size: 14.5px; margin-top: 4px }
+html:not([lang=pt-BR]) .pixbox .kofi { order: -2 }
+html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 </style>
 </head>
 <body class="no-js">
@@ -552,7 +559,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
     <ul>
       <li><a href="/ja/deicida/">Deicida</a></li>
       <li><a href="/ja/rota-estelar/">Rota Estelar</a></li>
+      <li><a href="/ja/volei-total/">Vôlei Total</a></li>
       <li><a href="/ja/gol-de-placa/">Gol de Placa</a></li>
+      <li><a href="/ja/xodo/">Xodó</a></li>
       <li><a href="/ja/esconde-esconde/" aria-current="page">Esconde-Esconde</a></li>
       <li><a href="/ja/gelada/">Gelada</a></li>
       <li class="app"><a href="/ja/acervo/">Acervo</a></li>
@@ -648,7 +657,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <div class="others">
         <a href="/ja/deicida/"><img src="/deicida.png" alt="" width="72" height="72"><span><b>Deicida</b>Android 版は無料 · ひとりの人間が11の神話の神々に挑む壮大なバトル ⚔️☀️</span></a>
         <a href="/ja/rota-estelar/"><img src="/rota.png" alt="" width="72" height="72"><span><b>Rota Estelar</b>App Store で配信中 · 宇宙船で地球から、これまでに見つかった最も遠い惑星へ 🚀👾</span></a>
+        <a href="/ja/volei-total/"><img src="/volei.png" alt="" width="72" height="72"><span><b>Vôlei Total</b>近日公開 · アーケードバレー：インドア6人制とビーチ2人制 🏐🔥</span></a>
         <a href="/ja/gol-de-placa/"><img src="/gol.png" alt="" width="72" height="72"><span><b>Gol de Placa</b>PKとフリーキック：キッカーにもキーパーにもなれる ⚽🧤</span></a>
+        <a href="/ja/xodo/"><img src="/xodo.png" alt="" width="72" height="72"><span><b>Xodó</b>近日公開 · 90年代のキーホルダー型育成ゲームが、ブラジルのどうぶつで復活 🥚🦫</span></a>
         <a href="/ja/gelada/"><img src="/gelada.png" alt="" width="72" height="72"><span><b>Gelada</b>ビール、カクテル、コーヒーまでスマホで。グラスを満たして傾けて飲もう 🍺</span></a>
         <a href="/ja/acervo/"><img src="/acervo.png" alt="" width="72" height="72"><span><b>Acervo</b>あなたのコレクションの目録。アイテムごとの価値もわかります ⌚🪙</span></a>
       </div>
@@ -689,7 +700,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
         <div>
           <p class="eyebrow">応援</p>
           <h2>Arial Gamerを応援</h2>
-          <p>ここでは広告は一切表示されません。ゲームを支えているのはあなたです。Pix（ブラジルの即時決済）での応援は、どんな金額でも大きな力になります。ありがとう！💛</p>
+          <p>ここでは広告は一切表示されません。ゲームを支えているのはあなたです。Ko-fi（カードまたはPayPal）での応援は、どんな金額でも大きな力になります。ありがとう！💛</p>
         </div>
         <div class="pixbox">
           <span class="lbl">Pixキー（メール）</span>
@@ -697,6 +708,8 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <button class="btn green" type="button" id="pix-copy"><svg aria-hidden="true"><use href="#i-copy"/></svg><span>キーをコピー</span></button>
           <span class="copied" id="pix-ok" role="status" aria-live="polite"></span>
           <span hidden id="t-copied">キーをコピーしました！銀行アプリに貼り付けてください。</span>
+          <span class="ou">ブラジルにお住まいの方はPixもどうぞ：</span>
+          <a class="btn kofi" href="https://ko-fi.com/arialgamer" target="_blank" rel="noopener"><span aria-hidden="true">☕</span><span>Ko-fiで応援する</span></a>
         </div>
       </div>
     </div>
@@ -755,7 +768,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <nav aria-label="ゲームとアプリ">
         <a href="/ja/deicida/">Deicida</a>
         <a href="/ja/rota-estelar/">Rota Estelar</a>
+        <a href="/ja/volei-total/">Vôlei Total</a>
         <a href="/ja/gol-de-placa/">Gol de Placa</a>
+        <a href="/ja/xodo/">Xodó</a>
         <a href="/ja/esconde-esconde/">Esconde-Esconde</a>
         <a href="/ja/gelada/">Gelada</a>
         <a href="/ja/acervo/">Acervo</a>
@@ -766,7 +781,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <nav aria-label="プライバシー">
         <a href="/deicida-privacidade/">Deicidaのプライバシー</a>
         <a href="/rota-estelar-privacidade/">Rota Estelarのプライバシー</a>
+        <a href="/volei-privacidade/">Vôlei Totalのプライバシー</a>
         <a href="/gol-privacidade/">Gol de Placaのプライバシー</a>
+        <a href="/xodo-privacidade/">Xodóのプライバシー</a>
         <a href="/esconde-privacidade/">Esconde-Escondeのプライバシー</a>
         <a href="/gelada-privacidade/">Geladaのプライバシー</a>
         <a href="/acervo/privacidade/">Acervoのプライバシー</a>

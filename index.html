@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Arial Gamer · Jogos e apps para celular: Gol de Placa, Esconde-Esconde, Gelada, Deicida, Rota Estelar e Acervo</title>
-<meta name="description" content="Arial Gamer: jogos de celular feitos no Brasil, a partir de R$ 2,90 no iPhone e no Android (Gol de Placa por enquanto só no iPhone): Gelada (simulador de cerveja e drinks, incline o celular para beber), Esconde-Esconde (24 lugares, contra a máquina ou um amigo) e Gol de Placa (pênaltis e faltas em 3D). Sem anúncios. Veja os vídeos. Novo: Rota Estelar (nave espacial por 31 planetas), já na App Store. Em breve: Deicida (ação contra os deuses do Egito). E o Acervo: Sua Coleção, app grátis para catalogar e avaliar coleções.">
+<title>Arial Gamer · Jogos e apps para celular: Deicida, Rota Estelar, Vôlei Total, Gol de Placa, Xodó, Esconde-Esconde, Gelada e Acervo</title>
+<meta name="description" content="Arial Gamer: jogos de celular feitos no Brasil, para iPhone e Android, sem anúncios: Deicida (ação contra os deuses de 11 mitologias), Rota Estelar (nave espacial por 31 planetas), Gol de Placa (pênaltis e faltas em 3D), Esconde-Esconde (24 lugares, contra a máquina ou um amigo) e Gelada (incline o celular para beber). Em breve: Vôlei Total (vôlei de arcade) e Xodó (bichinho virtual com bichos do Brasil). E o Acervo: Sua Coleção, app grátis para catalogar e avaliar coleções.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
 <meta property="og:site_name" content="Arial Gamer">
 <meta property="og:locale" content="pt_BR">
@@ -21,8 +21,8 @@
 <meta name="theme-color" content="#0d0a20">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arialgamer.com.br/">
-<meta property="og:title" content="Arial Gamer · Jogos e apps para celular feitos no Brasil: Gelada, Esconde-Esconde, Gol de Placa e Acervo">
-<meta property="og:description" content="Gelada 🍺, Esconde-Esconde 🙈 e Gol de Placa ⚽: jogos sem anúncios. E o Acervo 📦, para a sua coleção. Veja os vídeos e baixe.">
+<meta property="og:title" content="Arial Gamer · Jogos e apps para celular feitos no Brasil: Deicida, Rota Estelar, Vôlei Total, Gol de Placa, Xodó, Esconde-Esconde, Gelada e Acervo">
+<meta property="og:description" content="Deicida ⚔️, Rota Estelar 🚀, Gol de Placa ⚽, Esconde-Esconde 🙈 e Gelada 🍺, e em breve Vôlei Total 🏐 e Xodó 🥚: jogos sem anúncios. E o Acervo 📦, para a sua coleção.">
 <meta property="og:image" content="https://arialgamer.com.br/logo-1080.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
@@ -445,6 +445,9 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .pill svg { width: 18px; height: 18px; flex: none }
 .brand { white-space: nowrap }
 @media (max-width: 860px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
+.nav ul a { white-space: nowrap }
+@media (max-width: 1400px) { .nav ul a { padding: 8px 9px; font-size: 14px } .nav .wrap { gap: 12px } }
+@media (max-width: 1160px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
 @media (max-width: 400px) { .nav .wrap { gap: 10px } .brand { font-size: 18px; gap: 8px } .brand img { width: 34px; height: 34px } .nav .pill { padding: 0 14px } }
 
 /* ---------- Abertura ---------- */
@@ -530,7 +533,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .esconde { --c: var(--violet); --c-ink: #15102e; --glow: rgba(180,156,255,.22); --gx: 28%; background: linear-gradient(180deg, transparent, rgba(23,18,54,.6), transparent) }
 .acervo { --c: #D0AC72; --c-ink: #1B232E; --glow: rgba(208,172,114,.2); --gx: 28% }
 .acervo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
-.gol { --c: var(--green); --c-ink: #06301a; --glow: rgba(61,220,132,.18); --gx: 72% }
+.gol { --c: var(--green); --c-ink: #06301a; --glow: rgba(61,220,132,.18); --gx: 28% }
 
 .info .head { display: flex; align-items: center; gap: 18px; margin-bottom: 18px }
 .info .head img { width: 84px; height: 84px; border-radius: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.4) }
@@ -758,6 +761,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .wide .clip img { width: 100%; height: auto; aspect-ratio: 84 / 48; border-radius: 10px }
 .wide .wrap.shots img { aspect-ratio: 16 / 9 }
 @media (max-width: 960px) { .game.wide .wrap:not(.shots), .game.wide.flip .wrap:not(.shots) { grid-template-columns: 1fr } }
+.volei { --c: #ffc93a; --c-ink: #2a1d00; --glow: rgba(60,130,255,.22); --gx: 72%; background: linear-gradient(180deg, transparent, rgba(10,30,70,.55), transparent) }
+.xodo { --c: #b99bff; --c-ink: #1c0b3d; --glow: rgba(180,140,255,.22); --gx: 72% }
+.volei .screen img, .xodo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 </style>
 </head>
 <body class="no-js">
@@ -780,7 +786,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     <ul>
       <li><a href="#deicida">Deicida</a></li>
       <li><a href="#rota">Rota Estelar</a></li>
+      <li><a href="#volei">Vôlei Total</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
+      <li><a href="#xodo">Xodó</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gelada">Gelada</a></li>
       <li class="app"><a href="#acervo">Acervo</a></li>
@@ -804,7 +812,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <div>
         <p class="eyebrow">Arial Gamer · Games &amp; Apps</p>
         <h1>Jogos para celular <span class="grad">feitos no Brasil</span></h1>
-        <p class="lead">Enfrente os deuses de 11 mitologias. Pilote uma nave até o planeta mais distante. Bata o pênalti ou defenda no último minuto. Esconda-se até atrás da lua. Encha um copo e incline para beber. Cinco jogos para jogar sozinho ou com um amigo. E o Acervo, para catalogar a sua coleção.</p>
+        <p class="lead">Enfrente os deuses de 11 mitologias. Pilote uma nave até o planeta mais distante. Solte a Super Cortada no vôlei. Bata o pênalti ou defenda no último minuto. Cuide de um bichinho com bichos do Brasil. Esconda-se até atrás da lua. Encha um copo e incline para beber. Sete jogos para jogar sozinho ou com um amigo. E o Acervo, para catalogar a sua coleção.</p>
         <p class="noads"><i aria-hidden="true">🚫</i><span><b>Sem anúncios</b><span>Nenhum dos nossos jogos tem propaganda. Nada interrompe a diversão.</span></span></p>
         <div class="ctas">
           <a class="btn primary" href="#jogos">Conhecer os jogos</a>
@@ -947,8 +955,45 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     </div>
   </section>
 
+  <!-- ================= VÔLEI TOTAL ================= -->
+  <section class="game volei wide" data-vista="jogos" id="volei">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="volei.png" alt="Ícone do Vôlei Total" width="84" height="84">
+          <div><p class="eyebrow">Em breve</p><h2>Vôlei Total</h2></div>
+        </div>
+        <p class="tag">Vôlei de arcade: 6x6 na quadra e 2x2 na praia 🏐🔥</p>
+        <span class="price">🏐 Em breve · R$ 3,90</span><span class="price free">🚫 Sem anúncios</span>
+        <ul class="feats">
+          <li><i>🏐</i><span><b>Quadra 6x6 e praia 2x2</b>, com saque viagem e bloqueio</span></li>
+          <li><i>🔥</i><span><b>Super Cortada</b> em câmera lenta, com fogo</span></li>
+          <li><i>👥</i><span><b>2 jogadores</b> no mesmo celular e torneio com 8 seleções</span></li>
+          <li><i>🎙️</i><span><b>Narrador ou narradora</b>, torcida e replay das melhores jogadas</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>Em breve</b> para iPhone, iPad e Android, por R$ 3,90: jogo completo, sem anúncios e sem compras dentro do app.</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>Em breve</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>Em breve</strong></span></span>
+        </div>
+        <a class="more" href="volei-total/">Tudo sobre o Vôlei Total →</a>
+      </div>
+      <div class="player reveal">
+        <div class="phone wide"><div class="screen"><img src="media/volei-quadra.jpg" alt="Partida de vôlei 6x6 no ginásio, com torcida e placar" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="media/volei-quadra.jpg" alt="Jogo rápido na quadra, Brasil contra Samurais" loading="lazy"><figcaption>Quadra 6x6</figcaption></figure>
+      <figure class="reveal"><img src="media/volei-praia.jpg" alt="Partida de vôlei de praia 2x2 na areia" loading="lazy"><figcaption>Praia 2x2</figcaption></figure>
+      <figure class="reveal"><img src="media/volei-craque.jpg" alt="Tela Meu craque: nome, número, pele e cabelo" loading="lazy"><figcaption>Monte o seu craque</figcaption></figure>
+      <figure class="reveal"><img src="media/volei-conquistas.jpg" alt="Lista das 13 conquistas do jogo" loading="lazy"><figcaption>13 conquistas</figcaption></figure>
+    </div>
+  </section>
+
   <!-- ================= GOL DE PLACA ================= -->
-  <section class="game gol" data-vista="jogos" id="gol">
+  <section class="game gol flip" data-vista="jogos" id="gol">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -993,6 +1038,43 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <figure class="reveal"><img src="media/gol-shot-gol.jpg" alt="Jogadora comemora gol à noite e ganha a figurinha Gol à noite" loading="lazy"><figcaption>Gol! E figurinha nova</figcaption></figure>
       <figure class="reveal"><img src="media/gol-shot-falta.jpg" alt="Cobrança de falta com barreira e neve no gramado" loading="lazy"><figcaption>Falta com barreira, na neve</figcaption></figure>
       <figure class="reveal"><img src="media/gol-shot-goleiro.jpg" alt="Goleiro se esticando para defender na chuva" loading="lazy"><figcaption>Agora defenda!</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================= XODÓ ================= -->
+  <section class="game xodo" data-vista="jogos" id="xodo">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="xodo.png" alt="Ícone do Xodó" width="84" height="84">
+          <div><p class="eyebrow">Em breve</p><h2>Xodó</h2></div>
+        </div>
+        <p class="tag">O bichinho de chaveiro dos anos 90 de volta, com bichos do Brasil 🥚🦫</p>
+        <span class="price">🥚 Em breve · R$ 2,90</span><span class="price free">🚫 Sem anúncios</span>
+        <ul class="feats">
+          <li><i>🦫</i><span><b>6 bichos do Brasil</b>: capivara, mico-leão, tatu-bola, arara, boto e tamanduá</span></li>
+          <li><i>⏰</i><span><b>O tempo é real</b>, mesmo com o app fechado</span></li>
+          <li><i>💚</i><span><b>Ele nunca morre</b>: perfeito para crianças</span></li>
+          <li><i>🎮</i><span><b>Minijogos e álbum</b>, com 18 formas para descobrir</span></li>
+        </ul>
+        <div class="soon">
+          <p><b>Em breve</b> para iPhone, iPad e Android, por R$ 2,90: sem anúncios e sem compras dentro do app. Dois visuais: retrô, com telinha verde, ou moderno e colorido.</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>Em breve</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>Em breve</strong></span></span>
+        </div>
+        <a class="more" href="xodo/">Tudo sobre o Xodó →</a>
+      </div>
+      <div class="player reveal">
+        <div class="phone"><div class="screen"><img src="media/xodo-moderno.jpg" alt="Xodó no visual moderno: a capivara Pipoca recém-nascida, com as barras de fome, alegria, energia e higiene" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="media/xodo-retro.jpg" alt="Ovinho retrô com telinha verde e os botões A, B e C" loading="lazy"><figcaption>Visual retrô</figcaption></figure>
+      <figure class="reveal"><img src="media/xodo-minijogos.jpg" alt="Menu Brincar com os minijogos Pra que lado?, Pula-tronco e Pega-fruta" loading="lazy"><figcaption>3 minijogos</figcaption></figure>
+      <figure class="reveal"><img src="media/xodo-album.jpg" alt="Álbum com as 18 formas dos bichos para descobrir" loading="lazy"><figcaption>Álbum de bichos</figcaption></figure>
+      <figure class="reveal"><img src="media/xodo-inicio.jpg" alt="Tela inicial: escolha entre o visual Retrô e o Moderno" loading="lazy"><figcaption>Retrô ou moderno</figcaption></figure>
     </div>
   </section>
 
@@ -1225,7 +1307,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <nav aria-label="Jogos e apps">
         <a href="deicida/">Deicida</a>
         <a href="rota-estelar/">Rota Estelar</a>
+        <a href="volei-total/">Vôlei Total</a>
         <a href="gol-de-placa/">Gol de Placa</a>
+        <a href="xodo/">Xodó</a>
         <a href="esconde-esconde/">Esconde-Esconde</a>
         <a href="gelada/">Gelada</a>
         <a href="acervo/">Acervo</a>
@@ -1236,7 +1320,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <nav aria-label="Privacidade">
         <a href="deicida-privacidade/">Privacidade Deicida</a>
         <a href="rota-estelar-privacidade/">Privacidade Rota Estelar</a>
+        <a href="volei-privacidade/">Privacidade Vôlei Total</a>
         <a href="gol-privacidade/">Privacidade Gol de Placa</a>
+        <a href="xodo-privacidade/">Privacidade Xodó</a>
         <a href="/esconde-privacidade/">Privacidade Esconde-Esconde</a>
         <a href="/gelada-privacidade/">Privacidade Gelada</a>
         <a href="acervo/privacidade/">Privacidade Acervo</a>

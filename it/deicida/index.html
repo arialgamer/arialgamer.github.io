@@ -243,6 +243,9 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .pill svg { width: 18px; height: 18px; flex: none }
 .brand { white-space: nowrap }
 @media (max-width: 860px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
+.nav ul a { white-space: nowrap }
+@media (max-width: 1400px) { .nav ul a { padding: 8px 9px; font-size: 14px } .nav .wrap { gap: 12px } }
+@media (max-width: 1160px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
 @media (max-width: 400px) { .nav .wrap { gap: 10px } .brand { font-size: 18px; gap: 8px } .brand img { width: 34px; height: 34px } .nav .pill { padding: 0 14px } }
 
 /* ---------- Abertura ---------- */
@@ -543,6 +546,10 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .wide .clip img { width: 100%; height: auto; aspect-ratio: 84 / 48; border-radius: 10px }
 .wide .wrap.shots img { aspect-ratio: 16 / 9 }
 @media (max-width: 960px) { .game.wide .wrap:not(.shots), .game.wide.flip .wrap:not(.shots) { grid-template-columns: 1fr } }
+.btn.kofi { background: #72a4f2; color: #0b1f3d }
+.pixbox .ou { color: var(--muted); font-size: 14.5px; margin-top: 4px }
+html:not([lang=pt-BR]) .pixbox .kofi { order: -2 }
+html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 </style>
 </head>
 <body class="no-js">
@@ -565,7 +572,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
     <ul>
       <li><a href="/it/deicida/" aria-current="page">Deicida</a></li>
       <li><a href="/it/rota-estelar/">Rota Estelar</a></li>
+      <li><a href="/it/volei-total/">Vôlei Total</a></li>
       <li><a href="/it/gol-de-placa/">Gol de Placa</a></li>
+      <li><a href="/it/xodo/">Xodó</a></li>
       <li><a href="/it/esconde-esconde/">Esconde-Esconde</a></li>
       <li><a href="/it/gelada/">Gelada</a></li>
       <li class="app"><a href="/it/acervo/">Acervo</a></li>
@@ -684,7 +693,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <p class="sub">Senza pubblicità, in 8 lingue.</p>
       <div class="others">
         <a href="/it/rota-estelar/"><img src="/rota.png" alt="" width="72" height="72"><span><b>Rota Estelar</b>Già sull&#x27;App Store · Pilota la tua astronave dalla Terra al pianeta più lontano mai scoperto 🚀👾</span></a>
+        <a href="/it/volei-total/"><img src="/volei.png" alt="" width="72" height="72"><span><b>Vôlei Total</b>In arrivo · Pallavolo arcade: 6 contro 6 in palestra e 2 contro 2 in spiaggia 🏐🔥</span></a>
         <a href="/it/gol-de-placa/"><img src="/gol.png" alt="" width="72" height="72"><span><b>Gol de Placa</b>Rigori e punizioni: sii il tiratore o il portiere ⚽🧤</span></a>
+        <a href="/it/xodo/"><img src="/xodo.png" alt="" width="72" height="72"><span><b>Xodó</b>In arrivo · Torna l&#x27;animaletto portachiavi degli anni &#x27;90, con animali del Brasile 🥚🦫</span></a>
         <a href="/it/esconde-esconde/"><img src="/esconde.png" alt="" width="72" height="72"><span><b>Esconde-Esconde</b>Nascondino contro il computer o un amico 🙈</span></a>
         <a href="/it/gelada/"><img src="/gelada.png" alt="" width="72" height="72"><span><b>Gelada</b>Birra, cocktail e perfino caffè sul tuo telefono. Riempi il bicchiere e inclina per bere 🍺</span></a>
         <a href="/it/acervo/"><img src="/acervo.png" alt="" width="72" height="72"><span><b>Acervo</b>Il catalogo della tua collezione, con il valore di ogni oggetto ⌚🪙</span></a>
@@ -726,7 +737,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
         <div>
           <p class="eyebrow">Sostieni</p>
           <h2>Sostieni Arial Gamer</h2>
-          <p>Qui nessuno vede pubblicità. Sei tu a mandare avanti i giochi: qualsiasi importo tramite Pix (il pagamento istantaneo brasiliano) fa la differenza. Grazie! 💛</p>
+          <p>Qui nessuno vede pubblicità. Sei tu a mandare avanti i giochi: qualsiasi importo su Ko-fi (carta o PayPal) fa la differenza. Grazie! 💛</p>
         </div>
         <div class="pixbox">
           <span class="lbl">Chiave Pix (e-mail)</span>
@@ -734,6 +745,8 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <button class="btn green" type="button" id="pix-copy"><svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copia chiave</span></button>
           <span class="copied" id="pix-ok" role="status" aria-live="polite"></span>
           <span hidden id="t-copied">Chiave copiata! Ora incollala nell'app della tua banca.</span>
+          <span class="ou">In Brasile? Va bene anche Pix:</span>
+          <a class="btn kofi" href="https://ko-fi.com/arialgamer" target="_blank" rel="noopener"><span aria-hidden="true">☕</span><span>Sostieni su Ko-fi</span></a>
         </div>
       </div>
     </div>
@@ -792,7 +805,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <nav aria-label="Giochi e app">
         <a href="/it/deicida/">Deicida</a>
         <a href="/it/rota-estelar/">Rota Estelar</a>
+        <a href="/it/volei-total/">Vôlei Total</a>
         <a href="/it/gol-de-placa/">Gol de Placa</a>
+        <a href="/it/xodo/">Xodó</a>
         <a href="/it/esconde-esconde/">Esconde-Esconde</a>
         <a href="/it/gelada/">Gelada</a>
         <a href="/it/acervo/">Acervo</a>
@@ -803,7 +818,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <nav aria-label="Privacy">
         <a href="/deicida-privacidade/">Privacy Deicida</a>
         <a href="/rota-estelar-privacidade/">Privacy Rota Estelar</a>
+        <a href="/volei-privacidade/">Privacy Vôlei Total</a>
         <a href="/gol-privacidade/">Privacy Gol de Placa</a>
+        <a href="/xodo-privacidade/">Privacy Xodó</a>
         <a href="/esconde-privacidade/">Privacy Esconde-Esconde</a>
         <a href="/gelada-privacidade/">Privacy Gelada</a>
         <a href="/acervo/privacidade/">Privacy Acervo</a>

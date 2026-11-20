@@ -243,6 +243,9 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .pill svg { width: 18px; height: 18px; flex: none }
 .brand { white-space: nowrap }
 @media (max-width: 860px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
+.nav ul a { white-space: nowrap }
+@media (max-width: 1400px) { .nav ul a { padding: 8px 9px; font-size: 14px } .nav .wrap { gap: 12px } }
+@media (max-width: 1160px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
 @media (max-width: 400px) { .nav .wrap { gap: 10px } .brand { font-size: 18px; gap: 8px } .brand img { width: 34px; height: 34px } .nav .pill { padding: 0 14px } }
 
 /* ---------- Abertura ---------- */
@@ -517,6 +520,10 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
   .others { grid-template-columns: 1fr }
   .block { padding: 60px 0 }
 }
+.btn.kofi { background: #72a4f2; color: #0b1f3d }
+.pixbox .ou { color: var(--muted); font-size: 14.5px; margin-top: 4px }
+html:not([lang=pt-BR]) .pixbox .kofi { order: -2 }
+html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 </style>
 </head>
 <body class="no-js">
@@ -539,7 +546,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
     <ul>
       <li><a href="/es/deicida/">Deicida</a></li>
       <li><a href="/es/rota-estelar/">Rota Estelar</a></li>
+      <li><a href="/es/volei-total/">Vôlei Total</a></li>
       <li><a href="/es/gol-de-placa/">Gol de Placa</a></li>
+      <li><a href="/es/xodo/">Xodó</a></li>
       <li><a href="/es/esconde-esconde/">Esconde-Esconde</a></li>
       <li><a href="/es/gelada/" aria-current="page">Gelada</a></li>
       <li class="app"><a href="/es/acervo/">Acervo</a></li>
@@ -629,7 +638,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <div class="others">
         <a href="/es/deicida/"><img src="/deicida.png" alt="" width="72" height="72"><span><b>Deicida</b>Gratis en Android · Un mortal contra los dioses de 11 mitologías, en un combate épico ⚔️☀️</span></a>
         <a href="/es/rota-estelar/"><img src="/rota.png" alt="" width="72" height="72"><span><b>Rota Estelar</b>Ya en la App Store · Pilota tu nave desde la Tierra hasta el planeta más lejano jamás descubierto 🚀👾</span></a>
+        <a href="/es/volei-total/"><img src="/volei.png" alt="" width="72" height="72"><span><b>Vôlei Total</b>Muy pronto · Vóley arcade: 6x6 en pista y 2x2 en la playa 🏐🔥</span></a>
         <a href="/es/gol-de-placa/"><img src="/gol.png" alt="" width="72" height="72"><span><b>Gol de Placa</b>Penales y tiros libres: sé el pateador o el portero ⚽🧤</span></a>
+        <a href="/es/xodo/"><img src="/xodo.png" alt="" width="72" height="72"><span><b>Xodó</b>Muy pronto · Vuelve la mascota de llavero de los 90, con animales de Brasil 🥚🦫</span></a>
         <a href="/es/esconde-esconde/"><img src="/esconde.png" alt="" width="72" height="72"><span><b>Esconde-Esconde</b>Escóndete y busca, contra la máquina o un amigo 🙈</span></a>
         <a href="/es/acervo/"><img src="/acervo.png" alt="" width="72" height="72"><span><b>Acervo</b>El catálogo de tu colección, con lo que vale cada artículo ⌚🪙</span></a>
       </div>
@@ -670,7 +681,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
         <div>
           <p class="eyebrow">Apoya</p>
           <h2>Apoya a Arial Gamer</h2>
-          <p>Aquí nadie ve publicidad. Quien mantiene los juegos eres tú: cualquier monto por Pix (el pago instantáneo de Brasil) ya marca la diferencia. ¡Gracias! 💛</p>
+          <p>Aquí nadie ve publicidad. Quien mantiene los juegos eres tú: cualquier monto en Ko-fi (tarjeta o PayPal) ya marca la diferencia. ¡Gracias! 💛</p>
         </div>
         <div class="pixbox">
           <span class="lbl">Clave Pix (correo)</span>
@@ -678,6 +689,8 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
           <button class="btn green" type="button" id="pix-copy"><svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar clave</span></button>
           <span class="copied" id="pix-ok" role="status" aria-live="polite"></span>
           <span hidden id="t-copied">¡Clave copiada! Ahora solo pégala en la app de tu banco.</span>
+          <span class="ou">¿En Brasil? También puedes usar Pix:</span>
+          <a class="btn kofi" href="https://ko-fi.com/arialgamer" target="_blank" rel="noopener"><span aria-hidden="true">☕</span><span>Apoyar en Ko-fi</span></a>
         </div>
       </div>
     </div>
@@ -736,7 +749,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <nav aria-label="Juegos y apps">
         <a href="/es/deicida/">Deicida</a>
         <a href="/es/rota-estelar/">Rota Estelar</a>
+        <a href="/es/volei-total/">Vôlei Total</a>
         <a href="/es/gol-de-placa/">Gol de Placa</a>
+        <a href="/es/xodo/">Xodó</a>
         <a href="/es/esconde-esconde/">Esconde-Esconde</a>
         <a href="/es/gelada/">Gelada</a>
         <a href="/es/acervo/">Acervo</a>
@@ -747,7 +762,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
       <nav aria-label="Privacidad">
         <a href="/deicida-privacidade/">Privacidad Deicida</a>
         <a href="/rota-estelar-privacidade/">Privacidad Rota Estelar</a>
+        <a href="/volei-privacidade/">Privacidad Vôlei Total</a>
         <a href="/gol-privacidade/">Privacidad Gol de Placa</a>
+        <a href="/xodo-privacidade/">Privacidad Xodó</a>
         <a href="/esconde-privacidade/">Privacidad Esconde-Esconde</a>
         <a href="/gelada-privacidade/">Privacidad Gelada</a>
         <a href="/acervo/privacidade/">Privacidad Acervo</a>

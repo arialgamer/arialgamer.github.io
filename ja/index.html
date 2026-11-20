@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Arial Gamer · ブラジル生まれのスマホゲームとアプリ：Gelada、Esconde-Esconde、Gol de Placa、Acervo</title>
-<meta name="description" content="Arial Gamer はブラジルでiPhone・Android向けスマホゲームを制作しています（Gol de Placa は今のところiPhoneのみ）。Gelada（ビールとカクテルのシミュレーター、傾けて飲む）、Esconde-Esconde（かくれんぼ、24か所）、Gol de Placa（3DのPKとフリーキック）。広告なし、8言語対応。コレクション管理アプリ Acervo も無料で始められます。">
+<title>Arial Gamer · ブラジル生まれのスマホゲームとアプリ：Deicida、Rota Estelar、Vôlei Total、Gol de Placa、Xodó、Esconde-Esconde、Gelada、Acervo</title>
+<meta name="description" content="Arial Gamer はブラジルでiPhone・Android向けの広告なしスマホゲームを制作しています。Deicida（11の神話の神々と戦うアクション）、Rota Estelar（31の惑星をめぐる宇宙船）、Gol de Placa（3DのPKとフリーキック）、Esconde-Esconde（かくれんぼ、24か所）、Gelada（傾けて飲む）。近日公開：Vôlei Total（アーケードバレー）とXodó（ブラジルのどうぶつの育成ゲーム）。コレクション管理アプリ Acervo も無料で始められます。">
 <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
 <meta property="og:site_name" content="Arial Gamer">
 <meta property="og:locale" content="ja_JP">
@@ -22,8 +22,8 @@
 <meta name="theme-color" content="#0d0a20">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arialgamer.com.br/ja/">
-<meta property="og:title" content="Arial Gamer · ブラジル生まれのスマホゲームとアプリ：Gelada、Esconde-Esconde、Gol de Placa、Acervo">
-<meta property="og:description" content="Gelada 🍺、Esconde-Esconde 🙈、Gol de Placa ⚽ と、コレクション管理の Acervo 📦。動画を見てダウンロード。">
+<meta property="og:title" content="Arial Gamer · ブラジル生まれのスマホゲームとアプリ：Deicida、Rota Estelar、Vôlei Total、Gol de Placa、Xodó、Esconde-Esconde、Gelada、Acervo">
+<meta property="og:description" content="Deicida ⚔️、Rota Estelar 🚀、Gol de Placa ⚽、Esconde-Esconde 🙈、Gelada 🍺、そして近日公開の Vôlei Total 🏐 と Xodó 🥚：広告なしのゲーム。コレクション用の Acervo 📦 も。">
 <meta property="og:image" content="https://arialgamer.com.br/logo-1080.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
@@ -313,6 +313,9 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .pill svg { width: 18px; height: 18px; flex: none }
 .brand { white-space: nowrap }
 @media (max-width: 860px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
+.nav ul a { white-space: nowrap }
+@media (max-width: 1400px) { .nav ul a { padding: 8px 9px; font-size: 14px } .nav .wrap { gap: 12px } }
+@media (max-width: 1160px) { .nav ul { display: none } .nav .ig-round { margin-left: auto } }
 @media (max-width: 400px) { .nav .wrap { gap: 10px } .brand { font-size: 18px; gap: 8px } .brand img { width: 34px; height: 34px } .nav .pill { padding: 0 14px } }
 
 /* ---------- Abertura ---------- */
@@ -396,7 +399,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .game.flip .info { order: 2 }
 .gelada { --c: var(--amber); --c-ink: #2a1703; --glow: rgba(246,184,58,.2); --gx: 72% }
 .esconde { --c: var(--violet); --c-ink: #15102e; --glow: rgba(180,156,255,.22); --gx: 28%; background: linear-gradient(180deg, transparent, rgba(23,18,54,.6), transparent) }
-.gol { --c: var(--green); --c-ink: #06301a; --glow: rgba(61,220,132,.18); --gx: 72% }
+.gol { --c: var(--green); --c-ink: #06301a; --glow: rgba(61,220,132,.18); --gx: 28% }
 .acervo { --c: #D0AC72; --c-ink: #1B232E; --glow: rgba(208,172,114,.2); --gx: 28% }
 .acervo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 
@@ -626,6 +629,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .wide .clip img { width: 100%; height: auto; aspect-ratio: 84 / 48; border-radius: 10px }
 .wide .wrap.shots img { aspect-ratio: 16 / 9 }
 @media (max-width: 960px) { .game.wide .wrap:not(.shots), .game.wide.flip .wrap:not(.shots) { grid-template-columns: 1fr } }
+.volei { --c: #ffc93a; --c-ink: #2a1d00; --glow: rgba(60,130,255,.22); --gx: 72%; background: linear-gradient(180deg, transparent, rgba(10,30,70,.55), transparent) }
+.xodo { --c: #b99bff; --c-ink: #1c0b3d; --glow: rgba(180,140,255,.22); --gx: 72% }
+.volei .screen img, .xodo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -649,7 +655,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     <ul>
       <li><a href="#deicida">Deicida</a></li>
       <li><a href="#rota">Rota Estelar</a></li>
+      <li><a href="#volei">Vôlei Total</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
+      <li><a href="#xodo">Xodó</a></li>
       <li><a href="#esconde">Esconde-Esconde</a></li>
       <li><a href="#gelada">Gelada</a></li>
       <li class="app"><a href="#acervo">Acervo</a></li>
@@ -673,7 +681,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <div>
         <p class="eyebrow">Arial Gamer · Games &amp; Apps</p>
         <h1>ブラジル生まれの <span class="grad">スマホゲーム</span></h1>
-        <p class="lead">11の神話の神々に挑もう。宇宙船で最も遠い惑星へ。ラストワンミニッツでPKを決めるか、止めるか。月の裏にかくれよう。グラスを満たして、スマホを傾けて飲もう。ひとりでも友だちとでも遊べる5つのゲーム。そして、コレクションを整理する Acervo。</p>
+        <p class="lead">11の神話の神々に挑もう。宇宙船で最も遠い惑星へ。バレーでスーパースパイクを決めよう。ラストワンミニッツでPKを決めるか、止めるか。ブラジルのどうぶつを育てよう。月の裏にかくれよう。グラスを満たして、スマホを傾けて飲もう。ひとりでも友だちとでも遊べる7つのゲーム。そして、コレクションを整理する Acervo。</p>
         <p class="noads"><i aria-hidden="true">🚫</i><span><b>広告なし</b><span>どのゲームにも広告はありません。楽しい時間をじゃまするものはゼロ。</span></span></p>
         <div class="ctas">
           <a class="btn primary" href="#jogos">ゲームを見る</a>
@@ -816,8 +824,45 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     </div>
   </section>
 
+  <!-- ================= VÔLEI TOTAL ================= -->
+  <section class="game volei wide" data-vista="jogos" id="volei">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/volei.png" alt="Vôlei Totalのアイコン" width="84" height="84">
+          <div><p class="eyebrow">近日公開</p><h2>Vôlei Total</h2></div>
+        </div>
+        <p class="tag">アーケードバレー：インドア6人制とビーチ2人制 🏐🔥</p>
+        <span class="price">🏐 近日公開</span><span class="price free">🚫 広告なし</span>
+        <ul class="feats">
+          <li><i>🏐</i><span><b>インドア6人制とビーチ2人制</b>、ジャンプサーブとブロック</span></li>
+          <li><i>🔥</i><span><b>スーパースパイク</b>はスローモーションで炎をまとう</span></li>
+          <li><i>👥</i><span><b>2人プレイ</b>は1台で。8チームのトーナメントも</span></li>
+          <li><i>🎙️</i><span><b>男性・女性の実況</b>、観客、好プレーのリプレイ</span></li>
+        </ul>
+        <div class="soon">
+          <p>iPhone、iPad、Androidで<b>近日公開</b>。広告もアプリ内課金もない完全版です。</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>近日公開</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>近日公開</strong></span></span>
+        </div>
+        <a class="more" href="/ja/volei-total/">Vôlei Total について →</a>
+      </div>
+      <div class="player reveal">
+        <div class="phone wide"><div class="screen"><img src="/media/volei-quadra.jpg" alt="体育館での6人制バレーの試合、観客とスコアボード" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/volei-quadra.jpg" alt="コートでのクイックマッチ、ブラジル対サムライ" loading="lazy"><figcaption>インドア6人制</figcaption></figure>
+      <figure class="reveal"><img src="/media/volei-praia.jpg" alt="砂浜でのビーチバレー2人制" loading="lazy"><figcaption>ビーチ2人制</figcaption></figure>
+      <figure class="reveal"><img src="/media/volei-craque.jpg" alt="マイ選手の画面：名前、背番号、肌、髪" loading="lazy"><figcaption>自分の選手を作ろう</figcaption></figure>
+      <figure class="reveal"><img src="/media/volei-conquistas.jpg" alt="13個の実績一覧" loading="lazy"><figcaption>13個の実績</figcaption></figure>
+    </div>
+  </section>
+
   <!-- ================= GOL DE PLACA ================= -->
-  <section class="game gol" data-vista="jogos" id="gol">
+  <section class="game gol flip" data-vista="jogos" id="gol">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -862,6 +907,43 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <figure class="reveal"><img src="/media/gol-shot-gol.jpg" alt="女子選手がナイターでゴールを決めてステッカー「ナイターのゴール」をゲット" loading="lazy"><figcaption>ゴール！新しいステッカーも</figcaption></figure>
       <figure class="reveal"><img src="/media/gol-shot-falta.jpg" alt="壁と雪のピッチでのフリーキック" loading="lazy"><figcaption>壁ありフリーキック、雪の中で</figcaption></figure>
       <figure class="reveal"><img src="/media/gol-shot-goleiro.jpg" alt="雨の中で手を伸ばしてセーブするキーパー" loading="lazy"><figcaption>次は止めよう！</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================= XODÓ ================= -->
+  <section class="game xodo" data-vista="jogos" id="xodo">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/xodo.png" alt="Xodóのアイコン" width="84" height="84">
+          <div><p class="eyebrow">近日公開</p><h2>Xodó</h2></div>
+        </div>
+        <p class="tag">90年代のキーホルダー型育成ゲームが、ブラジルのどうぶつで復活 🥚🦫</p>
+        <span class="price">🥚 近日公開</span><span class="price free">🚫 広告なし</span>
+        <ul class="feats">
+          <li><i>🦫</i><span><b>ブラジルのどうぶつ6種</b>：カピバラ、タマリン、アルマジロ、コンゴウインコ、アマゾンカワイルカ、アリクイ</span></li>
+          <li><i>⏰</i><span><b>時間はリアルタイム</b>、アプリを閉じても進む</span></li>
+          <li><i>💚</i><span><b>絶対に死なない</b>から子どもにも安心</span></li>
+          <li><i>🎮</i><span><b>ミニゲームと図鑑</b>、18の姿を集めよう</span></li>
+        </ul>
+        <div class="soon">
+          <p>iPhone、iPad、Androidで<b>近日公開</b>。広告もアプリ内課金もありません。緑の液晶画面のレトロ版と、カラフルなモダン版の2つの見た目。</p>
+        </div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>iPhone</small><strong>近日公開</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Android</small><strong>近日公開</strong></span></span>
+        </div>
+        <a class="more" href="/ja/xodo/">Xodó について →</a>
+      </div>
+      <div class="player reveal">
+        <div class="phone"><div class="screen"><img src="/media/xodo-moderno-ja.jpg" alt="モダン版のXodó：生まれたばかりのカピバラと、おなか・ごきげん・元気・清潔のゲージ" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap shots">
+      <figure class="reveal"><img src="/media/xodo-retro-ja.jpg" alt="緑の液晶画面とA・B・Cボタンのレトロなたまご" loading="lazy"><figcaption>レトロ版</figcaption></figure>
+      <figure class="reveal"><img src="/media/xodo-minijogos-ja.jpg" alt="ミニゲーム「どっち？」「丸太ジャンプ」「フルーツキャッチ」" loading="lazy"><figcaption>ミニゲーム3種</figcaption></figure>
+      <figure class="reveal"><img src="/media/xodo-album-ja.jpg" alt="18の姿を集める図鑑" loading="lazy"><figcaption>どうぶつ図鑑</figcaption></figure>
+      <figure class="reveal"><img src="/media/xodo-inicio-ja.jpg" alt="スタート画面：レトロ版とモダン版を選ぶ" loading="lazy"><figcaption>レトロかモダンか</figcaption></figure>
     </div>
   </section>
 
@@ -1094,7 +1176,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <nav aria-label="ゲームとアプリ">
         <a href="/ja/deicida/">Deicida</a>
         <a href="/ja/rota-estelar/">Rota Estelar</a>
+        <a href="/ja/volei-total/">Vôlei Total</a>
         <a href="/ja/gol-de-placa/">Gol de Placa</a>
+        <a href="/ja/xodo/">Xodó</a>
         <a href="/ja/esconde-esconde/">Esconde-Esconde</a>
         <a href="/ja/gelada/">Gelada</a>
         <a href="/ja/acervo/">Acervo</a>
@@ -1105,7 +1189,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <nav aria-label="プライバシー">
         <a href="/deicida-privacidade/">Deicidaのプライバシー</a>
         <a href="/rota-estelar-privacidade/">Rota Estelarのプライバシー</a>
+        <a href="/volei-privacidade/">Vôlei Totalのプライバシー</a>
         <a href="/gol-privacidade/">Gol de Placaのプライバシー</a>
+        <a href="/xodo-privacidade/">Xodóのプライバシー</a>
         <a href="/esconde-privacidade/">Esconde-Escondeのプライバシー</a>
         <a href="/gelada-privacidade/">Geladaのプライバシー</a>
         <a href="/acervo/privacidade/">Acervoのプライバシー</a>
