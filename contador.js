@@ -13,6 +13,8 @@
 
   let contar = false;
   try { contar = !sessionStorage.getItem('ag_visita'); sessionStorage.setItem('ag_visita', '1'); } catch { contar = false; }
+  // só conta no site de verdade e com uma pessoa usando o navegador (testes automáticos e cópias locais não somam)
+  if (!/(^|\.)arialgamer\.com\.br$/.test(location.hostname) || navigator.webdriver) contar = false;
   const regiao = (navigator.languages || [navigator.language]).map(l => (String(l).match(/-([A-Za-z]{2})\b/) || [])[1]).find(Boolean);
 
   const css = document.createElement('style');
