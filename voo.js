@@ -13,7 +13,7 @@
   const parado = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const css = document.createElement('style');
   css.textContent = `
-  .voo { position: fixed; inset: 0; pointer-events: none; z-index: 40; overflow: hidden }
+  .voo { position: fixed; inset: 0; pointer-events: none; z-index: 40; overflow: hidden; clip-path: inset(calc(76px + env(safe-area-inset-top, 0px)) 0 0 0) }
   .voo i { position: absolute; top: 0; left: 0; width: var(--t); height: var(--t); will-change: transform; opacity: 0; transition: opacity .35s }
   .voo i.on { opacity: 1 }
   .voo i.on.sob { opacity: .3 }
