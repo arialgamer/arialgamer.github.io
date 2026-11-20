@@ -7,8 +7,9 @@
   const DO_JOGO = {
     gelada: ['cerveja', 'limao', 'nota10'], esconde: ['iglu', 'foguete', 'bau'], gol: ['gol', 'penalti'], acervo: ['relogio', 'moeda'],
     rota: ['planeta', 'nave', 'terra', 'laser'], deicida: ['eclipse', 'guerreiro', 'barca', 'deuses'],
+    volei: ['bola', 'cortada'], xodo: ['ovo', 'capivara'],
   };
-  const TODAS = ['cerveja', 'gol', 'nave', 'iglu', 'eclipse', 'limao', 'penalti', 'planeta', 'foguete', 'guerreiro', 'nota10', 'relogio', 'terra', 'bau', 'barca', 'moeda', 'laser', 'deuses'];
+  const TODAS = ['cerveja', 'gol', 'nave', 'iglu', 'eclipse', 'limao', 'penalti', 'planeta', 'foguete', 'guerreiro', 'nota10', 'relogio', 'terra', 'bau', 'barca', 'moeda', 'laser', 'deuses', 'bola', 'ovo', 'cortada', 'capivara'];
   const parado = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const css = document.createElement('style');
   css.textContent = `

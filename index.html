@@ -764,6 +764,25 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .volei { --c: #ffc93a; --c-ink: #2a1d00; --glow: rgba(60,130,255,.22); --gx: 72%; background: linear-gradient(180deg, transparent, rgba(10,30,70,.55), transparent) }
 .xodo { --c: #b99bff; --c-ink: #1c0b3d; --glow: rgba(180,140,255,.22); --gx: 72% }
 .volei .screen img, .xodo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
+@media (min-width: 1241px) { .fan .phone { width: 210px } }
+.fan .phone:nth-child(1) { transform: translateX(-146%) rotate(-19deg) translateY(104px) scale(.66); z-index: 1 }
+.fan .phone:nth-child(2) { transform: translateX(-104%) rotate(-13deg) translateY(62px) scale(.76); z-index: 2 }
+.fan .phone:nth-child(3) { transform: translateX(-54%) rotate(-6deg) translateY(22px) scale(.88); z-index: 4 }
+.fan .phone:nth-child(4) { transform: translateY(-14px); z-index: 6 }
+.fan .phone:nth-child(5) { transform: translateX(54%) rotate(6deg) translateY(22px) scale(.88); z-index: 5 }
+.fan .phone:nth-child(6) { transform: translateX(104%) rotate(13deg) translateY(62px) scale(.76); z-index: 3 }
+.fan .phone:nth-child(7) { transform: translateX(146%) rotate(19deg) translateY(104px) scale(.66); z-index: 1 }
+.fan:hover .phone:nth-child(1) { transform: translateX(-156%) rotate(-21deg) translateY(96px) scale(.66) }
+.fan:hover .phone:nth-child(2) { transform: translateX(-112%) rotate(-15deg) translateY(56px) scale(.76) }
+.fan:hover .phone:nth-child(3) { transform: translateX(-60%) rotate(-8deg) translateY(16px) scale(.88) }
+.fan:hover .phone:nth-child(5) { transform: translateX(60%) rotate(8deg) translateY(16px) scale(.88) }
+.fan:hover .phone:nth-child(6) { transform: translateX(112%) rotate(15deg) translateY(56px) scale(.76) }
+.fan:hover .phone:nth-child(7) { transform: translateX(156%) rotate(21deg) translateY(96px) scale(.66) }
+@media (max-width: 480px) { .fan .phone { width: 126px } .fan .phone:nth-child(1) { transform: translateX(-118%) rotate(-16deg) translateY(66px) scale(.64) } .fan .phone:nth-child(2) { transform: translateX(-86%) rotate(-11deg) translateY(42px) scale(.74) } .fan .phone:nth-child(3) { transform: translateX(-46%) rotate(-5deg) translateY(16px) scale(.86) } .fan .phone:nth-child(5) { transform: translateX(46%) rotate(5deg) translateY(16px) scale(.86) } .fan .phone:nth-child(6) { transform: translateX(86%) rotate(11deg) translateY(42px) scale(.74) } .fan .phone:nth-child(7) { transform: translateX(118%) rotate(16deg) translateY(66px) scale(.64) } }
+.facts .wrap { grid-template-columns: repeat(2, 1fr) }
+@media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(4, 1fr) } }
+@media (min-width: 1180px) { .facts .wrap { grid-template-columns: repeat(8, 1fr) } }
+.grid6 { grid-template-columns: repeat(4, 1fr) }
 </style>
 </head>
 <body class="no-js">
@@ -835,10 +854,12 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
           </div>
         </div>
       </div>
-      <div class="fan" aria-label="Vídeos dos cinco jogos">
+      <div class="fan" aria-label="Vídeos dos sete jogos">
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/xodo-topo.jpg" aria-label="Xodó"><source src="media/topo/xodo-retro.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/esconde-lua.jpg" aria-label="Esconde-Esconde: escondido na lua"><source src="media/topo/esconde-lua.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/rota-nave.jpg" aria-label="Rota Estelar: Criaturas"><source src="media/topo/rota-nave.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/deicida-chamada.jpg" aria-label="Deicida"><source src="media/topo/deicida-chamada.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/volei-topo.jpg" aria-label="Vôlei Total"><source src="media/topo/volei-quadra.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/gol-adulta.jpg" aria-label="Gol de Placa: cobrança de pênalti"><source src="media/topo/gol-adulta.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/gelada-saude.jpg" aria-label="Gelada: cerveja enchendo e sendo bebida no celular"><source src="media/topo/gelada-saude.mp4" type="video/mp4"></video></div></div>
       </div>
@@ -849,8 +870,10 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     <div class="wrap">
       <div class="fact zero" style="--c:var(--gold);--glow:rgba(255,210,63,.4)"><i class="ico" aria-hidden="true">🚫</i><b>0</b><span>anúncios</span></div>
       <a class="fact" href="#deicida" style="--c:#ff8a3d;--glow:rgba(255,96,40,.45)"><img class="ico" src="deicida.png" alt="" width="58" height="58" loading="lazy"><b>11</b><span>mitologias no Deicida</span></a>
-      <a class="fact" href="#rota" style="--c:#7fa8ff;--glow:rgba(90,130,255,.45)"><img class="ico" src="rota.png" alt="" width="58" height="58" loading="lazy"><b>31</b><span>planetas no Rota Estelar</span></a>
-      <a class="fact" href="#gol" style="--c:#3ddc84;--glow:rgba(61,220,132,.4)"><img class="ico" src="gol.png" alt="" width="58" height="58" loading="lazy"><b>14</b><span>idiomas de narração no Gol de Placa</span></a>
+      <a class="fact" href="#rota" style="--c:#7fa8ff;--glow:rgba(90,130,255,.45)"><img class="ico" src="rota.png" alt="" width="58" height="58" loading="lazy"><b>31</b><span>planetas no Rota Estelar</span></a>
+      <a class="fact" href="#volei" style="--c:#ffc93a;--glow:rgba(60,130,255,.45)"><img class="ico" src="volei.png" alt="" width="58" height="58" loading="lazy"><b>8</b><span>seleções no Vôlei Total</span></a>
+      <a class="fact" href="#gol" style="--c:#3ddc84;--glow:rgba(61,220,132,.4)"><img class="ico" src="gol.png" alt="" width="58" height="58" loading="lazy"><b>14</b><span>idiomas de narração no Gol de Placa</span></a>
+      <a class="fact" href="#xodo" style="--c:#ff9ad5;--glow:rgba(255,120,200,.4)"><img class="ico" src="xodo.png" alt="" width="58" height="58" loading="lazy"><b>6</b><span>bichos do Brasil no Xodó</span></a>
       <a class="fact" href="#esconde" style="--c:#b49cff;--glow:rgba(180,156,255,.45)"><img class="ico" src="esconde.png" alt="" width="58" height="58" loading="lazy"><b>24</b><span>lugares no Esconde-Esconde</span></a>
       <a class="fact" href="#gelada" style="--c:#f6b83a;--glow:rgba(246,184,58,.45)"><img class="ico" src="gelada.png" alt="" width="58" height="58" loading="lazy"><b>100</b><span>bebidas no Gelada</span></a>
     </div>
@@ -980,8 +1003,15 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         </div>
         <a class="more" href="volei-total/">Tudo sobre o Vôlei Total →</a>
       </div>
-      <div class="player reveal">
-        <div class="phone wide"><div class="screen"><img src="media/volei-quadra.jpg" alt="Partida de vôlei 6x6 no ginásio, com torcida e placar" loading="lazy"></div></div>
+      <div class="player reveal" data-player>
+        <div class="phone wide"><div class="screen">
+          <video muted playsinline preload="none" poster="media/volei-jogo-quadra.jpg"><source src="media/volei-jogo-quadra.mp4" type="video/mp4"></video>
+        </div></div>
+        <div class="clips" role="group" aria-label="Escolha um vídeo do Vôlei Total">
+          <button class="clip" type="button" aria-pressed="true" data-src="media/volei-jogo-quadra"><img src="media/volei-jogo-quadra.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Quadra 6x6</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/volei-jogo-praia"><img src="media/volei-jogo-praia.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Praia 2x2</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/volei-jogo-adulta"><img src="media/volei-jogo-adulta.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Versão adulta</button>
+        </div>
       </div>
     </div>
     <div class="wrap shots">
@@ -1066,8 +1096,15 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         </div>
         <a class="more" href="xodo/">Tudo sobre o Xodó →</a>
       </div>
-      <div class="player reveal">
-        <div class="phone"><div class="screen"><img src="media/xodo-moderno.jpg" alt="Xodó no visual moderno: a capivara Pipoca recém-nascida, com as barras de fome, alegria, energia e higiene" loading="lazy"></div></div>
+      <div class="player reveal" data-player>
+        <div class="phone"><div class="screen">
+          <video muted playsinline preload="none" poster="media/xodo-jogo-retro.jpg"><source src="media/xodo-jogo-retro.mp4" type="video/mp4"></video>
+        </div></div>
+        <div class="clips" role="group" aria-label="Escolha um vídeo do Xodó">
+          <button class="clip" type="button" aria-pressed="true" data-src="media/xodo-jogo-retro"><img src="media/xodo-jogo-retro.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Retrô</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/xodo-jogo-minijogo"><img src="media/xodo-jogo-minijogo.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Minijogo</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="media/xodo-jogo-moderno"><img src="media/xodo-jogo-moderno.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Moderno</button>
+        </div>
       </div>
     </div>
     <div class="wrap shots">
@@ -1223,7 +1260,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         <div class="grid6">
           <a href="/deicida/"><img src="/media/deicida-chamada.jpg" alt="" loading="lazy"><span>Deicida</span></a>
           <a href="/rota-estelar/"><img src="/media/rota-nave-centro.jpg" alt="" loading="lazy"><span>Rota Estelar</span></a>
+          <a href="/volei-total/"><img src="/media/volei-topo.jpg" alt="" loading="lazy"><span>Vôlei Total</span></a>
           <a href="/gol-de-placa/"><img src="/media/gol-adulta.jpg" alt="" loading="lazy"><span>Gol de Placa</span></a>
+          <a href="/xodo/"><img src="/media/xodo-moderno.jpg" alt="" loading="lazy"><span>Xodó</span></a>
           <a href="/esconde-esconde/"><img src="/media/esconde-geleira.jpg" alt="" loading="lazy"><span>Esconde-Esconde</span></a>
           <a href="/gelada/"><img src="/media/gelada-cuba-libre.jpg" alt="" loading="lazy"><span>Gelada</span></a>
           <a href="/acervo/"><img src="/media/acervo-shot-colecao.jpg" alt="" loading="lazy"><span>Acervo</span></a>
