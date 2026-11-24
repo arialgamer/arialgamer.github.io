@@ -662,6 +662,37 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 @media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(4, 1fr) } }
 @media (min-width: 1180px) { .facts .wrap { grid-template-columns: repeat(8, 1fr) } }
 .grid6 { grid-template-columns: repeat(4, 1fr) }
+/* ---------- Sobre a Arial Gamer ---------- */
+.sobre .card { display: block }
+.sobre .intro { display: grid; grid-template-columns: 1.3fr 1fr; gap: 34px; align-items: start }
+.sobre .intro p { color: var(--muted); margin: 0 0 14px }
+.sobre .intro p b { color: var(--ink) }
+.sobre .nums { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px }
+.sobre .num { padding: 16px 18px; border-radius: 18px; background: var(--glass); border: 1px solid var(--line) }
+.sobre .num strong { display: block; font: 800 30px/1.1 var(--display, inherit); color: var(--ink) }
+.sobre .num span { color: var(--muted); font-size: 14px }
+.sobre .promessas { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px }
+.sobre .promessas li { padding: 16px; border-radius: 18px; background: var(--glass); border: 1px solid var(--line); font-size: 15px; line-height: 1.4 }
+.sobre .promessas li b { display: block; margin-bottom: 4px; font-size: 16px }
+.sobre h3 { margin: 34px 0 12px; font-size: 20px }
+.sobre .precos { width: 100%; border-collapse: collapse; font-size: 15px }
+.sobre .precos th { text-align: left; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; padding: 0 12px 10px }
+.sobre .precos td { padding: 12px; border-top: 1px solid var(--line); vertical-align: top }
+.sobre .precos td:first-child a { font-weight: 700; color: var(--ink); text-decoration: none }
+.sobre .precos td:first-child a:hover { text-decoration: underline }
+.sobre .precos td.pr { font-weight: 700; white-space: nowrap }
+.sobre .precos td.pv a { color: var(--muted); font-size: 14px }
+.sobre .nota { color: var(--muted); font-size: 14px; margin: 10px 0 0 }
+.sobre .confia { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px }
+@media (max-width: 900px) { .sobre .intro { grid-template-columns: 1fr } .sobre .promessas { grid-template-columns: 1fr 1fr } }
+@media (max-width: 640px) {
+  .sobre .promessas { grid-template-columns: 1fr }
+  .sobre .precos thead { display: none }
+  .sobre .precos tr { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 12px 0; border-top: 1px solid var(--line) }
+  .sobre .precos td { border: 0; padding: 0 }
+  .sobre .precos td.pf { grid-column: 1 / -1; color: var(--muted); font-size: 14px }
+  .sobre .precos td.pv { grid-column: 1 / -1 }
+}
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -1158,6 +1189,34 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     </div>
   </section>
 
+  <!-- ================= SOBRE ================= -->
+  <section class="extra sobre" id="sobre">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="intro">
+          <div>
+            <p class="eyebrow">Who we are</p>
+            <h2>About Arial Gamer</h2>
+            <p><b>Arial Gamer</b> is an independent mobile game studio from Brazil. We make short, joyful games to play alone, with family or with friends, on iPhone and Android.</p>
+            <p>Every game is made from start to finish here: idea, art, code, narration and translation into 8 languages. Players never see ads and never need an account.</p>
+          </div>
+          <div class="nums"><div class="num"><strong>7</strong><span>games released</span></div><div class="num"><strong>1</strong><span>app for collectors</span></div><div class="num"><strong>8</strong><span>languages</span></div><div class="num"><strong>0</strong><span>ads</span></div></div>
+        </div>
+        <ul class="promessas"><li><b>🚫 No ads</b>In every game, always.</li><li><b>🔒 No data collection</b>Our games need no sign-up and store no personal data.</li><li><b>💳 Clear pricing</b>You see the price before you download. No tricks.</li><li><b>🌎 8 languages</b>English, Portuguese, Spanish, German, French, Italian, Japanese and Chinese.</li></ul>
+        <h3>What each game costs</h3>
+        <table class="precos"><thead><tr><th>Game</th><th>Price</th><th>Where to play</th><th>Privacy</th></tr></thead><tbody><tr><td><a href="/en/deicida/">Deicida</a></td><td class="pr">Free</td><td class="pf">Android (iPhone coming soon). Prologue and level 1 unlocked; levels 2 to 10 coming as an in-app purchase.</td><td class="pv"><a href="/deicida-privacidade/">Policy</a></td></tr><tr><td><a href="/en/rota-estelar/">Rota Estelar</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Full game, no in-app purchases.</td><td class="pv"><a href="/rota-estelar-privacidade/">Policy</a></td></tr><tr><td><a href="/en/volei-total/">Vôlei Total</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone and iPad (Android coming soon). Full game, no in-app purchases.</td><td class="pv"><a href="/volei-privacidade/">Policy</a></td></tr><tr><td><a href="/en/gol-de-placa/">Gol de Placa</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Everything unlocked, no in-app purchases.</td><td class="pv"><a href="/gol-privacidade/">Policy</a></td></tr><tr><td><a href="/en/xodo/">Xodó</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone and iPad (Android coming soon). Full game, no in-app purchases.</td><td class="pv"><a href="/xodo-privacidade/">Policy</a></td></tr><tr><td><a href="/en/esconde-esconde/">Esconde-Esconde</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. All 24 places unlocked, no in-app purchases.</td><td class="pv"><a href="/esconde-privacidade/">Policy</a></td></tr><tr><td><a href="/en/gelada/">Gelada</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. No in-app purchases.</td><td class="pv"><a href="/gelada-privacidade/">Policy</a></td></tr><tr><td><a href="/en/acervo/">Acervo</a></td><td class="pr">Free</td><td class="pf">iPhone and Android. Optional Premium subscription.</td><td class="pv"><a href="/acervo/privacidade/">Policy</a></td></tr></tbody></table>
+        <p class="nota">The App Store and Google Play show the exact price in your local currency.</p>
+        <h3>Check for yourself</h3>
+        <div class="confia">
+          <a class="btn ghost" href="https://apps.apple.com/us/developer/renato-nogueira/id6819882965" target="_blank" rel="noopener"><svg><use href="#i-apple"/></svg>Our games on the App Store</a>
+          <a class="btn ghost" href="https://play.google.com/store/apps/dev?id=7102410817973589199" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg>Our games on Google Play</a>
+          <a class="btn ghost" href="/press/">Press kit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================= /SOBRE ================= -->
+
   <!-- ================= APOIE ================= -->
   <section class="extra" id="apoie">
     <div class="wrap">
@@ -1216,6 +1275,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     <div class="fmarca">
       <img class="sig" src="/assinatura.svg" alt="Arial">
       <nav aria-label="Arial Gamer">
+        <a href="#sobre">About Arial Gamer</a>
         <a href="#contato">Comments and suggestions</a>
         <a href="#apoie">Support Arial Gamer</a>
       </nav>
