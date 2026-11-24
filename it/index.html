@@ -353,11 +353,12 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .btn.primary { background: linear-gradient(135deg, var(--gold), var(--amber-2)); color: #2a1703; box-shadow: 0 12px 30px rgba(255,138,31,.3) }
 .btn.ghost { background: var(--glass); color: var(--ink); border: 1px solid var(--line) }
 .btn svg { width: 20px; height: 20px }
-.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px }
-.chip { display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px 6px 6px; border-radius: 999px; background: var(--glass); border: 1px solid var(--line); text-decoration: none; font-weight: 700; font-size: 15px; transition: background .2s, transform .2s }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 34px }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 13px 5px 5px; border-radius: 999px; background: var(--glass); border: 1px solid var(--line); text-decoration: none; font-weight: 700; font-size: 15px; transition: background .2s, transform .2s }
 .chip:hover { background: var(--glass-2); transform: translateY(-1px) }
-.chip img { width: 34px; height: 34px; border-radius: 10px }
+.chip img { width: 30px; height: 30px; border-radius: 9px }
 .chipgroups { display: grid; gap: 14px; margin-top: 34px }
+@media (min-width: 961px) and (max-width: 1239px) { .chip { font-size: 13px; gap: 6px; padding: 4px 10px 4px 4px } .chip img { width: 26px; height: 26px; border-radius: 8px } .chips { gap: 6px } }
 .chipgroup .chips { margin-top: 8px }
 .chiplabel { display: block; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted) }
 .divisao { padding: 84px 0 0; text-align: center }
