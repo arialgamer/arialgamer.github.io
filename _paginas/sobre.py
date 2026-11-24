@@ -80,7 +80,7 @@ T = {
   },
   nota="Preços da App Store e do Google Play no Brasil; em outros países, a loja mostra o valor na moeda local.",
   h3c="Confira por conta própria", apple="Nossos jogos na App Store", gp="Nossos jogos no Google Play", press="Kit de imprensa",
-  apple_url="https://apps.apple.com/br/developer/renato-nogueira/id6819882965", press_url="/press/"),
+  apple_url="https://apps.apple.com/br/developer/renato-nogueira/id6819882965", press_url="/imprensa/"),
  "en": dict(
   eyebrow="Who we are", h2="About Arial Gamer", rodape="About Arial Gamer",
   p1="<b>Arial Gamer</b> is an independent mobile game studio from Brazil. We make short, joyful games to play alone, with family or with friends, on iPhone and Android.",
@@ -122,7 +122,7 @@ T = {
   },
   nota="La App Store y Google Play muestran el precio exacto en tu moneda local.",
   h3c="Compruébalo tú mismo", apple="Nuestros juegos en la App Store", gp="Nuestros juegos en Google Play", press="Kit de prensa",
-  apple_url="https://apps.apple.com/es/developer/renato-nogueira/id6819882965", press_url="/press/"),
+  apple_url="https://apps.apple.com/es/developer/renato-nogueira/id6819882965", press_url="/es/press/"),
  "de": dict(
   eyebrow="Wer wir sind", h2="Über Arial Gamer", rodape="Über Arial Gamer",
   p1="<b>Arial Gamer</b> ist ein unabhängiges Studio für Handyspiele aus Brasilien. Wir machen kurze, fröhliche Spiele für allein, mit der Familie oder mit Freunden, auf iPhone und Android.",
@@ -143,7 +143,7 @@ T = {
   },
   nota="Der App Store und Google Play zeigen den genauen Preis in deiner Landeswährung.",
   h3c="Überzeug dich selbst", apple="Unsere Spiele im App Store", gp="Unsere Spiele bei Google Play", press="Pressekit",
-  apple_url="https://apps.apple.com/de/developer/renato-nogueira/id6819882965", press_url="/press/"),
+  apple_url="https://apps.apple.com/de/developer/renato-nogueira/id6819882965", press_url="/de/press/"),
  "fr": dict(
   eyebrow="Qui sommes-nous", h2="À propos d'Arial Gamer", rodape="À propos d'Arial Gamer",
   p1="<b>Arial Gamer</b> est un studio indépendant de jeux mobiles, fait au Brésil. Nous créons des jeux courts et joyeux à jouer seul, en famille ou entre amis, sur iPhone et Android.",
@@ -164,7 +164,7 @@ T = {
   },
   nota="L'App Store et Google Play affichent le prix exact dans votre monnaie locale.",
   h3c="Vérifiez par vous-même", apple="Nos jeux sur l'App Store", gp="Nos jeux sur Google Play", press="Kit presse",
-  apple_url="https://apps.apple.com/fr/developer/renato-nogueira/id6819882965", press_url="/press/"),
+  apple_url="https://apps.apple.com/fr/developer/renato-nogueira/id6819882965", press_url="/fr/press/"),
  "it": dict(
   eyebrow="Chi siamo", h2="Chi è Arial Gamer", rodape="Chi è Arial Gamer",
   p1="<b>Arial Gamer</b> è uno studio indipendente di giochi per smartphone, fatto in Brasile. Creiamo giochi brevi e allegri da giocare da soli, in famiglia o con gli amici, su iPhone e Android.",
@@ -185,7 +185,7 @@ T = {
   },
   nota="L'App Store e Google Play mostrano il prezzo esatto nella tua valuta locale.",
   h3c="Verifica tu stesso", apple="I nostri giochi sull'App Store", gp="I nostri giochi su Google Play", press="Kit stampa",
-  apple_url="https://apps.apple.com/it/developer/renato-nogueira/id6819882965", press_url="/press/"),
+  apple_url="https://apps.apple.com/it/developer/renato-nogueira/id6819882965", press_url="/it/press/"),
  "ja": dict(
   eyebrow="私たちについて", h2="Arial Gamer について", rodape="Arial Gamer について",
   p1="<b>Arial Gamer</b> はブラジルのインディーのスマホゲームスタジオです。ひとりでも、家族や友だちとでも遊べる、短くて楽しいゲームを iPhone と Android 向けに作っています。",
@@ -206,7 +206,7 @@ T = {
   },
   nota="正確な価格は App Store と Google Play でお住まいの国の通貨で表示されます。",
   h3c="ストアで確認", apple="App Store のゲーム一覧", gp="Google Play のゲーム一覧", press="プレスキット",
-  apple_url="https://apps.apple.com/jp/developer/renato-nogueira/id6819882965", press_url="/press/"),
+  apple_url="https://apps.apple.com/jp/developer/renato-nogueira/id6819882965", press_url="/ja/press/"),
  "zh": dict(
   eyebrow="关于我们", h2="关于 Arial Gamer", rodape="关于 Arial Gamer",
   p1="<b>Arial Gamer</b> 是来自巴西的独立手机游戏工作室。我们为 iPhone 和 Android 制作简短、欢乐的游戏，可以一个人玩，也可以和家人朋友一起玩。",
@@ -227,7 +227,7 @@ T = {
   },
   nota="App Store 和 Google Play 会以你所在地区的货币显示准确价格。",
   h3c="自己查看", apple="我们在 App Store 的游戏", gp="我们在 Google Play 的游戏", press="媒体资料包",
-  apple_url="https://apps.apple.com/cn/developer/renato-nogueira/id6819882965", press_url="/press/"),
+  apple_url="https://apps.apple.com/cn/developer/renato-nogueira/id6819882965", press_url="/zh/press/"),
 }
 
 
