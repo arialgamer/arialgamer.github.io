@@ -1,3 +1,4 @@
+# OBSOLETO (24/11/2026): o Rota já está no Android; não rode este script, ele voltaria textos de "em breve no Android".
 # Rota Estelar saiu no iPhone (App Store, R$ 4,90); Android em análise no Google Play.
 # Troca o "Em breve" do Rota por "Já na App Store" nos 8 idiomas (home, página do jogo, cartões de
 # "outros jogos", descrições para o Google, perguntas frequentes e dados estruturados).
