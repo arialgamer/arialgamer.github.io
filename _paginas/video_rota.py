@@ -1,4 +1,4 @@
-# Vídeo vertical de lançamento do Rota Estelar (1080x1920, ~20 s, sem música: escolha o som no app).
+# Vídeo vertical do Rota Estelar, já no iPhone e no Android (1080x1920, ~20 s, sem música: escolha o som no app).
 # Usa as gravações do jogo em media/ e gera divulgacao/rota-lancamento.mp4 (pt) e divulgacao/en/rota-launch.mp4 (en).
 #   python _paginas/video_rota.py  <ícone 512px da loja>
 import os, subprocess, sys, tempfile
@@ -13,18 +13,18 @@ F_BOLD = "C:/Windows/Fonts/segoeuib.ttf"
 GOLD = (255, 210, 63); ORANGE = (255, 181, 71); BLUE = (127, 168, 255); INK = (246, 242, 255)
 
 TEXTOS = {
-    "pt": dict(saida="divulgacao/rota-lancamento.mp4", selo="JÁ NA APP STORE", sub="Jogo de nave para celular",
+    "pt": dict(saida="divulgacao/rota-lancamento.mp4", selo="JÁ NO IPHONE E NO ANDROID", sub="Jogo de nave para celular",
                cenas=[("rota-chefe", 0.0, "Um chefe gigante", "em cada planeta"),
                       ("rota-meteoros", 1.0, "Chuva de", "meteoros"),
                       ("rota-criaturas", 2.0, "20 criaturas", "e 10 naves"),
                       ("rota-tempestade", 1.0, "31 planetas", "de verdade")],
-               fim=["Rota Estelar", "Já na App Store", "iPhone e iPad · R$ 4,90", "Android em breve", "Sem anúncios · sem compras no app"]),
-    "en": dict(saida="divulgacao/en/rota-launch.mp4", selo="OUT NOW ON THE APP STORE", sub="Space shooter for your phone",
+               fim=["Rota Estelar", "Já no iPhone e no Android", "App Store e Google Play", "", "Sem anúncios · sem compras no app"]),
+    "en": dict(saida="divulgacao/en/rota-launch.mp4", selo="OUT NOW ON IPHONE AND ANDROID", sub="Space shooter for your phone",
                cenas=[("rota-chefe", 0.0, "A giant boss", "on every planet"),
                       ("rota-meteoros", 1.0, "Meteor", "showers"),
                       ("rota-criaturas", 2.0, "20 creatures", "and 10 ships"),
                       ("rota-tempestade", 1.0, "31 real", "planets")],
-               fim=["Rota Estelar", "Out now on the App Store", "iPhone and iPad", "Android coming soon", "No ads · no in-app purchases"]),
+               fim=["Rota Estelar", "Out now on iPhone and Android", "App Store and Google Play", "", "No ads · no in-app purchases"]),
 }
 
 
@@ -71,8 +71,8 @@ def camada_fim(t, icone, caminho):
     texto_c(d, 900, nome, fonte(F_BLACK, 120), INK)
     pilula(d, 1080, loja, fonte(F_BLACK, 54), GOLD + (255,), (42, 23, 3))
     texto_c(d, 1215, plat, fonte(F_BOLD, 56), INK)
-    texto_c(d, 1300, andr, fonte(F_BOLD, 50), BLUE)
-    texto_c(d, 1390, extra, fonte(F_BOLD, 40), (200, 192, 230))
+    if andr: texto_c(d, 1300, andr, fonte(F_BOLD, 50), BLUE)
+    texto_c(d, 1390 if andr else 1310, extra, fonte(F_BOLD, 40), (200, 192, 230))
     texto_c(d, 1640, "arialgamer.com.br", fonte(F_BLACK, 58), ORANGE)
     texto_c(d, 1720, "@arial.gamer", fonte(F_BOLD, 40), (220, 214, 245))
     im.save(caminho)
