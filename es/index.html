@@ -696,6 +696,47 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   .sobre .precos td.pf { grid-column: 1 / -1; color: var(--muted); font-size: 14px }
   .sobre .precos td.pv { grid-column: 1 / -1 }
 }
+
+/* ---------- Turma Arial (vitrine dos jogos) ---------- */
+.turma-vitrine { position: relative; padding: 90px 0 30px; isolation: isolate }
+.tv-card { position: relative; overflow: hidden; border-radius: 36px; padding: clamp(24px, 4.2vw, 52px); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 40px; align-items: center;
+  background: linear-gradient(150deg, #18226a 0%, #0d1440 55%, #0a0f30 100%); border: 1px solid rgba(255,255,255,.12); box-shadow: 0 40px 90px rgba(0,0,0,.45); isolation: isolate }
+.tv-card::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(30% 40% at 4% 0%, rgba(35,127,67,.45), transparent 70%), radial-gradient(28% 38% at 40% 0%, rgba(17,119,143,.4), transparent 70%),
+              radial-gradient(30% 40% at 100% 20%, rgba(106,36,168,.45), transparent 70%), radial-gradient(34% 44% at 85% 100%, rgba(194,65,12,.38), transparent 70%),
+              radial-gradient(30% 40% at 10% 100%, rgba(190,24,93,.32), transparent 70%) }
+.tv-card::after { content: ""; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; z-index: -1; border-radius: 60px; transform: rotate(18deg);
+  background: linear-gradient(135deg, rgba(233,185,73,.16), rgba(233,185,73,0)); border: 2px solid rgba(233,185,73,.18) }
+.tv-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px }
+.tv-head img { width: 80px; height: 80px; border-radius: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.45) }
+.tv-head .eyebrow { color: #e9b949 }
+.turma-vitrine h2 { font-size: clamp(40px, 5.4vw, 66px); font-weight: 800 }
+.turma-vitrine h2 span { color: #e9b949 }
+.tv-lead { font-size: clamp(18px, 2vw, 21px); margin: 0 0 22px; max-width: 40ch }
+.tv-tiles { list-style: none; padding: 0; margin: 0 0 20px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px }
+.tv-tiles a, .tv-tiles span.t { display: grid; gap: 2px; min-height: 76px; align-content: start; padding: 12px 13px; border-radius: 16px; text-decoration: none; color: #fff; background: var(--t); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12), 0 10px 22px rgba(0,0,0,.25); transition: transform .2s, filter .2s }
+.tv-tiles a:hover { transform: translateY(-3px); filter: brightness(1.08) }
+.tv-tiles b { font-family: var(--display); font-size: 18px; line-height: 1.1 }
+.tv-tiles small { font-size: 12.5px; opacity: .85; line-height: 1.25 }
+.tv-note { margin: 0 0 22px; color: var(--muted); font-size: 15.5px; border-left: 3px solid #e9b949; padding-left: 14px }
+.tv-note b { color: var(--ink) }
+.tv-fan { position: relative; height: 520px; display: flex; justify-content: center; align-items: center }
+.tv-fan .phone { position: absolute; width: 220px }
+.tv-fan .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top }
+.tv-fan .phone:nth-child(1) { transform: translateX(-62%) rotate(-9deg) translateY(30px) scale(.86); z-index: 1 }
+.tv-fan .phone:nth-child(2) { z-index: 3 }
+.tv-fan .phone:nth-child(3) { transform: translateX(62%) rotate(9deg) translateY(30px) scale(.86); z-index: 2 }
+@media (max-width: 960px) { .tv-card { grid-template-columns: minmax(0, 1fr); text-align: center } .tv-head { justify-content: center } .tv-lead { margin-inline: auto } .tv-note { text-align: left; max-width: 520px; margin-inline: auto } .turma-vitrine .stores { justify-content: center } .tv-fan { height: 440px } .tv-fan .phone { width: 180px } }
+@media (max-width: 560px) { .tv-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)) } .tv-fan { height: 360px } .tv-fan .phone { width: 140px } .tv-tiles a, .tv-tiles span.t { text-align: left } }
+.golaco { --c: #ffc21a; --c-ink: #2a1500; --glow: rgba(31,154,85,.26); --gx: 30%; background: linear-gradient(180deg, transparent, rgba(6,48,29,.55), transparent) }
+.golaco .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
+/* Deicida: 6 fotos e a faixa das mitologias */
+.deicida .wrap.shots { grid-template-columns: repeat(3, 1fr) }
+@media (max-width: 720px) { .deicida .wrap.shots { grid-template-columns: repeat(2, 1fr) } }
+.game.wide .wrap.mitos { margin-top: 60px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px }
+.mitos h3 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 14px }
+.mitos .track figure { width: 260px }
+.mitos .track img { width: 260px; height: 146px }
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -722,7 +763,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   <div class="wrap">
     <a class="brand" href="#topo"><img src="/logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
+      <li><a href="#turma">Turma Arial</a></li>
       <li><a href="#deicida">Deicida</a></li>
+      <li><a href="#golaco">Golaço Total</a></li>
       <li><a href="#rota">Rota Estelar</a></li>
       <li><a href="#volei">Vôlei Total</a></li>
       <li><a href="#gol">Gol de Placa</a></li>
@@ -757,9 +800,15 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
           <a class="btn ghost" href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>Ver en TikTok</a>
         </div>
         <div class="chipgroups">
+          <div class="chipgroup"><span class="chiplabel">⭐ Empieza aquí</span>
+            <div class="chips">
+              <a class="chip" href="#turma"><img src="/turma.png" alt="" width="34" height="34">Turma Arial</a>
+            </div>
+          </div>
           <div class="chipgroup"><span class="chiplabel">🎮 Juegos</span>
             <div class="chips">
               <a class="chip" href="#deicida"><img src="/deicida.png" alt="" width="34" height="34">Deicida</a>
+              <a class="chip" href="#golaco"><img src="/golaco.png" alt="" width="34" height="34">Golaço Total</a>
               <a class="chip" href="#rota"><img src="/rota.png" alt="" width="34" height="34">Rota Estelar</a>
               <a class="chip" href="#volei"><img src="/volei.png" alt="" width="34" height="34">Vôlei Total</a>
               <a class="chip" href="#gol"><img src="/gol.png" alt="" width="34" height="34">Gol de Placa</a>
@@ -799,6 +848,28 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <a class="fact" href="#gelada" style="--c:#f6b83a;--glow:rgba(246,184,58,.45)"><img class="ico" src="/gelada.png" alt="" width="58" height="58" loading="lazy"><b>100</b><span>bebidas en Gelada</span></a>
     </div>
   </div>
+
+  <!-- ================= TURMA ARIAL (vitrine) ================= -->
+  <section class="turma-vitrine" data-vista="jogos" id="turma">
+    <div class="wrap">
+      <div class="tv-card reveal">
+        <div class="tv-info">
+          <div class="tv-head">
+            <img src="/turma.png" alt="Turma Arial" width="80" height="80">
+            <div><p class="eyebrow">Empieza aquí · App gratis</p><h2>Turma <span>Arial</span></h2></div>
+          </div>
+          <p class="tv-lead">La app gratis de Arial Gamer para disfrutar con tu grupo: arma equipos, lleva el marcador y juega una probadita de cada uno de nuestros juegos.</p>
+          <ul class="tv-tiles"><li><a href="#gol" style="--t:#237f43"><b>Fútbol</b><small>Probadita de Gol de Placa</small></a></li><li><a href="#volei" style="--t:#11778f"><b>Vóley</b><small>Probadita de Vôlei Total</small></a></li><li><a href="#deicida" style="--t:#6a24a8"><b>Mitología</b><small>Probadita de Deicida</small></a></li><li><a href="#rota" style="--t:#4338ca"><b>Espacio</b><small>Probadita de Rota Estelar</small></a></li><li><span class="t" style="--t:#c2410c"><b>Fiesta</b><small>Cartas y brindis sin alcohol</small></span></li><li><a href="#esconde" style="--t:#b45309"><b>Escondite</b><small>Probadita de Esconde-Esconde</small></a></li><li><a href="#xodo" style="--t:#be185d"><b>Xodó</b><small>Probadita de Xodó</small></a></li><li><a href="#acervo" style="--t:#15803d"><b>Colección</b><small>Probadita de Acervo</small></a></li></ul>
+          <p class="tv-note"><b>Gratis</b>, sin anuncios, sin registro y sin recopilar datos. Medallas, rachas y un desafío nuevo cada día.</p>
+          <div class="stores">
+            <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>Muy pronto en</small><strong>App Store</strong></span></span>
+            <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Muy pronto en</small><strong>Google Play</strong></span></span>
+          </div>
+        </div>
+        <div class="tv-fan"><div class="phone"><div class="screen"><img src="/media/turma-pelada.jpg" alt="Turma Arial: sorteo de equipos de fútbol" loading="lazy" width="560" height="1213"></div></div><div class="phone"><div class="screen"><img src="/media/turma-inicio.jpg" alt="Turma Arial: pantalla de inicio con un espacio para cada juego" loading="lazy" width="560" height="1213"></div></div><div class="phone"><div class="screen"><img src="/media/turma-festa.jpg" alt="Turma Arial: cartas de fiesta" loading="lazy" width="560" height="1213"></div></div></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= JOGOS ================= -->
   <div class="divisao" id="jogos" data-vista="jogos"><div class="wrap"><p class="eyebrow">🎮 Arial Gamer</p><h2>Juegos</h2><p class="sub">Para jugar solo o con un amigo</p></div></div>
@@ -848,11 +919,41 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <figure class="reveal"><img src="/media/deicida-foto-anubis.jpg" alt="Anubis pesa el corazón del héroe en la balanza del Duat" loading="lazy"><figcaption>El juicio de Anubis</figcaption></figure>
       <figure class="reveal"><img src="/media/deicida-foto-mercado.jpg" alt="Patio de mercado con tiendas y palmeras en la fase 1" loading="lazy"><figcaption>Fase 1: las orillas del Nilo</figcaption></figure>
       <figure class="reveal"><img src="/media/deicida-foto-sobek.jpg" alt="Sobek, el dios cocodrilo, rodeado de momias ante las pirámides" loading="lazy"><figcaption>Sobek, el dios cocodrilo</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-foto-jardim.jpg" alt="Jardín con estanque y momias rodeado de palmeras" loading="lazy"><figcaption>El jardín de las momias</figcaption></figure>
+      <figure class="reveal"><img src="/media/deicida-foto-templo.jpg" alt="Patio del templo con obeliscos y las pirámides al fondo" loading="lazy"><figcaption>El templo y las pirámides</figcaption></figure>
+    </div>
+    <div class="wrap places mitos reveal">
+      <h3>Un dios al final de cada mitología</h3>
+      <div class="track"><div class="row"><figure><img src="/media/deicida-mito-01.jpg" alt="Lucha contra Ra en Deicida" loading="lazy" width="260" height="146"><figcaption>Egipcia</figcaption></figure><figure><img src="/media/deicida-mito-02.jpg" alt="Lucha contra Marduk en Deicida" loading="lazy" width="260" height="146"><figcaption>Mesopotámica</figcaption></figure><figure><img src="/media/deicida-mito-03.jpg" alt="Lucha contra Tonatiuh en Deicida" loading="lazy" width="260" height="146"><figcaption>Azteca</figcaption></figure><figure><img src="/media/deicida-mito-04.jpg" alt="Lucha contra Itzamná en Deicida" loading="lazy" width="260" height="146"><figcaption>Maya</figcaption></figure><figure><img src="/media/deicida-mito-05.jpg" alt="Lucha contra Inti en Deicida" loading="lazy" width="260" height="146"><figcaption>Inca</figcaption></figure><figure><img src="/media/deicida-mito-06.jpg" alt="Lucha contra La Morrígan en Deicida" loading="lazy" width="260" height="146"><figcaption>Celta</figcaption></figure><figure><img src="/media/deicida-mito-07.jpg" alt="Lucha contra Perun en Deicida" loading="lazy" width="260" height="146"><figcaption>Eslava</figcaption></figure><figure><img src="/media/deicida-mito-08.jpg" alt="Lucha contra Louhi en Deicida" loading="lazy" width="260" height="146"><figcaption>Finlandesa</figcaption></figure><figure><img src="/media/deicida-mito-09.jpg" alt="Lucha contra Júpiter en Deicida" loading="lazy" width="260" height="146"><figcaption>Romana</figcaption></figure><figure><img src="/media/deicida-mito-10.jpg" alt="Lucha contra Odín en Deicida" loading="lazy" width="260" height="146"><figcaption>Nórdica</figcaption></figure><figure><img src="/media/deicida-mito-11.jpg" alt="Lucha contra Zeus en Deicida" loading="lazy" width="260" height="146"><figcaption>Griega</figcaption></figure></div><div class="row" aria-hidden="true"><figure><img src="/media/deicida-mito-01.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Egipcia</figcaption></figure><figure><img src="/media/deicida-mito-02.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Mesopotámica</figcaption></figure><figure><img src="/media/deicida-mito-03.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Azteca</figcaption></figure><figure><img src="/media/deicida-mito-04.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Maya</figcaption></figure><figure><img src="/media/deicida-mito-05.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Inca</figcaption></figure><figure><img src="/media/deicida-mito-06.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Celta</figcaption></figure><figure><img src="/media/deicida-mito-07.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Eslava</figcaption></figure><figure><img src="/media/deicida-mito-08.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Finlandesa</figcaption></figure><figure><img src="/media/deicida-mito-09.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Romana</figcaption></figure><figure><img src="/media/deicida-mito-10.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Nórdica</figcaption></figure><figure><img src="/media/deicida-mito-11.jpg" alt="" loading="lazy" width="260" height="146"><figcaption>Griega</figcaption></figure></div></div>
     </div>
   </section>
 
+  <!-- ================= GOLAÇO TOTAL ================= -->
+  <section class="game golaco wide flip" data-vista="jogos" id="golaco">
+    <div class="wrap">
+      <div class="info reveal">
+        <div class="head">
+          <img src="/golaco.png" alt="Golaço Total" width="84" height="84">
+          <div><p class="eyebrow">Llega a iPhone y Android</p><h2>Golaço Total</h2></div>
+        </div>
+        <p class="tag">Fútbol sala 5 contra 5 en pista y en la arena, con control de verdad ⚽🔥</p>
+        <span class="price">⚽ Juego nuevo</span><span class="price free">🚫 Sin anuncios</span>
+        <ul class="feats"><li><i>🎮</i><span><b>Tú mandas en el equipo</b>: pase, tiro cargado, regate y barrida; quien recibe el pase pasa a ser tu jugador</span></li><li><i>🏖️</i><span><b>Pista y arena</b>, con torneo de selecciones, prórroga con gol de oro y penales</span></li><li><i>📏</i><span><b>Reglas del fútbol sala</b>: faltas acumuladas, tiro libre sin barrera y portero que saca con la mano</span></li><li><i>👥</i><span><b>2 jugadores</b> en el mismo móvil, narración, repetición de los goles y versión adulta con atletas realistas</span></li></ul>
+        <div class="soon"><p><b>En camino a la App Store y Google Play</b>, para iPhone, iPad y Android: el juego completo, sin anuncios y sin compras dentro de la app.</p></div>
+        <div class="stores">
+          <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>Muy pronto en</small><strong>App Store</strong></span></span>
+          <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Muy pronto en</small><strong>Google Play</strong></span></span>
+        </div>
+      </div>
+      <div class="player reveal">
+        <div class="phone wide"><div class="screen"><img src="/media/golaco-quadra.jpg" alt="Golaço Total: partido en pista" loading="lazy" width="1280" height="720"></div></div>
+      </div>
+    </div>
+    <div class="wrap shots"><figure class="reveal"><img src="/media/golaco-quadra.jpg" alt="Partido de fútbol sala en pista, Brasil contra Argentina" loading="lazy"><figcaption>Fútbol sala en pista</figcaption></figure><figure class="reveal"><img src="/media/golaco-areia.jpg" alt="Partido de fútbol playa 5 contra 5" loading="lazy"><figcaption>Fútbol playa</figcaption></figure><figure class="reveal"><img src="/media/golaco-craque.jpg" alt="Pantalla Mi crack: nombre, número, piel, pelo y físico" loading="lazy"><figcaption>Crea tu crack</figcaption></figure><figure class="reveal"><img src="/media/golaco-times.jpg" alt="Elección de selección con ataque, defensa y velocidad" loading="lazy"><figcaption>16 selecciones</figcaption></figure></div>
+  </section>
+
   <!-- ================= ROTA ESTELAR ================= -->
-  <section class="game rota wide flip" data-vista="jogos" id="rota">
+  <section class="game rota wide" data-vista="jogos" id="rota">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -900,7 +1001,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   </section>
 
   <!-- ================= VÔLEI TOTAL ================= -->
-  <section class="game volei wide" data-vista="jogos" id="volei">
+  <section class="game volei wide flip" data-vista="jogos" id="volei">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -944,7 +1045,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   </section>
 
   <!-- ================= GOL DE PLACA ================= -->
-  <section class="game gol flip" data-vista="jogos" id="gol">
+  <section class="game gol" data-vista="jogos" id="gol">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -993,7 +1094,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   </section>
 
   <!-- ================= XODÓ ================= -->
-  <section class="game xodo" data-vista="jogos" id="xodo">
+  <section class="game xodo flip" data-vista="jogos" id="xodo">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -1037,7 +1138,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   </section>
 
   <!-- ================= ESCONDE-ESCONDE ================= -->
-  <section class="game esconde flip" data-vista="jogos" id="esconde">
+  <section class="game esconde" data-vista="jogos" id="esconde">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -1083,7 +1184,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
   </section>
 
   <!-- ================= GELADA ================= -->
-  <section class="game gelada" data-vista="jogos" id="gelada">
+  <section class="game gelada flip" data-vista="jogos" id="gelada">
     <div class="wrap">
       <div class="info reveal">
         <div class="head">
@@ -1313,6 +1414,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <p class="ftit">Privacidad</p>
       <nav aria-label="Privacidad">
         <a href="/deicida-privacidade/">Privacidad Deicida</a>
+        <a href="/turma-privacidade/">Privacidad Turma Arial</a>
+        <a href="/golaco-privacidade/">Privacidad Golaço Total</a>
         <a href="/rota-estelar-privacidade/">Privacidad Rota Estelar</a>
         <a href="/volei-privacidade/">Privacidad Vôlei Total</a>
         <a href="/gol-privacidade/">Privacidad Gol de Placa</a>
