@@ -117,15 +117,15 @@
      "name": "Welche Mythologien wird Deicida haben?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Elf, eine pro Kapitel, in dieser Reihenfolge: ägyptisch, mesopotamisch, aztekisch, Maya, Inka, keltisch, slawisch, finnisch, römisch, nordisch und zum Schluss griechisch. Zum Start gibt es das Ägypten-Kapitel; die anderen folgen als Updates."
+      "text": "Elf, eine pro Kapitel, in dieser Reihenfolge: ägyptisch, mesopotamisch, aztekisch, Maya, Inka, keltisch, slawisch, finnisch, römisch, nordisch und zuletzt griechisch. Alle sind schon im Spiel: 110 Level, jedes mit einem Gott als Boss."
      }
     },
     {
      "@type": "Question",
-     "name": "Was wird es kosten?",
+     "name": "Was kostet es?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Der Download ist kostenlos und schaltet den Prolog und das erste Level in Ägypten frei. Die Level 2 bis 10 kommen bald und werden per In-App-Kauf freigeschaltet. Ohne Werbung und ohne Energie."
+      "text": "Der Download ist kostenlos, und der Prolog und das erste Level in Ägypten (bis zum Sieg über Sobek) kosten nichts. Jedes Kapitel ist ein einmaliger Kauf im Spiel (Richtpreis 2,99 US$), und der Deicida-Pass schaltet alle 11 Kapitel frei (14,99 US$). Der Store zeigt den Preis in deiner Währung. Kein Abo, keine Werbung, keine Energie."
      }
     },
     {
@@ -559,6 +559,17 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 html:not([lang=pt-BR]) .pixbox .kofi { order: -2 }
 html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 .grid6 { grid-template-columns: repeat(4, 1fr) }
+.mito-foto { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 14px; margin: 0 0 14px; border: 1px solid var(--line) }
+.precos-deicida { display: grid; gap: 28px; grid-template-columns: 1.2fr 1fr; align-items: start }
+.precos-deicida table { width: 100%; border-collapse: collapse; font-size: 15px }
+.precos-deicida th { text-align: left; font-size: 13px; color: var(--muted); font-weight: 600; padding: 8px 10px; border-bottom: 1px solid var(--line) }
+.precos-deicida td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top }
+.precos-deicida td.v { white-space: nowrap; font-weight: 800; color: var(--amber) }
+.precos-deicida tr.passe td { background: rgba(246,184,58,.08) }
+.precos-deicida .como h3 { margin: 0 0 10px }
+.precos-deicida .como ol { margin: 0 0 16px; padding-left: 20px; display: grid; gap: 6px }
+.precos-deicida .como img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line) }
+@media (max-width: 820px) { .precos-deicida { grid-template-columns: 1fr } .precos-deicida td { padding: 10px 6px } }
 </style>
 </head>
 <body class="no-js">
@@ -614,13 +625,13 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
         <p class="tag">Ein Sterblicher gegen die Götter von 11 Mythologien ⚔️☀️</p>
         <span class="price">⚔️ Kostenlos</span><span class="price free">🚫 Ohne Werbung</span>
         <ul class="feats">
-          <li><i>🏺</i><span><b>Kapitel I: Ägypten</b>, mit 10 Leveln und einem Gott als Boss in jedem</span></li>
+          <li><i>🏺</i><span><b>11 Kapitel und 110 Level</b>: vom Ägypten des Ra bis zum Griechenland des Zeus, mit einem Gott als Boss in jedem Level</span></li>
           <li><i>⚔️</i><span><b>Zwei Khopesch</b>: Kombos, Ausweichen, Parieren und Finisher in Zeitlupe</span></li>
           <li><i>✨</i><span><b>Kräfte der Götter</b>: 3 pro Mythologie; die übrigen Götter machen sie stärker</span></li>
           <li><i>🎙️</i><span><b>Epische Erzählstimme</b>: Der Held spricht mit Verbündeten und stellt sich jedem Boss vor dem Kampf</span></li>
         </ul>
         <div class="soon">
-          <p><b>Jetzt im App Store und bei Google Play</b>, kostenlos: Der Prolog und das erste Level in Ägypten sind freigeschaltet. Die Level 2 bis 10 kommen bald per In-App-Kauf.</p>
+          <p><b>Das ganze Spiel ist jetzt im App Store und bei Google Play.</b> Kostenlos: der Prolog und das erste Level in Ägypten, bis zum Sieg über Sobek. Die übrigen Kapitel werden per In-App-Kauf freigeschaltet, einzeln oder alle mit dem Deicida-Pass.</p>
           <p><b>11 Mythologien</b>, eine pro Kapitel: ägyptisch, mesopotamisch, aztekisch, Maya, Inka, keltisch, slawisch, finnisch, römisch, nordisch und zum Schluss griechisch.</p>
         </div>
         <div class="stores">
@@ -660,7 +671,7 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
         <article class="reveal"><div class="em">⚔️</div><h3>Kampf mit den Fingerspitzen</h3><p>Leichte und schwere Angriffe, Kombos, Ausweichen, Blocken und Parieren im richtigen Moment. Gegner betäubt? Finisher in Zeitlupe.</p></article>
         <article class="reveal"><div class="em">✨</div><h3>Æther</h3><p>Die Energie der getöteten Götter. Damit verbesserst du den Helden und die 3 Kräfte, die du in jeder Mythologie erbeutest.</p></article>
         <article class="reveal"><div class="em">🏹</div><h3>Waffen</h3><p>Zwei Khopesch zu Beginn, ein Bogen, den du unterwegs bekommst, und die Divina, eine legendäre Waffe, die in jeder Mythologie ihre Form ändert.</p></article>
-        <article class="reveal"><div class="em">🎮</div><h3>Premium und ehrlich</h3><p>Ohne Werbung, ohne Energie und ohne bezahlte Währung. Der Prolog und das erste Level sind kostenlos; der Rest wird per In-App-Kauf freigeschaltet.</p></article>
+        <article class="reveal"><div class="em">🎮</div><h3>Premium und ehrlich</h3><p>Ohne Werbung, ohne Energie und ohne bezahlte Währung. Kostenlos: der Prolog und der Kampf gegen Sobek. Jedes Kapitel ist ein einmaliger Kauf, oder alle mit dem Deicida-Pass.</p></article>
       </div>
     </div>
   </section>
@@ -670,19 +681,30 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
       <h2>Gegen wen du kämpfst</h2>
       <p class="sub">Elf Mythologien. Tippe auf jede, um zu sehen, wer sich dir in den Weg stellt.</p>
       <div class="cards">
-        <details class="reveal mito"><summary><div class="em">🏺</div><h3>Ägyptisch</h3><p>Wüsten, Pyramiden und die Duat</p><span class="ver">Liste ansehen</span></summary><ul><li>Sobek</li><li>Serket</li><li>Anubis</li><li>Ammit</li><li>Chons</li><li>Seth</li><li>Sachmet</li><li>Thot</li><li>Horus</li><li>Re</li><li>???</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🦁</div><h3>Mesopotamisch</h3><p>Zikkurate, Babylon und der Abgrund der Tiamat</p><span class="ver">Liste ansehen</span></summary><ul><li>Ischtar</li><li>Nergal</li><li>Ereschkigal</li><li>Enlil</li><li>Marduk</li><li>Tiamat</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🐍</div><h3>Aztekisch</h3><p>Dschungelpyramiden und Mictlan</p><span class="ver">Liste ansehen</span></summary><ul><li>Tezcatlipoca</li><li>Huitzilopochtli</li><li>Quetzalcoatl</li><li>Mictlantecuhtli</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🌿</div><h3>Maya</h3><p>Dschungelstädte und Xibalba</p><span class="ver">Liste ansehen</span></summary><ul><li>Herren von Xibalba</li><li>Camazotz</li><li>Kukulkan</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🏔️</div><h3>Inka</h3><p>Die Anden und Machu Picchu</p><span class="ver">Liste ansehen</span></summary><ul><li>Supay</li><li>Illapa</li><li>Mama Quilla</li><li>Inti</li><li>Viracocha</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🍀</div><h3>Keltisch</h3><p>Moore, Nebel und Steinkreise</p><span class="ver">Liste ansehen</span></summary><ul><li>Morrígan</li><li>Balor</li><li>Cernunnos</li><li>Lugh</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🐺</div><h3>Slawisch</h3><p>Finstere Wälder und Steppen</p><span class="ver">Liste ansehen</span></summary><ul><li>Veles</li><li>Perun</li><li>Baba Jaga</li><li>Koschtschei der Unsterbliche</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">❄️</div><h3>Finnisch</h3><p>Der eisige Norden und Tuonela</p><span class="ver">Liste ansehen</span></summary><ul><li>Louhi</li><li>Tuoni</li><li>Ukko</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🦅</div><h3>Römisch</h3><p>Das kaiserliche Rom und seine Kolosseen</p><span class="ver">Liste ansehen</span></summary><ul><li>Janus</li><li>Bellona</li><li>Quirinus</li><li>Sol Invictus</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">🌳</div><h3>Nordisch</h3><p>Eis, Wälder und Yggdrasil</p><span class="ver">Liste ansehen</span></summary><ul><li>Thor</li><li>Loki</li><li>Freyja</li><li>Odin</li><li>Fenrir</li><li>Jörmungandr</li></ul></details>
-        <details class="reveal mito"><summary><div class="em">⚡</div><h3>Griechisch</h3><p>Tempel, der Olymp und der Tartaros</p><span class="ver">Liste ansehen</span></summary><ul><li>Ares</li><li>Poseidon</li><li>Hades</li><li>Hera</li><li>Zeus</li><li>Kronos</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-01.jpg" alt="Kampf gegen Ra in Deicida" width="960" height="540" loading="lazy"><div class="em">🏺</div><h3>Ägyptisch</h3><p>Wüsten, Pyramiden und die Duat</p><span class="ver">Liste ansehen</span></summary><ul><li>Sobek</li><li>Serket</li><li>Anubis</li><li>Ammit</li><li>Chons</li><li>Seth</li><li>Sachmet</li><li>Thot</li><li>Horus</li><li>Ra</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-02.jpg" alt="Kampf gegen Marduk in Deicida" width="960" height="540" loading="lazy"><div class="em">🦁</div><h3>Mesopotamisch</h3><p>Zikkurate, Babylon und der Abgrund der Tiamat</p><span class="ver">Liste ansehen</span></summary><ul><li>Mušḫuššu</li><li>Humbaba</li><li>Pazuzu</li><li>Anzu</li><li>Ischtar</li><li>Gugalanna</li><li>Nergal</li><li>Ereschkigal</li><li>Enlil</li><li>Marduk</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-03.jpg" alt="Kampf gegen Tonatiuh in Deicida" width="960" height="540" loading="lazy"><div class="em">🐍</div><h3>Aztekisch</h3><p>Dschungelpyramiden und Mictlan</p><span class="ver">Liste ansehen</span></summary><ul><li>Ahuizotl</li><li>Coyolxauhqui</li><li>Tláloc</li><li>Xipe Tótec</li><li>Itzpapálotl</li><li>Tezcatlipoca</li><li>Mictlantecuhtli</li><li>Quetzalcóatl</li><li>Huitzilopochtli</li><li>Tonatiuh</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-04.jpg" alt="Kampf gegen Itzamná in Deicida" width="960" height="540" loading="lazy"><div class="em">🌿</div><h3>Maya</h3><p>Dschungelstädte und Xibalba</p><span class="ver">Liste ansehen</span></summary><ul><li>Vucub Caquix</li><li>Zipacna</li><li>Cabracan</li><li>Chaac</li><li>Ixchel</li><li>Camazotz</li><li>Hun-Came</li><li>Ah Puch</li><li>Kukulkan</li><li>Itzamná</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-05.jpg" alt="Kampf gegen Inti in Deicida" width="960" height="540" loading="lazy"><div class="em">🏔️</div><h3>Inka</h3><p>Die Anden und Machu Picchu</p><span class="ver">Liste ansehen</span></summary><ul><li>Mama Qucha</li><li>Ccoa</li><li>Kon</li><li>Illapa</li><li>Mama Killa</li><li>Pachacamac</li><li>Supay</li><li>Huari</li><li>Viracocha</li><li>Inti</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-06.jpg" alt="Kampf gegen Die Morrígan in Deicida" width="960" height="540" loading="lazy"><div class="em">🍀</div><h3>Keltisch</h3><p>Moore, Nebel und Steinkreise</p><span class="ver">Liste ansehen</span></summary><ul><li>Der Púca</li><li>Cernunnos</li><li>Manannán mac Lir</li><li>Cerridwen</li><li>Die Banshee</li><li>Der Dullahan</li><li>Arawn</li><li>Crom Cruach</li><li>Caoránach</li><li>Die Morrígan</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-07.jpg" alt="Kampf gegen Perun in Deicida" width="960" height="540" loading="lazy"><div class="em">🐺</div><h3>Slawisch</h3><p>Finstere Wälder und Steppen</p><span class="ver">Liste ansehen</span></summary><ul><li>Baba Jaga</li><li>Die Rusalka</li><li>Der Leschi</li><li>Der Wodjanoi</li><li>Die Poludniza</li><li>Koschtschei der Unsterbliche</li><li>Marzanna</li><li>Weles</li><li>Smei Gorynytsch</li><li>Perun</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-08.jpg" alt="Kampf gegen Louhi in Deicida" width="960" height="540" loading="lazy"><div class="em">❄️</div><h3>Finnisch</h3><p>Der eisige Norden und Tuonela</p><span class="ver">Liste ansehen</span></summary><ul><li>Der Näkki</li><li>Tapio</li><li>Otso</li><li>Hiisi</li><li>Tulikettu</li><li>Der Schwan von Tuonela</li><li>Tuoni</li><li>Kalma</li><li>Iku-Turso</li><li>Louhi</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-09.jpg" alt="Kampf gegen Jupiter in Deicida" width="960" height="540" loading="lazy"><div class="em">🦅</div><h3>Römisch</h3><p>Das kaiserliche Rom und seine Kolosseen</p><span class="ver">Liste ansehen</span></summary><ul><li>Janus</li><li>Faunus</li><li>Mars</li><li>Vesta</li><li>Vulcanus</li><li>Lupa</li><li>Pluto</li><li>Saturn</li><li>Die Schlange Vom Bagradas</li><li>Jupiter</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-10.jpg" alt="Kampf gegen Odin in Deicida" width="960" height="540" loading="lazy"><div class="em">🌳</div><h3>Nordisch</h3><p>Eis, Wälder und Yggdrasil</p><span class="ver">Liste ansehen</span></summary><ul><li>Heimdall</li><li>Freyja</li><li>Skadi</li><li>Fenrir</li><li>Hel</li><li>Surt</li><li>Thor</li><li>Loki</li><li>Jörmungand</li><li>Odin</li><li>???</li></ul></details>
+        <details class="reveal mito"><summary><img class="mito-foto" src="/media/deicida-mito-11.jpg" alt="Kampf gegen Zeus in Deicida" width="960" height="540" loading="lazy"><div class="em">⚡</div><h3>Griechisch</h3><p>Tempel, der Olymp und der Tartaros</p><span class="ver">Liste ansehen</span></summary><ul><li>Apollon</li><li>Artemis</li><li>Der Minotaurus</li><li>Athene</li><li>Poseidon</li><li>Hades</li><li>Hera</li><li>Kronos</li><li>Die Hydra von Lerna</li><li>Zeus</li><li>???</li></ul></details>
       </div>
-      <p class="nota-mitos">Liste in Entwicklung, Änderungen vorbehalten.</p>
+    </div>
+  </section>
+
+  <section class="block" id="precos">
+    <div class="wrap">
+      <h2>Preis und so kaufst du</h2>
+      <p class="sub">Einmaliger Kauf im Spiel, kein Abo. Richtpreise in US-Dollar; der Store zeigt den Preis in deiner Währung.</p>
+      <div class="precos-deicida">
+        <table><thead><tr><th>Was</th><th>Was drin ist</th><th>Preis</th></tr></thead><tbody><tr><td><b>Kostenlos</b></td><td>Der Prolog und Level 1 in Ägypten, bis zum Sieg über Sobek, den ersten Boss</td><td class="v">0&nbsp;US$</td></tr><tr><td><b>Kapitel I: Ägypten</b></td><td>Die übrigen 9 Level Ägyptens, mit 9 Göttern und 2 Kräften</td><td class="v">2,99&nbsp;US$</td></tr><tr><td><b>Kapitel II bis XI</b></td><td>Eins pro Mythologie: Mesopotamien, Azteken, Maya, Inka, Kelten, Slawen, Finnen, Römer, Nordmänner und Griechen. Jedes mit 10 Leveln, 10 Göttern und 3 Kräften</td><td class="v">je 2,99&nbsp;US$</td></tr><tr class="passe"><td><b>Deicida-Pass</b></td><td>Alle 11 Kapitel auf einmal (einzeln wären es 32,89&nbsp;US$)</td><td class="v">14,99&nbsp;US$</td></tr></tbody></table>
+        <div class="como"><h3>So kaufst du</h3><ol><li>Tippe auf der Levelkarte auf ein Level mit <b>Kaufen</b>.</li><li>Wähle das Kapitel oder den <b>Deicida-Pass</b>.</li><li>Bestätige die Zahlung im App Store oder bei Google Play. Das Kapitel öffnet sich sofort.</li><li>Die Kapitel werden der Reihe nach gespielt: Um nach Mesopotamien zu kommen, besiege Ägypten.</li><li>Neues Gerät? Tippe auf demselben Bildschirm auf <b>Kauf wiederherstellen</b>.</li></ol>
+          <img src="/media/deicida-compra-en.jpg" alt="Kaufbildschirm von Deicida mit Kapitel I: Ägypten und dem Deicida-Pass" width="1280" height="720" loading="lazy"></div>
+      </div>
     </div>
   </section>
 
@@ -692,8 +714,8 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
       <p class="sub">Alles, was über Deicida gefragt wird.</p>
       <div class="faq">
         <details><summary>Wo bekomme ich Deicida?</summary><p>Im App Store für iPhone und iPad und bei Google Play für Android, kostenlos.</p></details>
-        <details><summary>Welche Mythologien wird Deicida haben?</summary><p>Elf, eine pro Kapitel, in dieser Reihenfolge: ägyptisch, mesopotamisch, aztekisch, Maya, Inka, keltisch, slawisch, finnisch, römisch, nordisch und zum Schluss griechisch. Zum Start gibt es das Ägypten-Kapitel; die anderen folgen als Updates.</p></details>
-        <details><summary>Was wird es kosten?</summary><p>Der Download ist kostenlos und schaltet den Prolog und das erste Level in Ägypten frei. Die Level 2 bis 10 kommen bald und werden per In-App-Kauf freigeschaltet. Ohne Werbung und ohne Energie.</p></details>
+        <details><summary>Welche Mythologien wird Deicida haben?</summary><p>Elf, eine pro Kapitel, in dieser Reihenfolge: ägyptisch, mesopotamisch, aztekisch, Maya, Inka, keltisch, slawisch, finnisch, römisch, nordisch und zuletzt griechisch. Alle sind schon im Spiel: 110 Level, jedes mit einem Gott als Boss.</p></details>
+        <details><summary>Was kostet es?</summary><p>Der Download ist kostenlos, und der Prolog und das erste Level in Ägypten (bis zum Sieg über Sobek) kosten nichts. Jedes Kapitel ist ein einmaliger Kauf im Spiel (Richtpreis 2,99 US$), und der Deicida-Pass schaltet alle 11 Kapitel frei (14,99 US$). Der Store zeigt den Preis in deiner Währung. Kein Abo, keine Werbung, keine Energie.</p></details>
         <details><summary>Gibt es das für iPhone und Android?</summary><p>Ja, es ist im App Store und bei Google Play.</p></details>
         <details><summary>Stammen die Bilder aus dem Spiel?</summary><p>Ja. Die Fotos und Videos auf dieser Seite stammen aus dem Spiel selbst.</p></details>
         <details><summary>Funktioniert es ohne Internet?</summary><p>Ja. Das ganze Spiel wird offline funktionieren, der Fortschritt wird auf dem Gerät gespeichert.</p></details>
