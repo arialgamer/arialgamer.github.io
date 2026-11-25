@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "games": [
   {
    "id": "gol",
@@ -27,10 +27,10 @@
    "name": "Vôlei Total",
    "icon": "volei.webp",
    "apple": "6836941401",
-   "play": null,
+   "play": "com.arial.voleitotal",
    "state": {
     "ios": "na_loja",
-    "android": "chegando"
+    "android": "na_loja"
    },
    "pitch": {
     "pt": "Vôlei de arcade 6 contra 6, na quadra e na praia.",
@@ -47,11 +47,11 @@
    "id": "deicida",
    "name": "Deicida",
    "icon": "deicida.webp",
-   "apple": null,
+   "apple": "6835123729",
    "play": "com.arial.deicida",
    "adult": true,
    "state": {
-    "ios": "chegando",
+    "ios": "na_loja",
     "android": "na_loja"
    },
    "pitch": {
@@ -112,10 +112,10 @@
    "name": "Xodó",
    "icon": "xodo.webp",
    "apple": "6836941077",
-   "play": null,
+   "play": "com.arial.xodo",
    "state": {
     "ios": "na_loja",
-    "android": "chegando"
+    "android": "na_loja"
    },
    "pitch": {
     "pt": "Cuide do seu bichinho virtual todos os dias.",
