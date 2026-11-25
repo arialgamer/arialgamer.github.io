@@ -3,7 +3,7 @@
 > Arial Gamer is an independent mobile game studio from Brazil. Short, joyful games for iPhone and Android, with no ads, no sign-up and no data collection, in 8 languages (English, Portuguese, Spanish, German, French, Italian, Japanese and Chinese). Website: https://arialgamer.com.br/
 
 ## Games
-- [Deicida](https://arialgamer.com.br/en/deicida/): cinematic hack and slash, a mortal against the gods of 11 mythologies. Free on Android; iPhone coming soon.
+- [Deicida](https://arialgamer.com.br/en/deicida/): cinematic hack and slash, a mortal against the gods of 11 mythologies. Free on iPhone and Android.
 - [Rota Estelar](https://arialgamer.com.br/en/rota-estelar/): family space shooter through 31 real planets, giant bosses and 10 ships. iPhone and Android.
 - [Vôlei Total](https://arialgamer.com.br/en/volei-total/): arcade volleyball, 6v6 indoor and 2v2 beach, Super Spike, 2 players on one phone. iPhone and Android.
 - [Gol de Placa](https://arialgamer.com.br/en/gol-de-placa/): 3D penalties and free kicks, be the kicker or the goalkeeper, online with a friend. iPhone and Android.

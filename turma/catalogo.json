@@ -47,11 +47,11 @@
    "id": "deicida",
    "name": "Deicida",
    "icon": "deicida.webp",
-   "apple": null,
+   "apple": "6835123729",
    "play": "com.arial.deicida",
    "adult": true,
    "state": {
-    "ios": "chegando",
+    "ios": "na_loja",
     "android": "na_loja"
    },
    "pitch": {
