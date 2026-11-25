@@ -1,0 +1,175 @@
+{
+ "version": 1,
+ "games": [
+  {
+   "id": "gol",
+   "name": "Gol de Placa",
+   "icon": "gol.webp",
+   "apple": "6823608331",
+   "play": "com.arial.goldeplaca",
+   "state": {
+    "ios": "na_loja",
+    "android": "na_loja"
+   },
+   "pitch": {
+    "pt": "Futebol com narrador, comemorações e partidas de verdade.",
+    "en": "Soccer with a commentator, celebrations and real matches.",
+    "es": "Fútbol con narrador, celebraciones y partidos de verdad.",
+    "de": "Fußball mit Kommentator, Jubel und echten Spielen.",
+    "fr": "Du foot avec commentateur, célébrations et vrais matchs.",
+    "it": "Calcio con telecronista, esultanze e partite vere.",
+    "zh": "带解说、庆祝动作和真实比赛的足球游戏。",
+    "ja": "実況、ゴールパフォーマンス、本格的な試合が楽しめるサッカー。"
+   }
+  },
+  {
+   "id": "volei",
+   "name": "Vôlei Total",
+   "icon": "volei.webp",
+   "apple": "6836941401",
+   "play": null,
+   "state": {
+    "ios": "na_loja",
+    "android": "chegando"
+   },
+   "pitch": {
+    "pt": "Vôlei de arcade 6 contra 6, na quadra e na praia.",
+    "en": "Arcade volleyball, 6 vs 6, indoor and on the beach.",
+    "es": "Vóley arcade 6 contra 6, en pista y en la playa.",
+    "de": "Arcade-Volleyball 6 gegen 6, in der Halle und am Strand.",
+    "fr": "Volley arcade à 6 contre 6, en salle et à la plage.",
+    "it": "Pallavolo arcade 6 contro 6, in palestra e in spiaggia.",
+    "zh": "6对6街机排球，室内和沙滩都能打。",
+    "ja": "6対6のアーケードバレー。インドアもビーチも。"
+   }
+  },
+  {
+   "id": "deicida",
+   "name": "Deicida",
+   "icon": "deicida.webp",
+   "apple": null,
+   "play": "com.arial.deicida",
+   "adult": true,
+   "state": {
+    "ios": "chegando",
+    "android": "na_loja"
+   },
+   "pitch": {
+    "pt": "Ação contra os deuses de várias mitologias.",
+    "en": "Action against the gods of many mythologies.",
+    "es": "Acción contra los dioses de muchas mitologías.",
+    "de": "Action gegen die Götter vieler Mythologien.",
+    "fr": "De l'action contre les dieux de nombreuses mythologies.",
+    "it": "Azione contro gli dèi di molte mitologie.",
+    "zh": "挑战多个神话中的众神的动作游戏。",
+    "ja": "さまざまな神話の神々に挑むアクション。"
+   }
+  },
+  {
+   "id": "rota",
+   "name": "Rota Estelar",
+   "icon": "rota.webp",
+   "apple": "6833923100",
+   "play": "com.arial.rotaestelar",
+   "state": {
+    "ios": "na_loja",
+    "android": "na_loja"
+   },
+   "pitch": {
+    "pt": "Pilote sua nave, desvie e atire pelo espaço.",
+    "en": "Pilot your ship, dodge and shoot across space.",
+    "es": "Pilota tu nave, esquiva y dispara por el espacio.",
+    "de": "Steuere dein Schiff, weiche aus und schieße durchs All.",
+    "fr": "Pilotez votre vaisseau, esquivez et tirez dans l'espace.",
+    "it": "Pilota la tua nave, schiva e spara nello spazio.",
+    "zh": "驾驶飞船，在太空中闪避和射击。",
+    "ja": "宇宙船を操縦して、よけて、撃ちまくろう。"
+   }
+  },
+  {
+   "id": "gelada",
+   "name": "Gelada",
+   "icon": "gelada.webp",
+   "apple": "6819882963",
+   "play": "com.arial.gelada",
+   "adult": true,
+   "state": {
+    "ios": "na_loja",
+    "android": "na_loja"
+   },
+   "pitch": {
+    "pt": "Bar virtual, só para maiores de 18 anos.",
+    "en": "A virtual bar, for adults 18+ only.",
+    "es": "Bar virtual, solo para mayores de 18 años.",
+    "de": "Eine virtuelle Bar, nur für Erwachsene ab 18.",
+    "fr": "Un bar virtuel, réservé aux 18 ans et plus.",
+    "it": "Un bar virtuale, solo per maggiori di 18 anni.",
+    "zh": "虚拟酒吧，仅限18岁以上。",
+    "ja": "18歳以上限定のバーチャルバー。"
+   }
+  },
+  {
+   "id": "esconde",
+   "name": "Esconde-Esconde",
+   "icon": "esconde.webp",
+   "apple": "6819893974",
+   "play": "com.arial.escondeesconde",
+   "state": {
+    "ios": "na_loja",
+    "android": "na_loja"
+   },
+   "pitch": {
+    "pt": "Esconde-esconde para a família, em muitos lugares diferentes.",
+    "en": "Hide-and-seek for the whole family, in lots of places.",
+    "es": "Escondite para toda la familia, en muchos lugares.",
+    "de": "Verstecken für die ganze Familie, an vielen Orten.",
+    "fr": "Cache-cache pour toute la famille, dans plein de lieux.",
+    "it": "Nascondino per tutta la famiglia, in tanti posti diversi.",
+    "zh": "全家一起玩的捉迷藏，场景超多。",
+    "ja": "家族みんなで遊べるかくれんぼ。舞台もたくさん。"
+   }
+  },
+  {
+   "id": "xodo",
+   "name": "Xodó",
+   "icon": "xodo.webp",
+   "apple": "6836941077",
+   "play": null,
+   "state": {
+    "ios": "na_loja",
+    "android": "chegando"
+   },
+   "pitch": {
+    "pt": "Cuide do seu bichinho virtual todos os dias.",
+    "en": "Take care of your virtual pet every day.",
+    "es": "Cuida a tu mascota virtual todos los días.",
+    "de": "Kümmere dich jeden Tag um dein virtuelles Haustier.",
+    "fr": "Prenez soin de votre animal virtuel chaque jour.",
+    "it": "Prenditi cura del tuo cucciolo virtuale ogni giorno.",
+    "zh": "每天照顾你的虚拟宠物。",
+    "ja": "毎日バーチャルペットのお世話をしよう。"
+   }
+  },
+  {
+   "id": "acervo",
+   "name": "Acervo",
+   "icon": "acervo.webp",
+   "apple": "6832553837",
+   "play": "com.arial.acervo",
+   "state": {
+    "ios": "na_loja",
+    "android": "na_loja"
+   },
+   "pitch": {
+    "pt": "Organize todas as suas coleções num lugar só.",
+    "en": "Organize all your collections in one place.",
+    "es": "Organiza todas tus colecciones en un solo lugar.",
+    "de": "Organisiere alle deine Sammlungen an einem Ort.",
+    "fr": "Organisez toutes vos collections au même endroit.",
+    "it": "Organizza tutte le tue collezioni in un unico posto.",
+    "zh": "把你所有的收藏整理在一个地方。",
+    "ja": "すべてのコレクションをひとつの場所で管理。"
+   }
+  }
+ ]
+}
