@@ -16,6 +16,7 @@
 (function () {
   var ua = navigator.userAgent;
   if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/' + (/^pt/i.test(navigator.language || '') ? 'br/' : '') + 'app/id6836941401');
+  else if (/Android/.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.arial.voleitotal');
 })();
 </script>
 <style>
@@ -38,7 +39,7 @@ small a { color: #fff }
   <h1>Vôlei Total</h1>
   <p>Vôlei rápido e bonito: saque, corte e bloqueio 🏐</p>
   <a class="loja" href="https://apps.apple.com/br/app/id6836941401">App Store</a>
-  <span class="loja breve">Google Play · em breve</span>
+  <a class="loja" href="https://play.google.com/store/apps/details?id=com.arial.voleitotal">Google Play</a>
   <img class="qr" src="/volei-total/baixar/qr.png" alt="QR code para baixar o Vôlei Total">
   <small>Aponte a câmera do celular · Point your phone camera</small>
   <small><a href="/volei-total/">Conheça o Vôlei Total →</a></small>

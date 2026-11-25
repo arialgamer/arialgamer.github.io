@@ -16,6 +16,7 @@
 (function () {
   var ua = navigator.userAgent;
   if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace('https://apps.apple.com/' + (/^pt/i.test(navigator.language || '') ? 'br/' : '') + 'app/id6833923100');
+  else if (/Android/.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.arial.rotaestelar');
 })();
 </script>
 <style>

@@ -5,9 +5,9 @@
 ## Games
 - [Deicida](https://arialgamer.com.br/en/deicida/): cinematic hack and slash, a mortal against the gods of 11 mythologies. Free on Android; iPhone coming soon.
 - [Rota Estelar](https://arialgamer.com.br/en/rota-estelar/): family space shooter through 31 real planets, giant bosses and 10 ships. iPhone and Android.
-- [Vôlei Total](https://arialgamer.com.br/en/volei-total/): arcade volleyball, 6v6 indoor and 2v2 beach, Super Spike, 2 players on one phone. iPhone; Android coming soon.
+- [Vôlei Total](https://arialgamer.com.br/en/volei-total/): arcade volleyball, 6v6 indoor and 2v2 beach, Super Spike, 2 players on one phone. iPhone and Android.
 - [Gol de Placa](https://arialgamer.com.br/en/gol-de-placa/): 3D penalties and free kicks, be the kicker or the goalkeeper, online with a friend. iPhone and Android.
-- [Xodó](https://arialgamer.com.br/en/xodo/): 90s keychain virtual pet with Brazilian animals (capybara, tamarin, armadillo). It never dies. iPhone; Android coming soon.
+- [Xodó](https://arialgamer.com.br/en/xodo/): 90s keychain virtual pet with Brazilian animals (capybara, tamarin, armadillo). It never dies. iPhone and Android.
 - [Esconde-Esconde](https://arialgamer.com.br/en/esconde-esconde/): hide and seek in 24 places, against the computer or a friend. iPhone and Android.
 - [Gelada](https://arialgamer.com.br/en/gelada/): virtual beer and cocktail simulator, tilt the phone to drink, 100 drinks. iPhone and Android.
 
