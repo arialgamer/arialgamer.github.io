@@ -1,5 +1,5 @@
 {
- "version": 1,
+ "version": 2,
  "games": [
   {
    "id": "gol",
@@ -27,10 +27,10 @@
    "name": "Vôlei Total",
    "icon": "volei.webp",
    "apple": "6836941401",
-   "play": "com.arial.voleitotal",
+   "play": null,
    "state": {
     "ios": "na_loja",
-    "android": "na_loja"
+    "android": "chegando"
    },
    "pitch": {
     "pt": "Vôlei de arcade 6 contra 6, na quadra e na praia.",
@@ -47,11 +47,11 @@
    "id": "deicida",
    "name": "Deicida",
    "icon": "deicida.webp",
-   "apple": "6835123729",
+   "apple": null,
    "play": "com.arial.deicida",
    "adult": true,
    "state": {
-    "ios": "na_loja",
+    "ios": "chegando",
     "android": "na_loja"
    },
    "pitch": {
@@ -87,28 +87,6 @@
    }
   },
   {
-   "id": "gelada",
-   "name": "Gelada",
-   "icon": "gelada.webp",
-   "apple": "6819882963",
-   "play": "com.arial.gelada",
-   "adult": true,
-   "state": {
-    "ios": "na_loja",
-    "android": "na_loja"
-   },
-   "pitch": {
-    "pt": "Bar virtual, só para maiores de 18 anos.",
-    "en": "A virtual bar, for adults 18+ only.",
-    "es": "Bar virtual, solo para mayores de 18 años.",
-    "de": "Eine virtuelle Bar, nur für Erwachsene ab 18.",
-    "fr": "Un bar virtuel, réservé aux 18 ans et plus.",
-    "it": "Un bar virtuale, solo per maggiori di 18 anni.",
-    "zh": "虚拟酒吧，仅限18岁以上。",
-    "ja": "18歳以上限定のバーチャルバー。"
-   }
-  },
-  {
    "id": "esconde",
    "name": "Esconde-Esconde",
    "icon": "esconde.webp",
@@ -134,10 +112,10 @@
    "name": "Xodó",
    "icon": "xodo.webp",
    "apple": "6836941077",
-   "play": "com.arial.xodo",
+   "play": null,
    "state": {
     "ios": "na_loja",
-    "android": "na_loja"
+    "android": "chegando"
    },
    "pitch": {
     "pt": "Cuide do seu bichinho virtual todos os dias.",
