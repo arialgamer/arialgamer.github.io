@@ -71,7 +71,7 @@ T = {
   linhas={
    "deicida": ("Grátis", "iPhone, iPad e Android. Prólogo e 1ª fase liberados; as fases 2 a 10 chegam por compra dentro do jogo."),
    "rota": ("R$ 4,90", "iPhone, iPad e Android. Jogo completo, sem compras dentro do app."),
-   "volei": ("R$ 3,90", "iPhone, iPad e Android. Jogo completo, sem compras dentro do app."),
+   "volei": ("R$ 4,90", "iPhone, iPad e Android. Jogo completo, sem compras dentro do app."),
    "gol": ("R$ 3,90", "iPhone, iPad e Android. Tudo liberado, sem compras dentro do app."),
    "xodo": ("R$ 2,90", "iPhone, iPad e Android. Jogo completo, sem compras dentro do app."),
    "esconde": ("R$ 2,90", "iPhone, iPad e Android. Os 24 lugares liberados, sem compras dentro do app."),
