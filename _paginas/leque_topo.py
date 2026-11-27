@@ -69,3 +69,62 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ---------- 2ª versão (27/11): sem o leque inteiro abrir no mouse; o jogo sob o mouse vem para a frente ----------
+DESTAQUE = """/* fan-destaque: o celular sob o mouse vem para a frente, com o nome do jogo; os outros escurecem */
+@media (min-width: 961px) { .fan { left: 56px } }
+.fan .phone { cursor: pointer; transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .3s }
+.fan .phone .screen { transition: box-shadow .3s }
+.fan:hover .phone:not(:hover) { filter: brightness(.5) saturate(.7) }
+.fan .phone:hover { z-index: 30 !important }
+.fan .phone:hover .screen { box-shadow: 0 0 0 3px var(--gold), 0 18px 50px rgba(255,210,63,.35) }
+.fan .phone::after { content: attr(data-nome); position: absolute; left: 50%; bottom: -46px; transform: translateX(-50%); white-space: nowrap; padding: 6px 14px; border-radius: 999px; background: var(--gold); color: #1b1300; font-weight: 800; font-size: 15px; opacity: 0; transition: opacity .25s; pointer-events: none }
+.fan .phone:hover::after { opacity: 1 }
+@media (hover: none) { .fan:hover .phone:not(:hover) { filter: none } }
+"""
+JS = """
+// Leque do topo: o jogo sob o mouse vem para a frente e o vídeo dele recomeça
+document.querySelectorAll('.fan .phone').forEach((p) => {
+  const m = p.querySelector('video, img'); if (!m) return;
+  p.dataset.nome = (m.getAttribute('aria-label') || m.getAttribute('alt') || '').split(':')[0].trim();
+  p.addEventListener('mouseenter', () => { const v = p.querySelector('video'); if (v && !reduce) { v.preload = 'auto'; v.currentTime = 0; v.play().catch(() => {}); } });
+});
+"""
+
+
+def hover_rules():
+    out = []
+    for i in range(1, 10):
+        d = i - 5
+        x, r, y, s = POS[abs(d)]
+        sx = "-" if d < 0 else ""
+        # vem para a frente: menos giro, sobe e cresce, sem sair do lugar
+        t = (f"translateX({sx}{x}%) rotate({sx}{round(r * .3, 1)}deg) translateY({y - 46}px) scale({min(1.06, round(s + .24, 2))})"
+             if d else "translateY(-34px) scale(1.04)")
+        out.append(f".fan .phone:nth-child({i}):hover {{ transform: {t} }}")
+    return out
+
+
+def destaque():
+    for rel in ARQS:
+        p = os.path.join(RAIZ, rel)
+        s = open(p, encoding="utf-8", newline="").read()
+        if "fan-destaque" in s:
+            print(rel, "destaque já estava")
+            continue
+        nl = "\r\n" if "\r\n" in s else "\n"
+        # tira todas as regras antigas de ".fan:hover .phone:nth-child(n)" (inclusive as do leque de 5, que puxavam o Deicida para a direita)
+        s = re.sub(r"\.fan:hover \.phone:nth-child\(\d\) \{[^}]*\}[ \t]*(\r?\n)?", "", s)
+        css = (DESTAQUE + "\n".join(hover_rules()) + "\n").replace("\n", nl)
+        i = s.index("</style>")
+        s = s[:i] + css + s[i:]
+        j = s.index("document.querySelectorAll('video[data-auto]')")
+        j = s.index(nl, j) + len(nl)
+        s = s[:j] + JS.replace("\n", nl) + s[j:]
+        open(p, "w", encoding="utf-8", newline="").write(s)
+        print(rel, "destaque ok")
+
+
+if __name__ == "__main__" and len(__import__("sys").argv) > 1 and __import__("sys").argv[1] == "destaque":
+    destaque()

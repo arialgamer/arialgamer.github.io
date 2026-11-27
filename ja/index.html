@@ -378,10 +378,6 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-s
 .fan .phone:nth-child(3) { transform: translateY(-14px); z-index: 5 }
 .fan .phone:nth-child(4) { transform: translateX(54%) rotate(7deg) translateY(26px) scale(.9); z-index: 4 }
 .fan .phone:nth-child(5) { transform: translateX(104%) rotate(14deg) translateY(70px) scale(.78); z-index: 2 }
-.fan:hover .phone:nth-child(1) { transform: translateX(-114%) rotate(-16deg) translateY(62px) scale(.78) }
-.fan:hover .phone:nth-child(2) { transform: translateX(-60%) rotate(-9deg) translateY(20px) scale(.9) }
-.fan:hover .phone:nth-child(4) { transform: translateX(60%) rotate(9deg) translateY(20px) scale(.9) }
-.fan:hover .phone:nth-child(5) { transform: translateX(114%) rotate(16deg) translateY(62px) scale(.78) }
 
 .phone { aspect-ratio: 9 / 19.5; border-radius: 40px; padding: 9px; background: linear-gradient(145deg, #3a3550, #15121f 60%); box-shadow: 0 40px 80px rgba(0,0,0,.55), inset 0 0 0 1.5px rgba(255,255,255,.14) }
 .phone .screen { position: relative; height: 100%; border-radius: 32px; overflow: hidden; background: #000 }
@@ -656,14 +652,6 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .fan .phone:nth-child(7) { transform: translateX(94%) rotate(12deg) translateY(60px) scale(0.76); z-index: 4 }
 .fan .phone:nth-child(8) { transform: translateX(132%) rotate(17deg) translateY(100px) scale(0.66); z-index: 2 }
 .fan .phone:nth-child(9) { transform: translateX(164%) rotate(22deg) translateY(142px) scale(0.56); z-index: 0 }
-.fan:hover .phone:nth-child(1) { transform: translateX(-176%) rotate(-24deg) translateY(136px) scale(0.56) }
-.fan:hover .phone:nth-child(2) { transform: translateX(-142%) rotate(-19deg) translateY(94px) scale(0.66) }
-.fan:hover .phone:nth-child(3) { transform: translateX(-102%) rotate(-14deg) translateY(54px) scale(0.76) }
-.fan:hover .phone:nth-child(4) { transform: translateX(-56%) rotate(-8deg) translateY(16px) scale(0.88) }
-.fan:hover .phone:nth-child(6) { transform: translateX(56%) rotate(8deg) translateY(16px) scale(0.88) }
-.fan:hover .phone:nth-child(7) { transform: translateX(102%) rotate(14deg) translateY(54px) scale(0.76) }
-.fan:hover .phone:nth-child(8) { transform: translateX(142%) rotate(19deg) translateY(94px) scale(0.66) }
-.fan:hover .phone:nth-child(9) { transform: translateX(176%) rotate(24deg) translateY(136px) scale(0.56) }
 @media (max-width: 480px) { .fan .phone { width: 120px } .fan .phone:nth-child(1) { transform: translateX(-128%) rotate(-19deg) translateY(80px) scale(0.54) } .fan .phone:nth-child(2) { transform: translateX(-104%) rotate(-15deg) translateY(58px) scale(0.62) } .fan .phone:nth-child(3) { transform: translateX(-76%) rotate(-10deg) translateY(36px) scale(0.72) } .fan .phone:nth-child(4) { transform: translateX(-42%) rotate(-5deg) translateY(14px) scale(0.85) } .fan .phone:nth-child(5) { transform: translateY(-14px) } .fan .phone:nth-child(6) { transform: translateX(42%) rotate(5deg) translateY(14px) scale(0.85) } .fan .phone:nth-child(7) { transform: translateX(76%) rotate(10deg) translateY(36px) scale(0.72) } .fan .phone:nth-child(8) { transform: translateX(104%) rotate(15deg) translateY(58px) scale(0.62) } .fan .phone:nth-child(9) { transform: translateX(128%) rotate(19deg) translateY(80px) scale(0.54) } }
 .fan .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 .facts .wrap { grid-template-columns: repeat(2, 1fr) }
@@ -754,6 +742,25 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 @keyframes noadsBrilho { 0%, 100% { box-shadow: 0 0 12px rgba(255,210,63,.2) } 50% { box-shadow: 0 0 0 4px rgba(255,210,63,.15), 0 0 26px rgba(255,210,63,.55) } }
 @media (prefers-reduced-motion: reduce) { .noads, .luz { animation: none } }
 @media (max-width: 560px) { .grid6 { grid-template-columns: repeat(2, 1fr) !important } .grid6 a { aspect-ratio: 4 / 3 } }
+/* fan-destaque: o celular sob o mouse vem para a frente, com o nome do jogo; os outros escurecem */
+@media (min-width: 961px) { .fan { left: 56px } }
+.fan .phone { cursor: pointer; transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .3s }
+.fan .phone .screen { transition: box-shadow .3s }
+.fan:hover .phone:not(:hover) { filter: brightness(.5) saturate(.7) }
+.fan .phone:hover { z-index: 30 !important }
+.fan .phone:hover .screen { box-shadow: 0 0 0 3px var(--gold), 0 18px 50px rgba(255,210,63,.35) }
+.fan .phone::after { content: attr(data-nome); position: absolute; left: 50%; bottom: -46px; transform: translateX(-50%); white-space: nowrap; padding: 6px 14px; border-radius: 999px; background: var(--gold); color: #1b1300; font-weight: 800; font-size: 15px; opacity: 0; transition: opacity .25s; pointer-events: none }
+.fan .phone:hover::after { opacity: 1 }
+@media (hover: none) { .fan:hover .phone:not(:hover) { filter: none } }
+.fan .phone:nth-child(1):hover { transform: translateX(-164%) rotate(-6.6deg) translateY(96px) scale(0.8) }
+.fan .phone:nth-child(2):hover { transform: translateX(-132%) rotate(-5.1deg) translateY(54px) scale(0.9) }
+.fan .phone:nth-child(3):hover { transform: translateX(-94%) rotate(-3.6deg) translateY(14px) scale(1.0) }
+.fan .phone:nth-child(4):hover { transform: translateX(-50%) rotate(-1.8deg) translateY(-24px) scale(1.06) }
+.fan .phone:nth-child(5):hover { transform: translateY(-34px) scale(1.04) }
+.fan .phone:nth-child(6):hover { transform: translateX(50%) rotate(1.8deg) translateY(-24px) scale(1.06) }
+.fan .phone:nth-child(7):hover { transform: translateX(94%) rotate(3.6deg) translateY(14px) scale(1.0) }
+.fan .phone:nth-child(8):hover { transform: translateX(132%) rotate(5.1deg) translateY(54px) scale(0.9) }
+.fan .phone:nth-child(9):hover { transform: translateX(164%) rotate(6.6deg) translateY(96px) scale(0.8) }
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -1523,6 +1530,13 @@ const playIfVisible = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting && !reduce) { v.preload = 'auto'; v.play().catch(() => {}); } else { v.pause(); }
 }), { threshold: .35 });
 document.querySelectorAll('video[data-auto]').forEach((v) => { v.muted = true; v.defaultMuted = true; v.volume = 0; playIfVisible.observe(v); });
+
+// Leque do topo: o jogo sob o mouse vem para a frente e o vídeo dele recomeça
+document.querySelectorAll('.fan .phone').forEach((p) => {
+  const m = p.querySelector('video, img'); if (!m) return;
+  p.dataset.nome = (m.getAttribute('aria-label') || m.getAttribute('alt') || '').split(':')[0].trim();
+  p.addEventListener('mouseenter', () => { const v = p.querySelector('video'); if (v && !reduce) { v.preload = 'auto'; v.currentTime = 0; v.play().catch(() => {}); } });
+});
 
 // Players dos jogos: troca de vídeo, barra de progresso, avança sozinho e liga o som
 document.querySelectorAll('[data-player]').forEach((p) => {
