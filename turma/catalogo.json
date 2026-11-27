@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "games": [
   {
    "id": "gol",
@@ -41,28 +41,6 @@
     "it": "Pallavolo arcade 6 contro 6, in palestra e in spiaggia.",
     "zh": "6对6街机排球，室内和沙滩都能打。",
     "ja": "6対6のアーケードバレー。インドアもビーチも。"
-   }
-  },
-  {
-   "id": "deicida",
-   "name": "Deicida",
-   "icon": "deicida.webp",
-   "apple": "6835123729",
-   "play": "com.arial.deicida",
-   "adult": true,
-   "state": {
-    "ios": "na_loja",
-    "android": "na_loja"
-   },
-   "pitch": {
-    "pt": "Ação contra os deuses de várias mitologias.",
-    "en": "Action against the gods of many mythologies.",
-    "es": "Acción contra los dioses de muchas mitologías.",
-    "de": "Action gegen die Götter vieler Mythologien.",
-    "fr": "De l'action contre les dieux de nombreuses mythologies.",
-    "it": "Azione contro gli dèi di molte mitologie.",
-    "zh": "挑战多个神话中的众神的动作游戏。",
-    "ja": "さまざまな神話の神々に挑むアクション。"
    }
   },
   {
