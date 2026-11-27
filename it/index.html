@@ -647,20 +647,25 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .xodo { --c: #b99bff; --c-ink: #1c0b3d; --glow: rgba(180,140,255,.22); --gx: 72% }
 .volei .screen img, .xodo .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 @media (min-width: 1241px) { .fan .phone { width: 210px } }
-.fan .phone:nth-child(1) { transform: translateX(-146%) rotate(-19deg) translateY(104px) scale(.66); z-index: 1 }
-.fan .phone:nth-child(2) { transform: translateX(-104%) rotate(-13deg) translateY(62px) scale(.76); z-index: 2 }
-.fan .phone:nth-child(3) { transform: translateX(-54%) rotate(-6deg) translateY(22px) scale(.88); z-index: 4 }
-.fan .phone:nth-child(4) { transform: translateY(-14px); z-index: 6 }
-.fan .phone:nth-child(5) { transform: translateX(54%) rotate(6deg) translateY(22px) scale(.88); z-index: 5 }
-.fan .phone:nth-child(6) { transform: translateX(104%) rotate(13deg) translateY(62px) scale(.76); z-index: 3 }
-.fan .phone:nth-child(7) { transform: translateX(146%) rotate(19deg) translateY(104px) scale(.66); z-index: 1 }
-.fan:hover .phone:nth-child(1) { transform: translateX(-156%) rotate(-21deg) translateY(96px) scale(.66) }
-.fan:hover .phone:nth-child(2) { transform: translateX(-112%) rotate(-15deg) translateY(56px) scale(.76) }
-.fan:hover .phone:nth-child(3) { transform: translateX(-60%) rotate(-8deg) translateY(16px) scale(.88) }
-.fan:hover .phone:nth-child(5) { transform: translateX(60%) rotate(8deg) translateY(16px) scale(.88) }
-.fan:hover .phone:nth-child(6) { transform: translateX(112%) rotate(15deg) translateY(56px) scale(.76) }
-.fan:hover .phone:nth-child(7) { transform: translateX(156%) rotate(21deg) translateY(96px) scale(.66) }
-@media (max-width: 480px) { .fan .phone { width: 126px } .fan .phone:nth-child(1) { transform: translateX(-118%) rotate(-16deg) translateY(66px) scale(.64) } .fan .phone:nth-child(2) { transform: translateX(-86%) rotate(-11deg) translateY(42px) scale(.74) } .fan .phone:nth-child(3) { transform: translateX(-46%) rotate(-5deg) translateY(16px) scale(.86) } .fan .phone:nth-child(5) { transform: translateX(46%) rotate(5deg) translateY(16px) scale(.86) } .fan .phone:nth-child(6) { transform: translateX(86%) rotate(11deg) translateY(42px) scale(.74) } .fan .phone:nth-child(7) { transform: translateX(118%) rotate(16deg) translateY(66px) scale(.64) } }
+.fan .phone:nth-child(1) { transform: translateX(-164%) rotate(-22deg) translateY(142px) scale(0.56); z-index: 1 }
+.fan .phone:nth-child(2) { transform: translateX(-132%) rotate(-17deg) translateY(100px) scale(0.66); z-index: 3 }
+.fan .phone:nth-child(3) { transform: translateX(-94%) rotate(-12deg) translateY(60px) scale(0.76); z-index: 5 }
+.fan .phone:nth-child(4) { transform: translateX(-50%) rotate(-6deg) translateY(22px) scale(0.88); z-index: 7 }
+.fan .phone:nth-child(5) { transform: translateY(-14px); z-index: 9 }
+.fan .phone:nth-child(6) { transform: translateX(50%) rotate(6deg) translateY(22px) scale(0.88); z-index: 6 }
+.fan .phone:nth-child(7) { transform: translateX(94%) rotate(12deg) translateY(60px) scale(0.76); z-index: 4 }
+.fan .phone:nth-child(8) { transform: translateX(132%) rotate(17deg) translateY(100px) scale(0.66); z-index: 2 }
+.fan .phone:nth-child(9) { transform: translateX(164%) rotate(22deg) translateY(142px) scale(0.56); z-index: 0 }
+.fan:hover .phone:nth-child(1) { transform: translateX(-176%) rotate(-24deg) translateY(136px) scale(0.56) }
+.fan:hover .phone:nth-child(2) { transform: translateX(-142%) rotate(-19deg) translateY(94px) scale(0.66) }
+.fan:hover .phone:nth-child(3) { transform: translateX(-102%) rotate(-14deg) translateY(54px) scale(0.76) }
+.fan:hover .phone:nth-child(4) { transform: translateX(-56%) rotate(-8deg) translateY(16px) scale(0.88) }
+.fan:hover .phone:nth-child(6) { transform: translateX(56%) rotate(8deg) translateY(16px) scale(0.88) }
+.fan:hover .phone:nth-child(7) { transform: translateX(102%) rotate(14deg) translateY(54px) scale(0.76) }
+.fan:hover .phone:nth-child(8) { transform: translateX(142%) rotate(19deg) translateY(94px) scale(0.66) }
+.fan:hover .phone:nth-child(9) { transform: translateX(176%) rotate(24deg) translateY(136px) scale(0.56) }
+@media (max-width: 480px) { .fan .phone { width: 120px } .fan .phone:nth-child(1) { transform: translateX(-128%) rotate(-19deg) translateY(80px) scale(0.54) } .fan .phone:nth-child(2) { transform: translateX(-104%) rotate(-15deg) translateY(58px) scale(0.62) } .fan .phone:nth-child(3) { transform: translateX(-76%) rotate(-10deg) translateY(36px) scale(0.72) } .fan .phone:nth-child(4) { transform: translateX(-42%) rotate(-5deg) translateY(14px) scale(0.85) } .fan .phone:nth-child(5) { transform: translateY(-14px) } .fan .phone:nth-child(6) { transform: translateX(42%) rotate(5deg) translateY(14px) scale(0.85) } .fan .phone:nth-child(7) { transform: translateX(76%) rotate(10deg) translateY(36px) scale(0.72) } .fan .phone:nth-child(8) { transform: translateX(104%) rotate(15deg) translateY(58px) scale(0.62) } .fan .phone:nth-child(9) { transform: translateX(128%) rotate(19deg) translateY(80px) scale(0.54) } }
+.fan .screen img { width: 100%; height: 100%; object-fit: cover; display: block }
 .facts .wrap { grid-template-columns: repeat(2, 1fr) }
 @media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(5, 1fr) } }
 @media (min-width: 1180px) { .facts .wrap { grid-template-columns: repeat(5, 1fr) } }
@@ -836,11 +841,13 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
           </div>
         </div>
       </div>
-      <div class="fan" aria-label="Video dei sette giochi">
+      <div class="fan" aria-label="Video dei nove giochi">
+        <div class="phone"><div class="screen"><img src="/media/turma-topo.jpg" alt="Turma Arial" loading="lazy" width="540" height="1170"></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/xodo-topo.jpg" aria-label="Xodó"><source src="/media/topo/xodo-retro-2.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/esconde-lua.jpg" aria-label="Esconde-Esconde: nascosto sulla luna"><source src="/media/topo/esconde-lua.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/rota-nave.jpg" aria-label="Rota Estelar: Creature"><source src="/media/topo/rota-nave.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/deicida-chamada.jpg" aria-label="Deicida"><source src="/media/topo/deicida-chamada.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><img src="/media/golaco-topo.jpg" alt="Golaço Total" loading="lazy" width="540" height="1170"></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/volei-topo.jpg" aria-label="Vôlei Total"><source src="/media/topo/volei-quadra-2.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gol-adulta.jpg" aria-label="Gol de Placa: calcio di rigore"><source src="/media/topo/gol-adulta.mp4" type="video/mp4"></video></div></div>
         <div class="phone"><div class="screen"><video data-auto muted loop playsinline preload="none" poster="/media/gelada-saude.jpg" aria-label="Gelada: birra che si riempie e si beve sul telefono"><source src="/media/topo/gelada-saude.mp4" type="video/mp4"></video></div></div>
