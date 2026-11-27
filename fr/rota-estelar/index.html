@@ -569,7 +569,19 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .pixbox .ou { color: var(--muted); font-size: 14.5px; margin-top: 4px }
 html:not([lang=pt-BR]) .pixbox .kofi { order: -2 }
 html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
-.grid6 { grid-template-columns: repeat(4, 1fr) }
+.grid6 { grid-template-columns: repeat(5, 1fr) }
+
+/* ---------- destaque do texto de baixo do título e do "Sem anúncios" (luz amarela) ---------- */
+.hero p.lead { color: var(--ink); max-width: 46ch; padding: 14px 18px; border-left: 4px solid var(--gold); background: rgba(255,210,63,.07); border-radius: 0 16px 16px 0 }
+.noads { position: relative; border: 2px solid var(--gold); animation: noadsBrilho 2.2s ease-in-out infinite }
+.noads i { font-size: 30px; filter: drop-shadow(0 0 6px rgba(255,210,63,.7)) }
+.luz { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #ffd23f; box-shadow: 0 0 8px 3px rgba(255,210,63,.9); animation: luzPisca 1.1s ease-in-out infinite }
+.luz.a { top: -7px; right: -7px } .luz.b { bottom: -7px; left: -7px; animation-delay: .55s }
+.fact.zero { position: relative; border-color: var(--gold) }
+@keyframes luzPisca { 0%, 100% { opacity: 1; transform: scale(1) } 50% { opacity: .15; transform: scale(.7) } }
+@keyframes noadsBrilho { 0%, 100% { box-shadow: 0 0 12px rgba(255,210,63,.2) } 50% { box-shadow: 0 0 0 4px rgba(255,210,63,.15), 0 0 26px rgba(255,210,63,.55) } }
+@media (prefers-reduced-motion: reduce) { .noads, .luz { animation: none } }
+@media (max-width: 560px) { .grid6 { grid-template-columns: repeat(2, 1fr) !important } .grid6 a { aspect-ratio: 4 / 3 } }
 </style>
 </head>
 <body class="no-js">
@@ -722,7 +734,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
           </div>
         </div>
         <div class="grid6">
+          <a href="/fr/#turma"><img src="/media/turma-inicio.jpg" alt="" loading="lazy"><span>Turma Arial</span></a>
           <a href="/fr/deicida/"><img src="/media/deicida-chamada.jpg" alt="" loading="lazy"><span>Deicida</span></a>
+          <a href="/fr/#golaco"><img src="/media/golaco-quadra.jpg" alt="" loading="lazy"><span>Golaço Total</span></a>
           <a href="/fr/rota-estelar/"><img src="/media/rota-nave-centro.jpg" alt="" loading="lazy"><span>Rota Estelar</span></a>
           <a href="/fr/volei-total/"><img src="/media/volei-topo.jpg" alt="" loading="lazy"><span>Vôlei Total</span></a>
           <a href="/fr/gol-de-placa/"><img src="/media/gol-adulta.jpg" alt="" loading="lazy"><span>Gol de Placa</span></a>
@@ -813,7 +827,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
     <div class="fjogos">
       <p class="ftit">Jeux et apps</p>
       <nav aria-label="Jeux et apps">
+        <a href="/fr/#turma">Turma Arial</a>
         <a href="/fr/deicida/">Deicida</a>
+        <a href="/fr/#golaco">Golaço Total</a>
         <a href="/fr/rota-estelar/">Rota Estelar</a>
         <a href="/fr/volei-total/">Vôlei Total</a>
         <a href="/fr/gol-de-placa/">Gol de Placa</a>
@@ -826,7 +842,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
     <div class="fpriv">
       <p class="ftit">Confidentialité</p>
       <nav aria-label="Confidentialité">
+        <a href="/turma-privacidade/">Confidentialité Turma Arial</a>
         <a href="/deicida-privacidade/">Confidentialité Deicida</a>
+        <a href="/golaco-privacidade/">Confidentialité Golaço Total</a>
         <a href="/rota-estelar-privacidade/">Confidentialité Rota Estelar</a>
         <a href="/volei-privacidade/">Confidentialité Vôlei Total</a>
         <a href="/gol-privacidade/">Confidentialité Gol de Placa</a>

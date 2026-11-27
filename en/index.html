@@ -662,9 +662,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .fan:hover .phone:nth-child(7) { transform: translateX(156%) rotate(21deg) translateY(96px) scale(.66) }
 @media (max-width: 480px) { .fan .phone { width: 126px } .fan .phone:nth-child(1) { transform: translateX(-118%) rotate(-16deg) translateY(66px) scale(.64) } .fan .phone:nth-child(2) { transform: translateX(-86%) rotate(-11deg) translateY(42px) scale(.74) } .fan .phone:nth-child(3) { transform: translateX(-46%) rotate(-5deg) translateY(16px) scale(.86) } .fan .phone:nth-child(5) { transform: translateX(46%) rotate(5deg) translateY(16px) scale(.86) } .fan .phone:nth-child(6) { transform: translateX(86%) rotate(11deg) translateY(42px) scale(.74) } .fan .phone:nth-child(7) { transform: translateX(118%) rotate(16deg) translateY(66px) scale(.64) } }
 .facts .wrap { grid-template-columns: repeat(2, 1fr) }
-@media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(4, 1fr) } }
-@media (min-width: 1180px) { .facts .wrap { grid-template-columns: repeat(8, 1fr) } }
-.grid6 { grid-template-columns: repeat(4, 1fr) }
+@media (min-width: 721px) { .facts .wrap { grid-template-columns: repeat(5, 1fr) } }
+@media (min-width: 1180px) { .facts .wrap { grid-template-columns: repeat(5, 1fr) } }
+.grid6 { grid-template-columns: repeat(5, 1fr) }
 /* ---------- Sobre a Arial Gamer ---------- */
 .sobre .card { display: block }
 .sobre .intro { display: grid; grid-template-columns: 1.3fr 1fr; gap: 34px; align-items: start }
@@ -737,6 +737,18 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 .mitos h3 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 14px }
 .mitos .track figure { width: 260px }
 .mitos .track img { width: 260px; height: 146px }
+
+/* ---------- destaque do texto de baixo do título e do "Sem anúncios" (luz amarela) ---------- */
+.hero p.lead { color: var(--ink); max-width: 46ch; padding: 14px 18px; border-left: 4px solid var(--gold); background: rgba(255,210,63,.07); border-radius: 0 16px 16px 0 }
+.noads { position: relative; border: 2px solid var(--gold); animation: noadsBrilho 2.2s ease-in-out infinite }
+.noads i { font-size: 30px; filter: drop-shadow(0 0 6px rgba(255,210,63,.7)) }
+.luz { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #ffd23f; box-shadow: 0 0 8px 3px rgba(255,210,63,.9); animation: luzPisca 1.1s ease-in-out infinite }
+.luz.a { top: -7px; right: -7px } .luz.b { bottom: -7px; left: -7px; animation-delay: .55s }
+.fact.zero { position: relative; border-color: var(--gold) }
+@keyframes luzPisca { 0%, 100% { opacity: 1; transform: scale(1) } 50% { opacity: .15; transform: scale(.7) } }
+@keyframes noadsBrilho { 0%, 100% { box-shadow: 0 0 12px rgba(255,210,63,.2) } 50% { box-shadow: 0 0 0 4px rgba(255,210,63,.15), 0 0 26px rgba(255,210,63,.55) } }
+@media (prefers-reduced-motion: reduce) { .noads, .luz { animation: none } }
+@media (max-width: 560px) { .grid6 { grid-template-columns: repeat(2, 1fr) !important } .grid6 a { aspect-ratio: 4 / 3 } }
 </style>
 </head>
 <!-- Página gerada por _paginas/idiomas.py a partir do index.html. Não edite à mão. -->
@@ -793,8 +805,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
       <div>
         <p class="eyebrow">Arial Gamer · Games &amp; Apps</p>
         <h1>Mobile games <span class="grad">made in Brazil</span></h1>
-        <p class="lead">Take on the gods of 11 mythologies. Fly a ship to the most distant planet. Unleash the Super Spike in volleyball. Take the penalty or save it in the last minute. Raise a pet with Brazilian animals. Hide behind the moon. Fill a glass and tilt to drink. Seven games to play alone or with a friend. And Acervo, to catalog your collection.</p>
-        <p class="noads"><i aria-hidden="true">🚫</i><span><b>No ads</b><span>None of our games have ads. Nothing interrupts the fun.</span></span></p>
+        <p class="lead">Take on the gods of 11 mythologies. Play 5-a-side futsal and beach football. Fly a ship to the most distant planet. Unleash the Super Spike in volleyball. Take the penalty or save it in the last minute. Raise a pet with Brazilian animals. Hide behind the moon. Fill a glass and tilt to drink. Eight games to play alone or with a friend, the free Turma Arial app to enjoy with your crew, and Acervo, to catalog your collection.</p>
+        <p class="noads"><span class="luz a" aria-hidden="true"></span><span class="luz b" aria-hidden="true"></span><i aria-hidden="true">🚫</i><span><b>No ads</b><span>None of our games have ads. Nothing interrupts the fun.</span></span></p>
         <div class="ctas">
           <a class="btn primary" href="#jogos">See the games</a>
           <a class="btn ghost" href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>Watch on TikTok</a>
@@ -838,8 +850,10 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
 
   <div class="facts" data-vista="jogos">
     <div class="wrap">
-      <div class="fact zero" style="--c:var(--gold);--glow:rgba(255,210,63,.4)"><i class="ico" aria-hidden="true">🚫</i><b>0</b><span>ads</span></div>
+      <div class="fact zero" style="--c:var(--gold);--glow:rgba(255,210,63,.4)"><span class="luz a" aria-hidden="true"></span><i class="ico" aria-hidden="true">🚫</i><b>0</b><span>ads</span></div>
+      <a class="fact" href="#turma" style="--c:#e9b949;--glow:rgba(233,185,73,.4)"><img class="ico" src="/turma.png" alt="" width="58" height="58" loading="lazy"><b>8</b><span>spaces in the free Turma Arial app</span></a>
       <a class="fact" href="#deicida" style="--c:#ff8a3d;--glow:rgba(255,96,40,.45)"><img class="ico" src="/deicida.png" alt="" width="58" height="58" loading="lazy"><b>11</b><span>mythologies in Deicida</span></a>
+      <a class="fact" href="#golaco" style="--c:#38d47a;--glow:rgba(56,212,122,.4)"><img class="ico" src="/golaco.png" alt="" width="58" height="58" loading="lazy"><b>16</b><span>national teams in Golaço Total</span></a>
       <a class="fact" href="#rota" style="--c:#7fa8ff;--glow:rgba(90,130,255,.45)"><img class="ico" src="/rota.png" alt="" width="58" height="58" loading="lazy"><b>31</b><span>planets in Rota Estelar</span></a>
       <a class="fact" href="#volei" style="--c:#ffc93a;--glow:rgba(60,130,255,.45)"><img class="ico" src="/volei.png" alt="" width="58" height="58" loading="lazy"><b>8</b><span>national teams in Vôlei Total</span></a>
       <a class="fact" href="#gol" style="--c:#3ddc84;--glow:rgba(61,220,132,.4)"><img class="ico" src="/gol.png" alt="" width="58" height="58" loading="lazy"><b>14</b><span>commentary languages in Gol de Placa</span></a>
@@ -863,7 +877,7 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
           <p class="tv-note"><b>Free</b>, no ads, no sign-up and no data collection. Medals, streaks and a new challenge every day.</p>
           <div class="stores">
             <span class="store outline wait"><svg><use href="#i-apple"/></svg><span><small>Coming soon to the</small><strong>App Store</strong></span></span>
-            <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Coming soon on</small><strong>Google Play</strong></span></span>
+            <a class="store" href="https://play.google.com/store/apps/details?id=com.arial.turma&amp;hl=en" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg><span><small>Get it on</small><strong>Google Play</strong></span></a>
           </div>
         </div>
         <div class="tv-fan"><div class="phone"><div class="screen"><img src="/media/turma-pelada.jpg" alt="Turma Arial: picking teams for pickup soccer" loading="lazy" width="560" height="1213"></div></div><div class="phone"><div class="screen"><img src="/media/turma-inicio.jpg" alt="Turma Arial: home screen with a space for each game" loading="lazy" width="560" height="1213"></div></div><div class="phone"><div class="screen"><img src="/media/turma-festa.jpg" alt="Turma Arial: party cards" loading="lazy" width="560" height="1213"></div></div></div>
@@ -1280,7 +1294,9 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
           </div>
         </div>
         <div class="grid6">
+          <a href="/en/#turma"><img src="/media/turma-inicio.jpg" alt="" loading="lazy"><span>Turma Arial</span></a>
           <a href="/en/deicida/"><img src="/media/deicida-chamada.jpg" alt="" loading="lazy"><span>Deicida</span></a>
+          <a href="/en/#golaco"><img src="/media/golaco-quadra.jpg" alt="" loading="lazy"><span>Golaço Total</span></a>
           <a href="/en/rota-estelar/"><img src="/media/rota-nave-centro.jpg" alt="" loading="lazy"><span>Rota Estelar</span></a>
           <a href="/en/volei-total/"><img src="/media/volei-topo.jpg" alt="" loading="lazy"><span>Vôlei Total</span></a>
           <a href="/en/gol-de-placa/"><img src="/media/gol-adulta.jpg" alt="" loading="lazy"><span>Gol de Placa</span></a>
@@ -1304,11 +1320,11 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
             <p><b>Arial Gamer</b> is an independent mobile game studio from Brazil. We make short, joyful games to play alone, with family or with friends, on iPhone and Android.</p>
             <p>Every game is made from start to finish here: idea, art, code, narration and translation into 8 languages. Players never see ads and never need an account.</p>
           </div>
-          <div class="nums"><div class="num"><strong>7</strong><span>games released</span></div><div class="num"><strong>1</strong><span>app for collectors</span></div><div class="num"><strong>8</strong><span>languages</span></div><div class="num"><strong>0</strong><span>ads</span></div></div>
+          <div class="nums"><div class="num"><strong>8</strong><span>games</span></div><div class="num"><strong>2</strong><span>apps: Turma Arial and Acervo</span></div><div class="num"><strong>8</strong><span>languages</span></div><div class="num"><strong>0</strong><span>ads</span></div></div>
         </div>
         <ul class="promessas"><li><b>🚫 No ads</b>In every game, always.</li><li><b>🔒 No data collection</b>Our games need no sign-up and store no personal data.</li><li><b>💳 Clear pricing</b>You see the price before you download. No tricks.</li><li><b>🌎 8 languages</b>English, Portuguese, Spanish, German, French, Italian, Japanese and Chinese.</li></ul>
         <h3>What each game costs</h3>
-        <table class="precos"><thead><tr><th>Game</th><th>Price</th><th>Where to play</th><th>Privacy</th></tr></thead><tbody><tr><td><a href="/en/deicida/">Deicida</a></td><td class="pr">Free + chapters</td><td class="pf">iPhone, iPad and Android. Free: prologue and level 1 (Sobek). Chapters US$ 2.99 each, or the Deicida Pass (11 chapters) for US$ 14.99.</td><td class="pv"><a href="/deicida-privacidade/">Policy</a></td></tr><tr><td><a href="/en/rota-estelar/">Rota Estelar</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Full game, no in-app purchases.</td><td class="pv"><a href="/rota-estelar-privacidade/">Policy</a></td></tr><tr><td><a href="/en/volei-total/">Vôlei Total</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Full game, no in-app purchases.</td><td class="pv"><a href="/volei-privacidade/">Policy</a></td></tr><tr><td><a href="/en/gol-de-placa/">Gol de Placa</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Everything unlocked, no in-app purchases.</td><td class="pv"><a href="/gol-privacidade/">Policy</a></td></tr><tr><td><a href="/en/xodo/">Xodó</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Full game, no in-app purchases.</td><td class="pv"><a href="/xodo-privacidade/">Policy</a></td></tr><tr><td><a href="/en/esconde-esconde/">Esconde-Esconde</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. All 24 places unlocked, no in-app purchases.</td><td class="pv"><a href="/esconde-privacidade/">Policy</a></td></tr><tr><td><a href="/en/gelada/">Gelada</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. No in-app purchases.</td><td class="pv"><a href="/gelada-privacidade/">Policy</a></td></tr><tr><td><a href="/en/acervo/">Acervo</a></td><td class="pr">Free</td><td class="pf">iPhone and Android. Optional Premium subscription.</td><td class="pv"><a href="/acervo/privacidade/">Policy</a></td></tr></tbody></table>
+        <table class="precos"><thead><tr><th>Game</th><th>Price</th><th>Where to play</th><th>Privacy</th></tr></thead><tbody><tr><td><a href="/en/#turma">Turma Arial</a></td><td class="pr">Free</td><td class="pf">Android (Google Play). Coming soon to iPhone and iPad. No ads, no purchases.</td><td class="pv"><a href="/turma-privacidade/">Policy</a></td></tr><tr><td><a href="/en/deicida/">Deicida</a></td><td class="pr">Free + chapters</td><td class="pf">iPhone, iPad and Android. Free: prologue and level 1 (Sobek). Chapters US$ 2.99 each, or the Deicida Pass (11 chapters) for US$ 14.99.</td><td class="pv"><a href="/deicida-privacidade/">Policy</a></td></tr><tr><td><a href="/en/#golaco">Golaço Total</a></td><td class="pr">Paid, one-time</td><td class="pf">Coming soon to iPhone, iPad and Android. Full game, no in-app purchases.</td><td class="pv"><a href="/golaco-privacidade/">Policy</a></td></tr><tr><td><a href="/en/rota-estelar/">Rota Estelar</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Full game, no in-app purchases.</td><td class="pv"><a href="/rota-estelar-privacidade/">Policy</a></td></tr><tr><td><a href="/en/volei-total/">Vôlei Total</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Full game, no in-app purchases.</td><td class="pv"><a href="/volei-privacidade/">Policy</a></td></tr><tr><td><a href="/en/gol-de-placa/">Gol de Placa</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Everything unlocked, no in-app purchases.</td><td class="pv"><a href="/gol-privacidade/">Policy</a></td></tr><tr><td><a href="/en/xodo/">Xodó</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. Full game, no in-app purchases.</td><td class="pv"><a href="/xodo-privacidade/">Policy</a></td></tr><tr><td><a href="/en/esconde-esconde/">Esconde-Esconde</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. All 24 places unlocked, no in-app purchases.</td><td class="pv"><a href="/esconde-privacidade/">Policy</a></td></tr><tr><td><a href="/en/gelada/">Gelada</a></td><td class="pr">Paid, one-time</td><td class="pf">iPhone, iPad and Android. No in-app purchases.</td><td class="pv"><a href="/gelada-privacidade/">Policy</a></td></tr><tr><td><a href="/en/acervo/">Acervo</a></td><td class="pr">Free</td><td class="pf">iPhone and Android. Optional Premium subscription.</td><td class="pv"><a href="/acervo/privacidade/">Policy</a></td></tr></tbody></table>
         <p class="nota">The App Store and Google Play show the exact price in your local currency.</p>
         <h3>Check for yourself</h3>
         <div class="confia">
@@ -1400,10 +1416,13 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     <div class="fjogos">
       <p class="ftit">Games and apps</p>
       <nav aria-label="Games and apps">
+        <a href="/en/#turma">Turma Arial</a>
         <a href="/en/deicida/">Deicida</a>
+        <a href="/en/#golaco">Golaço Total</a>
         <a href="/en/rota-estelar/">Rota Estelar</a>
         <a href="/en/volei-total/">Vôlei Total</a>
-        <a href="/en/gol-de-placa/">Gol de Placa</a><a href="/press/">Press kit</a>
+        <a href="/en/gol-de-placa/">Gol de Placa</a>
+        <a href="/en/xodo/">Xodó</a>
         <a href="/en/esconde-esconde/">Esconde-Esconde</a>
         <a href="/en/gelada/">Gelada</a>
         <a href="/en/acervo/">Acervo</a>
@@ -1412,8 +1431,8 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
     <div class="fpriv">
       <p class="ftit">Privacy</p>
       <nav aria-label="Privacy">
-        <a href="/deicida-privacidade/">Deicida privacy</a>
         <a href="/turma-privacidade/">Turma Arial privacy</a>
+        <a href="/deicida-privacidade/">Deicida privacy</a>
         <a href="/golaco-privacidade/">Golaço Total privacy</a>
         <a href="/rota-estelar-privacidade/">Rota Estelar privacy</a>
         <a href="/volei-privacidade/">Vôlei Total privacy</a>
