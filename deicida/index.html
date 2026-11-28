@@ -582,6 +582,7 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 @keyframes noadsBrilho { 0%, 100% { box-shadow: 0 0 12px rgba(255,210,63,.2) } 50% { box-shadow: 0 0 0 4px rgba(255,210,63,.15), 0 0 26px rgba(255,210,63,.55) } }
 @media (prefers-reduced-motion: reduce) { .noads, .luz { animation: none } }
 @media (max-width: 560px) { .grid6 { grid-template-columns: repeat(2, 1fr) !important } .grid6 a { aspect-ratio: 4 / 3 } }
+@media (min-width: 1261px) { .nav .wrap { width: min(1560px, calc(100% - 40px)) } .nav ul { gap: 2px } .nav ul a { padding: 8px 7px; font-size: 13.5px } .nav ul li:has(> a[href$="#siga"]) { display: none } .nav ul li.app { margin-left: 6px; padding-left: 6px } }
 </style>
 </head>
 <body class="no-js">
@@ -607,7 +608,9 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
   <div class="wrap">
     <a class="brand" href="/"><img src="/logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
+      <li><a href="/#turma">Turma Arial</a></li>
       <li><a href="/deicida/" aria-current="page">Deicida</a></li>
+      <li><a href="/#golaco">Golaço Total</a></li>
       <li><a href="/rota-estelar/">Rota Estelar</a></li>
       <li><a href="/volei-total/">Vôlei Total</a></li>
       <li><a href="/gol-de-placa/">Gol de Placa</a></li>

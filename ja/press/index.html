@@ -268,6 +268,7 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
 .pk-contact { background: var(--glass-2); border-radius: 22px; padding: 26px; border: 1px solid var(--line) }
 .pk-contact a { color: var(--gold) }
 .pk-langs { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 18px; font-size: 14px } .pk-langs a { color: var(--muted); text-decoration: none } .pk-langs a:hover { color: var(--ink) } .pk-langs a[aria-current] { color: var(--ink); font-weight: 700 }
+@media (min-width: 1261px) { .nav .wrap { width: min(1560px, calc(100% - 40px)) } .nav ul { gap: 2px } .nav ul a { padding: 8px 7px; font-size: 13.5px } .nav ul li:has(> a[href$="#siga"]) { display: none } .nav ul li.app { margin-left: 6px; padding-left: 6px } }
 </style>
 </head>
 <body>
@@ -285,7 +286,9 @@ footer nav a:hover { color: var(--ink); text-decoration: underline }
   <div class="wrap">
     <a class="brand" href="/ja/"><img src="/logo.png" alt="" width="38" height="38">Arial Gamer</a>
     <ul>
+      <li><a href="/ja/#turma">Turma Arial</a></li>
       <li><a href="/ja/deicida/">Deicida</a></li>
+      <li><a href="/ja/#golaco">Golaço Total</a></li>
       <li><a href="/ja/rota-estelar/">Rota Estelar</a></li>
       <li><a href="/ja/volei-total/">Vôlei Total</a></li>
       <li><a href="/ja/gol-de-placa/">Gol de Placa</a></li>
