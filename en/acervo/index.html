@@ -675,6 +675,14 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     video.addEventListener('ended', () => select((i + 1) % clips.length));
     video.addEventListener('timeupdate', () => { if (video.duration) clips[i].querySelector('.bar span').style.width = (video.currentTime / video.duration * 100) + '%'; });
     new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting && !reduzir) { video.preload = 'auto'; video.play().catch(() => {}); } else video.pause(); }), { threshold: .4 }).observe(video);
+  // começa a baixar um pouco antes de aparecer na tela
+  new IntersectionObserver((es, o) => es.forEach((e) => { if (e.isIntersecting) { video.preload = 'auto'; if (video.readyState === 0 && video.paused) video.load(); o.disconnect(); } }), { rootMargin: '800px 0px' }).observe(video);
+  // da metade do vídeo em diante, já baixa o próximo videozinho
+  let aquecido = -1;
+  video.addEventListener('timeupdate', () => {
+    const n = (i + 1) % clips.length;
+    if (clips.length > 1 && aquecido !== n && video.duration && video.currentTime > video.duration * 0.5) { aquecido = n; fetch(clips[n].dataset.src + '.mp4').catch(() => {}); }
+  });
   });
 })();
 </script>

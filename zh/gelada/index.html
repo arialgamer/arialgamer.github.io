@@ -842,6 +842,8 @@ const playIfVisible = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting && !reduce) { v.preload = 'auto'; v.play().catch(() => {}); } else { v.pause(); }
 }), { threshold: .35 });
 document.querySelectorAll('video[data-auto]').forEach((v) => { v.muted = true; v.defaultMuted = true; v.volume = 0; playIfVisible.observe(v); });
+// leque do topo: baixa os vídeos assim que a página termina de abrir, para não travar ao passar o mouse
+addEventListener('load', () => setTimeout(() => document.querySelectorAll('video[data-auto]').forEach((v) => { if (v.preload !== 'auto') { v.preload = 'auto'; if (v.readyState === 0 && v.paused) v.load(); } }), 300));
 
 // Players dos jogos: troca de vídeo, barra de progresso, avança sozinho e liga o som
 document.querySelectorAll('[data-player]').forEach((p) => {
@@ -881,6 +883,14 @@ document.querySelectorAll('[data-player]').forEach((p) => {
   new IntersectionObserver((es) => es.forEach((e) => {
     if (e.isIntersecting && !reduce) { video.preload = 'auto'; video.play().catch(() => {}); } else video.pause();
   }), { threshold: .4 }).observe(video);
+  // começa a baixar um pouco antes de aparecer na tela
+  new IntersectionObserver((es, o) => es.forEach((e) => { if (e.isIntersecting) { video.preload = 'auto'; if (video.readyState === 0 && video.paused) video.load(); o.disconnect(); } }), { rootMargin: '800px 0px' }).observe(video);
+  // da metade do vídeo em diante, já baixa o próximo videozinho
+  let aquecido = -1;
+  video.addEventListener('timeupdate', () => {
+    const n = (i + 1) % clips.length;
+    if (clips.length > 1 && aquecido !== n && video.duration && video.currentTime > video.duration * 0.5) { aquecido = n; fetch(clips[n].dataset.src + '.mp4').catch(() => {}); }
+  });
 });
 
 // Compartilhar: menu nativo do celular, ou WhatsApp no computador
