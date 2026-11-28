@@ -1,4 +1,4 @@
-/* Contador de acessos no topo, à direita: total geral e os 3 países com mais acessos (bandeira + número).
+/* Contador de acessos no topo, à direita: total geral e os 5 países com mais acessos (no celular, os 3 primeiros) (bandeira + número).
    Conta uma vez por visita (sessionStorage): navegar entre as páginas do site não soma de novo.
    Os números vêm da função contador_site do Supabase, que guarda só país e total (nada de IP). */
 (() => {
@@ -31,7 +31,7 @@
   .visitas .tot small { color: var(--muted, #b8b0d6); font-weight: 600; font-size: 12px }
   .visitas .pais { display: inline-flex; align-items: center; gap: 5px; padding-left: 10px; border-left: 1px solid var(--line, rgba(255,255,255,.1)) }
   .visitas img { width: 18px; height: 13.5px; border-radius: 2px; object-fit: cover; box-shadow: 0 0 0 1px rgba(255,255,255,.18) }
-  @media (max-width: 480px) { .visitas { gap: 8px; padding: 4px 10px; font-size: 12px } .visitas .pais { padding-left: 8px } .visitas .tot small { display: none } }
+  @media (max-width: 480px) { .visitas { gap: 8px; padding: 4px 10px; font-size: 12px } .visitas .pais { padding-left: 8px } .visitas .tot small { display: none } .visitas .pais:nth-child(n+5) { display: none } }
   `;
   document.head.appendChild(css);
 
@@ -60,7 +60,7 @@
       s.textContent = rotulo;
       tot.append(b, s);
       box.appendChild(tot);
-      for (const t of (d.top || []).slice(0, 3)) {
+      for (const t of (d.top || []).slice(0, 5)) {
         if (!/^[A-Z]{2}$/.test(t.pais)) continue;
         const p = document.createElement('span');
         p.className = 'pais';
