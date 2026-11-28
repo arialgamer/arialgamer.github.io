@@ -6,7 +6,7 @@
   const VIDEO = {
     'deicida-foto-heroi': 'deicida-chamada', 'deicida-foto-anubis': 'deicida-julgamento', 'deicida-foto-mercado': 'deicida-mumias',
     'deicida-foto-sobek': 'deicida-sobek', 'deicida-foto-jardim': 'deicida-mumias', 'deicida-foto-templo': 'deicida-barca',
-    'golaco-quadra': 'fotos/golaco-quadra', 'golaco-areia': 'fotos/golaco-areia', 'golaco-craque': 'fotos/golaco-craque', 'golaco-times': 'fotos/golaco-times',
+    'golaco-quadra': 'golaco-gol-quadra', 'golaco-areia': 'golaco-gol-areia', 'golaco-craque': 'fotos/golaco-craque', 'golaco-times': 'fotos/golaco-times',
     'rota-shot-mapa': 'fotos/rota-mapa', 'rota-shot-hangar': 'fotos/rota-hangar', 'rota-shot-catalogo': 'fotos/rota-catalogo', 'rota-shot-guardiao': 'rota-guardiao',
     'volei-quadra': 'volei-jogo-quadra-2', 'volei-praia': 'volei-jogo-praia-2', 'volei-craque': 'fotos/volei-craque', 'volei-conquistas': 'fotos/volei-conquistas',
     'gol-shot-craque': 'gol-craque', 'gol-shot-gol': 'gol-noite', 'gol-shot-falta': 'gol-falta-neve', 'gol-shot-goleiro': 'gol-defesa-chuva',

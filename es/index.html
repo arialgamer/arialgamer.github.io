@@ -973,8 +973,16 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
           <span class="store outline wait"><svg><use href="#i-play"/></svg><span><small>Muy pronto en</small><strong>Google Play</strong></span></span>
         </div>
       </div>
-      <div class="player reveal">
-        <div class="phone wide"><div class="screen"><img src="/media/golaco-quadra.jpg" alt="Golaço Total: partido en pista" loading="lazy" width="1280" height="720"></div></div>
+      <div class="player reveal" data-player>
+        <div class="phone wide"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/golaco-gol-quadra.jpg"><source src="/media/golaco-gol-quadra.mp4" type="video/mp4"></video>
+        </div></div>
+        <div class="clips" role="group" aria-label="Elige un video de Golaço Total">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/golaco-gol-quadra"><img src="/media/golaco-gol-quadra.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Gol en la cancha</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/golaco-gol-areia"><img src="/media/golaco-gol-areia.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Gol en la arena</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/golaco-gol-adulta"><img src="/media/golaco-gol-adulta.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Versión adulta</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/fotos/golaco-craque"><img src="/media/fotos/golaco-craque.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Mi crack</button>
+        </div>
       </div>
     </div>
     <div class="wrap shots"><figure class="reveal"><img src="/media/golaco-quadra.jpg" alt="Partido de fútbol sala en pista, Brasil contra Argentina" loading="lazy"><figcaption>Fútbol sala en pista</figcaption></figure><figure class="reveal"><img src="/media/golaco-areia.jpg" alt="Partido de fútbol playa 5 contra 5" loading="lazy"><figcaption>Fútbol playa</figcaption></figure><figure class="reveal"><img src="/media/golaco-craque.jpg" alt="Pantalla Mi crack: nombre, número, piel, pelo y físico" loading="lazy"><figcaption>Crea tu crack</figcaption></figure><figure class="reveal"><img src="/media/golaco-times.jpg" alt="Elección de selección con ataque, defensa y velocidad" loading="lazy"><figcaption>16 selecciones</figcaption></figure></div>
@@ -1280,8 +1288,16 @@ body:not(.no-js):not(.vista-apps) [data-vista="apps"], body.vista-apps [data-vis
         </div>
         <a class="more" href="/es/acervo/">Todo sobre Acervo →</a>
       </div>
-      <div class="player reveal">
-        <div class="phone"><div class="screen"><img src="/media/acervo-shot-colecao-es.jpg" alt="Acervo: colección de relojes con el valor total estimado" loading="lazy"></div></div>
+      <div class="player reveal" data-player>
+        <div class="phone"><div class="screen">
+          <video muted playsinline preload="none" poster="/media/fotos/acervo-colecao.jpg"><source src="/media/fotos/acervo-colecao.mp4" type="video/mp4"></video>
+        </div></div>
+        <div class="clips" role="group" aria-label="Elige un video de Acervo">
+          <button class="clip" type="button" aria-pressed="true" data-src="/media/fotos/acervo-colecao"><img src="/media/fotos/acervo-colecao.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Colección</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/fotos/acervo-detalhe"><img src="/media/fotos/acervo-detalhe.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Cuánto vale</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/fotos/acervo-identificar"><img src="/media/fotos/acervo-identificar.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Identificar</button>
+          <button class="clip" type="button" aria-pressed="false" data-src="/media/fotos/acervo-relatorio"><img src="/media/fotos/acervo-relatorio.jpg" alt="" loading="lazy"><span class="bar"><span></span></span>Informe</button>
+        </div>
       </div>
     </div>
     <div class="wrap shots">
