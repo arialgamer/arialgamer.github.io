@@ -557,6 +557,7 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 @media (prefers-reduced-motion: reduce) { .noads, .luz { animation: none } }
 @media (max-width: 560px) { .grid6 { grid-template-columns: repeat(2, 1fr) !important } .grid6 a { aspect-ratio: 4 / 3 } }
 @media (min-width: 1261px) { .nav .wrap { width: min(1560px, calc(100% - 40px)) } .nav ul { gap: 2px } .nav ul a { padding: 8px 7px; font-size: 13.5px } .nav ul li:has(> a[href$="#siga"]) { display: none } .nav ul li.app { margin-left: 6px; padding-left: 6px } }
+.nav .wrap { position: relative } .nav .menu-btn { display: none } @media (max-width: 1260px) { .nav .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; border-radius: 50%; border: 1px solid var(--line, rgba(255,255,255,.14)); background: var(--glass, rgba(255,255,255,.08)); color: var(--ink, #fff); cursor: pointer; flex-shrink: 0 } .nav .menu-btn svg { width: 20px; height: 20px } .nav .menu-btn .x { display: none } .nav.aberto .menu-btn .x { display: block } .nav.aberto .menu-btn .l { display: none } .nav.aberto { background: rgba(13,10,32,.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px) } .nav.aberto ul { display: flex; flex-direction: column; position: absolute; top: calc(100% + 6px); right: 0; min-width: 240px; max-height: calc(100vh - 96px); overflow: auto; margin: 0; padding: 8px; gap: 2px; background: rgba(13,10,32,.97); border: 1px solid var(--line, rgba(255,255,255,.14)); border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,.5) } .nav.aberto ul li { display: block !important } .nav.aberto ul a { padding: 11px 14px; font-size: 15px } .nav.aberto ul li.app { margin: 4px 0 0; padding: 4px 0 0; border-left: 0; border-top: 1px solid var(--line, rgba(255,255,255,.14)) } }@media (prefers-reduced-motion: no-preference) { .nav.aberto ul { animation: menu-abre .18s ease-out } @keyframes menu-abre { from { opacity: 0; transform: translateY(-6px) } } }@media (max-width: 560px) { .nav .pill { font-size: 0; gap: 0; width: 42px; height: 42px; padding: 0; justify-content: center; flex-shrink: 0 } .nav .pill svg { margin: 0 } } @media (max-width: 420px) { .nav .wrap { gap: 8px } } @media (max-width: 340px) { .nav .yt-round { display: none } } .nav.aberto .visitas { visibility: hidden }
 </style>
 </head>
 <body class="no-js">
@@ -581,7 +582,7 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="/fr/"><img src="/logo.png" alt="" width="38" height="38">Arial Gamer</a>
-    <ul>
+    <ul id="nav-menu">
       <li><a href="/fr/#turma">Turma Arial</a></li>
       <li><a href="/fr/deicida/">Deicida</a></li>
       <li><a href="/fr/#golaco">Golaço Total</a></li>
@@ -597,8 +598,10 @@ html:not([lang=pt-BR]) .pixbox .ou { order: -1; margin-top: 8px }
     <a class="ig-round" href="https://www.instagram.com/arial.gamer/" target="_blank" rel="noopener" aria-label="Instagram @arial.gamer"><svg><use href="#i-insta"/></svg></a>
     <a class="ig-round yt-round" href="https://www.youtube.com/@arialgamer" target="_blank" rel="noopener" aria-label="YouTube @arialgamer"><svg><use href="#i-yt"/></svg></a>
     <a class="pill" href="https://www.tiktok.com/@arial.gamer" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>Suivre</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu" data-fechar="Fermer le menu"><svg class="l" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg><svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
   </div>
   <script src="/contador.js" defer></script>
+<script>(() => { const nav = document.getElementById('nav'), b = nav && nav.querySelector('.menu-btn'); if (!b) return; const abrir = b.getAttribute('aria-label'), fechar = b.dataset.fechar; const poe = (a) => { nav.classList.toggle('aberto', a); b.setAttribute('aria-expanded', a); b.setAttribute('aria-label', a ? fechar : abrir); }; b.addEventListener('click', (e) => { e.stopPropagation(); poe(!nav.classList.contains('aberto')); }); nav.querySelectorAll('ul a').forEach((a) => a.addEventListener('click', () => poe(false))); document.addEventListener('click', (e) => { if (!nav.contains(e.target)) poe(false); }); document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('aberto')) { poe(false); b.focus(); } }); })();</script>
 </header>
 
 <main id="topo">
