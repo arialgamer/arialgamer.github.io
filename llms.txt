@@ -4,7 +4,7 @@
 
 ## Games
 - [Deicida](https://arialgamer.com.br/en/deicida/): cinematic hack and slash, a mortal against the gods of 11 mythologies (110 levels). Free on iPhone and Android with the prologue and the first level; the other chapters are in-app purchases (US$ 2.99 each, or US$ 14.99 for the Deicida Pass with all 11).
-- [Golaço Total](https://arialgamer.com.br/en/#golaco): 5-a-side futsal and beach football with real controls (pass, charged shot, dribble, slide tackle), national-team tournament and 2 players on one phone. On the App Store for iPhone and iPad; coming soon to Android (paid, no in-app purchases).
+- [Golaço Total](https://arialgamer.com.br/en/golaco/): 5-a-side futsal and beach football with real controls (pass, charged shot, dribble, slide tackle), national-team tournament and 2 players on one phone. On the App Store for iPhone and iPad; coming soon to Android (paid, no in-app purchases).
 - [Rota Estelar](https://arialgamer.com.br/en/rota-estelar/): family space shooter through 31 real planets, giant bosses and 10 ships. iPhone and Android.
 - [Vôlei Total](https://arialgamer.com.br/en/volei-total/): arcade volleyball, 6v6 indoor and 2v2 beach, Super Spike, 2 players on one phone. iPhone and Android.
 - [Gol de Placa](https://arialgamer.com.br/en/gol-de-placa/): 3D penalties and free kicks, be the kicker or the goalkeeper, online with a friend. iPhone and Android.
@@ -13,7 +13,7 @@
 - [Gelada](https://arialgamer.com.br/en/gelada/): virtual beer and cocktail simulator, tilt the phone to drink, 100 drinks. iPhone and Android.
 
 ## Apps
-- [Turma Arial](https://arialgamer.com.br/en/#turma): free app to enjoy with friends: team draw, scoreboard and a mini game from each Arial Gamer game. On the App Store and Google Play.
+- [Turma Arial](https://arialgamer.com.br/en/turma/): free app to enjoy with friends: team draw, scoreboard and a mini game from each Arial Gamer game. On the App Store and Google Play.
 - [Acervo: Your Collection](https://arialgamer.com.br/en/acervo/): catalog and value collections (watches, coins, stamps, vinyl, trading cards).
 
 ## More
