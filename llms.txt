@@ -13,7 +13,7 @@
 - [Gelada](https://arialgamer.com.br/en/gelada/): virtual beer and cocktail simulator, tilt the phone to drink, 100 drinks. iPhone and Android.
 
 ## Apps
-- [Turma Arial](https://arialgamer.com.br/en/#turma): free app to enjoy with friends: team draw, scoreboard and a mini game from each Arial Gamer game. On Google Play; coming soon to iPhone.
+- [Turma Arial](https://arialgamer.com.br/en/#turma): free app to enjoy with friends: team draw, scoreboard and a mini game from each Arial Gamer game. On the App Store and Google Play.
 - [Acervo: Your Collection](https://arialgamer.com.br/en/acervo/): catalog and value collections (watches, coins, stamps, vinyl, trading cards).
 
 ## More
